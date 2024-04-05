@@ -1,0 +1,40 @@
+@media screen and (min-width: 1441px) and (max-width: 1600px) {
+
+    /* presentation */
+    
+    .presentation .content {
+        padding-left: 0;
+    }
+
+    .presentation .content .btn-container button {
+        margin: 0 30px;
+        width: 250px;
+    }
+
+    .presentation .image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .presentation .image img {
+        transform: scale(0.8);
+    }
+
+    /* tuto */
+
+    .box-container {
+        margin-top: 100px;
+        margin-bottom: 50px;
+    }
+
+    .box-container .box {
+        height: 45vh;
+    }
+
+    .box-container .box .img {
+        min-height: 50%;
+        width: 100%;
+    }
+
+}

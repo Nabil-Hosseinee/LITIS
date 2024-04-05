@@ -1,0 +1,23 @@
+@media screen and (min-width: 1601px) and (max-width: 1920px) {
+
+    /* presentation */
+    .presentation .content {
+        padding-left: 0;
+    }
+
+    .presentation .content .btn-container button {
+        margin: 0 30px;
+    }
+
+    /* tuto */
+
+    .box-container {
+        margin-top: 60px;
+        margin-bottom: 50px;
+    }
+
+    .box-container .box {
+        height: 40vh;
+    }
+
+}
