@@ -12,7 +12,7 @@
 
   <body>
     <header class="d-flex justify-content-evenly align-items-center bg-white fixed-top">
-        <div class="logo d-flex align-items-center">
+        <div class="logo d-flex justify-content-center align-items-center">
             <img class="img-fluid" src="./assets/images/Logo_existencenumerique_v1.png" alt="">
         </div>
         <nav class="navbar navbar-expand-lg">
@@ -48,6 +48,40 @@
         </div>
     </header>
 
+    <!-- phone header -->
+    <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
+        <div class="logo d-flex justify-content-center align-items-center">
+            <img class="img-fluid" src="./assets/images/Logo_existencenumerique_v1.png" alt="">
+        </div>
+        <div class="header-container d-flex">
+            <div class="search">
+                <input type="text" placeholder="Rechercher...">
+                <a href="#">
+                    <lord-icon class="icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                </a>
+            </div>
+    
+            <div class="burger-active" id="burger-menu">
+                <span></span>
+            </div>
+    
+            <div id="menu">
+                <ul>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Accueil</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">A propos</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Ressources</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+
+    <!-- presentation -->
     <section class="presentation">
         <div class="pre-container d-flex align-items-center">
             <div class="images col-xl-6 col-lg-12">
@@ -68,6 +102,8 @@
         </div>
     </section>
 
+    
+    <!-- prb -->
     <section class="prb">
         <h2 class="fs-1 fw-bold">
             Quelle est notre <span class="color_v">mission</span> ?
@@ -86,6 +122,8 @@
         </div>
     </section>
 
+
+    <!-- tuto -->
     <section class="tuto">
         <h2 class="fs-1 fw-bold">
             Les <span class="color_v">tutoriels</span> à la une
@@ -140,19 +178,21 @@
         </div>
     </section>
 
+
+    <!-- footer -->
     <footer>
         <div class="container d-flex flex-column align-items-center">
             <div class="link-container">
                 <ul class="d-flex">
-                    <li><a class="fs-3 menu__link fw-medium" href="#">Accueil</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#">Accueil</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-3 menu__link fw-medium" href="#">A propos</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#">A propos</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-3 menu__link fw-medium" href="#">Ressources</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#">Ressources</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-3 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-3 menu__link fw-medium" href="#">Mentions légales</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
                 </ul>
             </div>
 

@@ -32,6 +32,7 @@ li {
 
 header {
     min-height: 15vh;
+    display: none !important;
 }
 
 .logo {
@@ -197,6 +198,12 @@ header nav ul li a:hover {
   }
 
 
+/* header phone */
+.phone {
+    display: none !important;
+}
+
+
 
 /* presentation */
 
@@ -359,7 +366,7 @@ footer {
     height: 4vh;
     background-color: var(--violet);
     margin: 0 2vw;
-    margin-top: 1vh;
+    margin-top: 0.5vh;
 }
 
 .none {
@@ -586,6 +593,17 @@ footer {
 
 @media screen and (max-width: 576px) {
 
+    /* header */
+    .logo img {
+        /* transform: scale(0.7); */
+        width: 70%;
+    }
+
+    .search {
+        margin-right: 5vw;
+        margin-left: 2vw;
+    }
+
     /* section presentation */
     .presentation {
         padding: 5vh;
@@ -638,5 +656,115 @@ footer {
 
     footer {
         padding: 5vh 1vh;
+    }
+}
+
+
+@media screen and (max-width: 400px) {
+    /* header */
+
+    .phone {
+        display: flex !important;
+    }
+
+    .logo {
+        /* margin-bottom: 2vh; */
+        margin: 2vh 0 1vh 0;
+    }
+
+    .logo img {
+        width: 100% ;
+    }
+
+    .search {
+        margin-right: 10vw;
+        margin-bottom: 5vh;
+    }
+
+    #burger-menu {
+        margin-top: 0.5vh;
+    }
+
+    /* presentation */
+    .images {
+        margin-top: 5vh;
+        margin-bottom: 7vh;
+    }
+
+    .pre-container .content p {
+        font-size: 1.3rem !important;
+    }
+
+    .btn-container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: center m !important;
+    }
+
+    .btn {
+        width: 60vw;
+    }
+
+    .btn-resource {
+        margin: 0;
+    }
+
+    .btn-about {
+        margin-top: 3vh;
+    }
+
+    /* prb */
+    .prb {
+        padding: 10vh 5vh;
+    }
+
+    .prb h2 {
+        font-size: 1.4rem !important;
+    }
+
+    .prb .container p {
+        font-size: 1.3rem !important;
+    }
+
+    /* tuto */
+    .tuto h2 {
+        font-size: 1.4rem !important;
+    }
+
+    .box {
+        padding: 2vh;
+    }
+
+    .box .img {
+        width: 80%;
+    }
+
+    .tuto .box-container h4 {
+        font-size: 1.3rem !important;
+    }
+
+    .tuto .box-container h3  {
+        font-size: 1.1rem !important;
+    }
+
+    /* footer */
+    footer .container {
+        padding: 0;
+    }
+
+    .top .separator {
+        margin: 0 5vw;
+    }
+
+    .top ul, .bot ul {
+        padding: 0;
+    }
+
+    .link-container_992 a {
+        font-size: 1.1rem !important;
+    }
+
+    .bot a {
+        font-size: 1rem !important;
     }
 }
