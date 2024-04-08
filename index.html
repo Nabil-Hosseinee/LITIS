@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LITIS | Accueil</title>
+
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+  </head>
+
+  <body>
+    <header class="d-flex justify-content-evenly align-items-center bg-white fixed-top">
+        <div class="logo d-flex align-items-center">
+            <img class="img-fluid" src="./assets/images/Logo_existencenumerique_v1.png" alt="">
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <ul class="d-flex justify-content-center align-items-center">
+                <li><a class="active fs-4 menu__link fw-semibold" href="#">Accueil</a></li>
+                <li><a class="fs-4 menu__link fw-semibold" href="#">A propos</a></li>
+                <li><a class="fs-4 menu__link fw-semibold" href="#">Ressources</a></li>
+            </ul>
+        </nav>
+
+        <div class="search">
+            <input type="text" placeholder="Rechercher...">
+            <a href="#">
+                <lord-icon class="icon"
+                    src="https://cdn.lordicon.com/unukghxb.json"
+                    trigger="loop"
+                    delay="2000"
+                    style="width:30px;height:30px">
+                </lord-icon>
+            </a>
+        </div>
+
+        <div class="burger-active" id="burger-menu">
+            <span></span>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Accueil</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">A propos</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Ressources</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <section class="presentation">
+        <div class="pre-container d-flex align-items-center">
+            <div class="images col-xl-6 col-lg-12">
+                <img class="img-fluid" src="./assets/images/accueil_galere.png" alt="">
+            </div>
+
+            <div class="content col-xl-6 col-lg-12">
+                <!-- class bootstrap qui ne fonctionne pas "fs-sm-4" -->
+                <p class="fs-3 fs-sm-4">
+                    Découvrez une multitude de <span class="fw-semibold color_v">ressources</span> soigneusement élaborées pour vous accompagner dans le développement de vos <span class="color_v fw-semibold">compétences numériques</span>, vous permettant ainsi de naviguer avec aisance et assurance à travers le paysage technologique en constante évolution, tout en vous donnant les outils nécessaires pour relever les <span class="color_v fw-semibold">défis numériques</span> avec confiance et succès
+                </p>
+                <div class="btn-container d-flex justify-content-start">
+                    <button class="btn fw-bold btn-resource">Accéder aux ressources</button>
+                    <button class="btn fw-bold btn-about">A propos</button>
+                </div>
+            </div>
+            
+        </div>
+    </section>
+
+    <section class="prb">
+        <h2 class="fs-1 fw-bold">
+            Quelle est notre <span class="color_v">mission</span> ?
+        </h2>
+        <div class="container prb-container d-flex flex-column align-items-center">
+            <img class="col-xl-12 img-fluid" src="./assets/images/mission.png" alt="">
+            <p class="col-xl-12 fs-3 fw-medium">
+                Nous nous engageons à rendre le monde numérique accessible à tous.
+                <br>
+                <br>
+                Découvrez une multitude de ressources et de vidéos tutoriels pour renforcer vos compétences numériques. De la théorie à la pratique, notre plateforme offre des guides détaillés et des mises en situation concrètes.
+                <br>
+                <br>
+                <span class="color_v fw-bold">Notre mission</span> : accompagner chacun vers une maîtrise confiante du digital, pour un avenir prospère et inclusif.
+            </p>
+        </div>
+    </section>
+
+    <section class="tuto">
+        <h2 class="fs-1 fw-bold">
+            Les <span class="color_v">tutoriels</span> à la une
+        </h2>
+
+        <div class="container">
+            <div class="big-box col-xl-12 d-flex justify-content-between align-items-center rounded-4 desapear-576">
+                <div class="big-box-img col-xl-5 rounded-4">
+
+                </div>
+                <div class="big-box-content col-6">
+                    <h3>Titre de la ressource</h3>
+                    <h4>Catégorie</h4>
+                    <p class="fs-5">
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, possimus tenetur consequuntur nam fugit repellat...
+                        <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
+                    </p>
+                </div>
+            </div>
+
+            <div class="container box-container d-flex justify-content-between">
+                <div class="box d-flex flex-column align-items-center bg-white rounded-4">
+                    <h4 class="fs-3">Titre de la ressource</h4>
+                    <h3 class="fs-4">Catégorie</h3>
+                    <div class="img rounded-4"></div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
+                        <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
+                    </p>
+                </div>
+
+                <div class="box d-flex flex-column align-items-center bg-white rounded-4 center-box">
+                    <h4 class="fs-3">Titre de la ressource</h4>
+                    <h3 class="fs-4">Catégorie</h3>
+                    <div class="img rounded-4"></div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
+                        <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
+                    </p>
+                </div>
+
+                <div class="box d-flex flex-column align-items-center bg-white rounded-4 desapear">
+                    <h4 class="fs-3">Titre de la ressource</h4>
+                    <h3 class="fs-4">Catégorie</h3>
+                    <div class="img rounded-4"></div>
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
+                        <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container d-flex flex-column align-items-center">
+            <div class="link-container">
+                <ul class="d-flex">
+                    <li><a class="fs-3 menu__link fw-medium" href="#">Accueil</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-3 menu__link fw-medium" href="#">A propos</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-3 menu__link fw-medium" href="#">Ressources</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-3 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-3 menu__link fw-medium" href="#">Mentions légales</a></li>
+                </ul>
+            </div>
+
+            <div class="link-container_992 d-flex flex-column align-items-center none">
+                <div class="top">
+                    <ul class="d-flex">
+                        <li><a class="fs-3 menu__link fw-medium" href="#">Accueil</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-3 menu__link fw-medium" href="#">A propos</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-3 menu__link fw-medium" href="#">Ressources</a></li>
+                    </ul>
+                </div>
+                <div class="bot">
+                    <ul class="d-flex">
+                        <li><a class="fs-3 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-3 menu__link fw-medium" href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="logo-container">
+                <img class="img-fluid" src="./assets/images/litis_logo.webp" alt="">
+                <img class="img-fluid" src="./assets/images/agefiph logo.svg" alt="">
+                <img class="img-fluid" src="./assets/images/logo_iut.png" alt="">
+                <img class="img-fluid" src="./assets/images/iut_rouen_logo_nobg.png" alt="">
+            </div>
+        </div>
+    </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        var burgerMenu = document.getElementById('burger-menu');
+
+        var overlay = document.getElementById('menu');
+
+        burgerMenu.addEventListener('click', function() {
+            this.classList.toggle("close");
+            overlay.classList.toggle("overlay");
+        });
+    </script>
+  </body>
+
+</html>
