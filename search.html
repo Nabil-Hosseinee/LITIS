@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/general.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <title>LITIS | Accueil</title>
+  </head>
+
+  <body>
+    <header class="d-flex justify-content-evenly align-items-center bg-white fixed-top">
+        <div class="logo d-flex justify-content-center align-items-center">
+            <img class="img-fluid" src="./assets/images/Logo_existencenumerique_v1.png" alt="">
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <ul class="d-flex justify-content-center align-items-center">
+                <li><a class="active fs-4 menu__link fw-semibold" href="#">Accueil</a></li>
+                <li><a class="fs-4 menu__link fw-semibold" href="#">A propos</a></li>
+                <li><a class="fs-4 menu__link fw-semibold" href="#">Ressources</a></li>
+            </ul>
+        </nav>
+
+        <div class="search">
+            <input type="text" placeholder="Rechercher...">
+            <a href="#">
+                <lord-icon class="icon"
+                    src="https://cdn.lordicon.com/unukghxb.json"
+                    trigger="loop"
+                    delay="2000"
+                    style="width:30px;height:30px">
+                </lord-icon>
+            </a>
+        </div>
+
+        <div class="burger-active" id="burger-menu">
+            <button>
+                <p>Menu</p>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.html">Accueil</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Ressources</a></li>
+            </ul>
+        </div>
+    </header>
+
+  </body>
