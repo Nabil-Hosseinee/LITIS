@@ -23,16 +23,18 @@
             </ul>
         </nav>
 
-        <div class="search">
-            <input type="text" placeholder="Rechercher...">
-            <a href="#">
-                <lord-icon class="icon"
-                    src="https://cdn.lordicon.com/unukghxb.json"
-                    trigger="loop"
-                    delay="2000"
-                    style="width:30px;height:30px">
-                </lord-icon>
-            </a>
+        <div>
+            <form class="search" action="cible2.php" method="post">
+                <input name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
+                <a href="#">
+                    <lord-icon class="icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                </a>
+            </form>
         </div>
 
         <div class="burger-active" id="burger-menu">
