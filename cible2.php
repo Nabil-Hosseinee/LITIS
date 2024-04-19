@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+session_unset();
+
 // Vérifier si un mot a été saisi dans la barre de recherche
 if (isset($_POST['mot'])) {
     $mot = $_POST['mot'];
@@ -30,6 +32,9 @@ if (isset($_POST['mot'])) {
                 $synonymes = $resultSynonyme['Synonyme']; // Supposons que les synonymes soient stockés dans la colonne 'Synonyme' sous forme de chaîne séparée par des virgules
                 $motsAssocies[$mot] = array('definition' => $definition, 'synonymes' => $synonymes);
             }
+
+            // Stocke $motsAssocies dans une variable de session avec le mot et ses synonymes
+            $_SESSION['motsAssocies'] = $motsAssocies;
 
             echo "<ul>";
             foreach ($motsAssocies as $mot => $data) {
@@ -66,6 +71,10 @@ if (isset($_POST['mot'])) {
 
             $statementRessources->execute();
             $ressources = $statementRessources->fetchAll(PDO::FETCH_ASSOC);
+            
+            echo "<pre>";
+            var_dump($ressources);
+            echo "</pre>";
 
             // Afficher les ressources trouvées
             if ($ressources) {
@@ -89,9 +98,15 @@ if (isset($_POST['mot'])) {
 
                 $mot = $resultMot['Mot'];
                 $definition = $resultMot['Definition'];
+                $synonyme = $resultMot['Synonyme'];
+
+                $_SESSION['mot'] = $mot;
+                $_SESSION['def'] = $definition;
+                $_SESSION['synonyme'] = $synonyme;
+
                 
                 // Afficher le mot et sa définition
-                echo "<h2>$mot</h2>";
+                echo "<h2>$mot ($synonyme)</h2>";
                 echo "<p>$definition</p>";
 
 
@@ -103,6 +118,10 @@ if (isset($_POST['mot'])) {
                 $statementRessources->bindValue(':mot', "%$mot%", PDO::PARAM_STR);
                 $statementRessources->execute();
                 $ressources = $statementRessources->fetchAll(PDO::FETCH_ASSOC);
+
+                echo "<pre>";
+                var_dump($ressources);
+                echo "</pre>";
 
                 // Afficher les ressources trouvées
                 if ($ressources) {
@@ -122,8 +141,8 @@ if (isset($_POST['mot'])) {
         }
 
          // Redirection vers la page search.html
-        //  header("Location: search.html");
-        //  exit; // Assurez-vous d'utiliser exit() après header() pour éviter tout autre traitement de code après la redirection
+         header("Location: search.php");
+         exit; 
     } catch (PDOException $e) {
         echo "Erreur de connexion à la base de données : " . $e->getMessage();
     }
