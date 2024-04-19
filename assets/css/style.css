@@ -34,11 +34,11 @@ header nav ul li {
 }
 
 header nav ul li a.active {
-    color: var(--violet);
+    color: var(--secondaire);
 }
 
 header nav ul li a:hover {
-    color: var(--violet);
+    color: var(--secondaire);
 }
 
 .menu__link {
@@ -52,7 +52,7 @@ header nav ul li a:hover {
     width: 0;
     height: 2px;
     border-radius: 2px;
-    background-color: var(--violet);
+    background-color: var(--secondaire);
     position: absolute;
     bottom: -.25rem;
     left: 0;
@@ -324,27 +324,27 @@ header nav ul li a:hover {
 
 .btn-resource {
     margin-right: 5vw;
-    background-color: var(--bleu-flo);
+    background-color: var(--secondaire);
     color: white;
     border: 2px solid white;
 }
 
 .btn-resource:hover {
     background-color: white;
-    color: var(--bleu-flo);
-    border: 2px solid var(--bleu-flo);
+    color: var(--secondaire);
+    border: 2px solid var(--secondaire);
 }
 
 .btn-about {
-    background-color: var(--vert);
-    color: white;
-    border: 2px solid white;
+    background-color: var(--blanc);
+    color: var(--secondaire);
+    border: 2px solid var(--secondaire);
 }
 
 .btn-about:hover {
-    background-color: white;
-    color: var(--vert);
-    border: 2px solid var(--vert);
+    background-color: var(--secondaire);
+    color: var(--blanc);
+    border: 2px solid var(--blanc);
 }
 
 
@@ -396,9 +396,10 @@ header nav ul li a:hover {
 
 .big-box-img {
     width: 40%;
-    height: 25vh;
-    background: #250000;
+    height: 30vh;
+    /* background: #250000; */
 }
+
 
 .big-box-content h3 {
     margin-bottom: 1vh;
@@ -421,7 +422,7 @@ header nav ul li a:hover {
     width: 100%;
     height: 20vh;
     margin: 50px 0;
-    background-color: #250000;
+    /* background-color: #250000; */
 }
 
 
@@ -432,7 +433,7 @@ footer {
 }
 
 .link-container ul li a {
-    color: var(--violet);
+    color: var(--secondaire);
 }
 
 .logo-container {

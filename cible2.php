@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 // Vérifier si un mot a été saisi dans la barre de recherche
 if (isset($_POST['mot'])) {
     $mot = $_POST['mot'];
@@ -118,6 +120,10 @@ if (isset($_POST['mot'])) {
                 echo "Aucun résultat trouvé pour le mot '$mot'";
             }
         }
+
+         // Redirection vers la page search.html
+        //  header("Location: search.html");
+        //  exit; // Assurez-vous d'utiliser exit() après header() pour éviter tout autre traitement de code après la redirection
     } catch (PDOException $e) {
         echo "Erreur de connexion à la base de données : " . $e->getMessage();
     }

@@ -2,6 +2,7 @@ body {
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    /* overflow: hidden; */
 }
 
 a {
@@ -22,6 +23,7 @@ li {
 header {
     min-height: 15vh;
     display: none !important;
+    padding: 0 5vh;
 }
 
 .logo {
@@ -287,4 +289,40 @@ header nav ul li a:hover {
 /* header phone */
 .phone {
     display: none !important;
+}
+
+
+/* section affichage */
+.affichage {
+  min-height: 85vh;
+  min-width: 100vw;
+  position: relative;
+  margin-top: 15vh;
+  /* padding: 10vh; */
+  background-color: var(--gris-clair);
+}
+
+.affichage h1 {
+  text-align: center;
+  margin-top: 5vh;
+}
+
+.container {
+  padding: 5vh;
+}
+
+.glossaire {
+  width: 40%;
+  min-height: 60vh;
+}
+
+.ressource {
+  width: 40%;
+  min-height:60vh;
+}
+
+.separator {
+  width: 0.5%;
+  min-height:45vh;
+  margin: 0 15vh;
 }

@@ -13,7 +13,7 @@
   <body>
     <header class="d-flex justify-content-evenly align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
-            <img class="img-fluid" src="./assets/images/Logo_existencenumerique_v1.png" alt="">
+            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="">
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
@@ -90,7 +90,7 @@
     <section class="presentation">
         <div class="pre-container d-flex align-items-center">
             <div class="images col-xl-6 col-lg-12">
-                <img class="img-fluid" src="./assets/images/accueil_galere.png" alt="">
+                <img class="img-fluid" src="./assets/images/illustration/accueil_galere.png" alt="">
             </div>
 
             <div class="content col-xl-6 col-lg-12">
@@ -114,7 +114,7 @@
             Quelle est notre <span class="color_v">mission</span> ?
         </h2>
         <div class="container prb-container d-flex flex-column align-items-center">
-            <img class="col-xl-12 img-fluid" src="./assets/images/mission.png" alt="">
+            <img class="col-xl-12 img-fluid" src="./assets/images/illustration/mission.png" alt="">
             <p class="col-xl-12 fs-3 fw-medium">
                 Nous nous engageons à rendre le monde numérique accessible à tous.
                 <br>
@@ -137,11 +137,11 @@
         <div class="container">
             <div class="big-box col-xl-12 d-flex justify-content-between align-items-center rounded-4 desapear-576">
                 <div class="big-box-img col-xl-5 rounded-4">
-
+                    <img class="img-fluid rounded" src="./assets/images/miniatures/minia_doctolib.png" alt="">
                 </div>
                 <div class="big-box-content col-6">
-                    <h3>Titre de la ressource</h3>
-                    <h4>Catégorie</h4>
+                    <h3>Prendre un rendez-vous sur Doctolib</h3>
+                    <h4>Santé</h4>
                     <p class="fs-5">
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, possimus tenetur consequuntur nam fugit repellat...
                         <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
@@ -151,9 +151,11 @@
 
             <div class="container box-container d-flex justify-content-between">
                 <div class="box d-flex flex-column align-items-center bg-white rounded-4">
-                    <h4 class="fs-3">Titre de la ressource</h4>
-                    <h3 class="fs-4">Catégorie</h3>
-                    <div class="img rounded-4"></div>
+                    <h4 class="fs-5">Créer un mot de passe sécurisé</h4>
+                    <h3 class="fs-6">Base d'Internet</h3>
+                    <div class="img rounded-4">
+                        <img class="img-fluid rounded" src="./assets/images/miniatures/minia_crea_mdp.png" alt="">
+                    </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
                         <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
@@ -161,9 +163,11 @@
                 </div>
 
                 <div class="box d-flex flex-column align-items-center bg-white rounded-4 center-box">
-                    <h4 class="fs-3">Titre de la ressource</h4>
-                    <h3 class="fs-4">Catégorie</h3>
-                    <div class="img rounded-4"></div>
+                    <h4 class="fs-5">Utiliser Parcoursup</h4>
+                    <h3 class="fs-6">Éducation</h3>
+                    <div class="img rounded-4">
+                        <img class="img-fluid rounded" src="./assets/images/miniatures/minia_parcoursup.png" alt="">
+                    </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
                         <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
@@ -171,9 +175,11 @@
                 </div>
 
                 <div class="box d-flex flex-column align-items-center bg-white rounded-4 desapear">
-                    <h4 class="fs-3">Titre de la ressource</h4>
-                    <h3 class="fs-4">Catégorie</h3>
-                    <div class="img rounded-4"></div>
+                    <h4 class="fs-5">Créer un compte Google</h4>
+                    <h3 class="fs-6">Base d'Internet</h3>
+                    <div class="img rounded-4">
+                        <img class="img-fluid rounded" src="./assets/images/miniatures/minia_crea_google.png" alt="">
+                    </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
                         <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
@@ -220,10 +226,10 @@
             </div>
 
             <div class="logo-container">
-                <img class="img-fluid" src="./assets/images/litis_logo.webp" alt="">
-                <img class="img-fluid" src="./assets/images/agefiph logo.svg" alt="">
-                <img class="img-fluid" src="./assets/images/logo_iut.png" alt="">
-                <img class="img-fluid" src="./assets/images/iut_rouen_logo_nobg.png" alt="">
+                <img class="img-fluid" src="./assets/images/logo/litis_logo.webp" alt="">
+                <img class="img-fluid" src="./assets/images/logo/agefiph logo.svg" alt="">
+                <img class="img-fluid" src="./assets/images/logo/logo_iut.png" alt="">
+                <img class="img-fluid" src="./assets/images/logo/iut_rouen_logo_nobg.png" alt="">
             </div>
         </div>
     </footer>
