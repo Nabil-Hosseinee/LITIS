@@ -354,7 +354,7 @@ h2 {
   box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.3);
   border-radius: 64px;
   height: 6vh;
-  width: 65%;
+  width: 45%;
   background-color: var(--secondaire);
   color: white;
   border: 2px solid white;
@@ -375,7 +375,7 @@ h2 {
 }
 
 .box .img img {
-  width: 50%;
+  width: 70%;
 }
 
 .separator {

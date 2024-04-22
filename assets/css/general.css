@@ -12,3 +12,18 @@
     --secondaire : #002Fa7;
     --secondaire_dyl : #193d98;
 }
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+li {
+    list-style: none;
+}
+
+
+
+
+/* Header */
+

@@ -13,18 +13,16 @@ if (isset($_SESSION['motsAssocies'])) {
     // var_dump($motsAssocies);
     // echo "</pre>";
 
-    // echo "<ul>";
-        foreach ($motsAssocies as $mot => $data) {
-            $definition = $data['definition'];
-            $synonyme = $data['synonymes'];
-            $synonymesArray = explode(',', $synonyme); // Convertir la chaîne de synonymes en tableau
+    foreach ($motsAssocies as $mot => $data) {
+        $definition = $data['definition'];
+        $synonyme = $data['synonymes'];
+        $synonymesArray = explode(',', $synonyme); // Convertir la chaîne de synonymes en tableau
 
-            // Construire la chaîne des synonymes entre parenthèses
-            $synonymes = implode(', ', $synonymesArray);
+        // Construire la chaîne des synonymes entre parenthèses
+        $synonymes = implode(', ', $synonymesArray);
 
-            echo "<li><strong>$mot $synonymes :</strong> $definition</li>";
-        }
-    // echo "</ul>";
+        echo "<li><strong>$mot $synonymes :</strong> $definition</li>";
+    }
 
 }
 // dans le cas ou c'est un mot et où l'on récupère def + syn
@@ -125,8 +123,8 @@ else {
                 <h2 class="res-title">Ressource(s)</h2>
                 <div class="ressource-prop">
                     <div class="box d-flex flex-column align-items-center bg-white rounded-4 center-box">
-                        <h4 class="fs-5">Utiliser Parcoursup</h4>
-                        <h3 class="fs-6">Éducation</h3>
+                        <h3 class="fs-5">Utiliser Parcoursup</h3>
+                        <h4 class="fs-6">Éducation</h4>
                         <div class="img rounded-4">
                             <img class="img-fluid rounded" src="./assets/images/miniatures/minia_parcoursup.png" alt="">
                         </div>

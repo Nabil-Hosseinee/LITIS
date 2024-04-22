@@ -4,15 +4,6 @@ body {
     font-style: normal;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
-li {
-    list-style: none;
-}
-
 .color_v {
     color: var(--violet);
 }
@@ -34,11 +25,11 @@ header nav ul li {
 }
 
 header nav ul li a.active {
-    color: var(--secondaire);
+    color: var(--violet);
 }
 
 header nav ul li a:hover {
-    color: var(--secondaire);
+    color: var(--violet);
 }
 
 .menu__link {
@@ -52,7 +43,7 @@ header nav ul li a:hover {
     width: 0;
     height: 2px;
     border-radius: 2px;
-    background-color: var(--secondaire);
+    background-color: var(--violet);
     position: absolute;
     bottom: -.25rem;
     left: 0;
@@ -147,6 +138,12 @@ header nav ul li a:hover {
     opacity: 0;
     width: 0;
   }
+
+  #burger-menu button p {
+    margin-left: 6vw;
+    margin-top: 1vh;
+    font-weight: 500;
+}
 
 /* menu */
 #menu {
@@ -579,11 +576,7 @@ footer {
         margin-right: 3vw;
     }
 
-    #burger-menu button p {
-        margin-left: 6vw;
-        margin-top: 1vh;
-        font-weight: 500;
-    }
+    
 
     /* section presentation */
 
