@@ -136,7 +136,7 @@ if (isset($_POST['mot'])) {
                 }
             } else {
                 // Si le mot n'est pas un synonyme ni un mot de la table glossaire
-                echo "Aucun résultat trouvé pour le mot '$mot'";
+                header("Location: 404.php");
             }
         }
 
