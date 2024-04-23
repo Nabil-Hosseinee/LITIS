@@ -12,7 +12,7 @@
 
     <header class="d-flex justify-content-evenly align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
-            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="">
+            <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt=""></a>
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
