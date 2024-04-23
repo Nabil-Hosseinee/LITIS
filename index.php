@@ -63,7 +63,7 @@ session_start();
     <!-- phone header -->
     <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
-            <img class="img-fluid" src="./assets/images/Logo_existencenumerique_v1.png" alt="Logo du site existence numérique">
+            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo du site existence numérique">
         </div>
         <div class="header-container d-flex">
             <div class="search">
@@ -80,7 +80,10 @@ session_start();
             </div>
     
             <div class="burger-active" id="burger-menu-phone">
-                <span></span>
+                <button>
+                    <p>Menu</p>
+                    <span></span>
+                </button>
             </div>
     
             <div id="menu-phone">
@@ -114,6 +117,21 @@ session_start();
             
         </div>
     </section>
+
+
+    <!-- slogan -->
+    <div class="slogan d-flex justify-content-center align-items-center">
+        <img class="slogan_img slogan_droite" src="./assets/images/illustration/slogan.svg" alt="">
+        <!-- <img class="slogan_img slogan_gauche" src="./assets/images/illustration/slogan_gauche.svg" alt=""> -->
+        <div class="circle d-flex justify-content-center align-items-center">
+            <img src="./assets/images/illustration/quotes.svg" alt="">
+        </div>
+        <div class="container rounded-4 d-flex justify-content-center align-items-center">
+            <h1 class="color_v">
+                La référence digitale pour naviguer vers l'inclusion en ligne
+            </h1>
+        </div>
+    </div>
 
     
     <!-- prb -->
@@ -158,7 +176,7 @@ session_start();
             </div>
 
             <div class="container box-container d-flex justify-content-between">
-                <div class="box d-flex flex-column align-items-center bg-white rounded-4">
+                <div class="box d-flex flex-column align-items-center rounded-4">
                     <h4 class="fs-5">Créer un mot de passe sécurisé</h4>
                     <h3 class="fs-6">Base d'Internet</h3>
                     <div class="img rounded-4">
@@ -170,7 +188,7 @@ session_start();
                     </p>
                 </div>
 
-                <div class="box d-flex flex-column align-items-center bg-white rounded-4 center-box">
+                <div class="box d-flex flex-column align-items-center rounded-4 center-box">
                     <h4 class="fs-5">Utiliser Parcoursup</h4>
                     <h3 class="fs-6">Éducation</h3>
                     <div class="img rounded-4">
@@ -182,7 +200,7 @@ session_start();
                     </p>
                 </div>
 
-                <div class="box d-flex flex-column align-items-center bg-white rounded-4 desapear">
+                <div class="box d-flex flex-column align-items-center rounded-4 desapear">
                     <h4 class="fs-5">Créer un compte Google</h4>
                     <h3 class="fs-6">Base d'Internet</h3>
                     <div class="img rounded-4">
