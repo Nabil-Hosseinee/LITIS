@@ -10,14 +10,14 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/general.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <title>LITIS | Accueil</title>
   </head>
 
   <body>
-    <header class="d-flex justify-content-evenly align-items-center bg-white fixed-top">
+    <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
             <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique">
         </div>

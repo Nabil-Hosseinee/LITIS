@@ -323,3 +323,9 @@ footer {
 .top {
     margin-bottom: 1vh;
 }
+
+
+/* media queries */
+@media screen and (max-width: 1200px) {
+    
+}
