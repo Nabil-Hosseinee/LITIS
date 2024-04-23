@@ -25,6 +25,10 @@ li {
   color: var(--violet);
 }
 
+.color_s {
+  color: var(--secondaire);
+}
+
 
 .btn, button {
   width: 15vw;

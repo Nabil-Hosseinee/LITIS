@@ -5,7 +5,11 @@ body {
 }
 
 .color_v {
-    color: var(--violet);
+    color: var(--secondaire);
+}
+
+.btn {
+    margin: auto;
 }
 
 
@@ -23,8 +27,8 @@ body {
 
 h1 {
     display: flex;
-    font-size: 70px;
-    margin-bottom: 8vh;
+    font-size: 64px;
+    margin-bottom: 5vh;
 }
 
 p {
@@ -70,7 +74,7 @@ p {
 .trait {
     width: 4vw;
     height: 0.6vh;
-    background-color: var(--secondaire);
+    background-color: var(--violet);
     border-radius: 16px;
     margin-top: 3vh;
     margin-left: 2vh ;
@@ -81,20 +85,16 @@ p {
     margin: 3vh 0;
 }
 
-.btn {
-    margin: auto;
-}
-
 .btn-savoir {
-    background-color: var(--violet);
+    background-color: var(--secondaire);
     color: white;
     border: 2px solid white;
 }
 
 .btn-savoir:hover {
     background-color: white;
-    color: var(--violet);
-    border: 2px solid var(--violet);
+    color: var(--secondaire);
+    border: 2px solid var(--secondaire);
 }
 
 
@@ -174,100 +174,48 @@ p {
     margin-bottom: 50px; 
 }
 
-/* .form, .lieu {
-    padding: 5%;
-    background-color: white;
-    box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.3);
-}
-
 .lieu {
-    width: 35vw;
-    margin: 5%;
-    height: 75vh;
-}
-
-.lieu p, .logo-reseaux img  {
-    margin: 5% 0;
-}
-
-.reseaux h3 {
-    margin-top: 40%;
-}
-
-.logo-reseaux img {
-    width: 3vw;
-    height: auto;
-    padding: 2%;
-}
-
-.carte {
-    width: 100%;
-    height: 100%;
-}
-
-.form {
-    width: 45vw;
-    height: 75vh;
-    margin: 5%;
-}
-
-.form h3 {
-    margin-bottom: 20px;
     text-align: center;
-}
-
-.form label {
-    display: block;
-    margin-bottom: 10px;
-    font-size: 18px;
-}
-
-.form input,
-.form textarea {
-    background-color: var(--gris-clair);
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    font-size: 16px;
-}
-
-.btn-form {
-    background-color: var(--violet);
-    color: white;
-    border: 2px solid white;
-}
-
-.btn-form:hover {
-    background-color: white;
-    color: var(--violet);
-    border: 2px solid var(--violet);
-} */
-
-
-/* contact2 */
-.lieu {
-    display: flex;
-    justify-content: space-between;
+    height: 28vh;
 }
 
 .reseaux {
     width: 50%;
+    height: 100%;
     padding: 3%;
     background-color: white;
 }
 
 .adresse {
-    width: 30%;
+    width: 50%;
+    height: 100%;
     padding: 3%;
     background-color: white;
 }
 
+.adresse p {
+    margin-top: 10%;
+}
+
 .logo-reseaux img {
-    width: 5vw;
+    width: 4vw;
     height: auto;
     padding: 2%;
+    filter: grayscale(100%);
+    transition: 0.5s ease;
+}
+
+.logo-reseaux  {
+    margin-top: 3vh;
+}
+
+.logo-reseaux p {
+    margin: 1vh 0;
+}
+
+.logo-reseaux img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
 }
 
 .form-carte {
@@ -279,8 +227,8 @@ p {
 .form {
     background-color: white;
     width: 50vw;
-    height: 75vh;
-    padding: 5%;
+    height: 77vh;
+    padding: 3%;
 }
 
 .form h3 {
@@ -305,23 +253,73 @@ p {
     font-size: 16px;
 }
 
+.form textarea {
+    height: 100px;
+}
+
+::placeholder {
+    color: black;
+}
+
 .btn-form {
-    background-color: var(--violet);
+    background-color: var(--secondaire);
     color: white;
     border: 2px solid white;
+    margin-left: 25%;
 }
 
 .btn-form:hover {
     background-color: white;
-    color: var(--violet);
-    border: 2px solid var(--violet);
+    color: var(--secondaire);
+    border: 2px solid var(--secondaire);
 }
 
 .carte {
     width: 50vw;
-    height: 75vh;
+    height: 77vh;
 }
 
 .carte iframe {
-    height: 75vh;
+    height: 77vh;
+}
+
+
+/* footer */
+
+footer {
+    padding: 5vh;
+}
+
+.link-container ul li a {
+    color: var(--violet);
+}
+
+.logo-container {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.logo-container img {
+    width: 10%;
+    margin: 0 4vw;
+}
+
+.separator {
+    width: 2px;
+    height: 4vh;
+    background-color: var(--violet);
+    margin: 0 2vw;
+    margin-top: 0.5vh;
+}
+
+.none {
+    display: none !important;
+}
+
+.none a {
+    color: var(--violet);
+}
+
+.top {
+    margin-bottom: 1vh;
 }
