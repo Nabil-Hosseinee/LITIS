@@ -89,6 +89,12 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.3);
+    padding-bottom: 3vh;
+    padding-right: 0.5vw;
+}
+
+.slogan .circle img {
+    transform: scale(1.5);
 }
 
 .slogan .container {
@@ -530,7 +536,7 @@ footer {
     }
 
     .images img {
-        transform: scale(1.5);
+        transform: scale(2);
     }
 
     .btn-container {
@@ -635,7 +641,7 @@ footer {
 
     /* presentation */
     .presentation {
-        padding: 25vh 5vh 10vh 5vh;
+        padding: 30vh 5vh 10vh 5vh;
     }
 
     .images {
