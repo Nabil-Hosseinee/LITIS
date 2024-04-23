@@ -309,6 +309,7 @@ p {
     background-color: var(--violet);
     color: white;
     border: 2px solid white;
+    margin-left: 25%;
 }
 
 .btn-form:hover {
