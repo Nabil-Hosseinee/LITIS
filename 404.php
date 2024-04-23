@@ -54,7 +54,7 @@
 
 
     <section class="error d-flex flex-column justify-content-center align-items-center">
-        <img src="./assets/images/illustration/404.avif" alt="">
+        <img class="img-fluid" src="./assets/images/illustration/Error404.png" alt="">
         <h1>Page non trouvée</h1>
         <p>La page que vous tentez d'afficher n'existe pas ou une autre errer s'est produite. Veuillez revenir à la page d'accueil.</p>
         <a href="index.php">

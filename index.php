@@ -61,7 +61,7 @@ session_start();
 
     <!-- phone header -->
     <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
-        <div class="logo d-flex justify-content-center align-items-center">
+        <div class="logo d-flex justify-content-cent    er align-items-center">
             <img class="img-fluid" src="./assets/images/logo/Logo_existencenumerique_v1.png" alt="">
         </div>
         <div class="header-container d-flex">
@@ -121,9 +121,12 @@ session_start();
     </section>
 
     <div class="slogan d-flex justify-content-center align-items-center">
-        <div class="container">
+        <div class="circle d-flex justify-content-center align-items-center">
+            <img src="./assets/images/illustration/quotes_bleu.png" alt="">
+        </div>
+        <div class="container rounded-4 d-flex justify-content-center align-items-center">
             <h1 class="color_v">
-                La référence digitale pour naviguer vers l'inclusion en ligne
+                „La référence digitale pour naviguer vers l'inclusion en ligne“
             </h1>
         </div>
     </div>
