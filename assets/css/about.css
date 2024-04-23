@@ -82,12 +82,7 @@ p {
 }
 
 .btn {
-    width: 6vw;
-    height: 3vh;
     margin: auto;
-    border-radius: 64px;
-    transition: 0.5s ease;
-    box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.3);
 }
 
 .btn-savoir {
@@ -330,88 +325,3 @@ p {
 .carte iframe {
     height: 75vh;
 }
-
-
-
-  
-  .button-instagram {
-    display: flex;
-    justify-content: center;
-    padding: 0.5rem;
-    border-radius: 0.375rem;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
-    background-color: #a21caf;
-    color: #ffffff;
-    font-weight: 600;
-    transition: all 0.5s;
-    max-width: 15%;
-    max-height: 20%;
-  }
-  
-  .button-instagram:hover {
-    transform: translateY(3px);
-    border-radius: 50%;
-    background-color: #331029;
-  }
-  
-  .button-instagram:hover > svg {
-    fill: #ffffff;
-  }
-  
-  .button-instagram:hover > .span-instagram {
-    opacity: 1;
-    transform: translateY(-1rem);
-    transition-duration: 0.5s;
-    color: #6b7280;
-    font-size: 0.875rem;
-  }
-  
-  .button-instagram svg {
-    width: 1em;
-    height: 1.2em;
-  }
-  
-  .span-instagram {
-    position: absolute;
-    opacity: 0;
-  }
-  
-  .reseaux .button-instagram {
-    display: flex;
-    justify-content: center;
-    padding: 0.5rem;
-    border-radius: 0.375rem;
-    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.5);
-    background-color: #a21caf;
-    color: #ffffff;
-    font-weight: 600;
-    transition: all 0.5s;
-  }
-  
-  .reseaux .button-instagram:hover {
-    transform: translateY(3px);
-    background-color: #331029;
-  }
-  
-  .reseaux .button-instagram:hover > svg {
-    fill: #ffffff;
-  }
-  
-  .reseaux .button-instagram:hover > .span-instagram {
-    opacity: 1;
-    transform: translateY(-2.5rem);
-    transition-duration: 0.7s;
-    color: #6b7280;
-    font-size: 0.875rem;
-  }
-  
-  .reseaux .button-instagram svg {
-    width: 1em;
-    height: 1.2em;
-  }
-  
-  .reseaux .span-instagram {
-    position: absolute;
-    opacity: 0;
-  }
-  
