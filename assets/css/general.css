@@ -44,6 +44,7 @@ li {
 
 header {
   min-height: 15vh;
+  z-index: 9999;
 }
 
 .logo {

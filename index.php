@@ -10,14 +10,14 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/style.css">
     <link rel="stylesheet" href="./assets/css/general.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <title>LITIS | Accueil</title>
   </head>
 
   <body>
-    <header class="d-flex justify-content-evenly align-items-center bg-white fixed-top">
+    <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
             <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="">
         </div>
@@ -62,7 +62,7 @@ session_start();
     <!-- phone header -->
     <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
-            <img class="img-fluid" src="./assets/images/Logo_existencenumerique_v1.png" alt="">
+            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="">
         </div>
         <div class="header-container d-flex">
             <div class="search">
@@ -78,7 +78,10 @@ session_start();
             </div>
     
             <div class="burger-active" id="burger-menu-phone">
-                <span></span>
+                <button>
+                    <p>Menu</p>
+                    <span></span>
+                </button>
             </div>
     
             <div id="menu-phone">
@@ -113,7 +116,11 @@ session_start();
         </div>
     </section>
 
+
+    <!-- slogan -->
     <div class="slogan d-flex justify-content-center align-items-center">
+        <img class="slogan_img slogan_droite" src="./assets/images/illustration/slogan.svg" alt="">
+        <!-- <img class="slogan_img slogan_gauche" src="./assets/images/illustration/slogan_gauche.svg" alt=""> -->
         <div class="circle d-flex justify-content-center align-items-center">
             <img src="./assets/images/illustration/quotes.svg" alt="">
         </div>

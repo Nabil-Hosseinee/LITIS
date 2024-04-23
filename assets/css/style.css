@@ -2,6 +2,7 @@ body {
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    overflow-x: hidden;
 }
 
 /* presentation */
@@ -79,6 +80,24 @@ body {
     position: relative;
 }
 
+.slogan_img {
+    width: 20%;
+}
+
+.slogan_droite {
+    position: absolute;
+    top: 45%;
+    left: 8%;
+    transform:  rotate(-15deg);
+}
+
+.slogan_gauche {
+    position: absolute;
+    top: 35%;
+    left: 70%;
+    transform: rotate(15deg);
+}
+
 .slogan .circle {
     width: 200px;
     height: 200px;
@@ -108,6 +127,7 @@ h1 {
     font-weight: 700;
     /* text-transform: uppercase; */
     line-height: 15vh;
+    z-index: 999;
 }
 
 
