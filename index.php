@@ -122,7 +122,7 @@ session_start();
 
     <div class="slogan d-flex justify-content-center align-items-center">
         <div class="circle d-flex justify-content-center align-items-center">
-            <img src="./assets/images/illustration/quotes_bleu.png" alt="">
+            <img src="./assets/images/illustration/quotes.svg   " alt="">
         </div>
         <div class="container rounded-4 d-flex justify-content-center align-items-center">
             <h1 class="color_v">
