@@ -17,7 +17,7 @@
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
-                <li><a class="fs-4 menu__link fw-semibold" href="#">Accueil</a></li>
+                <li><a class="fs-4 menu__link fw-semibold" href="">Accueil</a></li>
                 <li><a class="active fs-4 menu__link fw-semibold" href="#">A propos</a></li>
                 <li><a class="fs-4 menu__link fw-semibold" href="#">Ressources</a></li>
             </ul>
@@ -25,8 +25,9 @@
 
         <div>
             <form class="search" action="cible2.php" method="post">
-                <input name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
-                <a href="#">
+                <label for="search-input" class="visually-hidden">Rechercher</label>
+                <input id="search-input" name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
+                <a href="#" aria-label="Rechercher">
                     <lord-icon class="icon"
                         src="https://cdn.lordicon.com/unukghxb.json"
                         trigger="loop"
@@ -36,6 +37,8 @@
                 </a>
             </form>
         </div>
+        
+        
 
         <div class="burger-active" id="burger-menu">
             <button>
@@ -60,14 +63,15 @@
         </div>
         <div class="header-container d-flex">
             <div class="search">
-                <input type="text" placeholder="Rechercher...">
-                <a href="#">
+                <input type="text" id="search-input" placeholder="Rechercher...">
+                <a href="#" aria-labelledby="search-input">
                     <lord-icon class="icon"
                         src="https://cdn.lordicon.com/unukghxb.json"
                         trigger="loop"
                         delay="2000"
                         style="width:30px;height:30px">
                     </lord-icon>
+                    <span class="visually-hidden">Rechercher</span>
                 </a>
             </div>
     
@@ -92,7 +96,7 @@
             <h1 class="fw-semibold">A propos</h1>
             
             <!-- class bootstrap qui ne fonctionne pas "fs-sm-4" -->
-            <p class="fs-4 fs-sm-4 fw-medium">
+            <p class="fs-5 fs-sm-4 fw-medium">
             Nous accompagnons les individus dans <span class="fw-semibold color_v">l'exploration</span> et <span class="fw-semibold color_v">la maîtrise</span> des outils numériques, en fournissant des ressources éducatives <span class="fw-semibold color_v">accessibles à tous</span>. Nous visons à <span class="fw-semibold color_v">sensibiliser</span>, <span class="fw-semibold color_v">autonomiser</span> et <span class="fw-semibold color_v">soutenir</span> chacun dans le développement de compétences numériques essentielles, en collaboration avec des partenaires tels que <span class="fw-semibold color_v">l'AGEFIPH</span>, afin de favoriser leur participation active dans la société moderne.</p>
 
             <div class="images col-xl-6 col-lg-12">
@@ -177,11 +181,11 @@
                 <div class="boite d-flex justify-content-between">
                     <div class="team">
                         <img src="assets/images/perso.png" alt="">
-                        <p class="fs-4 fw-semibold">Marya</p>
+                        <h4 class="fs-4 fw-semibold">Marya</h4>
                     </div>
                     <div class="team">
                         <img src="assets/images/perso.png" alt="">
-                        <p class="fs-4 fw-semibold">Elouan</p>
+                        <h4 class="fs-4 fw-semibold">Elouan</h4>
                     </div>
                 </div>
             </div>
@@ -191,11 +195,11 @@
                 <div class="boite d-flex justify-content-between">
                     <div class="team">
                         <img src="assets/images/perso.png" alt="">
-                        <p class="fs-4 fw-semibold">Katerine</p>
+                        <h4 class="fs-4 fw-semibold">Katerine</h4>
                     </div>
                     <div class="team">
                         <img src="assets/images/perso.png" alt="">
-                        <p class="fs-4 fw-semibold">Christèle</p>
+                        <h4 class="fs-4 fw-semibold">Christèle</h4>
                     </div>
                 </div>
             </div>
@@ -205,19 +209,19 @@
                 <div class="boite d-flex justify-content-between">
                     <div class="team">
                         <img src="assets/images/equipe/dylan.png" alt="">
-                        <p class="fs-4 fw-semibold">Dylan</p>
+                        <h4 class="fs-4 fw-semibold">Dylan</h4>
                     </div>
                     <div class="team">
                         <img src="assets/images/equipe/nabil.png" alt="">
-                        <p class="fs-4 fw-semibold">Nabil</p>
+                        <h4 class="fs-4 fw-semibold">Nabil</h4>
                     </div>
                     <div class="team">
                         <img src="assets/images/equipe/florian.png" alt="">
-                        <p class="fs-4 fw-semibold">Florian</p>
+                        <h4 class="fs-4 fw-semibold">Florian</h4>
                     </div>
                     <div class="team">
                         <img src="assets/images/equipe/souna.png" alt="">
-                        <p class="fs-4 fw-semibold">Souna</p>
+                        <h4 class="fs-4 fw-semibold">Souna</h4>
                     </div>
                 </div>
             </div>
@@ -225,47 +229,58 @@
     </section>
 
 
-        <!-- contact -->
-        <!-- <section class="contact">
-            <h2 class="fs-1 fw-bold">
-                Nous <span class="color_v">contacter</span>
-            </h2>
+    <!-- contact -->
+    <section class="contact">
+        <h2 class="fs-1 fw-bold">
+            Nous <span class="color_v">contacter</span>
+        </h2>
 
-            <div class="container contact-container d-flex align-items-start">
-                <div class="lieu">
-                    <div class="adresse">
-                        <h3 class="fs-1 fw-semibold color_v">Emplacement</h3>
-                        <p class="fs-4 fw-semibold">30 Rue Henri Gadeau de Kerville, 76038 Rouen</p>
-                        <iframe class='carte' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.888430891004!2d1.078311576707716!3d49.42992327141525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0de6d39fe8c63%3A0x31a48af2a2add715!2s30%20Rue%20Henri%20Gadeau%20de%20Kerville%2C%2076038%20Rouen!5e0!3m2!1sfr!2sfr!4v1713859115253!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                    <div class="reseaux">
-                        <h3 class="fs-1 fw-semibold color_v">Suivez nous</h3>
-                        <div class="logo-reseaux">
+        <div class="container contact-container d-flex flex-column justify-content-between">
+            <div class="lieu d-flex justify-content-between align-items-center">
+                <div class="reseaux">
+                    <h3 class="fs-2 fw-semibold color_v">Suivez nous</h3>
+                    <div class="logo-reseaux d-flex justify-content-around">
+                        <div>
                             <a href="https://www.instagram.com/?hl=fr"><img src="assets/images/logo/logo-insta.png" alt="Logo instagram"></img></a>
-                            <a href="https://www.facebook.com"><img src="assets/images/logo/logo-facebook.png" alt="Logo facebook"></img></a>
-                            <a href="https://www.linkedin.com/in/dylan-dumont-97ab64271/"><img src="assets/images/logo/logo-linkedin.png" alt="Logo linkedin"></img></a>
-                            <a href="https://www.youtube.com/"><img src="assets/images/logo/logo-youtube.png" alt="Logo youtube"></img></a>
+                            <p class="fs-5 fw-medium">Instagram</p>
                         </div>
-                         <p class="copyright fs-6 fw-medium">© 2024 Politique de confidentialité</p> 
+                        <div>
+                            <a href="https://www.facebook.com"><img src="assets/images/logo/logo-facebook.png" alt="Logo facebook"></img></a>
+                            <p class="fs-5 fw-medium">Facebook</p>
+                        </div>
+                        <div>
+                            <a href="https://www.linkedin.com/in/dylan-dumont-97ab64271/"><img src="assets/images/logo/logo-linkedin.png" alt="Logo linkedin"></img></a>
+                            <p class="fs-5 fw-medium">Linkedin</p>
+                        </div>
+                        <div>
+                            <a href="https://www.youtube.com/"><img src="assets/images/logo/logo-youtube.png" alt="Logo youtube"></img></a>
+                            <p class="fs-5 fw-medium">Youtube</p>
+                        </div>
                     </div>
                 </div>
+                <div class="adresse">
+                    <h3 class="fs-2 fw-semibold color_v">Emplacement</h3>
+                    <p class="fs-5 fw-semibold">30 Rue Henri Gadeau de Kerville, 76038 Rouen</p>
+                </div>
+            </div>
+            <div class="form-carte">
                 <div class="form">
-                    <h3 class="fs-1 fw-semibold color_v">Formulaire de contact</h3>
+                    <h3 class="fs-2 fw-semibold color_v">Formulaire de contact</h3>
                     <form action="#" method="post">
                         <div>
-                            <label for="prenom" class="fs-5 fw-semibold">Entrez votre prénom :</label>
+                            <label for="prenom" class="fs-6 fw-semibold">Entrez votre prénom :</label>
                             <input type="text" id="prenom" name="prenom" placeholder="Exemple : Julien" required>
                         </div>
                         <div>
-                            <label for="mail" class="fs-5 fw-semibold">Entrez votre adresse mail :</label>
+                            <label for="email" class="fs-6 fw-semibold">Entrez votre adresse mail :</label>
                             <input type="email" id="email" name="email" placeholder="Exemple : julien.dubois@gmail.com" required>
                         </div>
                         <div>
-                            <label for="objet" class="fs-5 fw-semibold">Entrez l'objet de votre requête :</label>
+                            <label for="objet" class="fs-6 fw-semibold">Entrez l'objet de votre requête :</label>
                             <input type="text" id="objet" name="objet" placeholder="Exemple : Erreur d'affichage sur le site" required>
                         </div>
                         <div>
-                            <label for="message" class="fs-5 fw-semibold">Entrez votre message :</label>
+                            <label for="message" class="fs-6 fw-semibold">Entrez votre message :</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
                         <div>
@@ -273,63 +288,56 @@
                         </div>
                     </form>
                 </div>
-            </div>
-        </section> -->
-
-        <!-- contact2 -->
-        <section class="contact">
-            <h2 class="fs-1 fw-bold">
-                Nous <span class="color_v">contacter</span>
-            </h2>
-
-            <div class="container contact-container d-flex flex-column justify-content-between">
-                <div class="lieu">
-                    <!-- <div class="reseaux">
-                        <h3 class="fs-1 fw-semibold color_v">Suivez nous</h3>
-                        <div class="logo-reseaux">
-                            <a href="https://www.instagram.com/?hl=fr"><img src="assets/images/logo/logo-insta.png" alt="Logo instagram"></img></a>
-                            <a href="https://www.facebook.com"><img src="assets/images/logo/logo-facebook.png" alt="Logo facebook"></img></a>
-                            <a href="https://www.linkedin.com/in/dylan-dumont-97ab64271/"><img src="assets/images/logo/logo-linkedin.png" alt="Logo linkedin"></img></a>
-                            <a href="https://www.youtube.com/"><img src="assets/images/logo/logo-youtube.png" alt="Logo youtube"></img></a>
-                        </div>
-                    </div> -->
-                    <div class="adresse">
-                        <h3 class="fs-1 fw-semibold color_v">Emplacement</h3>
-                        <p class="fs-4 fw-semibold">30 Rue Henri Gadeau de Kerville, 76038 Rouen</p>
-                    </div>
+                <div class="carte">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.888430891004!2d1.078311576707716!3d49.42992327141525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0de6d39fe8c63%3A0x31a48af2a2add715!2s30%20Rue%20Henri%20Gadeau%20de%20Kerville%2C%2076038%20Rouen!5e0!3m2!1sfr!2sfr!4v1713859115253!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
-                <div class="form-carte">
-                    <div class="form">
-                        <h3 class="fs-1 fw-semibold color_v">Formulaire de contact</h3>
-                        <form action="#" method="post">
-                            <div>
-                                <label for="prenom" class="fs-5 fw-semibold">Entrez votre prénom :</label>
-                                <input type="text" id="prenom" name="prenom" placeholder="Exemple : Julien" required>
-                            </div>
-                            <div>
-                                <label for="mail" class="fs-5 fw-semibold">Entrez votre adresse mail :</label>
-                                <input type="email" id="email" name="email" placeholder="Exemple : julien.dubois@gmail.com" required>
-                            </div>
-                            <div>
-                                <label for="objet" class="fs-5 fw-semibold">Entrez l'objet de votre requête :</label>
-                                <input type="text" id="objet" name="objet" placeholder="Exemple : Erreur d'affichage sur le site" required>
-                            </div>
-                            <div>
-                                <label for="message" class="fs-5 fw-semibold">Entrez votre message :</label>
-                                <textarea id="message" name="message" rows="5" required></textarea>
-                            </div>
-                            <div>
-                                <button class="btn fw-bold btn-form" type="submit">Soumettre</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="carte">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.888430891004!2d1.078311576707716!3d49.42992327141525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0de6d39fe8c63%3A0x31a48af2a2add715!2s30%20Rue%20Henri%20Gadeau%20de%20Kerville%2C%2076038%20Rouen!5e0!3m2!1sfr!2sfr!4v1713859115253!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <footer>
+        <div class="container d-flex flex-column align-items-center">
+            <div class="link-container">
+                <ul class="d-flex">
+                    <li><a class="fs-4 menu__link fw-medium" href="#">Accueil</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-4 menu__link fw-medium" href="#">A propos</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-4 menu__link fw-medium" href="#">Ressources</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                </ul>
+            </div>
+
+            <div class="link-container_992 d-flex flex-column align-items-center none">
+                <div class="top">
+                    <ul class="d-flex">
+                        <li><a class="fs-3 menu__link fw-medium" href="#">Accueil</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-3 menu__link fw-medium" href="#">A propos</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-3 menu__link fw-medium" href="#">Ressources</a></li>
+                    </ul>
+                </div>
+                <div class="bot">
+                    <ul class="d-flex">
+                        <li><a class="fs-3 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-3 menu__link fw-medium" href="#">Mentions légales</a></li>
+                    </ul>
                 </div>
             </div>
 
-
-
+            <div class="logo-container">
+                <img class="img-fluid" src="./assets/images/logo/litis_logo.webp" alt="">
+                <img class="img-fluid" src="./assets/images/logo/agefiph logo.svg" alt="">
+                <img class="img-fluid" src="./assets/images/logo/logo_iut.png" alt="">
+                <img class="img-fluid" src="./assets/images/logo/iut_rouen_logo_nobg.png" alt="">
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
