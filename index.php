@@ -19,7 +19,7 @@ session_start();
   <body>
     <header class="d-flex justify-content-evenly align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
-            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="">
+            <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt=""></a>
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
@@ -112,6 +112,14 @@ session_start();
             
         </div>
     </section>
+
+    <div class="slogan d-flex justify-content-center align-items-center">
+        <div class="container">
+            <h1 class="color_v">
+                La référence digitale pour naviguer vers l'inclusion en ligne
+            </h1>
+        </div>
+    </div>
 
     
     <!-- prb -->
