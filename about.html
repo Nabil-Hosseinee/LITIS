@@ -1,13 +1,343 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/about.css">
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="./assets/css/general.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <title>LITIS | A propos</title>
 </head>
 <body>
     
+    <header class="d-flex justify-content-evenly align-items-center bg-white fixed-top">
+        <div class="logo d-flex justify-content-center align-items-center">
+            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="">
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <ul class="d-flex justify-content-center align-items-center">
+                <li><a class="fs-4 menu__link fw-semibold" href="#">Accueil</a></li>
+                <li><a class="active fs-4 menu__link fw-semibold" href="#">A propos</a></li>
+                <li><a class="fs-4 menu__link fw-semibold" href="#">Ressources</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <form class="search" action="cible2.php" method="post">
+                <input name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
+                <a href="#">
+                    <lord-icon class="icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                </a>
+            </form>
+        </div>
+
+        <div class="burger-active" id="burger-menu">
+            <button>
+                <p>Menu</p>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Accueil</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">A propos</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Ressources</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- phone header -->
+    <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
+        <div class="logo d-flex justify-content-center align-items-center">
+            <img class="img-fluid" src="./assets/images/Logo_existencenumerique_v1.png" alt="">
+        </div>
+        <div class="header-container d-flex">
+            <div class="search">
+                <input type="text" placeholder="Rechercher...">
+                <a href="#">
+                    <lord-icon class="icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                </a>
+            </div>
+    
+            <div class="burger-active" id="burger-menu-phone">
+                <span></span>
+            </div>
+    
+            <div id="menu-phone">
+                <ul>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Accueil</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">A propos</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Ressources</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- aprpopos -->
+    <section class="apropos">
+        <div class="pre-container d-flex flex-column align-items-center">
+            
+            <h1 class="fw-semibold">A propos</h1>
+            
+            <!-- class bootstrap qui ne fonctionne pas "fs-sm-4" -->
+            <p class="fs-4 fs-sm-4 fw-medium">
+            Nous accompagnons les individus dans <span class="fw-semibold color_v">l'exploration</span> et <span class="fw-semibold color_v">la maîtrise</span> des outils numériques, en fournissant des ressources éducatives <span class="fw-semibold color_v">accessibles à tous</span>. Nous visons à <span class="fw-semibold color_v">sensibiliser</span>, <span class="fw-semibold color_v">autonomiser</span> et <span class="fw-semibold color_v">soutenir</span> chacun dans le développement de compétences numériques essentielles, en collaboration avec des partenaires tels que <span class="fw-semibold color_v">l'AGEFIPH</span>, afin de favoriser leur participation active dans la société moderne.</p>
+
+            <div class="images col-xl-6 col-lg-12">
+                <img class="img-fluid rounded-4" src="./assets/images/test.JPG" alt="">
+            </div>
+
+        </div>
+    </section>
+
+    
+    <!-- services -->
+    <section class="services">
+        <h2 class="fs-1 fw-bold">
+            Quels sont nos <span class="color_v">services</span> ?
+        </h2>
+        
+        <div class="container services-container d-flex justify-content-between">
+            
+            <div class="box d-flex flex-column  bg-white rounded-4">
+                <div class="titre-icon d-flex justify-content-between">
+                    <div class="titre-trait">
+                        <h3 class="fs-2 fw-bold">Tutoriels vidéo</h3>
+                        <div class="trait"></div>
+                    </div>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/mpzsxzrz.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:150px;height:120px;">
+                    </lord-icon>
+                </div>
+
+                <p class="fs-5 fw-medium">
+                Nous proposons des tutoriels couvrants un large éventail de sujets allants des bases de l’informatique à des compétences plus avancées.</p>
+
+                <button class="btn fw-bold btn-savoir">En savoir plus</button>
+            </div>
+            
+            <div class="box d-flex flex-column  bg-white rounded-4">
+                <div class="titre-icon d-flex justify-content-between">
+                    <div class="titre-trait">
+                        <h3 class="fs-2 fw-bold">Ressources</h3>
+                        <div class="trait"></div>
+                    </div>
+                    <img src="assets/images/ressource.gif" alt="" style="width:150px;height:130px;">
+                </div>
+                
+                <p class="fs-5 fw-medium">
+                Nous mettons à disposition des ressources telles que des guides pratiques, des fiches techniques et des modèles, pour un apprentissage pratique et autonome à votre rythme.</p>
+
+                <button class="btn fw-bold btn-savoir">En savoir plus</button>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- partenaire -->
+    <section class="partenaire">
+        <h2 class="fs-1 fw-bold">
+            Notre <span class="color_v">partenaire</span>
+        </h2>
+
+        <div class="container partenaire-container d-flex justify-content-between">
+            <p class="fs-4 fw-medium">Nous sommes fiers de collaborer avec l'AGEFIPH dans notre mission commune de promouvoir l'accessibilité numérique pour tous.<br><br>
+            En tant qu'organisation engagée dans l'insertion professionnelle des personnes en situation de handicap, l'AGEFIPH apporte une expertise précieuse et des ressources spécifiques pour aider à surmonter les obstacles liés à l'illectronisme chez les personnes en situation de handicap.</p>
+            
+            <img src="assets/images/logo/agefiph logo.svg" alt="Logo de l'AGEFIPH">
+        </div>
+    </section>
+
+
+    <!-- equipe -->
+    <section class="equipe">
+        <h2 class="fs-1 fw-bold">
+            Notre <span class="color_v">équipe</span>
+        </h2>
+
+        <div class="container equipe-container">
+            <div class="equipe-agefiph d-flex flex-column align-items-center">
+                <h3 class="fs-1 fw-semibold color_v">L'AGEFIPH</h3>
+                <div class="boite d-flex justify-content-between">
+                    <div class="team">
+                        <img src="assets/images/perso.png" alt="">
+                        <p class="fs-4 fw-semibold">Marya</p>
+                    </div>
+                    <div class="team">
+                        <img src="assets/images/perso.png" alt="">
+                        <p class="fs-4 fw-semibold">Elouan</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="equipe-litis">
+                <h3 class="fs-1 fw-semibold color_v">Laboratoire LITIS</h3>
+                <div class="boite d-flex justify-content-between">
+                    <div class="team">
+                        <img src="assets/images/perso.png" alt="">
+                        <p class="fs-4 fw-semibold">Katerine</p>
+                    </div>
+                    <div class="team">
+                        <img src="assets/images/perso.png" alt="">
+                        <p class="fs-4 fw-semibold">Christèle</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="equipe-iut">
+                <h3 class="fs-1 fw-semibold color_v">Université de Rouen / IUT de Rouen</h3>
+                <div class="boite d-flex justify-content-between">
+                    <div class="team">
+                        <img src="assets/images/equipe/dylan.png" alt="">
+                        <p class="fs-4 fw-semibold">Dylan</p>
+                    </div>
+                    <div class="team">
+                        <img src="assets/images/equipe/nabil.png" alt="">
+                        <p class="fs-4 fw-semibold">Nabil</p>
+                    </div>
+                    <div class="team">
+                        <img src="assets/images/equipe/florian.png" alt="">
+                        <p class="fs-4 fw-semibold">Florian</p>
+                    </div>
+                    <div class="team">
+                        <img src="assets/images/equipe/souna.png" alt="">
+                        <p class="fs-4 fw-semibold">Souna</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+        <!-- contact -->
+        <!-- <section class="contact">
+            <h2 class="fs-1 fw-bold">
+                Nous <span class="color_v">contacter</span>
+            </h2>
+
+            <div class="container contact-container d-flex align-items-start">
+                <div class="lieu">
+                    <div class="adresse">
+                        <h3 class="fs-1 fw-semibold color_v">Emplacement</h3>
+                        <p class="fs-4 fw-semibold">30 Rue Henri Gadeau de Kerville, 76038 Rouen</p>
+                        <iframe class='carte' src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.888430891004!2d1.078311576707716!3d49.42992327141525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0de6d39fe8c63%3A0x31a48af2a2add715!2s30%20Rue%20Henri%20Gadeau%20de%20Kerville%2C%2076038%20Rouen!5e0!3m2!1sfr!2sfr!4v1713859115253!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                    <div class="reseaux">
+                        <h3 class="fs-1 fw-semibold color_v">Suivez nous</h3>
+                        <div class="logo-reseaux">
+                            <a href="https://www.instagram.com/?hl=fr"><img src="assets/images/logo/logo-insta.png" alt="Logo instagram"></img></a>
+                            <a href="https://www.facebook.com"><img src="assets/images/logo/logo-facebook.png" alt="Logo facebook"></img></a>
+                            <a href="https://www.linkedin.com/in/dylan-dumont-97ab64271/"><img src="assets/images/logo/logo-linkedin.png" alt="Logo linkedin"></img></a>
+                            <a href="https://www.youtube.com/"><img src="assets/images/logo/logo-youtube.png" alt="Logo youtube"></img></a>
+                        </div>
+                         <p class="copyright fs-6 fw-medium">© 2024 Politique de confidentialité</p> 
+                    </div>
+                </div>
+                <div class="form">
+                    <h3 class="fs-1 fw-semibold color_v">Formulaire de contact</h3>
+                    <form action="#" method="post">
+                        <div>
+                            <label for="prenom" class="fs-5 fw-semibold">Entrez votre prénom :</label>
+                            <input type="text" id="prenom" name="prenom" placeholder="Exemple : Julien" required>
+                        </div>
+                        <div>
+                            <label for="mail" class="fs-5 fw-semibold">Entrez votre adresse mail :</label>
+                            <input type="email" id="email" name="email" placeholder="Exemple : julien.dubois@gmail.com" required>
+                        </div>
+                        <div>
+                            <label for="objet" class="fs-5 fw-semibold">Entrez l'objet de votre requête :</label>
+                            <input type="text" id="objet" name="objet" placeholder="Exemple : Erreur d'affichage sur le site" required>
+                        </div>
+                        <div>
+                            <label for="message" class="fs-5 fw-semibold">Entrez votre message :</label>
+                            <textarea id="message" name="message" rows="5" required></textarea>
+                        </div>
+                        <div>
+                            <button class="btn fw-bold btn-form" type="submit">Soumettre</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section> -->
+
+        <!-- contact2 -->
+        <section class="contact">
+            <h2 class="fs-1 fw-bold">
+                Nous <span class="color_v">contacter</span>
+            </h2>
+
+            <div class="container contact-container d-flex flex-column justify-content-between">
+                <div class="lieu">
+                    <!-- <div class="reseaux">
+                        <h3 class="fs-1 fw-semibold color_v">Suivez nous</h3>
+                        <div class="logo-reseaux">
+                            <a href="https://www.instagram.com/?hl=fr"><img src="assets/images/logo/logo-insta.png" alt="Logo instagram"></img></a>
+                            <a href="https://www.facebook.com"><img src="assets/images/logo/logo-facebook.png" alt="Logo facebook"></img></a>
+                            <a href="https://www.linkedin.com/in/dylan-dumont-97ab64271/"><img src="assets/images/logo/logo-linkedin.png" alt="Logo linkedin"></img></a>
+                            <a href="https://www.youtube.com/"><img src="assets/images/logo/logo-youtube.png" alt="Logo youtube"></img></a>
+                        </div>
+                    </div> -->
+                    <div class="reseaux">
+                        <button href="/" class="button-instagram">
+                          <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1.2em" viewBox="0 0 24 24" stroke-width="1" fill="currentColor" stroke="currentColor">
+                            <path d="M12.001 9C10.3436 9 9.00098 10.3431 9.00098 12C9.00098 13.6573 10.3441 15 12.001 15C13.6583 15 15.001 13.6569 15.001 12C15.001 10.3427 13.6579 9 12.001 9ZM12.001 7C14.7614 7 17.001 9.2371 17.001 12C17.001 14.7605 14.7639 17 12.001 17C9.24051 17 7.00098 14.7629 7.00098 12C7.00098 9.23953 9.23808 7 12.001 7ZM18.501 6.74915C18.501 7.43926 17.9402 7.99917 17.251 7.99917C16.5609 7.99917 16.001 7.4384 16.001 6.74915C16.001 6.0599 16.5617 5.5 17.251 5.5C17.9393 5.49913 18.501 6.0599 18.501 6.74915ZM12.001 4C9.5265 4 9.12318 4.00655 7.97227 4.0578C7.18815 4.09461 6.66253 4.20007 6.17416 4.38967C5.74016 4.55799 5.42709 4.75898 5.09352 5.09255C4.75867 5.4274 4.55804 5.73963 4.3904 6.17383C4.20036 6.66332 4.09493 7.18811 4.05878 7.97115C4.00703 9.0752 4.00098 9.46105 4.00098 12C4.00098 14.4745 4.00753 14.8778 4.05877 16.0286C4.0956 16.8124 4.2012 17.3388 4.39034 17.826C4.5591 18.2606 4.7605 18.5744 5.09246 18.9064C5.42863 19.2421 5.74179 19.4434 6.17187 19.6094C6.66619 19.8005 7.19148 19.9061 7.97212 19.9422C9.07618 19.9939 9.46203 20 12.001 20C14.4755 20 14.8788 19.9934 16.0296 19.9422C16.8117 19.9055 17.3385 19.7996 17.827 19.6106C18.2604 19.4423 18.5752 19.2402 18.9074 18.9085C19.2436 18.5718 19.4445 18.2594 19.6107 17.8283C19.8013 17.3358 19.9071 16.8098 19.9432 16.0289C19.9949 14.9248 20.001 14.5389 20.001 12C20.001 9.52552 19.9944 9.12221 19.9432 7.97137C19.9064 7.18906 19.8005 6.66149 19.6113 6.17318C19.4434 5.74038 19.2417 5.42635 18.9084 5.09255C18.573 4.75715 18.2616 4.55693 17.8271 4.38942C17.338 4.19954 16.8124 4.09396 16.0298 4.05781C14.9258 4.00605 14.5399 4 12.001 4ZM12.001 2C14.7176 2 15.0568 2.01 16.1235 2.06C17.1876 2.10917 17.9135 2.2775 18.551 2.525C19.2101 2.77917 19.7668 3.1225 20.3226 3.67833C20.8776 4.23417 21.221 4.7925 21.476 5.45C21.7226 6.08667 21.891 6.81333 21.941 7.8775C21.9885 8.94417 22.001 9.28333 22.001 12C22.001 14.7167 21.991 15.0558 21.941 16.1225C21.8918 17.1867 21.7226 17.9125 21.476 18.55C21.2218 19.2092 20.8776 19.7658 20.3226 20.3217C19.7668 20.8767 19.2076 21.22 18.551 21.475C17.9135 21.7217 17.1876 21.89 16.1235 21.94C15.0568 21.9875 14.7176 22 12.001 22C9.28431 22 8.94514 21.99 7.87848 21.94C6.81431 21.8908 6.08931 21.7217 5.45098 21.475C4.79264 21.2208 4.23514 20.8767 3.67931 20.3217C3.12348 19.7658 2.78098 19.2067 2.52598 18.55C2.27848 17.9125 2.11098 17.1867 2.06098 16.1225C2.01348 15.0558 2.00098 14.7167 2.00098 12C2.00098 9.28333 2.01098 8.94417 2.06098 7.8775C2.11014 6.8125 2.27848 6.0875 2.52598 5.45C2.78014 4.79167 3.12348 4.23417 3.67931 3.67833C4.23514 3.1225 4.79348 2.78 5.45098 2.525C6.08848 2.2775 6.81348 2.11 7.87848 2.06C8.94514 2.0125 9.28431 2 12.001 2Z"></path>
+                          </svg>
+                          <span class="span-instagram fs-5 fw-semibold">Instagram</span>
+                        </button>
+                    </div>
+                    <div class="adresse">
+                        <h3 class="fs-1 fw-semibold color_v">Emplacement</h3>
+                        <p class="fs-4 fw-semibold">30 Rue Henri Gadeau de Kerville, 76038 Rouen</p>
+                    </div>
+                </div>
+                <div class="form-carte">
+                    <div class="form">
+                        <h3 class="fs-1 fw-semibold color_v">Formulaire de contact</h3>
+                        <form action="#" method="post">
+                            <div>
+                                <label for="prenom" class="fs-5 fw-semibold">Entrez votre prénom :</label>
+                                <input type="text" id="prenom" name="prenom" placeholder="Exemple : Julien" required>
+                            </div>
+                            <div>
+                                <label for="mail" class="fs-5 fw-semibold">Entrez votre adresse mail :</label>
+                                <input type="email" id="email" name="email" placeholder="Exemple : julien.dubois@gmail.com" required>
+                            </div>
+                            <div>
+                                <label for="objet" class="fs-5 fw-semibold">Entrez l'objet de votre requête :</label>
+                                <input type="text" id="objet" name="objet" placeholder="Exemple : Erreur d'affichage sur le site" required>
+                            </div>
+                            <div>
+                                <label for="message" class="fs-5 fw-semibold">Entrez votre message :</label>
+                                <textarea id="message" name="message" rows="5" required></textarea>
+                            </div>
+                            <div>
+                                <button class="btn fw-bold btn-form" type="submit">Soumettre</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="carte">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.888430891004!2d1.078311576707716!3d49.42992327141525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0de6d39fe8c63%3A0x31a48af2a2add715!2s30%20Rue%20Henri%20Gadeau%20de%20Kerville%2C%2076038%20Rouen!5e0!3m2!1sfr!2sfr!4v1713859115253!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div>
+                </div>
+            </div>
+
+
+
 </body>
 </html>

@@ -10,14 +10,14 @@ session_start();
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="./assets/css/general.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <title>LITIS | Accueil</title>
   </head>
 
   <body>
-    <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
+    <header class="d-flex justify-content-evenly align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
             <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="">
         </div>
@@ -62,28 +62,23 @@ session_start();
     <!-- phone header -->
     <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
-            <img class="img-fluid" src="./assets/images/logo/Logo_existencenumerique_v1.png" alt="">
+            <img class="img-fluid" src="./assets/images/Logo_existencenumerique_v1.png" alt="">
         </div>
         <div class="header-container d-flex">
-            <div>
-                <form class="search" action="cible2.php" method="post">
-                    <input name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
-                    <a href="#">
-                        <lord-icon class="icon"
-                            src="https://cdn.lordicon.com/unukghxb.json"
-                            trigger="loop"
-                            delay="2000"
-                            style="width:30px;height:30px">
-                        </lord-icon>
-                    </a>
-                </form>
+            <div class="search">
+                <input type="text" placeholder="Rechercher...">
+                <a href="#">
+                    <lord-icon class="icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                </a>
             </div>
     
             <div class="burger-active" id="burger-menu-phone">
-                <button class="d-flex justify-content-center align-items-center">
-                    <p>Menu</p>
-                    <span></span>
-                </button>
+                <span></span>
             </div>
     
             <div id="menu-phone">
@@ -95,8 +90,6 @@ session_start();
             </div>
         </div>
     </header>
-
-    
 
 
     <!-- presentation -->
@@ -119,14 +112,6 @@ session_start();
             
         </div>
     </section>
-
-    <div class="slogan d-flex justify-content-center align-items-center">
-        <div class="container">
-            <h1 class="color_v">
-                La référence digitale pour naviguer vers l'inclusion en ligne
-            </h1>
-        </div>
-    </div>
 
     
     <!-- prb -->
