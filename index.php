@@ -19,7 +19,7 @@ session_start();
   <body>
     <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
-            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="">
+            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique">
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
@@ -31,8 +31,9 @@ session_start();
 
         <div>
             <form class="search" action="cible2.php" method="post">
-                <input name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
-                <a href="#">
+                <label for="search-input" class="visually-hidden">Rechercher</label>
+                <input id="search-input" name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
+                <a href="#" aria-label="Rechercher">
                     <lord-icon class="icon"
                         src="https://cdn.lordicon.com/unukghxb.json"
                         trigger="loop"
@@ -61,9 +62,21 @@ session_start();
 
     <!-- phone header -->
     <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
+        <div class="logo d-flex justify-content-center">
+            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo du site existence numérique">
+        </div>
         <div class="header-container d-flex">
-            <div class="logo d-flex justify-content-center align-items-center">
-                <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="">
+            <div class="search">
+                <input type="text" id="search-input" placeholder="Rechercher...">
+                <a href="#" aria-labelledby="search-input">
+                    <lord-icon class="icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                    <span class="visually-hidden">Rechercher</span>
+                </a>
             </div>
             
             <div class="burger-active" id="burger-menu-phone">
@@ -139,7 +152,7 @@ session_start();
             Quelle est notre <span class="color_v">mission</span> ?
         </h2>
         <div class="container prb-container d-flex flex-column align-items-center">
-            <img class="col-xl-12 img-fluid" src="./assets/images/illustration/mission.png" alt="">
+            <img class="col-xl-12 img-fluid" src="./assets/images/illustration/mission.png" alt="Illustration des missions, une personne vise une cible avec une fléchette">
             <p class="col-xl-12 fs-3 fw-medium">
                 Nous nous engageons à rendre le monde numérique accessible à tous.
                 <br>
@@ -162,7 +175,7 @@ session_start();
         <div class="container">
             <div class="big-box col-xl-12 d-flex justify-content-between align-items-center rounded-4 desapear-576">
                 <div class="big-box-img col-xl-5 rounded-4">
-                    <img class="img-fluid rounded" src="./assets/images/miniatures/minia_doctolib.png" alt="">
+                    <img class="img-fluid rounded" src="./assets/images/miniatures/minia_doctolib.png" alt="Miniature de la vidéo nommée 'Prendre un rendez-vous sur Doctolib'">
                 </div>
                 <div class="big-box-content col-6">
                     <h3>Prendre un rendez-vous sur Doctolib</h3>
@@ -179,7 +192,7 @@ session_start();
                     <h4 class="fs-5">Créer un mot de passe sécurisé</h4>
                     <h3 class="fs-6">Base d'Internet</h3>
                     <div class="img rounded-4">
-                        <img class="img-fluid rounded" src="./assets/images/miniatures/minia_crea_mdp.png" alt="">
+                        <img class="img-fluid rounded" src="./assets/images/miniatures/minia_crea_mdp.png" alt="Miniature de la vidéo nommée 'Créer un mot de passe sécurisé'">
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
@@ -191,7 +204,7 @@ session_start();
                     <h4 class="fs-5">Utiliser Parcoursup</h4>
                     <h3 class="fs-6">Éducation</h3>
                     <div class="img rounded-4">
-                        <img class="img-fluid rounded" src="./assets/images/miniatures/minia_parcoursup.png" alt="">
+                        <img class="img-fluid rounded" src="./assets/images/miniatures/minia_parcoursup.png" alt="Miniature de la vidéo nommée 'Utiliser Parcoursup'">
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
@@ -203,7 +216,7 @@ session_start();
                     <h4 class="fs-5">Créer un compte Google</h4>
                     <h3 class="fs-6">Base d'Internet</h3>
                     <div class="img rounded-4">
-                        <img class="img-fluid rounded" src="./assets/images/miniatures/minia_crea_google.png" alt="">
+                        <img class="img-fluid rounded" src="./assets/images/miniatures/minia_crea_google.png" alt="Miniature de la vidéo nommée 'Créer un compte Google'">
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
@@ -251,32 +264,17 @@ session_start();
             </div>
 
             <div class="logo-container">
-                <img class="img-fluid" src="./assets/images/logo/litis_logo.webp" alt="">
-                <img class="img-fluid" src="./assets/images/logo/agefiph logo.svg" alt="">
-                <img class="img-fluid" src="./assets/images/logo/logo_iut.png" alt="">
-                <img class="img-fluid" src="./assets/images/logo/iut_rouen_logo_nobg.png" alt="">
+                <img class="img-fluid" src="./assets/images/logo/litis_logo.webp" alt="Logo du laboratoire LITIS">
+                <img class="img-fluid" src="./assets/images/logo/agefiph logo.svg" alt="Logo de l'AGEFIPH">
+                <img class="img-fluid" src="./assets/images/logo/logo_iut.png" alt="Logo de l'Université de Rouen">
+                <img class="img-fluid" src="./assets/images/logo/iut_rouen_logo_nobg.png" alt="Logo de l'IUT de Rouen">
             </div>
         </div>
     </footer>
 
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        var burgerMenu = document.getElementById('burger-menu');
-        var overlay = document.getElementById('menu');
-        var burgerMenuPhone = document.getElementById('burger-menu-phone');
-        var overlayPhone = document.getElementById('menu-phone');
-
-        burgerMenu.addEventListener('click', function() {
-            this.classList.toggle("close");
-            overlay.classList.toggle("overlay");
-        });
-
-        burgerMenuPhone.addEventListener('click', function() {
-            this.classList.toggle("close");
-            overlayPhone.classList.toggle("overlay");
-        });
-    </script>
+    <script src="./assets/js/script.js"></script>
   </body>
 
 </html>
