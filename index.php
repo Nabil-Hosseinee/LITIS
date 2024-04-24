@@ -61,22 +61,11 @@ session_start();
 
     <!-- phone header -->
     <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
-        <div class="logo d-flex justify-content-center align-items-center">
-            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="">
-        </div>
         <div class="header-container d-flex">
-            <div class="search">
-                <input type="text" placeholder="Rechercher...">
-                <a href="#">
-                    <lord-icon class="icon"
-                        src="https://cdn.lordicon.com/unukghxb.json"
-                        trigger="loop"
-                        delay="2000"
-                        style="width:30px;height:30px">
-                    </lord-icon>
-                </a>
+            <div class="logo d-flex justify-content-center align-items-center">
+                <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="">
             </div>
-    
+            
             <div class="burger-active" id="burger-menu-phone">
                 <button>
                     <p>Menu</p>
@@ -92,6 +81,18 @@ session_start();
                 </ul>
             </div>
         </div>
+
+        <div class="search">
+                <input type="text" placeholder="Rechercher...">
+                <a href="#">
+                    <lord-icon class="icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                </a>
+            </div>
     </header>
 
 
@@ -99,7 +100,7 @@ session_start();
     <section class="presentation">
         <div class="pre-container d-flex align-items-center">
             <div class="images col-xl-6 col-lg-12">
-                <img class="img-fluid" src="./assets/images/illustration/accueil_galere.png" alt="">
+                <img class="img-fluid" src="./assets/images/illustration/galere.svg" alt="">
             </div>
 
             <div class="content col-xl-6 col-lg-12">
