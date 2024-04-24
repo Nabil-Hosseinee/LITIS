@@ -62,7 +62,7 @@ session_start();
 
     <!-- phone header -->
     <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
-        <div class="logo d-flex justify-content-center align-items-center">
+        <div class="logo d-flex justify-content-center">
             <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo du site existence numérique">
         </div>
         <div class="header-container d-flex">
@@ -262,22 +262,7 @@ session_start();
 
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
 
-    <script>
-        var burgerMenu = document.getElementById('burger-menu');
-        var overlay = document.getElementById('menu');
-        var burgerMenuPhone = document.getElementById('burger-menu-phone');
-        var overlayPhone = document.getElementById('menu-phone');
-
-        burgerMenu.addEventListener('click', function() {
-            this.classList.toggle("close");
-            overlay.classList.toggle("overlay");
-        });
-
-        burgerMenuPhone.addEventListener('click', function() {
-            this.classList.toggle("close");
-            overlayPhone.classList.toggle("overlay");
-        });
-    </script>
+    <script src="./assets/js/script.js"></script>
   </body>
 
 </html>

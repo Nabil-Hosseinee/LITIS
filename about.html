@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="./assets/css/about.css">
     <link rel="stylesheet" href="./assets/css/general.css">
+    <link rel="stylesheet" href="./assets/css/about.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <title>LITIS | A propos</title>
 </head>
@@ -59,7 +59,7 @@
     <!-- phone header -->
     <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
-            <img class="img-fluid" src="./assets/images/Logo_existencenumerique_v1.png" alt="Logo du site existence numérique">
+            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo du site existence numérique">
         </div>
         <div class="header-container d-flex">
             <div class="search">
@@ -76,7 +76,10 @@
             </div>
     
             <div class="burger-active" id="burger-menu-phone">
-                <span></span>
+                <button>
+                    <p>Menu</p>
+                    <span></span>
+                </button>
             </div>
     
             <div id="menu-phone">
@@ -89,14 +92,14 @@
         </div>
     </header>
 
-    <!-- aprpopos -->
+    <!-- apropos -->
     <section class="apropos">
-        <div class="pre-container d-flex flex-column align-items-center">
+        <div class="apropos-container d-flex flex-column align-items-center">
             
             <h1 class="fw-semibold">A propos</h1>
             
             <!-- class bootstrap qui ne fonctionne pas "fs-sm-4" -->
-            <p class="fs-5 fs-sm-4 fw-medium">
+            <p class="fs-sm-4 fw-medium">
             Nous accompagnons les individus dans <span class="fw-semibold color_v">l'exploration</span> et <span class="fw-semibold color_v">la maîtrise</span> des outils numériques, en fournissant des ressources éducatives <span class="fw-semibold color_v">accessibles à tous</span>. Nous visons à <span class="fw-semibold color_v">sensibiliser</span>, <span class="fw-semibold color_v">autonomiser</span> et <span class="fw-semibold color_v">soutenir</span> chacun dans le développement de compétences numériques essentielles, en collaboration avec des partenaires tels que <span class="fw-semibold color_v">l'AGEFIPH</span>, afin de favoriser leur participation active dans la société moderne.</p>
 
             <div class="images col-xl-6 col-lg-12">
@@ -109,19 +112,19 @@
     
     <!-- services -->
     <section class="services">
-        <h2 class="fs-1 fw-bold">
+        <h2 class="fw-bold">
             Quels sont nos <span class="color_v">services</span> ?
         </h2>
         
         <div class="container services-container d-flex justify-content-between">
             
-            <div class="box d-flex flex-column  bg-white rounded-4">
+            <div class="box box-1 d-flex flex-column  bg-white rounded-4">
                 <div class="titre-icon d-flex justify-content-between">
                     <div class="titre-trait">
-                        <h3 class="fs-2 fw-bold">Tutoriels vidéo</h3>
+                        <h3 class="fw-bold">Tutoriels vidéo</h3>
                         <div class="trait"></div>
                     </div>
-                    <lord-icon
+                    <lord-icon class="icon-services"
                         src="https://cdn.lordicon.com/mpzsxzrz.json"
                         trigger="loop"
                         delay="2000"
@@ -129,22 +132,22 @@
                     </lord-icon>
                 </div>
 
-                <p class="fs-5 fw-medium">
+                <p class="fw-medium">
                 Nous proposons des tutoriels couvrants un large éventail de sujets allants des bases de l’informatique à des compétences plus avancées.</p>
 
                 <button class="btn fw-bold btn-savoir">En savoir plus</button>
             </div>
             
-            <div class="box d-flex flex-column  bg-white rounded-4">
+            <div class="box d-flex flex-column bg-white rounded-4">
                 <div class="titre-icon d-flex justify-content-between">
                     <div class="titre-trait">
-                        <h3 class="fs-2 fw-bold">Ressources</h3>
+                        <h3 class="fw-bold">Ressources</h3>
                         <div class="trait"></div>
                     </div>
-                    <img src="assets/images/ressource.gif" alt="Illustration de ressources données à des personnes" style="width:150px;height:130px;">
+                    <img class="icon-services" src="assets/images/ressource.gif" alt="Illustration de ressources données à des personnes" style="width:150px;height:130px;">
                 </div>
                 
-                <p class="fs-5 fw-medium">
+                <p class="fw-medium">
                 Nous mettons à disposition des ressources telles que des guides pratiques, des fiches techniques et des modèles, pour un apprentissage pratique et autonome à votre rythme.</p>
 
                 <button class="btn fw-bold btn-savoir">En savoir plus</button>
@@ -156,12 +159,12 @@
 
     <!-- partenaire -->
     <section class="partenaire">
-        <h2 class="fs-1 fw-bold">
+        <h2 class="fw-bold">
             Notre <span class="color_v">partenaire</span>
         </h2>
 
         <div class="container partenaire-container d-flex justify-content-between">
-            <p class="fs-4 fw-medium">Nous sommes fiers de collaborer avec l'AGEFIPH dans notre mission commune de promouvoir l'accessibilité numérique pour tous.<br><br>
+            <p class="fw-medium">Nous sommes fiers de collaborer avec l'AGEFIPH dans notre mission commune de promouvoir l'accessibilité numérique pour tous.<br><br>
             En tant qu'organisation engagée dans l'insertion professionnelle des personnes en situation de handicap, l'AGEFIPH apporte une expertise précieuse et des ressources spécifiques pour aider à surmonter les obstacles liés à l'illectronisme chez les personnes en situation de handicap.</p>
             
             <img src="assets/images/logo/agefiph logo.svg" alt="Logo de l'AGEFIPH">
@@ -171,7 +174,7 @@
 
     <!-- equipe -->
     <section class="equipe">
-        <h2 class="fs-1 fw-bold">
+        <h2 class="fw-bold">
             Notre <span class="color_v">équipe</span>
         </h2>
 
@@ -181,11 +184,11 @@
                 <div class="boite d-flex justify-content-between">
                     <div class="team">
                         <img src="assets/images/perso.png" alt="Illustration représentant Marya">
-                        <h4 class="fs-4 fw-semibold">Marya</h4>
+                        <h4 class="fw-semibold">Marya</h4>
                     </div>
                     <div class="team">
                         <img src="assets/images/perso.png" alt="Illustration représentant Elouan">
-                        <h4 class="fs-4 fw-semibold">Elouan</h4>
+                        <h4 class="fw-semibold">Elouan</h4>
                     </div>
                 </div>
             </div>
@@ -195,11 +198,11 @@
                 <div class="boite d-flex justify-content-between">
                     <div class="team">
                         <img src="assets/images/perso.png" alt="Illustration représentant Katerine">
-                        <h4 class="fs-4 fw-semibold">Katerine</h4>
+                        <h4 class="fw-semibold">Katerine</h4>
                     </div>
                     <div class="team">
                         <img src="assets/images/perso.png" alt="Illustration représentant Christèle">
-                        <h4 class="fs-4 fw-semibold">Christèle</h4>
+                        <h4 class="fw-semibold">Christèle</h4>
                     </div>
                 </div>
             </div>
@@ -209,19 +212,19 @@
                 <div class="boite d-flex justify-content-between">
                     <div class="team">
                         <img src="assets/images/equipe/dylan.png" alt="Illustration représentant Dylan">
-                        <h4 class="fs-4 fw-semibold">Dylan</h4>
+                        <h4 class="fw-semibold">Dylan</h4>
                     </div>
                     <div class="team">
                         <img src="assets/images/equipe/nabil.png" alt="Illustration représentant Nabil">
-                        <h4 class="fs-4 fw-semibold">Nabil</h4>
+                        <h4 class="fw-semibold">Nabil</h4>
                     </div>
                     <div class="team">
                         <img src="assets/images/equipe/florian.png" alt="Illustration représentant Florian">
-                        <h4 class="fs-4 fw-semibold">Florian</h4>
+                        <h4 class="fw-semibold">Florian</h4>
                     </div>
                     <div class="team">
                         <img src="assets/images/equipe/souna.png" alt="Illustration représentant Souna">
-                        <h4 class="fs-4 fw-semibold">Souna</h4>
+                        <h4 class="fw-semibold">Souna</h4>
                     </div>
                 </div>
             </div>
@@ -231,7 +234,7 @@
 
     <!-- contact -->
     <section class="contact">
-        <h2 class="fs-1 fw-bold">
+        <h2 class="fw-bold">
             Nous <span class="color_v">contacter</span>
         </h2>
 
@@ -242,25 +245,25 @@
                     <div class="logo-reseaux d-flex justify-content-around">
                         <div>
                             <a href="https://www.instagram.com/?hl=fr"><img src="assets/images/logo/logo-insta.png" alt="Logo instagram"></img></a>
-                            <p class="fs-5 fw-medium">Instagram</p>
+                            <p class="fw-medium">Instagram</p>
                         </div>
                         <div>
                             <a href="https://www.facebook.com"><img src="assets/images/logo/logo-facebook.png" alt="Logo facebook"></img></a>
-                            <p class="fs-5 fw-medium">Facebook</p>
+                            <p class="fw-medium">Facebook</p>
                         </div>
                         <div>
                             <a href="https://www.linkedin.com/in/dylan-dumont-97ab64271/"><img src="assets/images/logo/logo-linkedin.png" alt="Logo linkedin"></img></a>
-                            <p class="fs-5 fw-medium">Linkedin</p>
+                            <p class="fw-medium">Linkedin</p>
                         </div>
                         <div>
                             <a href="https://www.youtube.com/"><img src="assets/images/logo/logo-youtube.png" alt="Logo youtube"></img></a>
-                            <p class="fs-5 fw-medium">Youtube</p>
+                            <p class="fw-medium">Youtube</p>
                         </div>
                     </div>
                 </div>
                 <div class="adresse">
                     <h3 class="fs-2 fw-semibold color_v">Emplacement</h3>
-                    <p class="fs-5 fw-semibold">30 Rue Henri Gadeau de Kerville, 76038 Rouen</p>
+                    <p class="fw-semibold">30 Rue Henri Gadeau de Kerville, 76038 Rouen</p>
                 </div>
             </div>
             <div class="form-carte">
@@ -289,7 +292,7 @@
                     </form>
                 </div>
                 <div class="carte">
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.888430891004!2d1.078311576707716!3d49.42992327141525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0de6d39fe8c63%3A0x31a48af2a2add715!2s30%20Rue%20Henri%20Gadeau%20de%20Kerville%2C%2076038%20Rouen!5e0!3m2!1sfr!2sfr!4v1713859115253!5m2!1sfr!2sfr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.888430891004!2d1.078311576707716!3d49.42992327141525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0de6d39fe8c63%3A0x31a48af2a2add715!2s30%20Rue%20Henri%20Gadeau%20de%20Kerville%2C%2076038%20Rouen!5e0!3m2!1sfr!2sfr!4v1713859115253!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>
             </div>
         </div>
@@ -339,5 +342,10 @@
             </div>
         </div>
     </footer>
+
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+
+    <script src="./assets/js/script.js"></script>
+    
 </body>
 </html>

@@ -245,17 +245,7 @@ footer {
 /* media queries */
 
 @media screen and (max-width: 1200px) {
-    /* header */
-    header nav {
-        display: block;
-    }
-
-    header nav ul li {
-        margin: 0 50px;
-    }
-
     /* section presentation */
-
     .presentation {
         padding-top: 10vh;
     }
@@ -314,50 +304,10 @@ footer {
     .box h3 {
         font-size: 1.2rem !important;
     }
-
-
-    /* footer */
-    .link-container ul li a {
-        font-size: 1.3rem !important;
-    }
-
-    .separator {
-        margin-top: 0.2vh;
-        height: 4vh;
-    }
-
 }
 
 @media screen and (max-width: 992px) {
-    /* header */
-    header nav {
-        display: none !important;
-    }
-
-    #burger-menu {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-
-    #burger-menu button {
-        min-width: 15vw;
-        padding: 0.5vh;
-        border-radius: 64px;
-        background-color: var(--violet);
-        outline: none;
-        border: 1px solid black;
-        color: white;
-    }
-
-    #burger-menu button span {
-        margin-right: 3vw;
-    }
-
-    
-
     /* section presentation */
-
     .presentation {
         padding: 10vh;
     }
@@ -393,75 +343,10 @@ footer {
     .box .img {
         width: 70%;
     }
-
-    /* footer */
-    .link-container {
-        display: none !important;
-    }
-
-    .none {
-        display: flex !important;
-    }
 }
 
 @media screen and (max-width: 768px) {
-
-    /* header */
-    .desktop {
-        display: none !important;
-    }
-
-    .phone {
-        display: flex !important;
-    }
-
-    .phone .logo {
-        margin-top: 5vh;
-        margin-bottom: 2vh;
-    }
-
-    .phone .logo img {
-        transform: scale(1.5);
-    }
-
-    .phone .header-container {
-        margin-top: 3vh;
-        padding-right: 5vw;
-    }
-
-    .phone .header-container .search {
-        margin-right: 20vw;
-        margin-bottom: 5vh;
-    }
-
-    #burger-menu-phone {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-top: 0.8vh;
-    }
-
-    #burger-menu-phone button {
-        min-width: 20vw;
-        padding: 0.5vh;
-        border-radius: 64px;
-        background-color: var(--violet);
-        outline: none;
-        border: 1px solid black;
-        color: white;
-    }
-
-    #burger-menu-phone button span {
-        margin-right: 3vw;
-    }
-
-    #burger-menu-phone button p {
-        padding-left: 8vw;
-        padding-top: 1.5vh;
-    }
-
     /* section presentation */
-
     .presentation {
         padding: 20vh 11vh 10vh 11vh;
     }
@@ -508,50 +393,9 @@ footer {
     .big-box-content h4 {
         font-size: 1.2rem !important;
     }
-
-    /* footer */
-    .none a {
-        font-size: 1.3rem !important;
-    }
-
-    .separator {
-        height: 3vh;
-    }
-
-    .logo-container {
-        margin-top: 3vh;
-    }
 }
 
 @media screen and (max-width: 576px) {
-
-    /* header */
-    .phone .logo img {
-        transform: scale(1.5);
-    }
-
-    .phone .header-container {
-        padding-right: 10vw;
-    }
-
-    .search {
-        margin-right: 5vw;
-        margin-left: 2vw;
-    }
-
-    #burger-menu-phone button {
-        min-width: 25vw;
-    }
-
-    #burger-menu-phone button span {
-        margin-right: 5vw;
-    }
-
-    #burger-menu-phone button p {
-        padding-left: 10vw;
-        padding-top: 1.5vh;
-    }
-
     /* section presentation */
     .presentation {
         padding: 20vh 11vh 10vh 11vh;
@@ -609,58 +453,10 @@ footer {
     .desapear-576 {
         display: none !important;
     }
-
-    /* footer */
-
-    footer {
-        padding: 5vh 1vh;
-    }
 }
 
 
 @media screen and (max-width: 400px) {
-    /* header */
-
-    header {
-        min-height: 40vh;
-    }
-
-    .phone {
-        display: flex !important;
-    }
-
-    .logo img {
-        width: 100%;
-        padding-top: 3vh;
-    }
-
-    .phone .header-container {
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: auto;
-        padding: 0;
-        padding-left: 20vw;
-    }
-
-    .phone .header-container .search {
-        margin-right: 15vw;
-        margin-bottom: 5vh;
-    }
-
-    #burger-menu-phone {
-        margin-right: 5vw;
-    }
-
-    #burger-menu-phone button {
-        min-width: 40vw;
-        margin-right: 5vw;
-    }
-
-    #burger-menu-phone button span {
-        margin-right: 10vw;
-    }
-
     /* presentation */
     .presentation {
         padding: 30vh 5vh 10vh 5vh;
@@ -725,30 +521,5 @@ footer {
 
     .tuto .box-container h3  {
         font-size: 1.1rem !important;
-    }
-
-    /* footer */
-    footer .container {
-        padding: 0;
-    }
-
-    .top .separator {
-        margin: 0 5vw;
-    }
-
-    .top ul, .bot ul {
-        padding: 0;
-    }
-
-    .link-container_992 a {
-        font-size: 1.1rem !important;
-    }
-
-    .bot a {
-        font-size: 1rem !important;
-    }
-
-    .logo-container img {
-        width: 15%;
     }
 }
