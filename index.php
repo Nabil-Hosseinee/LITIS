@@ -62,21 +62,9 @@ session_start();
 
     <!-- phone header -->
     <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
-        <div class="logo d-flex justify-content-center">
-            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo du site existence numérique">
-        </div>
-        <div class="header-container d-flex">
-            <div class="search">
-                <input type="text" id="search-input" placeholder="Rechercher...">
-                <a href="#" aria-labelledby="search-input">
-                    <lord-icon class="icon"
-                        src="https://cdn.lordicon.com/unukghxb.json"
-                        trigger="loop"
-                        delay="2000"
-                        style="width:30px;height:30px">
-                    </lord-icon>
-                    <span class="visually-hidden">Rechercher</span>
-                </a>
+        <div class="header-container d-flex justify-content-around align-items-center">
+            <div class="logo">
+                <img src="./assets/images/logo/Logo_principal.png" alt="Logo du site existence numérique">
             </div>
             
             <div class="burger-active" id="burger-menu-phone">
@@ -96,14 +84,15 @@ session_start();
         </div>
 
         <div class="search">
-                <input type="text" placeholder="Rechercher...">
-                <a href="#">
+                <input type="text" id="search-input" placeholder="Rechercher...">
+                <a href="#" aria-labelledby="search-input">
                     <lord-icon class="icon"
                         src="https://cdn.lordicon.com/unukghxb.json"
                         trigger="loop"
                         delay="2000"
                         style="width:30px;height:30px">
                     </lord-icon>
+                    <span class="visually-hidden">Rechercher</span>
                 </a>
             </div>
     </header>

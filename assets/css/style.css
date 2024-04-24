@@ -348,7 +348,7 @@ footer {
 @media screen and (max-width: 768px) {
     /* section presentation */
     .presentation {
-        padding: 20vh 11vh 10vh 11vh;
+        padding: 10vh 11vh;
     }
 
     .images img {
@@ -397,9 +397,6 @@ footer {
 
 @media screen and (max-width: 576px) {
     /* section presentation */
-    .presentation {
-        padding: 20vh 11vh 10vh 11vh;
-    }
 
     .images img {
         transform: scale(2);
@@ -459,7 +456,7 @@ footer {
 @media screen and (max-width: 400px) {
     /* presentation */
     .presentation {
-        padding: 30vh 5vh 10vh 5vh;
+        padding: 5vh 5vh;
     }
 
     .images {

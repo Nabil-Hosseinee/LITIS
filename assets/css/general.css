@@ -95,7 +95,7 @@ header nav ul li a:hover {
   border-radius: 30px;
   align-items: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-  max-width: 250px;
+  max-width: 450px;
   margin-bottom: 1vh;
 }
 
@@ -223,7 +223,7 @@ header nav ul li a:hover {
   overflow: visible;
   position: relative;
   z-index: 2;
-  margin-bottom: 1vh;
+  margin-top: 1vh;
   display: none;
 }
 #burger-menu-phone span,
@@ -316,6 +316,19 @@ header nav ul li a:hover {
 /* header phone */
 .phone {
   display: none !important;
+  min-height: 10vh;
+}
+
+.header-container {
+  width: 100%;
+  max-height: 10vh;
+  /* max-height: 15vh; */
+  margin-bottom: 1vh;
+}
+
+
+.header-container .logo img {
+  width: 100%;
 }
 
 
@@ -439,20 +452,28 @@ footer {
   }
 
   .phone .header-container {
-      margin-top: 3vh;
+      /* margin-top: 3vh; */
       padding-right: 5vw;
   }
 
-  .phone .header-container .search {
-      margin-right: 20vw;
-      margin-bottom: 5vh;
+  .phone .search {
+    margin-bottom: 3vh;
+  }
+
+  .phone .search input {
+    min-width: 450px;
+  }
+
+  .phone .search a {
+    position: absolute;
+    left: 70%;
   }
 
   #burger-menu-phone {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-top: 0.8vh;
+      /* margin-top: 1.5vh; */
   }
 
   #burger-menu-phone button {
@@ -500,6 +521,14 @@ footer {
       margin-left: 2vw;
   }
 
+  .phone .search input {
+    min-width: 300px;
+  }
+
+  .phone .search a {
+    left: 68%;
+  }
+
   #burger-menu-phone button {
       min-width: 25vw;
   }
@@ -531,23 +560,32 @@ footer {
       display: flex !important;
   }
 
-  .logo img {
-      width: 100%;
+  .phone .logo img {
+      width: 70%;
       padding-top: 3vh;
   }
 
   .phone .header-container {
-      flex-direction: column;
+      /* flex-direction: column; */
       align-items: center;
       justify-content: center;
       margin: auto;
       padding: 0;
-      padding-left: 20vw;
+      /* padding-left: 20vw; */
+      margin-bottom: 1vh;
+      padding: 0 5vh;
   }
 
-  .phone .header-container .search {
-      margin-right: 15vw;
-      margin-bottom: 5vh;
+  .phone .search {
+    margin: 1vh 0 2vh 0;
+  }
+
+  .phone .search input {
+    min-width: 200px;
+  }
+
+  .phone .search a {
+    left: 68%;
   }
 
   #burger-menu-phone {
@@ -555,13 +593,21 @@ footer {
   }
 
   #burger-menu-phone button {
-      min-width: 40vw;
+      min-width: 30vw;
+      max-height: 5vh;
       margin-right: 5vw;
+      margin-top: 3vh;
   }
 
   #burger-menu-phone button span {
-      margin-right: 10vw;
+      margin-right: 8vw;
+      margin-top: 1.5vh;
   }
+
+  #burger-menu-phone button p {
+    padding-top: 1vh;
+    padding-left: 11vw;
+}
 
   /* footer */
   footer .container {
