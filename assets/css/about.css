@@ -2,6 +2,7 @@ body {
     font-family: "Raleway", sans-serif;
     font-optical-sizing: auto;
     font-style: normal;
+    overflow-x: hidden;
 }
 
 .btn {
@@ -24,7 +25,8 @@ body {
 h1 {
     display: flex;
     font-size: 64px;
-    margin-bottom: 5vh;
+    margin-bottom: 10vh;
+    margin-top: 10vh;
 }
 
 h2 {
@@ -227,14 +229,15 @@ p {
 
 .form-carte {
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     margin-top: 10vh;
+    height: 90vh;
 }
 
 .form {
     background-color: white;
     width: 50%;
-    height: 77vh;
+    /* height: 77vh; */
     padding: 3%;
 }
 
@@ -264,8 +267,13 @@ p {
     height: 100px;
 }
 
+.form form {
+    margin-top: 5vh;
+}
+
 ::placeholder {
     color: black;
+    font-size: 12px;
 }
 
 .btn-form {
@@ -273,6 +281,7 @@ p {
     color: white;
     border: 2px solid white;
     margin-left:27.5%;
+    margin-top: 2vh;
 }
 
 .btn-form:hover {
@@ -283,12 +292,14 @@ p {
 
 .carte {
     width: 50%;
-    height: 77vh;
+    /* height: 77vh; */
+    height: 100%;
 }
 
 .carte iframe {
     width: 100%;
-    height: 77vh;
+    height: 100%;
+    /* height: 77vh; */
 }
 
 
@@ -299,6 +310,10 @@ p {
     /* padding de la page */ 
     .services, .partenaire, .equipe, .contact {
         padding: 10vh 10vw;
+    }
+
+    .contact {
+        padding: 10vh 10vw 0 10vw
     }
 
     /* apropos */
@@ -397,6 +412,12 @@ p {
 
 
 @media screen and (max-width: 992px) {
+
+    .contact {
+        padding: 10vh 10vw 15vw 10vw
+    }
+
+
     .btn {
         font-size: 16px;
     }
@@ -478,6 +499,10 @@ p {
 
     .form .btn, .btn-savoir {
         width: 25vw !important;
+    }
+
+    .btn-form {
+        margin-bottom: 2vh;
     }
 }
 
@@ -562,6 +587,8 @@ p {
     .lieu {
         margin-bottom: 20%;
     }
+
+    
 }
 
 @media screen and (max-width: 576px) {
@@ -573,6 +600,8 @@ p {
     h1 {
         font-size: 35px;
         padding-top: 3vh;
+        margin-top: 3vh;
+        margin-bottom: 5vh;
     }
 
     h2 {
