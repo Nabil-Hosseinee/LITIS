@@ -1,3 +1,139 @@
 body {
-    min-height: 3000vh;
+    background-color: var(--gris-clair);
 }
+
+
+/* section fonctionnalité */
+
+.fonctionnalite {
+    margin-top: 15vh;
+    padding: 10vh 20vh;
+}
+
+.underline {
+    height: 5px;
+    background-color: var(--secondaire);
+    border-radius: 16px;
+}
+
+.big_title_underline {
+    width: 200px;
+    margin-left: 2vw;
+    margin-top: 3vh;
+    margin-bottom: 8vh;
+    background-color: black;
+}
+
+.title_underline {
+    width: 80px;
+    margin-left: 1vw;
+    margin-top: 1.5vh;
+}
+
+.fonctionnalite .container {
+    margin-top: 5vh;
+}
+
+.mg_r {
+    margin-right: 5vw;
+}
+
+.fonc_box {
+    min-width: 35vw;
+    background-color: white;
+    border-radius: 32px;
+    padding: 5vh 3vw;
+    box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.3);
+
+}
+
+.container .top {
+    margin-bottom: 5vh;
+}
+
+.fonc_box .title h3 {
+    margin-top: 2vh;
+}
+
+.container img {
+    width: 50%;
+}
+
+.container button {
+    background-color: var(--secondaire);
+    border: 2px solid white;
+    color: white;
+    letter-spacing: 1px;
+    /* text-transform: uppercase; */
+    margin-left: 25%;
+    margin-top: 2vh;
+    font-weight: bold;
+}
+
+.container button:hover {
+    background-color: white;
+    border: 2px solid var(--secondaire);
+    color: var(--secondaire);
+}
+
+/* separator */
+
+.bar {
+    width: 50vw;
+    height: 5px;
+    border-radius: 16px;
+    margin: 10vh auto;
+    background-color: var(--violet);
+    opacity: 0.3;
+}
+
+
+
+/* thematique */
+
+.thematique {
+    padding-bottom: 5vh;
+}
+
+.thematique h1 {
+    text-align: center;
+    margin: 15vh;
+}
+
+.line {
+    margin: 10vh 0;
+}
+
+.theme_box {
+    min-width: 35vw;
+    background-color: white;
+    border-radius: 32px;
+    padding: 5vh 3vw;
+    box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.internet {
+    background-color: #C841BB;
+}
+
+.securite {
+    background-color: #FFA552;
+}
+
+.administratif {
+    background-color: #5271FF;
+}
+
+.education {
+    background-color: #FFD84C;
+}
+
+.sante {
+    background-color: #1FC678;
+}
+
+.comm {
+    background-color: #FF5276;
+}
+
+

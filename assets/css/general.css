@@ -340,6 +340,8 @@ header nav ul li a:hover {
 
 footer {
   padding: 5vh;
+  padding-top: 10vh;
+  background-color: white;
 }
 
 .link-container ul li a {
