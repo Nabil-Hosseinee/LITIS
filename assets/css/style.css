@@ -81,21 +81,14 @@ body {
 }
 
 .slogan_img {
-    width: 20%;
-}
-
-.slogan_droite {
-    position: absolute;
-    top: 45%;
-    left: 8%;
-    transform:  rotate(-15deg);
+    width: 30%;
 }
 
 .slogan_gauche {
     position: absolute;
-    top: 35%;
-    left: 70%;
-    transform: rotate(15deg);
+    bottom: -25%;
+    left: -10%;
+    transform: rotate(-15deg);
 }
 
 .slogan .circle {
@@ -110,6 +103,7 @@ body {
     box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.3);
     padding-bottom: 3vh;
     padding-right: 0.5vw;
+    z-index: 999;
 }
 
 .slogan .circle img {
@@ -119,6 +113,7 @@ body {
 .slogan .container {
     background-color: var(--gris-clair);
     min-height: 50vh;
+    position: relative;
 }
 
 h1 {
@@ -196,53 +191,35 @@ h1 {
     width: 100%;
     height: 20vh;
     margin: 50px 0;
-    /* background-color: #250000; */
-}
-
-
-/* footer */
-
-footer {
-    padding: 5vh;
-    /* background-color: var(--gris-clair); */
-}
-
-.link-container ul li a {
-    color: var(--violet);
-}
-
-.logo-container {
-    text-align: center;
-    margin-top: 5vh;
-}
-
-.logo-container img {
-    width: 10%;
-    margin: 0 4vw;
-}
-
-.separator {
-    width: 2px;
-    height: 4vh;
-    background-color: var(--violet);
-    margin: 0 2vw;
-    margin-top: 0.5vh;
-}
-
-.none {
-    display: none !important;
-}
-
-.none a {
-    color: var(--violet);
-}
-
-.top {
-    margin-bottom: 1vh;
 }
 
 
 /* media queries */
+
+@media screen and (max-width: 1400px)  {
+
+    /* presentation */
+    .presentation {
+        padding: 15vh;
+    }
+
+    .btn {
+        width: 20vw;
+    }
+
+    /* slogan */
+    .slogan .container {
+        max-width: 80vw;
+    }
+
+    .slogan_img {
+        width: 35%;
+    }
+
+    h1 {
+        font-size: 60px;
+    }
+}
 
 @media screen and (max-width: 1200px) {
     /* section presentation */
@@ -270,6 +247,25 @@ footer {
 
     .btn {
         width: 20vw;
+    }
+
+    /* slogan */
+
+    .slogan .circle {
+        width: 180px;
+        height: 180px;
+    }
+
+    .slogan .circle img {
+        transform: scale(1.3);
+    }
+
+    .slogan_img {
+        width: 38%;
+    }
+
+    h1 {
+        font-size: 50px;
     }
 
     /* section prb */
@@ -316,6 +312,29 @@ footer {
         width: 22vw;
     }
 
+    /* slogan */
+    .slogan .container {
+        max-width: 75vw;
+    }
+
+    .slogan .circle {
+        width: 160px;
+        height: 160px;
+    }
+
+    .slogan_img {
+        width: 42%;
+    }
+
+    .slogan_gauche {
+        left: -15%;
+    }
+
+    h1 {
+        padding: 0 5vh;
+        line-height: 10vh;
+    }
+
     /* section prb */
     .prb {
         padding: 10vh;
@@ -343,6 +362,10 @@ footer {
     .box .img {
         width: 70%;
     }
+
+    .box p {
+        margin-top: 8vh;
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -357,6 +380,20 @@ footer {
 
     .btn {
         width: 30vw;
+    }
+
+    /* slogan */
+    .slogan .circle {
+        width: 150px;
+        height: 150px;
+    }
+
+    h1 {
+        font-size: 45px;
+    }
+
+    .slogan_gauche {
+        bottom: -15%;
     }
 
     /* section prb */
@@ -393,6 +430,10 @@ footer {
     .big-box-content h4 {
         font-size: 1.2rem !important;
     }
+
+    .box p {
+        margin-top: 1vh;
+    }
 }
 
 @media screen and (max-width: 576px) {
@@ -417,6 +458,22 @@ footer {
         margin-top: 2vh;
     }
 
+    /* slogan */
+    .slogan_img {
+        width: 48%;
+        display: none;
+    }
+
+    .slogan .circle {
+        width: 120px;
+        height: 120px;
+    }
+
+    h1 {
+        font-size: 30px;
+        line-height: 8vh;
+    }
+
     /* section prb */
     .prb h2 {
         text-align: center;
@@ -432,7 +489,7 @@ footer {
 
     /* section tuto */
     .tuto {
-        padding: 10vh 3vh;
+        padding: 10vh 3vh 0vh 3vh;
     }
 
     .tuto h2 {
@@ -450,13 +507,17 @@ footer {
     .desapear-576 {
         display: none !important;
     }
+
+    .box p {
+        margin-top: -5vh;
+    }
 }
 
 
 @media screen and (max-width: 400px) {
     /* presentation */
     .presentation {
-        padding: 5vh 5vh;
+        padding: 10vh 5vh;
     }
 
     .images {
@@ -484,6 +545,21 @@ footer {
 
     .btn-about {
         margin-top: 3vh;
+    }
+
+    /* slogan */
+    .slogan_img {
+        display: none;
+    }
+
+    h1 {
+        font-size: 25px;
+    }
+
+    .slogan .circle {
+        width: 100px;
+        height: 100px;
+        top: 23%;
     }
 
     /* prb */
@@ -518,5 +594,9 @@ footer {
 
     .tuto .box-container h3  {
         font-size: 1.1rem !important;
+    }
+
+    .box p {
+        margin-top: -10vh;
     }
 }

@@ -23,8 +23,8 @@ session_start();
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
-                <li><a class="active fs-4 menu__link fw-semibold" href="#">Accueil</a></li>
-                <li><a class="fs-4 menu__link fw-semibold" href="#">A propos</a></li>
+                <li><a class="active fs-4 menu__link fw-semibold" href="index.php">Accueil</a></li>
+                <li><a class="fs-4 menu__link fw-semibold" href="about.html">A propos</a></li>
                 <li><a class="fs-4 menu__link fw-semibold" href="#">Ressources</a></li>
             </ul>
         </nav>
@@ -53,8 +53,8 @@ session_start();
 
         <div id="menu">
             <ul>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Accueil</a></li>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">A propos</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
                 <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Ressources</a></li>
             </ul>
         </div>
@@ -76,8 +76,8 @@ session_start();
     
             <div id="menu-phone">
                 <ul>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Accueil</a></li>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">A propos</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
                     <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Ressources</a></li>
                 </ul>
             </div>
@@ -122,12 +122,11 @@ session_start();
 
     <!-- slogan -->
     <div class="slogan d-flex justify-content-center align-items-center">
-        <img class="slogan_img slogan_droite" src="./assets/images/illustration/slogan.svg" alt="">
-        <!-- <img class="slogan_img slogan_gauche" src="./assets/images/illustration/slogan_gauche.svg" alt=""> -->
         <div class="circle d-flex justify-content-center align-items-center">
             <img src="./assets/images/illustration/quotes.svg" alt="">
         </div>
         <div class="container rounded-4 d-flex justify-content-center align-items-center">
+            <img class="slogan_img slogan_gauche" src="./assets/images/illustration/slogan.svg" alt="">
             <h1 class="color_v">
                 La référence digitale pour naviguer vers l'inclusion en ligne
             </h1>
@@ -218,7 +217,7 @@ session_start();
 
     <!-- footer -->
     <footer>
-        <div class="container d-flex flex-column align-items-center">
+        <div class="d-flex flex-column align-items-center">
             <div class="link-container">
                 <ul class="d-flex">
                     <li><a class="fs-4 menu__link fw-medium" href="#">Accueil</a></li>
@@ -236,18 +235,18 @@ session_start();
             <div class="link-container_992 d-flex flex-column align-items-center none">
                 <div class="top">
                     <ul class="d-flex">
-                        <li><a class="fs-3 menu__link fw-medium" href="#">Accueil</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#">Accueil</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-3 menu__link fw-medium" href="#">A propos</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#">A propos</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-3 menu__link fw-medium" href="#">Ressources</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#">Ressources</a></li>
                     </ul>
                 </div>
                 <div class="bot">
                     <ul class="d-flex">
-                        <li><a class="fs-3 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-3 menu__link fw-medium" href="#">Mentions légales</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
                     </ul>
                 </div>
             </div>

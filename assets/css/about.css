@@ -468,10 +468,6 @@ p {
         width: 100%;
     }
 
-    .form {
-        height: 60vh;
-    }
-
     .carte, .carte iframe {
         height: 30vh;
     }
@@ -487,11 +483,26 @@ p {
 
 
 @media screen and (max-width: 768px) {
-    /* apropos */
     h1 {
-        padding-top: 12vh;
+        font-size: 56px;
     }
-    
+
+    h2 {
+        font-size: 32px;
+    }
+
+    h3 {
+        font-size: 24px !important;
+    }
+
+    .apropos p, .team h4, .services-container p, .partenaire-container p, .lieu p {
+        font-size: 18px;
+    }
+
+    .box {
+        height: auto;
+    }
+
     /* services */    
     .icon-services {
         max-width: 12vw;
@@ -525,28 +536,8 @@ p {
         margin: auto;
         margin-bottom: 10%;
     }
-}
 
-@media screen and (max-width: 768px) {
-    h1 {
-        font-size: 56px;
-    }
-
-    h2 {
-        font-size: 32px;
-    }
-
-    h3 {
-        font-size: 24px !important;
-    }
-
-    .apropos p, .team h4, .services-container p, .partenaire-container p, .lieu p {
-        font-size: 18px;
-    }
-
-    .box {
-        height: auto;
-    }
+    /* contact */
 
     .logo-reseaux {
         display: flex;
@@ -580,7 +571,8 @@ p {
     }
     
     h1 {
-        font-size: 50px;
+        font-size: 35px;
+        padding-top: 3vh;
     }
 
     h2 {
@@ -622,10 +614,7 @@ p {
 @media screen and (max-width: 400px) {
     /* apropos */
     h1 {
-        padding-top: 22vh;
-    }
-
-    .form {
-        height: 85vh;
+        padding-top: 2vh;
+        font-size: 30px;
     }
 }

@@ -38,6 +38,10 @@ li {
   box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.3);
 }
 
+ol, ul {
+  padding: 0;
+}
+
 
 
 /* Header */
@@ -502,10 +506,15 @@ footer {
 
   .separator {
       height: 3vh;
+      margin-top: 0.5vh !important;
   }
 
   .logo-container {
       margin-top: 3vh;
+  }
+
+  .logo-container img {
+    width: 14% !important;
   }
 }
 
@@ -545,6 +554,10 @@ footer {
   /* footer */
   footer {
     padding: 5vh 1vh;
+  }
+
+  .none a {
+    font-size: 1rem !important;
   }
 }
 
@@ -596,16 +609,16 @@ footer {
       min-width: 30vw;
       max-height: 5vh;
       margin-right: 5vw;
-      margin-top: 3vh;
+      margin-top: 1vh;
   }
 
   #burger-menu-phone button span {
       margin-right: 8vw;
-      margin-top: 1.5vh;
+      margin-top: 0.5vh;
   }
 
   #burger-menu-phone button p {
-    padding-top: 1vh;
+    padding-top: 0.5vh;
     padding-left: 11vw;
 }
 
