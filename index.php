@@ -13,7 +13,7 @@ session_start();
     <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <title>LITIS | Accueil</title>
+    <title>Existence Numérique | Accueil</title>
   </head>
 
   <body>
