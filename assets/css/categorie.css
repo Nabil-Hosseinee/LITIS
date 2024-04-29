@@ -291,6 +291,11 @@ h1 {
         margin-bottom: 12vh;
     }
 
+    h1 {
+        margin: 20vh 0 4vh 0;
+        font-size: 38px;
+    }
+
     .trait, .trait-vert, .trait-orange, .trait-jaune, .trait-bleu, .trait-violet, .trait-rose {
         width: 15vw;
     }
