@@ -25,7 +25,7 @@ body {
 }
 
 .title_underline {
-    width: 80px;
+    width: 50px;
     margin-left: 1vw;
     margin-top: 1.5vh;
 }
@@ -36,6 +36,10 @@ body {
 
 .mg_r {
     margin-right: 5vw;
+}
+
+.pmg_b {
+    margin-bottom: 3rem;
 }
 
 .fonc_box {
@@ -63,6 +67,7 @@ body {
     background-color: var(--secondaire);
     border: 2px solid white;
     color: white;
+    /* a mettre dans général le letter spacing */
     letter-spacing: 1px;
     /* text-transform: uppercase; */
     margin-left: 25%;
@@ -83,7 +88,7 @@ body {
     height: 5px;
     border-radius: 16px;
     margin: 10vh auto;
-    background-color: var(--violet);
+    background-color: black;
     opacity: 0.3;
 }
 
@@ -135,5 +140,142 @@ body {
 .comm {
     background-color: #FF5276;
 }
+
+
+
+/* medias queries */
+
+@media screen and (max-width: 1400px) {
+    /* fonctionnalite */
+    .fonctionnalite {
+        padding: 10vh;
+    }
+
+    .fonctionnalite .container {
+        margin-left: 3vw;
+    }
+
+    .pmg_b {
+        margin-bottom: 1rem;
+    }
+
+    /* thématique */
+    .thematique {
+        padding: 0vh 5vw 5vh 5vw;
+    }
+}
+
+
+@media screen and (max-width: 1200px) {
+    /* fonctionnalite */
+    .fonctionnalite {
+        padding: 10vh 8vw;
+    }
+}
+
+
+@media screen and (max-width: 992px) {
+    /* fonctionnalite */
+    .fonctionnalite .container {
+        flex-direction: column;
+        margin-left: 0;
+    }
+
+    .fonc_box {
+        min-width: 100%;
+        margin: 0;
+        padding: 5vh 8vw;
+        text-align: center;
+    }
+    
+    .fonc_box .bot p {
+        text-align: start;
+    }
+
+
+    .mg_b {
+        margin-bottom: 10vh;
+    }
+
+    .container button {
+        margin-left: 0;
+        min-width: 40%;
+    }
+
+
+    /* thematique */
+
+    .theme_box .bot button {
+        min-width: 60%;
+        margin-left: 20%;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    /* thematique */
+    .line {
+        flex-direction: column;
+    }
+
+    .theme_box {
+        min-width: 100%;
+        margin: 0;
+        padding: 5vh 10vw;
+    }
+
+    .mg_b {
+        margin-bottom: 10vh;
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    /* fonctionnalite */
+    .container button {
+        margin-left: 0;
+        min-width: 60%;
+    }
+
+    .container img {
+        width: 40%;
+    }
+
+    h3 {
+        font-size: 1.3rem !important;
+    }
+
+    .fonc_box .bot p {
+        font-size: 1.1rem !important;
+    }
+
+    /* thematique */
+    .thematique h1 {
+        margin: 0;
+    }
+
+    /* bar */
+    .bar {
+        margin: 5vh auto;
+    }
+} 
+
+
+@media screen and (max-width: 400px)  {
+    .fonc_box {
+        text-align: start;
+    }
+
+    .fonc_box .bot button {
+        margin-left: 15%;
+        min-width: 70%;
+    }
+
+    /* thematique */
+    
+}
+
+
+
 
 
