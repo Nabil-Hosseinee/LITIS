@@ -25,7 +25,7 @@ session_start();
             <ul class="d-flex justify-content-center align-items-center">
                 <li><a class="active fs-4 menu__link fw-semibold" href="index.php">Accueil</a></li>
                 <li><a class="fs-4 menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-4 menu__link fw-semibold" href="#">Ressources</a></li>
+                <li><a class="fs-4 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
             </ul>
         </nav>
 
@@ -55,7 +55,7 @@ session_start();
             <ul>
                 <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
                 <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Ressources</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
             </ul>
         </div>
     </header>
