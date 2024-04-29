@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/general.css">
+    <link rel="stylesheet" href="./assets/css/categorie.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <title>LITIS | Santé</title>
+</head>
+<body>
+    
+    <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
+        <div class="logo d-flex justify-content-center align-items-center">
+            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique">
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <ul class="d-flex justify-content-center align-items-center">
+                <li><a class="fs-4 menu__link fw-semibold" href="index.php">Accueil</a></li>
+                <li><a class="fs-4 menu__link fw-semibold" href="about.html">A propos</a></li>
+                <li><a class="active fs-4 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+            </ul>
+        </nav>
+
+        <div>
+            <form class="search" action="cible2.php" method="post">
+                <label for="search-input" class="visually-hidden">Rechercher</label>
+                <input id="search-input" name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
+                <a href="#" aria-label="Rechercher">
+                    <lord-icon class="icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                </a>
+            </form>
+        </div>
+
+        <div class="burger-active" id="burger-menu">
+            <button>
+                <p>Menu</p>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Ressources</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- phone header -->
+    <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
+        <div class="header-container d-flex justify-content-around align-items-center">
+            <div class="logo">
+                <img src="./assets/images/logo/Logo_principal.png" alt="Logo du site existence numérique">
+            </div>
+            
+            <div class="burger-active" id="burger-menu-phone">
+                <button>
+                    <p>Menu</p>
+                    <span></span>
+                </button>
+            </div>
+    
+            <div id="menu-phone">
+                <ul>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Ressources</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="search">
+                <input type="text" id="search-input" placeholder="Rechercher...">
+                <a href="#" aria-labelledby="search-input">
+                    <lord-icon class="icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                    <span class="visually-hidden">Rechercher</span>
+                </a>
+            </div>
+    </header>
+
+    <!-- section intro -->
+    <section class="intro">
+        <div class="arc-cercle">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
+            </svg>
+        </div>
+        <div class="intro-container d-flex flex-column align-items-center">
+            <h1>Bases d'internet</h1>
+            <div class="trait"></div>
+            <p>Apprenez à maîtriser les bases du numérique avec ces tutoriels faciles à suivre. Simplifiez votre vie numérique dès maintenant !</p>
+        </div>
+    </section>
+
+    <!-- section tutoriels -->
+    <section class="tutoriels">
+        <div class="rdv">
+            <h2>Gestion en ligne</h2>
+            <div class="trait-violet"></div>
+            <div class="videos">
+                <div class="tuto image_wrapper">
+                    <a href="tuto.php">
+                        <img src="./assets/images/miniatures/minia_crea_google.png" alt="">
+                        <div class="overlay_4">
+                            <div class="text_overlay fw-semibold">Consulter</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="tuto image_wrapper">
+                    <a href="tuto.php">
+                        <img src="./assets/images/miniatures/minia_crea_google.png" alt="">
+                        <div class="overlay_4">
+                            <div class="text_overlay fw-semibold">Consulter</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="tuto image_wrapper">
+                    <a href="tuto.php">
+                        <img src="./assets/images/miniatures/minia_crea_google.png" alt="">
+                        <div class="overlay_4">
+                            <div class="text_overlay fw-semibold">Consulter</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="rdv">
+            <h2>Utilisation système</h2>
+            <div class="trait-violet"></div>
+            <div class="videos">
+                <div class="tuto image_wrapper">
+                    <a href="tuto.php">
+                        <img src="./assets/images/miniatures/minia_crea_google.png" alt="">
+                        <div class="overlay_4">
+                            <div class="text_overlay fw-semibold">Consulter</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="tuto image_wrapper">
+                    <a href="tuto.php">
+                        <img src="./assets/images/miniatures/minia_crea_google.png" alt="">
+                        <div class="overlay_4">
+                            <div class="text_overlay fw-semibold">Consulter</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="tuto image_wrapper">
+                    <a href="tuto.php">
+                        <img src="./assets/images/miniatures/minia_crea_google.png" alt="">
+                        <div class="overlay_4">
+                            <div class="text_overlay fw-semibold">Consulter</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="rdv">
+            <h2>Interactions physiques</h2>
+            <div class="trait-violet"></div>
+            <div class="videos">
+                <div class="tuto image_wrapper">
+                    <a href="tuto.php">
+                        <img src="./assets/images/miniatures/minia_crea_google.png" alt="">
+                        <div class="overlay_4">
+                            <div class="text_overlay fw-semibold">Consulter</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="tuto image_wrapper">
+                    <a href="tuto.php">
+                        <img src="./assets/images/miniatures/minia_crea_google.png" alt="">
+                        <div class="overlay_4">
+                            <div class="text_overlay fw-semibold">Consulter</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="tuto image_wrapper">
+                    <a href="tuto.php">
+                        <img src="./assets/images/miniatures/minia_crea_google.png" alt="">
+                        <div class="overlay_4">
+                            <div class="text_overlay fw-semibold">Consulter</div>
+                        </div>
+                    </a>
+                </div>
+                <div class="tuto image_wrapper">
+                    <a href="tuto.php">
+                        <img src="./assets/images/miniatures/minia_crea_google.png" alt="">
+                        <div class="overlay_4">
+                            <div class="text_overlay fw-semibold">Consulter</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+        <!-- footer -->
+        <footer>
+            <div class="container d-flex flex-column align-items-center">
+                <div class="link-container">
+                    <ul class="d-flex">
+                        <li><a class="fs-4 menu__link fw-medium" href="#">Accueil</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-4 menu__link fw-medium" href="#">A propos</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-4 menu__link fw-medium" href="#">Ressources</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+    
+                <div class="link-container_992 d-flex flex-column align-items-center none">
+                    <div class="top">
+                        <ul class="d-flex">
+                            <li><a class="fs-3 menu__link fw-medium" href="#">Accueil</a></li>
+                            <div class="separator"></div>
+                            <li><a class="fs-3 menu__link fw-medium" href="#">A propos</a></li>
+                            <div class="separator"></div>
+                            <li><a class="fs-3 menu__link fw-medium" href="#">Ressources</a></li>
+                        </ul>
+                    </div>
+                    <div class="bot">
+                        <ul class="d-flex">
+                            <li><a class="fs-3 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                            <div class="separator"></div>
+                            <li><a class="fs-3 menu__link fw-medium" href="#">Mentions légales</a></li>
+                        </ul>
+                    </div>
+                </div>
+    
+                <div class="logo-container">
+                    <img class="img-fluid" src="./assets/images/logo/litis_logo.webp" alt="Logo du laboratoire LITIS">
+                    <img class="img-fluid" src="./assets/images/logo/agefiph logo.svg" alt="Logo de l'AGEFIPH">
+                    <img class="img-fluid" src="./assets/images/logo/logo_iut.png" alt="Logo de l'Université de Rouen">
+                    <img class="img-fluid" src="./assets/images/logo/iut_rouen_logo_nobg.png" alt="Logo de l'IUT de Rouen">
+                </div>
+            </div>
+        </footer>
+    
+        <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    
+        <script src="./assets/js/script.js"></script>
+        
+    </body>
+    </html>

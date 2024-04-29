@@ -3,13 +3,16 @@
 
 :root {
     --gris-clair : #F4F4F4;
-    --violet : #7A1897;
-    --blanc : #fff;
+    --violet: #7A1897;
+    --blanc: #fff;
     --noir: black;
-    /* le vert est a viré */
-    --vert: #156d52;
-    --bleu-flo:#009eb2;
-    --secondaire : #002Fa7;
+    --secondaire: #002Fa7;
+    --sante: #1F936F;
+    --securite: #FFA552;
+    --administratif: #5271FF;
+    --communication: #FF5276;
+    --internet: #C841BB;
+    --education: #FFD84C;
 }
 
 a {
