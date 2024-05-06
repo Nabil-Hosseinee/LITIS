@@ -121,7 +121,7 @@ session_start();
 
 
     <!-- slogan -->
-    <div class="slogan d-flex justify-content-center align-items-center">
+    <div class="slogan d-flex justify-content-center align-items-center fade-in">
         <div class="circle d-flex justify-content-center align-items-center">
             <img src="./assets/images/illustration/quotes.svg" alt="">
         </div>
@@ -135,7 +135,7 @@ session_start();
 
     
     <!-- prb -->
-    <section class="prb">
+    <section class="prb fade-in">
         <h2 class="fs-1 fw-bold">
             Quelle est notre <span class="color_v">mission</span> ?
         </h2>
@@ -155,7 +155,7 @@ session_start();
 
 
     <!-- tuto -->
-    <section class="tuto">
+    <section class="tuto fade-in">
         <h2 class="fs-1 fw-bold">
             Les <span class="color_v">tutoriels</span> à la une
         </h2>
