@@ -1,6 +1,6 @@
 body {
-    background-color: #f2f2f2; /* fond gris */
-    min-height: 100vh; /* 100% de la hauteur de la fenêtre visible */
+    background-color: #f2f2f2;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     font-family: 'Raleway';
@@ -8,27 +8,25 @@ body {
 }
 
 footer {
-    margin-top: auto; /* le pied de page est en bas de la page */
+    margin-top: auto;
 }
 
 .titre {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 15vh; /* Ajoute une marge en haut pour déplacer le titre vers le bas */
+    margin-top: 15vh;
 }
 
 .definition {
     display: flex;
-    justify-content: center; /* Centrer horizontalement */
-    align-items: center; /* Centrer verticalement */
-    text-align: center; /* Centrer le texte à l'intérieur */
-    height: 20vh; /* Remplit la hauteur de l'écran */
+    justify-content: center;
+    align-items: center;
+    height: 20vh;
 }
 
 .definition p {
     max-width: 60%;
-    font-weight: bold; /* Limite la largeur du paragraphe */
 }
 
 
@@ -57,7 +55,7 @@ footer {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin-top: 15%;
+    margin-top: 5%;
 }
 
 .tuto {
@@ -105,4 +103,23 @@ footer {
     text-align: center;
     font-size: 24px;
 }
+
+/* separator */
+
+.bar {
+    width: 30vw;
+    height: 5px;
+    border-radius: 16px;
+    margin: 5vh auto;
+    background-color: black;
+    opacity: 0.3;
+}
+
+h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5vh;
+}
+
 
