@@ -628,6 +628,11 @@ p {
     .trait {
         width: 10vw;
     }
+
+    .team img {
+        max-width: 20vw;
+        width: 20vw;
+    }
 }
 
 
