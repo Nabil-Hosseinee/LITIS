@@ -74,18 +74,18 @@ if (isset($_POST['mot'])) {
                 foreach ($resultSynonymes as $resultSynonyme) {
                     $mot = $resultSynonyme['Mot'];
                     $definition = $resultSynonyme['Definition'];
-                    $synonymes = $resultSynonyme['Synonyme']; // Supposons que les synonymes soient stockés dans la colonne 'Synonyme' sous forme de chaîne séparée par des virgules
+                    $synonymes = $resultSynonyme['Synonyme'];
                     $motsAssocies[$mot] = array('definition' => $definition, 'synonymes' => $synonymes);
                 }
 
-                // Stocke $motsAssocies dans une variable de session avec le mot et ses synonymes
+                // Stocker $motsAssocies dans une variable de session avec le mot et ses synonymes
                 $_SESSION['motsAssocies'] = $motsAssocies;
 
                 echo "<ul>";
                 foreach ($motsAssocies as $mot => $data) {
                     $definition = $data['definition'];
                     $synonymes = $data['synonymes'];
-                    $synonymesArray = explode(',', $synonymes); // Convertir la chaîne de synonymes en tableau
+                    $synonymesArray = explode(',', $synonymes);
 
                     // Construire la chaîne des synonymes entre parenthèses
                     $synonymesString = '(' . implode(', ', $synonymesArray) . ')';
@@ -94,22 +94,24 @@ if (isset($_POST['mot'])) {
                 }
                 echo "</ul>";
 
-                // Récupérer les ressources où le titre ou les mots-clés contiennent le mot saisi par l'utilisateur
-                $sqlRessources = "SELECT * FROM ressource WHERE ";
-                $sqlRessources .= "Titre LIKE :mot OR ";
-                $sqlRessources .= "Mot_cle LIKE :mot ";
+                // Préparer la requête SQL pour les ressources
+                $sqlRessources = "SELECT * FROM ressource WHERE Titre LIKE :mot OR Mot_cle LIKE :mot ";
 
                 // Ajouter les conditions pour chaque synonyme
-                foreach ($motsAssocies as $i => $motAssocie) {
+                $i = 0;
+                foreach ($motsAssocies as $motAssocie) {
                     $sqlRessources .= "OR Titre LIKE :motAssocie$i OR Mot_cle LIKE :motAssocie$i ";
+                    $i++;
                 }
 
                 $statementRessources = $db->prepare($sqlRessources);
                 $statementRessources->bindValue(':mot', "%$mot%", PDO::PARAM_STR);
 
                 // Lier chaque synonyme à la requête
-                foreach ($motsAssocies as $i => $motAssocie) {
-                    $statementRessources->bindValue(":motAssocie$i", "%$i%", PDO::PARAM_STR); // Utiliser la clé $i comme valeur
+                $i = 0;
+                foreach ($motsAssocies as $motAssocie) {
+                    $statementRessources->bindValue(":motAssocie$i", "%" . $motAssocie['synonymes'] . "%", PDO::PARAM_STR);
+                    $i++;
                 }
 
                 $statementRessources->execute();
