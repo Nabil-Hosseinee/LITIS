@@ -111,8 +111,8 @@ session_start();
                     Découvrez une multitude de <span class="fw-semibold color_v">ressources</span> soigneusement élaborées pour vous accompagner dans le développement de vos <span class="color_v fw-semibold">compétences numériques.</span> <br><br>Elles vous permettront ainsi de naviguer avec aisance et assurance à travers le paysage technologique en constante évolution, tout en vous donnant les outils nécessaires pour relever les <span class="color_v fw-semibold">défis numériques</span> avec confiance et succès.
                 </p>
                 <div class="btn-container d-flex justify-content-start">
-                    <button class="btn fw-bold btn-resource">Accéder aux ressources</button>
-                    <button class="btn fw-bold btn-about">A propos</button>
+                    <a href="ressource.html"><button class="btn fw-bold btn-resource">Accéder aux ressources</button></a>
+                    <a href="about.html"><button class="btn fw-bold btn-about">A propos</button></a>
                 </div>
             </div>
             

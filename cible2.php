@@ -16,62 +16,35 @@ if (isset($_POST['mot'])) {
         $db = new PDO($dsn, $username, $password);
         $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        // Vérifier si le mot est un synonyme
-        $statementSynonyme = $db->prepare("SELECT * FROM glossaire WHERE Synonyme LIKE :motRecherche");
-        $motRecherche = "%$mot%";
-        $statementSynonyme->bindValue(':motRecherche', $motRecherche, PDO::PARAM_STR);
-        $statementSynonyme->execute();
-        $resultSynonymes = $statementSynonyme->fetchAll(PDO::FETCH_ASSOC);
+        // Vérifier d'abord si le mot existe dans la table glossaire
+        $statementMot = $db->prepare("SELECT * FROM glossaire WHERE Mot = :mot");
+        $statementMot->bindValue(':mot', $mot, PDO::PARAM_STR);
+        $statementMot->execute();
+        $resultMot = $statementMot->fetch(PDO::FETCH_ASSOC);
 
-        if ($resultSynonymes) {
-            // Récupérer tous les mots associés au synonyme
-            $motsAssocies = array();
-            foreach ($resultSynonymes as $resultSynonyme) {
-                $mot = $resultSynonyme['Mot'];
-                $definition = $resultSynonyme['Definition'];
-                $synonymes = $resultSynonyme['Synonyme']; // Supposons que les synonymes soient stockés dans la colonne 'Synonyme' sous forme de chaîne séparée par des virgules
-                $motsAssocies[$mot] = array('definition' => $definition, 'synonymes' => $synonymes);
-            }
+        if ($resultMot) {
+            // Le mot est dans la table glossaire
+            $mot = $resultMot['Mot'];
+            $definition = $resultMot['Definition'];
+            $synonyme = $resultMot['Synonyme'];
 
-            // Stocke $motsAssocies dans une variable de session avec le mot et ses synonymes
-            $_SESSION['motsAssocies'] = $motsAssocies;
+            $_SESSION['mot'] = $mot;
+            $_SESSION['def'] = $definition;
+            $_SESSION['synonyme'] = $synonyme;
 
-            echo "<ul>";
-            foreach ($motsAssocies as $mot => $data) {
-                $definition = $data['definition'];
-                $synonymes = $data['synonymes'];
-                $synonymesArray = explode(',', $synonymes); // Convertir la chaîne de synonymes en tableau
-
-                // Construire la chaîne des synonymes entre parenthèses
-                $synonymesString = '(' . implode(', ', $synonymesArray) . ')';
-
-                echo "<li><strong>$mot $synonymesString :</strong> $definition</li>";
-            }
-            echo "</ul>";
-
+            // Afficher le mot et sa définition
+            echo "<h2>$mot ($synonyme)</h2>";
+            echo "<p>$definition</p>";
 
             // Récupérer les ressources où le titre ou les mots-clés contiennent le mot saisi par l'utilisateur
             $sqlRessources = "SELECT * FROM ressource WHERE ";
             $sqlRessources .= "Titre LIKE :mot OR ";
             $sqlRessources .= "Mot_cle LIKE :mot ";
-
-            // Ajouter les conditions pour chaque synonyme
-            foreach ($motsAssocies as $i => $motAssocie) {
-                $sqlRessources .= "OR Titre LIKE :motAssocie$i OR Mot_cle LIKE :motAssocie$i ";
-            }
-
             $statementRessources = $db->prepare($sqlRessources);
             $statementRessources->bindValue(':mot', "%$mot%", PDO::PARAM_STR);
-
-            // Lier chaque synonyme à la requête
-            foreach ($motsAssocies as $i => $motAssocie) {
-                $statementRessources->bindValue(":motAssocie$i", "%$i%", PDO::PARAM_STR); // Utiliser la clé $i comme valeur
-            }
-            
-
             $statementRessources->execute();
             $ressources = $statementRessources->fetchAll(PDO::FETCH_ASSOC);
-            
+
             echo "<pre>";
             var_dump($ressources);
             echo "</pre>";
@@ -88,34 +61,57 @@ if (isset($_POST['mot'])) {
                 echo "Aucune ressource trouvée pour le mot '$mot'";
             }
         } else {
-            // Si le mot n'est pas un synonyme, vérifier s'il existe dans la table glossaire
-            $statementMot = $db->prepare("SELECT * FROM glossaire WHERE Mot = :mot");
-            $statementMot->bindValue(':mot', $mot, PDO::PARAM_STR);
-            $statementMot->execute();
-            $resultMot = $statementMot->fetch(PDO::FETCH_ASSOC);
+            // Si le mot n'est pas dans la table glossaire, vérifier s'il est un synonyme
+            $statementSynonyme = $db->prepare("SELECT * FROM glossaire WHERE Synonyme LIKE :motRecherche");
+            $motRecherche = "%$mot%";
+            $statementSynonyme->bindValue(':motRecherche', $motRecherche, PDO::PARAM_STR);
+            $statementSynonyme->execute();
+            $resultSynonymes = $statementSynonyme->fetchAll(PDO::FETCH_ASSOC);
 
-            if ($resultMot) {
+            if ($resultSynonymes) {
+                // Récupérer tous les mots associés au synonyme
+                $motsAssocies = array();
+                foreach ($resultSynonymes as $resultSynonyme) {
+                    $mot = $resultSynonyme['Mot'];
+                    $definition = $resultSynonyme['Definition'];
+                    $synonymes = $resultSynonyme['Synonyme']; // Supposons que les synonymes soient stockés dans la colonne 'Synonyme' sous forme de chaîne séparée par des virgules
+                    $motsAssocies[$mot] = array('definition' => $definition, 'synonymes' => $synonymes);
+                }
 
-                $mot = $resultMot['Mot'];
-                $definition = $resultMot['Definition'];
-                $synonyme = $resultMot['Synonyme'];
+                // Stocke $motsAssocies dans une variable de session avec le mot et ses synonymes
+                $_SESSION['motsAssocies'] = $motsAssocies;
 
-                $_SESSION['mot'] = $mot;
-                $_SESSION['def'] = $definition;
-                $_SESSION['synonyme'] = $synonyme;
+                echo "<ul>";
+                foreach ($motsAssocies as $mot => $data) {
+                    $definition = $data['definition'];
+                    $synonymes = $data['synonymes'];
+                    $synonymesArray = explode(',', $synonymes); // Convertir la chaîne de synonymes en tableau
 
-                
-                // Afficher le mot et sa définition
-                echo "<h2>$mot ($synonyme)</h2>";
-                echo "<p>$definition</p>";
+                    // Construire la chaîne des synonymes entre parenthèses
+                    $synonymesString = '(' . implode(', ', $synonymesArray) . ')';
 
+                    echo "<li><strong>$mot $synonymesString :</strong> $definition</li>";
+                }
+                echo "</ul>";
 
                 // Récupérer les ressources où le titre ou les mots-clés contiennent le mot saisi par l'utilisateur
                 $sqlRessources = "SELECT * FROM ressource WHERE ";
                 $sqlRessources .= "Titre LIKE :mot OR ";
                 $sqlRessources .= "Mot_cle LIKE :mot ";
+
+                // Ajouter les conditions pour chaque synonyme
+                foreach ($motsAssocies as $i => $motAssocie) {
+                    $sqlRessources .= "OR Titre LIKE :motAssocie$i OR Mot_cle LIKE :motAssocie$i ";
+                }
+
                 $statementRessources = $db->prepare($sqlRessources);
                 $statementRessources->bindValue(':mot', "%$mot%", PDO::PARAM_STR);
+
+                // Lier chaque synonyme à la requête
+                foreach ($motsAssocies as $i => $motAssocie) {
+                    $statementRessources->bindValue(":motAssocie$i", "%$i%", PDO::PARAM_STR); // Utiliser la clé $i comme valeur
+                }
+
                 $statementRessources->execute();
                 $ressources = $statementRessources->fetchAll(PDO::FETCH_ASSOC);
 
@@ -135,14 +131,14 @@ if (isset($_POST['mot'])) {
                     echo "Aucune ressource trouvée pour le mot '$mot'";
                 }
             } else {
-                // Si le mot n'est pas un synonyme ni un mot de la table glossaire
+                // Si le mot n'est ni un synonyme ni un mot de la table glossaire
                 header("Location: 404.php");
             }
         }
 
-         // Redirection vers la page search.html
-         header("Location: search.php");
-         exit; 
+        // Redirection vers la page search.html
+        header("Location: search.php");
+        exit;
     } catch (PDOException $e) {
         echo "Erreur de connexion à la base de données : " . $e->getMessage();
     }
