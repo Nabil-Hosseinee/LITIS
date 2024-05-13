@@ -5,26 +5,35 @@ session_start();
 if (isset($_SESSION['motsAssocies'])) {
     $motsAssocies = $_SESSION['motsAssocies'];
     $mot = $_SESSION['mot'];
-    echo $mot;
+    $definition = $_SESSION['definition'];
+    $synonymes = $_SESSION['synonyme'];
+
+    echo "le dernier mot récupérer est $mot";
+    echo "</br>";
     $text = "On a un synonyme";
 
+    echo "<pre>";
+    var_dump($motsAssocies);
+    echo "</pre>";
 
-    // echo "<pre>";
-    // var_dump($motsAssocies);
-    // echo "</pre>";
 
-    foreach ($motsAssocies as $mot => $data) {
-        $definition = $data['definition'];
-        $synonyme = $data['synonymes'];
-        $synonymesArray = explode(',', $synonyme); // Convertir la chaîne de synonymes en tableau
+    // 
+    // La boucle peut être enlever si on affiche pas les autres mots possibles 
+    // 
 
-        // Construire la chaîne des synonymes entre parenthèses
-        $synonymes = implode(', ', $synonymesArray);
+    // foreach ($motsAssocies as $mot => $data) {
+    //     $definition = $data['definition'];
+    //     $synonyme = $data['synonymes'];
+    //     $synonymesArray = explode(',', $synonyme); // Convertir la chaîne de synonymes en tableau
 
-        echo "<li><strong>$mot $synonymes :</strong> $definition</li>";
-    }
+    //     // Construire la chaîne des synonymes entre parenthèses
+    //     $synonymes = implode(', ', $synonymesArray);
+
+    //     echo "<li><strong>$mot $synonymes :</strong> $definition</li>";
+    // }
 
 }
+
 // dans le cas ou c'est un mot et où l'on récupère def + syn
 else {
     if (isset($_SESSION['mot'])) {
@@ -33,9 +42,25 @@ else {
         $definition = $_SESSION['def'];
         $synonymes = $_SESSION['synonyme'];
 
+        if (isset($_SESSION['ressource'])) {
+            $ressource = $_SESSION['ressource'];
+
+            echo "<pre>";
+            var_dump($ressource);
+            echo "</pre>";
+
+            foreach ($ressource as $item) {
+                echo "Titre: " . $item['Titre'] . "\n";
+                echo "Catégorie: " . $item['Categorie'] . "\n\n";
+            }
+        }
+
         echo "<h2>$mot ($synonymes)</h2>";
         echo "<p>$definition</p>";
         echo $mot;
+
+        
+
     }
     // logiquement, dans le cas où ce n'est ni un synonyme, ni un mot
     else {
@@ -102,14 +127,14 @@ else {
 
     <section class="affichage d-flex flex-column">
         <!-- php pour le h1 -->
-        <h1>Les résultats pour : Balise</h1>
+        <h1>Les résultats pour : <?php echo $_SESSION['mot']; ?></h1>
         <p><?php echo $text; ?></p>
         <div class="container d-flex align-items-center">
             <!-- php pour les boites glossaire et ressource -->
             <div class="glossaire d-flex flex-column align-items-center">
                 <h2>Glossaire</h2>
                 <div class="def">
-                    <h3 class="fs-2"><?php echo "$mot ($synonymes) :"; ?></h3>
+                    <h3 class="fs-2"><?php echo "$mot ($synonymes)";?></h3>
                     <p class="fs-5">
                         <?php echo $definition; ?>
                     </p>
@@ -121,7 +146,7 @@ else {
 
             <div class="ressource d-flex flex-column align-items-center">
                 <h2 class="res-title">Ressource(s)</h2>
-                <div class="ressource-prop">
+                <!-- <div class="ressource-prop">
                     <div class="box d-flex flex-column align-items-center bg-white rounded-4 center-box">
                         <h3 class="fs-5">Utiliser Parcoursup</h3>
                         <h4 class="fs-6">Éducation</h4>
@@ -130,7 +155,7 @@ else {
                         </div>
                         <button>Consulter la ressource</button>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

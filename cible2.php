@@ -33,8 +33,8 @@ if (isset($_POST['mot'])) {
             $_SESSION['synonyme'] = $synonyme;
 
             // Afficher le mot et sa définition
-            echo "<h2>$mot ($synonyme)</h2>";
-            echo "<p>$definition</p>";
+            // echo "<h2>$mot ($synonyme)</h2>";
+            // echo "<p>$definition</p>";
 
             // Récupérer les ressources où le titre ou les mots-clés contiennent le mot saisi par l'utilisateur
             $sqlRessources = "SELECT * FROM ressource WHERE ";
@@ -45,20 +45,40 @@ if (isset($_POST['mot'])) {
             $statementRessources->execute();
             $ressources = $statementRessources->fetchAll(PDO::FETCH_ASSOC);
 
-            echo "<pre>";
-            var_dump($ressources);
-            echo "</pre>";
+            // echo "<pre>";
+            // var_dump($ressources);
+            // echo "</pre>";
 
             // Afficher les ressources trouvées
             if ($ressources) {
-                echo "<h2>Ressources associées :</h2>";
-                echo "<ul>";
+                $ressource_tab = array();
+                // echo "<h2>Ressources associées :</h2>";
+                // echo "<ul>";
                 foreach ($ressources as $ressource) {
-                    echo "<li>" . $ressource['Titre'] . "</li>";
+                    // echo "<li>" . $ressource['Titre'] . "</li>";
+                    $titre = $ressource['Titre'];
+                    $categorie = $ressource['Categorie'];
+                    $ressource_tab[] = array('Titre' => $titre, 'Categorie' => $categorie);
                 }
-                echo "</ul>";
+                // echo "</ul>";
+
+
+                // il faudrait faire une condition pour vérifier s'il y a des valeurs dans le tableau ressource_tab et faire la session
+                if(!empty($ressource_tab)) {
+                    $_SESSION['ressource'] = $ressource_tab;
+                }
+                else {
+                    echo "aucune ressource trouvée pour ce mot";
+                }
+
+
+
+                // stocker $titre dans une variable session
+                // $_SESSION['titre'] = $ressource_tab;
+
             } else {
                 echo "Aucune ressource trouvée pour le mot '$mot'";
+                
             }
         } else {
             // Si le mot n'est pas dans la table glossaire, vérifier s'il est un synonyme
@@ -78,21 +98,51 @@ if (isset($_POST['mot'])) {
                     $motsAssocies[$mot] = array('definition' => $definition, 'synonymes' => $synonymes);
                 }
 
+                // echo "<pre>";
+                // var_dump($motsAssocies);
+                // echo "</pre>";
+
+
+                // boucle pour récup le premier mot
+                foreach ($motsAssocies as $mot => $details) {
+                    $premierMot = $mot;
+                    $detailsPremierMot = $details;
+                    $_SESSION['mot'] = $mot;
+                    break; // Quitter la boucle après le premier élément
+                }
+
+                // boucle pour récup la définition et les synonymes dans des variables pour les mettres dans des sessions
+                foreach ($detailsPremierMot as $key => $value) {
+                    $definition = $detailsPremierMot['definition'];
+                    $synonyme = $detailsPremierMot['synonymes'];
+                }
+
+                // echo "le premier mot est $mot";
+                // echo "<br>";
+                // echo "sa définition est : $definition";
+                // echo "<br>";
+                // echo "ses synonymes sont : $synonyme";
+
+
                 // Stocker $motsAssocies dans une variable de session avec le mot et ses synonymes
                 $_SESSION['motsAssocies'] = $motsAssocies;
+                $_SESSION['definition'] = $definition;
+                $_SESSION['synonyme'] = $synonyme;
 
-                echo "<ul>";
-                foreach ($motsAssocies as $mot => $data) {
-                    $definition = $data['definition'];
-                    $synonymes = $data['synonymes'];
-                    $synonymesArray = explode(',', $synonymes);
 
-                    // Construire la chaîne des synonymes entre parenthèses
-                    $synonymesString = '(' . implode(', ', $synonymesArray) . ')';
+                // affichage des mots 
+                // echo "<ul>";
+                // foreach ($motsAssocies as $mot => $data) {
+                //     $definition = $data['definition'];
+                //     $synonymes = $data['synonymes'];
+                //     $synonymesArray = explode(',', $synonymes);
 
-                    echo "<li><strong>$mot $synonymesString :</strong> $definition</li>";
-                }
-                echo "</ul>";
+                //     // Construire la chaîne des synonymes entre parenthèses
+                //     $synonymesString = '(' . implode(', ', $synonymesArray) . ')';
+
+                //     echo "<li><strong>$mot $synonymesString :</strong> $definition</li>";
+                // }
+                // echo "</ul>";
 
                 // Préparer la requête SQL pour les ressources
                 $sqlRessources = "SELECT * FROM ressource WHERE Titre LIKE :mot OR Mot_cle LIKE :mot ";
@@ -117,21 +167,21 @@ if (isset($_POST['mot'])) {
                 $statementRessources->execute();
                 $ressources = $statementRessources->fetchAll(PDO::FETCH_ASSOC);
 
-                echo "<pre>";
-                var_dump($ressources);
-                echo "</pre>";
+                // echo "<pre>";
+                // var_dump($ressources);
+                // echo "</pre>";
 
                 // Afficher les ressources trouvées
-                if ($ressources) {
-                    echo "<h2>Ressources associées :</h2>";
-                    echo "<ul>";
-                    foreach ($ressources as $ressource) {
-                        echo "<li>" . $ressource['Titre'] . "</li>";
-                    }
-                    echo "</ul>";
-                } else {
-                    echo "Aucune ressource trouvée pour le mot '$mot'";
-                }
+                // if ($ressources) {
+                //     echo "<h2>Ressources associées :</h2>";
+                //     echo "<ul>";
+                //     foreach ($ressources as $ressource) {
+                //         echo "<li>" . $ressource['Titre'] . "</li>";
+                //     }
+                //     echo "</ul>";
+                // } else {
+                //     echo "Aucune ressource trouvée pour le mot '$mot'";
+                // }
             } else {
                 // Si le mot n'est ni un synonyme ni un mot de la table glossaire
                 header("Location: 404.php");
@@ -141,6 +191,7 @@ if (isset($_POST['mot'])) {
         // Redirection vers la page search.html
         header("Location: search.php");
         exit;
+        
     } catch (PDOException $e) {
         echo "Erreur de connexion à la base de données : " . $e->getMessage();
     }

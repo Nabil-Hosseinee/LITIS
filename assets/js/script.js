@@ -83,3 +83,12 @@ burgerMenuPhone.addEventListener('click', function() {
 
 
 
+
+
+// dyslexique
+var body = document.getElementById('body');
+var access = document.getElementById('access');
+
+access.addEventListener("click", function() {
+    body.classList.toggle('dys');
+});
