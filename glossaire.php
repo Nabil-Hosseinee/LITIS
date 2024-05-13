@@ -105,8 +105,8 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     </header>
 
     <section class="container title d-flex flex-column align-items-center">
-        <h1 class="fs-1">Glossaire</h1>
-        <p class="fs-5">Ici, vous pouvez accéder, apprendre et découvrir tous les termes en lien avec le web.</p>
+        <h1>Glossaire</h1>
+        <p class="fs-4">Ici, vous pouvez accéder, apprendre et découvrir tous les termes en lien avec le web.</p>
         <div class="big_search">
             <input type="text" id="big-search-input" placeholder="Rechercher...">
             <a href="#" aria-labelledby="search-input">
