@@ -10,26 +10,84 @@
     <title>Existence Numérique | Quiz</title>
 </head>
 <body>
-<div class="quiz-container">
-    <h1>Quiz sur les capitales du monde</h1>
-    <div id="question-container">
-        <div id="question1" class="question">
-            <p>Quelle est la capitale de la France ?</p>
-            <input type="radio" name="question1" value="Paris"> Paris<br>
-            <input type="radio" name="question1" value="Berlin"> Berlin<br>
-            <input type="radio" name="question1" value="Londres"> Londres<br>
-            <button id="next-btn">Suivant</button>
+    <div class="quiz-container">
+        <h1>Quiz sur les démarches en ligne</h1>
+        <div id="question-container">
+            <div id="question1" class="question">
+                <p>Quelles sont les étapes pour effectuer une démarche en ligne selon le contenu fourni ?</p>
+                <input type="radio" name="question1" value="a"> a) Identification de la démarche<br>
+                <input type="radio" name="question1" value="b"> b) Accès à la page de démarche<br>
+                <input type="radio" name="question1" value="c"> c) Préparation des informations<br>
+                <input type="radio" name="question1" value="d"> d) Début de la démarche<br>
+            </div>
+            <div id="question2" class="question" style="display: none;">
+                <p>Comment accéder à la page de démarche après avoir identifié le service souhaité ?</p>
+                <input type="radio" name="question2" value="a"> a) Cliquer sur "Commencer la démarche"<br>
+                <input type="radio" name="question2" value="b"> b) Télécharger les documents nécessaires<br>
+                <input type="radio" name="question2" value="c"> c) Cliquer sur "Aide en ligne"<br>
+                <input type="radio" name="question2" value="d"> d) Contacter le service clientèle<br>
+            </div>
+            <div id="question3" class="question" style="display: none;">
+                <p>Quels sont les types d'informations et de documents que vous devez préparer avant de commencer une démarche en ligne ?</p>
+                <input type="radio" name="question3" value="a"> a) Carte de crédit et mot de passe<br>
+                <input type="radio" name="question3" value="b"> b) Pièces d'identité, relevés bancaires, justificatifs de domicile<br>
+                <input type="radio" name="question3" value="c"> c) Code de vérification par SMS<br>
+                <input type="radio" name="question3" value="d"> d) Adresse e-mail et numéro de téléphone<br>
+            </div>
+            <div id="question4" class="question" style="display: none;">
+                <p>Quelles sont les étapes pour remplir un formulaire en ligne de manière efficace ?</p>
+                <input type="radio" name="question4" value="a"> a) Télécharger les documents requis<br>
+                <input type="radio" name="question4" value="b"> b) Cliquer sur "Suivant" ou "Créer un compte"<br>
+                <input type="radio" name="question4" value="c"> c) Vérifier les informations avant de soumettre<br>
+                <input type="radio" name="question4" value="d"> d) Utiliser le format incorrect pour les données<br>
+            </div>
+            <div id="question5" class="question" style="display: none;">
+                <p>Comment utiliseriez-vous le gestionnaire de fichiers pour trouver un document spécifique sur votre ordinateur ?</p>
+                <input type="radio" name="question5" value="a"> a) Créer un nouveau dossier<br>
+                <input type="radio" name="question5" value="b"> b) Sélectionner tous les fichiers<br>
+                <input type="radio" name="question5" value="c"> c) Utiliser la fonction de recherche<br>
+                <input type="radio" name="question5" value="d"> d) Copier et coller des fichiers<br>
+            </div>
+            <div id="question6" class="question" style="display: none;">
+                <p>Quelles sont les étapes pour créer un dossier sur un Mac selon le contenu fourni ?</p>
+                <input type="radio" name="question6" value="a"> a) Ouvrir le Finder, choisir l'emplacement, créer le dossier<br>
+                <input type="radio" name="question6" value="b"> b) Ouvrir le Gestionnaire de Fichiers, cliquer sur "Nouveau dossier"<br>
+                <input type="radio" name="question6" value="c"> c) Naviguer vers "Téléchargements" et créer un dossier<br>
+                <input type="radio" name="question6" value="d"> d) Copier un dossier existant et le renommer<br>
+            </div>
+            <div id="question7" class="question" style="display: none;">
+                <p>Pouvez-vous décrire comment créer un dossier sur un système Windows ?</p>
+                <input type="radio" name="question7" value="a"> a) Accéder à l'Explorateur de Fichiers, choisir l'emplacement, créer le dossier<br>
+                <input type="radio" name="question7" value="b"> b) Ouvrir le Finder, naviguer vers l'emplacement souhaité, créer le dossier<br>
+                <input type="radio" name="question7" value="c"> c) Copier un fichier et le déplacer vers un nouvel emplacement<br>
+                <input type="radio" name="question7" value="d"> d) Utiliser le bureau comme emplacement par défaut pour tous les dossiers<br>
+            </div>
+            <div id="question8" class="question" style="display: none;">
+                <p>Quels sont les principaux paramètres à vérifier lors de la gestion des cookies dans votre navigateur web ?</p>
+                <input type="radio" name="question8" value="a"> a) Taille de la police et couleur de fond<br>
+                <input type="radio" name="question8" value="b"> b) Permissions de la caméra et du microphone<br>
+                <input type="radio" name="question8" value="c"> c) Autorisation d'accès aux emplacements<br>
+                <input type="radio" name="question8" value="d"> d) Préférences de confidentialité et de sécurité<br>
+            </div>
+            <div id="question9" class="question" style="display: none;">
+                <p>Comment mettre à jour votre système d'exploitation Windows selon les instructions fournies ?</p>
+                <input type="radio" name="question9" value="a"> a) Accéder aux paramètres du navigateur<br>
+                <input type="radio" name="question9" value="b"> b) Vérifier les mises à jour dans "Mise à jour et Sécurité"<br>
+                <input type="radio" name="question9" value="c"> c) Cliquer sur "Redémarrer" pour terminer l'installation<br>
+                <input type="radio" name="question9" value="d"> d) Utiliser un outil de numérisation de QR code<br>
+            </div>
+            <div id="question10" class="question" style="display: none;">
+                <p>Pouvez-vous expliquer comment scanner un QR code selon les étapes fournies ?</p>
+                <input type="radio" name="question10" value="a"> a) Télécharger un document spécifique<br>
+                <input type="radio" name="question10" value="b"> b) Utiliser l'application de scanner QR code<br>
+                <input type="radio" name="question10" value="c"> c) Accéder à la page de démarche<br>
+                <input type="radio" name="question10" value="d"> d) Créer un compte Google à partir de zéro<br>
+            </div>
         </div>
-        <div id="question2" class="question" style="display: none;">
-            <p>Quelle est la capitale de l'Espagne ?</p>
-            <input type="radio" name="question2" value="Madrid"> Madrid<br>
-            <input type="radio" name="question2" value="Rome"> Rome<br>
-            <input type="radio" name="question2" value="Lisbonne"> Lisbonne<br>
-            <button id="submit-btn">Soumettre</button>
-        </div>
+        <div id="result"></div>
+        <button id="next-btn">Suivant</button>
+        <button id="submit-btn" style="display: none;">Soumettre</button>
     </div>
-    <div id="result"></div>
-</div>
 
 <script src="./assets/js/quiz.js"></script>
 </body>
