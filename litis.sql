@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 06 mai 2024 à 10:36
+-- Généré le : lun. 13 mai 2024 à 09:14
 -- Version du serveur : 10.4.32-MariaDB
 -- Version de PHP : 8.0.30
 
@@ -299,7 +299,7 @@ CREATE TABLE `ressource` (
   `Id_ressource` int(11) NOT NULL,
   `Titre` varchar(100) NOT NULL,
   `Categorie` varchar(50) NOT NULL,
-  `Mot_cle` varchar(100) NOT NULL,
+  `Mot_cle` varchar(1500) NOT NULL,
   `Image` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -308,10 +308,55 @@ CREATE TABLE `ressource` (
 --
 
 INSERT INTO `ressource` (`Id_ressource`, `Titre`, `Categorie`, `Mot_cle`, `Image`) VALUES
-(1, 'Utilisation des balises PHP', 'Base d\'internet', 'Étiquette, marqueur', ''),
-(2, 'Utilisation des balises HTML', 'Base d\'internet', 'Étiquette, signet', ''),
-(3, 'Qu\'est-ce qu\'une adresse IP ?', 'Base d\'internet', 'Adresse Internet', ''),
-(4, 'Comment me procurer une adresse IP', 'Base d\'internet', 'IP Address, Adresse Internet', '');
+(103, 'Faire une démarche en ligne', 'Bases d\'internet', '', ''),
+(104, 'Utilisation du gestionnaire de fichier', 'Bases d\'internet', 'Bureau, interface utilisateur, Écran d\'accueil, Espace de travail, Desktop, Tableau de bord, Compresser, Compression de données, réduire la taille, zip, zipper, Dossier, Répertoire, classeur, dossier de fichiers, Folder, Extension, add-on, complément, module, format, format de fichier, type, type de fichier, suffixe, suffixe de fichier, Exporter, Transférer, sauvegarder, convertir, Fichier, Document, dossier, fichier informatique, FTP, File Transfer Protocol, transfert, protocole, fichier, Gestionnaire de fichier, Explorateur de fichier, gestionnaire de dossier, file manager, Glisser/déposer, Drag and drop, Déplacer et déposer, Importer, Charger, récupérer, recevoir, Partage, Envoi de fichiers, collaboration, Sharing, Directory, Téléversement, Transfert de fichier, upload, Copier - Coller, insérer, transférer', ''),
+(105, 'Création de dossier Mac', 'Bases d\'internet', 'Mac, Macintosh, ordinateur Apple, Bureau, interface utilisateur, Écran d\'accueil, Espace de travail, Desktop, Tableau de bord, Compresser, Compression de données, réduire la taille, zip, zipper, Dossier, Répertoire, classeur, dossier de fichiers, Folder, Extension, add-on, complément, module, format, format de fichier, type, type de fichier, suffixe, suffixe de fichier, Exporter, Transférer, sauvegarder, convertir, Fichier, Document, dossier, fichier informatique, FTP, File Transfer Protocol, transfert, protocole, fichier, Gestionnaire de fichier, Explorateur de fichier, gestionnaire de dossier, file manager, Glisser/déposer, Drag and drop, Déplacer et déposer, Importer, Charger, récupérer, recevoir, Partage, Envoi de fichiers, collaboration, Sharing, Directory, Téléversement, Transfert de fichier, upload', ''),
+(106, 'Création de dossier Windows', 'Bases d\'internet', 'Windows, Système d\'exploitation Windows, Plateforme Windows, Environnement Windows, Bureau, interface utilisateur, Écran d\'accueil, Espace de travail, Desktop, Tableau de bord, Compresser, Compression de données, réduire la taille, zip, zipper, Dossier, Répertoire, classeur, dossier de fichiers, Folder, Extension, add-on, complément, module, format, format de fichier, type, type de fichier, suffixe, suffixe de fichier, Exporter, Transférer, sauvegarder, convertir, Fichier, Document, dossier, fichier informatique, FTP (File Transfer Protocol), transfert, protocole, fichier, Gestionnaire de fichier, Explorateur de fichier, gestionnaire de dossier, file manager, Glisser/déposer, Drag and drop, Déplacer et déposer, Importer, Charger, récupérer, recevoir, Partage, Envoi de fichiers, collaboration, Sharing, Directory, Téléversement, Transfert de fichier, upload', ''),
+(107, 'Compresser un dossier', 'Bases d\'internet', 'Bureau, interface utilisateur, Écran d\'accueil, Espace de travail, Desktop, Tableau de bord, Compresser, Compression de données, réduire la taille, zip, zipper, Dossier, Répertoire, classeur, dossier de fichiers, Folder, Extension, add-on, complément, module, format, format de fichier, type, type de fichier, suffixe, suffixe de fichier, Exporter, Transférer, sauvegarder, convertir, Fichier, Document, dossier, fichier informatique, FTP (File Transfer Protocol), transfert, protocole, fichier, Gestionnaire de fichier, Explorateur de fichier, gestionnaire de dossier, file manager, Glisser/déposer, Drag and drop, Déplacer et déposer, Importer, Charger, récupérer, recevoir, Partage, Envoi de fichiers, collaboration, Sharing, Directory, Téléversement, Transfert de fichier, upload', ''),
+(108, 'Récupération des fichiers téléchargés', 'Bases d\'internet', 'Téléchargement, Téléchargement de fichiers, rapatriement, transfert de données, download', ''),
+(109, 'Gestion du stockage', 'Bases d\'internet', 'Stockage, Archivage, conservation, sauvegarde, Storage', ''),
+(110, 'Mettre à jour Windows', 'Bases d\'internet', 'Windows, Système d\'exploitation Windows, Plateforme Windows, Environnement Windows', ''),
+(111, 'Les raccourcis Windows', 'Bases d\'internet', 'Windows, Système d\'exploitation Windows, Plateforme Windows, Environnement Windows, Raccourci, Raccourci clavier, raccourci d\'accès, Shortcut, Qwerty, Agencement de touches QWERTY, Azerty, Agencement de touches AZERTY, Clavier, dispositif de saisie, outil', ''),
+(112, 'Les raccourcis Mac', 'Bases d\'internet', 'Mac, Macintosh, ordinateur Apple, Raccourci, Raccourci clavier, raccourci d\'accès, Shortcut, Qwerty, Agencement de touches QWERTY, Azerty, Agencement de touches AZERTY, Clavier, dispositif de saisie, outil', ''),
+(113, 'Création d’un compte google', 'Bases d\'internet', '', ''),
+(114, 'Présentation d’une page web type', 'Bases d\'internet', 'Lien, URL, Link, Lien hypertexte, Hyperlink, hyperlien, Onglet, Tabulation, onglette, onglet de navigation', ''),
+(115, 'Remplir un formulaire', 'Bases d\'internet', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, objet, titre, sujet, intitulé, description, rubrique, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password, Caractère, Symbole, lettre, chiffre, signe, élément graphique, Chaîne de caractères, Texte, suite de caractères, séquence de caractères', ''),
+(116, 'Faire une bonne recherche sur un moteur de recherche', 'Bases d\'internet', 'Recherche, Search, recherche en ligne, Moteur de recherche, Mode de recherche, outil de recherche, Search engine, Mot-clé, Terme-clé, expression-clé, Keyword, URL, Adresse web, lien URL, Uniform Resource Locator, Historique, Journal, registre, Onglet, Tabulation, onglette, onglet de navigation', ''),
+(117, 'Gestion des cookies', 'Bases d\'internet', 'Cookie, Témoin, connexion, suivie, traceur, web', ''),
+(118, 'Faire une capture d’écran', 'Bases d\'internet', '', ''),
+(119, 'Numériser un document', 'Bases d\'internet', 'Numériser, Scanner, Convertir en format numérique, Digitaliser, Transformer en données numériques, PDF, Format PDF, fichier PDF, Portable Document Format, Numériseur, scanneur, appareil de numérisation', ''),
+(120, 'Scan d’un QR code', 'Bases d\'internet', 'Qr code, Code QR, code à réponse rapide, Quick Response Code', ''),
+(121, 'Les différentes formes de curseur', 'Bases d\'internet', 'Curseur, Pointeur, Indicateur, repère, repère visuel', ''),
+(122, 'Les principales extensions', 'Bases d\'internet', '', ''),
+(123, 'Les périphériques + composants d’un pc ???????????', 'Bases d\'internet', 'Le matériel informatique, Carte graphique, GPU, carté vidéo, adaptateur graphique, Carte mémoire, carte SD, carte flash, stockage amovible, Carte son, carte audio, périphérique audio, Clavier, dispositif de saisie, outil, CPU, Processeur, unité de traitement, microprocesseur, Unité Centrale de Traitement, Ecran, Moniteur, affichage, ordinateur, Fibre Optique, Câble, câble optique, réseau, réseau optique, transmission, Hôte, Host, serveur, Jack, Connecteur audio, prise jack, Machine, Appareil, dispositif, Matériel informatique, Hardware, composants physiques, Mémoire vive, Random Access Memory (RAM), mémoire système, Microprocesseur, CPU, processeur, Microprocessor, Molette, Roulette, bouton de défilement, Scroll wheel, Moniteur, Écran, afficheur, Monitor, Périphérique, Équipement externe, périphérique informatique, Peripheral, Pixel, Point, élément d\'image, Port USB, Universal Serial Bus, USB port, Souris, Dispositif de pointage, souris d\'ordinateur, pointeur, Mouse, Tactile, Écran tactile, tactile touchscreen, Tablette, Tablette électronique, tablette numérique, tablet, Souris, Dispositif de pointage, souris d\'ordinateur, pointeur, Mouse', ''),
+(124, 'Créer un compte Ubiclic', 'Bases d\'internet', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', ''),
+(125, 'Créer un compte Ameli', 'Santé', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', ''),
+(126, 'Prendre un rendez-vous sur Doctolib', 'Santé', 'Widget, Gadgets, composant, élément d\'interface', ''),
+(127, 'Effectuer une consultation vidéo sur Doctolib', 'Santé', '', ''),
+(128, 'Réaliser des démarches de base sur le site Ameli', 'Santé', '', ''),
+(129, 'Commander ses médicaments en pharmacie en ligne', 'Santé', '', ''),
+(130, 'Création de mot de passe sécurisé', 'Santé', 'Mot de passe, Code secret, clé d\'accès, Password, Authentification, Vérification, validation, identification, Authentication, Gestionnaire de mot de passe, Gestionnaire d’authentification, coffre-fort des mots de passe, password manager, Caractère, Symbole, lettre, chiffre, signe, élément graphique, Chaîne de caractères, Texte, suite de caractères, séquence de caractères, ASCII, Code ASCII, jeu de caractères ASCII', ''),
+(131, 'Récupérer un mot de passe oublié', 'Sécurité', 'Mot de passe, Code secret, clé d\'accès, Password, Authentification, Vérification, validation, identification, Authentication, Gestionnaire de mot de passe, Gestionnaire d’authentification, coffre-fort des mots de passe, password manager, Caractère, Symbole, lettre, chiffre, signe, élément graphique, Chaîne de caractères, Texte, suite de caractères, séquence de caractères, ASCII, Code ASCII, jeu de caractères ASCII', ''),
+(132, 'Sensibilisation aux menaces en ligne', 'Sécurité', 'Hameçonnage, Filoutage, Phishing, Antivirus, Logiciel de sécurité, programme antivirus, Blacklist, Liste noir, répertoire d’exclusion, index négatif Cybersécurité, Sécurité, informatique, protection, défense, Pirate informatique, Pare-feu, coupe-feu, Firewall, Vulnérabilité, Faille de sécurité, point faible, vulnerability, Logiciel malveillant, Malware, programme malveillant, Virus, malware, Clickbait, contenu accrocheur, appât, Cryptographie, Chiffrement, codage, science, code, code-secret', ''),
+(133, 'Navigation sécurisée sur internet', 'Sécurité', 'Recherche, Search, recherche en ligne, Moteur de recherche, Mode de recherche, outil de recherche, Search engine, Mot-clé, Terme-clé, expression-clé, Keyword, HTTP, Hypertext Transfer Protocol, Protocole de transfert hypertexte, Clickbait, contenu accrocheur, appât, Cryptographie, Chiffrement, codage, science, code, code-secret', ''),
+(134, 'Gestion des comptes en ligne', 'Sécurité', '', ''),
+(135, 'Sécurité des achats en ligne', 'Sécurité', 'Télépaiement, Paiement en ligne, paiement électronique, paiement à distance, online payment', ''),
+(136, 'Sécurité des réseaux sociaux (les bonnes habitudes)', 'Sécurité', 'Cyberharcèlement, Harcèlement, intimidation, cyberintimidation', ''),
+(137, 'Consultation et usage d’une boîte mail', 'Sécurité', 'Mail, Courrier électronique, E-mail, message électronique, courriel, objet, titre, sujet, intitulé, description, rubrique', ''),
+(138, 'Joindre un fichier par mail', 'Communication', 'Mail, Courrier électronique, E-mail, message électronique, courriel, objet, titre, sujet, intitulé, description, rubrique', ''),
+(139, 'Utiliser une plateforme de communication à distance (Zoom etc…)', 'Communication', 'Visioconférence, Conférence vidéo, vidéoconférence, visioconférence, video conference, Présentation, Exposé, Discours, Exposition, diapositive, diapo, Présentation visuelle, Webcam, Caméra web, caméra Internet', ''),
+(140, 'Utilisation de TeamViewer', 'Communication', '', ''),
+(141, 'Faire un post Instagram', 'Communication', 'Buzz, Célèbre, Troll, Provocateur, agitateur, Tweet, Message Twitter, publication, Follower, Abonné, suiveur, Fan, Emoji, émoticône, pictogramme, Influenceur, Personne influente, leader d\'opinion, influenceur numérique, Influencer, Hashtag, Mot-clic, mot-dièse, Réseau social, Media social, site de réseautage social, Commentaire, Remarque, observation, note, réaction', ''),
+(142, 'Trouver un truc lié aux messages (ex : programmer un message)', 'Communication', 'Chat, Messagerie instantanée, discussion en ligne, tchat, GIF, Format graphique interchange, Format d\'image animée, Graphics Interchange Format, format d’échange d’images, Messagerie, Service de messagerie, système de messagerie, Messaging, SMS, Texto, message texte, texto, Short Message Service', ''),
+(143, 'Créer un compte CAF', 'Administratif', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', ''),
+(144, 'Créer un compte Pôle Emploi (Emploi Travail)', 'Administratif', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', ''),
+(145, 'Créer un compte sur impôt.gouv.fr', 'Administratif', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', ''),
+(146, 'Créer un compte ANTS', 'Administratif', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', ''),
+(147, 'Prendre un rendez-vous avec sa CAF', 'Administratif', 'Widget, Gadgets, composant, élément d\'interface', ''),
+(148, 'Prendre un rendez-vous avec Pôle Emploi', 'Administratif', 'Widget, Gadgets, composant, élément d\'interface', ''),
+(149, 'Réviser avec votre enfant', 'Éducation', 'E-learning, Apprentissage, apprentissage en ligne, formation, formation à distance, enseignement, enseignement virtuel', ''),
+(150, 'Utilisation et fonctionnement de parcoursup', 'Éducation', '', ''),
+(151, 'Accéder à l’ENT', 'Éducation', 'ENT, plateforme, éducation, espace, espace numérique, Environnement Numérique de Travail, E-learning, Apprentissage, apprentissage en ligne, formation, formation à distance, enseignement, enseignement virtuel', '');
 
 --
 -- Index pour les tables déchargées
@@ -343,7 +388,7 @@ ALTER TABLE `glossaire`
 -- AUTO_INCREMENT pour la table `ressource`
 --
 ALTER TABLE `ressource`
-  MODIFY `Id_ressource` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id_ressource` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=152;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
