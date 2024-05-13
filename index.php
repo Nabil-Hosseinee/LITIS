@@ -163,7 +163,7 @@ session_start();
         <div class="container">
             <div class="big-box col-xl-12 d-flex justify-content-between align-items-center rounded-4 desapear-576">
                 <div class="big-box-img col-xl-5 rounded-4">
-                    <img class="img-fluid rounded" src="./assets/images/miniatures/minia_doctolib.png" alt="Miniature de la vidéo nommée 'Prendre un rendez-vous sur Doctolib'">
+                    <img class="img-fluid rounded" src="./assets/images/miniatures/santé/minia_doctolib.png" alt="Miniature de la vidéo nommée 'Prendre un rendez-vous sur Doctolib'">
                 </div>
                 <div class="big-box-content col-6">
                     <h3>Prendre un rendez-vous sur Doctolib</h3>
@@ -178,9 +178,9 @@ session_start();
             <div class="container box-container d-flex justify-content-between">
                 <div class="box d-flex flex-column align-items-center rounded-4">
                     <h4 class="fs-5">Créer un mot de passe sécurisé</h4>
-                    <h3 class="fs-6">Base d'Internet</h3>
+                    <h3 class="fs-6">Sécurité</h3>
                     <div class="img rounded-4">
-                        <img class="img-fluid rounded" src="./assets/images/miniatures/minia_crea_mdp.png" alt="Miniature de la vidéo nommée 'Créer un mot de passe sécurisé'">
+                        <img class="img-fluid rounded" src="./assets/images/miniatures/sécurité/minia_crea_mdp.png" alt="Miniature de la vidéo nommée 'Créer un mot de passe sécurisé'">
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
@@ -192,7 +192,7 @@ session_start();
                     <h4 class="fs-5">Utiliser Parcoursup</h4>
                     <h3 class="fs-6">Éducation</h3>
                     <div class="img rounded-4">
-                        <img class="img-fluid rounded" src="./assets/images/miniatures/minia_parcoursup.png" alt="Miniature de la vidéo nommée 'Utiliser Parcoursup'">
+                        <img class="img-fluid rounded" src="./assets/images/miniatures/éducation/minia_parcoursup.png" alt="Miniature de la vidéo nommée 'Utiliser Parcoursup'">
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
@@ -204,7 +204,7 @@ session_start();
                     <h4 class="fs-5">Créer un compte Google</h4>
                     <h3 class="fs-6">Base d'Internet</h3>
                     <div class="img rounded-4">
-                        <img class="img-fluid rounded" src="./assets/images/miniatures/minia_crea_google.png" alt="Miniature de la vidéo nommée 'Créer un compte Google'">
+                        <img class="img-fluid rounded" src="./assets/images/miniatures/internet/minia_crea_google.png" alt="Miniature de la vidéo nommée 'Créer un compte Google'">
                     </div>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.

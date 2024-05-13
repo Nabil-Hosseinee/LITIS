@@ -1,95 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
-        <link rel="stylesheet" href="./assets/css/general.css">
-        <link rel="stylesheet" href="./assets/css/quiz.css">
-        <script src="https://cdn.lordicon.com/lordicon.js"></script>
-        <title>Existence Numérique | Quiz</title>
-    </head>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/general.css">
+    <link rel="stylesheet" href="./assets/css/quiz.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <title>Existence Numérique | Quiz</title>
+</head>
 <body>
-    <div class="quiz-container">
-        <h1>Quiz sur les capitales du monde</h1>
-        <div id="question-container">
-            <div id="question1" class="question">
-                <p>Quelle est la capitale de la France ?</p>
-                <input type="radio" name="question1" value="Paris"> Paris<br>
-                <input type="radio" name="question1" value="Berlin"> Berlin<br>
-                <input type="radio" name="question1" value="Londres"> Londres<br>
-                <button id="next-btn btn">Suivant</button>
-            </div>
-            <div id="question2" class="question" style="display: none;">
-                <p>Quelle est la capitale de l'Espagne ?</p>
-                <input type="radio" name="question2" value="Madrid"> Madrid<br>
-                <input type="radio" name="question2" value="Rome"> Rome<br>
-                <input type="radio" name="question2" value="Lisbonne"> Lisbonne<br>
-                <button id="submit-btn btn">Soumettre</button>
-            </div>
+<div class="quiz-container">
+    <h1>Quiz sur les capitales du monde</h1>
+    <div id="question-container">
+        <div id="question1" class="question">
+            <p>Quelle est la capitale de la France ?</p>
+            <input type="radio" name="question1" value="Paris"> Paris<br>
+            <input type="radio" name="question1" value="Berlin"> Berlin<br>
+            <input type="radio" name="question1" value="Londres"> Londres<br>
+            <button id="next-btn">Suivant</button>
         </div>
-        <div id="result"></div>
+        <div id="question2" class="question" style="display: none;">
+            <p>Quelle est la capitale de l'Espagne ?</p>
+            <input type="radio" name="question2" value="Madrid"> Madrid<br>
+            <input type="radio" name="question2" value="Rome"> Rome<br>
+            <input type="radio" name="question2" value="Lisbonne"> Lisbonne<br>
+            <button id="submit-btn">Soumettre</button>
+        </div>
     </div>
+    <div id="result"></div>
+</div>
 
-    <script src="script.js"></script>
+<script src="./assets/js/quiz.js"></script>
 </body>
-
-<script>
-    var currentQuestion = 1;
-var totalQuestions = 2;
-var score = 0;
-
-document.getElementById("next-btn").addEventListener("click", function() {
-    var currentQuestionDiv = document.getElementById("question" + currentQuestion);
-    var nextQuestionDiv = document.getElementById("question" + (currentQuestion + 1));
-
-    // Vérifie si une réponse a été sélectionnée pour la question actuelle
-    var answer = currentQuestionDiv.querySelector('input[name="question' + currentQuestion + '"]:checked');
-    if (answer !== null) {
-        // Incrémente le score si la réponse est correcte
-        if (currentQuestion === 1 && answer.value === "Paris") {
-            score++;
-        }
-        if (currentQuestion === 2 && answer.value === "Madrid") {
-            score++;
-        }
-
-        // Cache la question actuelle et affiche la question suivante
-        currentQuestionDiv.style.display = "none";
-        if (currentQuestion < totalQuestions) {
-            nextQuestionDiv.style.display = "block";
-            currentQuestion++;
-        } else {
-            // Affiche le score si toutes les questions ont été répondues
-            var resultContainer = document.getElementById("result");
-            resultContainer.innerHTML = "Votre score est : " + score + "/" + totalQuestions;
-        }
-    } else {
-        alert("Veuillez sélectionner une réponse.");
-    }
-});
-
-document.getElementById("submit-btn").addEventListener("click", function() {
-    var currentQuestionDiv = document.getElementById("question" + currentQuestion);
-
-    // Vérifie si une réponse a été sélectionnée pour la question actuelle
-    var answer = currentQuestionDiv.querySelector('input[name="question' + currentQuestion + '"]:checked');
-    if (answer !== null) {
-        // Incrémente le score si la réponse est correcte
-        if (currentQuestion === 1 && answer.value === "Paris") {
-            score++;
-        }
-        if (currentQuestion === 2 && answer.value === "Madrid") {
-            score++;
-        }
-
-        // Affiche le score
-        var resultContainer = document.getElementById("result");
-        resultContainer.innerHTML = "Votre score est : " + score + "/" + totalQuestions;
-    } else {
-        alert("Veuillez sélectionner une réponse.");
-    }
-});
-
-</script>
 </html>
