@@ -13,19 +13,20 @@ session_start();
     <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="https://kit.fontawesome.com/96e027db6d.js" crossorigin="anonymous"></script>
     <title>Existence Numérique | Accueil</title>
   </head>
 
-  <body>
+  <body id="body">
     <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
             <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique">
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
-                <li><a class="active fs-4 menu__link fw-semibold" href="index.php">Accueil</a></li>
-                <li><a class="fs-4 menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-4 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                <li><a class="active fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="about.html">A propos</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
             </ul>
         </nav>
 
@@ -96,6 +97,12 @@ session_start();
                 </a>
             </div>
     </header>
+
+
+    <!-- accessibilité -->
+    <div id="access" class="access d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-eye-low-vision"></i>
+    </div>
 
 
     <!-- presentation -->

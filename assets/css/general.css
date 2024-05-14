@@ -1,6 +1,8 @@
 /* général */
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
 
+@import url('https://fonts.cdnfonts.com/css/open-dyslexic');
+
 :root {
     --gris-clair : #F4F4F4;
     --violet: #7A1897;
@@ -13,6 +15,20 @@
     --communication: #FF5276;
     --internet: #C841BB;
     --education: #FFD84C;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  overflow-x: hidden;
+}
+
+.dys {
+  font-family: 'Open-Dyslexic', sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  overflow-x: hidden; 
 }
 
 a {
