@@ -6,18 +6,24 @@ body {
 }
 
 .quiz-container {
-    max-width: 60vw;
+    max-width: 80vw;
     max-height: 60vh;
-    margin: 20%;
-    padding: 20px;
+    margin: auto;
+    margin-top: 10%;
+    padding: 200px;
     background-color: var(--gris-clair);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .quiz-container h1 {
     color: var(--violet);
     text-align: center;
+    margin-bottom: 5vh;
+    font-weight: 600;
 }
 
 .question {
@@ -33,7 +39,7 @@ body {
     margin-right: 5px;
 }
 
-.question button {
+button {
     padding: 10px 20px;
     background-color: var(--secondaire);
     color: white;
@@ -42,7 +48,7 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.question button:hover {
+button:hover {
     background-color: white;
     color: var(--secondaire);
     border: 2px solid var(--secondaire);
@@ -70,8 +76,25 @@ input[type="radio"] {
     top: 4px;
 }
 
-/* Style du bouton radio sélectionné */
 input[type="radio"]:checked {
-    border: 6px solid var(--secondaire); /* Changer la couleur et l'épaisseur de la bordure ici */
+    border: 5px solid var(--secondaire);
 }
-  
+
+
+.question label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+a {
+    display: flex;
+    justify-content: center;
+    margin-top: 2vh;
+    color: var(--violet);
+    font-weight: 600;
+}
+
+a:hover {
+    color: var(--secondaire);
+    transition: 2s;
+}

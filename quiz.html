@@ -11,7 +11,8 @@
 </head>
 <body>
     <div class="quiz-container">
-        <h1>Quiz sur les démarches en ligne</h1>
+        <div id="avancee" style="display: flex; justify-content: flex-end;"></div>
+        <h1>Quiz sur les bases d'internet</h1>
         <div id="question-container">
             <div id="question1" class="question">
                 <p>Quelles sont les étapes pour effectuer une démarche en ligne selon le contenu fourni ?</p>
@@ -84,10 +85,12 @@
                 <input type="radio" name="question10" value="d"> d) Créer un compte Google à partir de zéro<br>
             </div>
         </div>
+        <div id="score-container"><span id="score"></span></div>
         <div id="result"></div>
         <button id="next-btn">Suivant</button>
         <button id="submit-btn" style="display: none;">Soumettre</button>
     </div>
+    <a href="./index.php">Retour à l'accueil</a>
 
 <script src="./assets/js/quiz.js"></script>
 </body>

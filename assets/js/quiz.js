@@ -1,84 +1,103 @@
-var actQuestion = 1;
-var nbreQuestion = 10;
+// Définition des variables pour le score et le nombre total de questions
 var score = 0;
+var totalQuestions = 10;
+var questionsPosees = 0;
+var currentQuestion = 1; // Ajout de l'initialisation de currentQuestion
 
-document.getElementById("next-btn").addEventListener("click", function() {
-    var actQuestionDiv = document.getElementById("question" + actQuestion);
-    var proQuestionDiv = document.getElementById("question" + (actQuestion + 1));
 
-    // Vérifie si une réponse a été sélectionnée pour la question actuelle
-    var reponse = actQuestionDiv.querySelector('input[name="question' + actQuestion + '"]:checked');
-    if (reponse !== null) {
-        // Incrémente le score si la réponse est correcte
-        if (resultatQuestion(actQuestion, reponse.value)) {
-            score++;
-        }
+// Déclaration de la variable scoreContainer en tant que variable globale
+var scoreContainer = document.getElementById("score-container");
 
-        // Cache la question actuelle et affiche la question suivante
-        actQuestionDiv.style.display = "none";
-        if (actQuestion < nbreQuestion) {
-            proQuestionDiv.style.display = "block";
-            actQuestion++;
-            if (actQuestion === nbreQuestion) {
-                document.getElementById("next-btn").style.display = "none";
-                document.getElementById("submit-btn").style.display = "block";
-            }
-        }
-    } else {
-        alert("Veuillez sélectionner une réponse.");
-    }
-});
 
-document.getElementById("submit-btn").addEventListener("click", function() {
-    var actQuestionDiv = document.getElementById("question" + actQuestion);
+// Tableau des réponses correctes pour chaque question
+var correctAnswers = {
+    question1: "a",
+    question2: "a",
+    question3: "b",
+    question4: "c",
+    question5: "c",
+    question6: "a",
+    question7: "a",
+    question8: "d",
+    question9: "b",
+    question10: "b"
+};
 
-    // Vérifie si une réponse a été sélectionnée pour la question actuelle
-    var reponse = actQuestionDiv.querySelector('input[name="question' + actQuestion + '"]:checked');
-    if (reponse !== null) {
-        // Incrémente le score si la réponse est correcte
-        if (resultatQuestion(actQuestion, reponse.value)) {
-            score++;
-        }
 
-        // Affiche le score
-        var resultContainer = document.getElementById("result");
-        resultContainer.innerHTML = "Votre score est : " + score + "/" + nbreQuestion;
-        document.getElementById("submit-btn").style.display = "none";
-
-        // Vérifie si le score est de 10 et affiche un message de félicitations
-        if (score === 10) {
-            resultContainer.innerHTML += "<br><br>Bravo, vous avez eu toutes les bonnes réponses !";
-            // Vous pouvez ajouter du code ici pour afficher une image si vous le souhaitez
-        }
-    } else {
-        alert("Veuillez sélectionner une réponse.");
-    }
-});
-
-function resultatQuestion(numeroQuestion, userReponse) {
-    // Fonction pour vérifier si la réponse de l'utilisateur est correcte pour chaque question
-    switch(numeroQuestion) {
-        case 1:
-            return userReponse === "a";
-        case 2:
-            return userReponse === "a";
-        case 3:
-            return userReponse === "b";
-        case 4:
-            return userReponse === "c";
-        case 5:
-            return userReponse === "b";
-        case 6:
-            return userReponse === "a";
-        case 7:
-            return userReponse === "d";
-        case 8:
-            return userReponse === "b";
-        case 9:
-            return userReponse === "c";
-        case 10:
-            return userReponse === "b";
-        default:
-            return false;
-    }
+// Fonction pour mettre à jour le score affiché sur la page
+function updateScoreContainer() {
+    scoreContainer.textContent = "Votre score est : " + score + "/" + questionsPosees;
 }
+
+
+function updateAvanceeContainer() {
+    var avanceeContainer = document.getElementById("avancee");
+    avanceeContainer.textContent = "Question " + currentQuestion + "/" + totalQuestions;
+}
+
+
+// Mettre à jour le score affiché au chargement de la page
+updateAvanceeContainer();
+updateScoreContainer();
+
+
+// Gestionnaire d'événement pour le bouton "Suivant"
+document.getElementById("next-btn").addEventListener("click", function() {
+    var currentQuestionDiv = document.getElementById("question" + currentQuestion);
+    var nextQuestionDiv = document.getElementById("question" + (currentQuestion + 1));
+
+
+    var answer = currentQuestionDiv.querySelector('input[name="question' + currentQuestion + '"]:checked');
+    if (answer !== null) {
+        if (answer.value === correctAnswers["question" + currentQuestion]) {
+            score++;
+        }
+
+
+        currentQuestionDiv.style.display = "none";
+        if (currentQuestion < totalQuestions) {
+            nextQuestionDiv.style.display = "block";
+            currentQuestion++;
+            questionsPosees++;
+        } else {
+            var resultContainer = document.getElementById("result");
+            resultContainer.innerHTML = "Votre score est : " + score + "/" + totalQuestions;
+            scoreContainer.style.display = "none";
+            document.getElementById("next-btn").style.display = "none";
+        }
+
+
+        // Mettre à jour le score affiché sur la page après chaque question
+        updateScoreContainer();
+        updateAvanceeContainer();
+    } else {
+        alert("Veuillez sélectionner une réponse.");
+    }
+});
+
+
+
+
+// Gestionnaire d'événement pour le bouton "Soumettre"
+// document.getElementById("submit-btn").addEventListener("click", function() {
+//     var currentQuestionDiv = document.getElementById("question" + currentQuestion);
+
+
+//     var answer = currentQuestionDiv.querySelector('input[name="question' + currentQuestion + '"]:checked');
+//     if (answer !== null) {
+//         if (answer.value === correctAnswers["question" + currentQuestion]) {
+//             score++;
+//         }
+
+
+//         var resultContainer = document.getElementById("result");
+//         resultContainer.innerHTML = "Votre score est : " + score + "/" + totalQuestions;
+
+
+//         // Mettre à jour le score affiché sur la page après la soumission
+//         updateScoreContainer();
+//         updateAvanceeContainer();
+//     } else {
+//         alert("Veuillez sélectionner une réponse.");
+//     }
+// });
