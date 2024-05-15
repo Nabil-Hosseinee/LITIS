@@ -28,30 +28,7 @@ body {
     transform: translateY(0);
 }
 
-/* accessibilité */
-.access {
-    width: 80px;
-    height: 80px;
-    background-color: black;
-    position: fixed;
-    bottom: 30px;
-    right: 10px;
-    border-radius: 100%;
-    color: white;
-    transition: 0.5s ease;
-    cursor: pointer;
-    z-index: 999999999999999999999999999999999999999999;
-}
 
-.access i {
-    font-size: 30px;
-}
-
-.access:hover {
-    background-color: white;
-    border: 1px solid black;
-    color: black;
-}
 
 
 
@@ -199,7 +176,7 @@ h1 {
 /* section tuto */
 
 .tuto {
-    background-color: var(--blanc);
+    /* background-color: var(--blanc); */
     padding: 20vh;
 }
 

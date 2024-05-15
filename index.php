@@ -100,9 +100,31 @@ session_start();
 
 
     <!-- accessibilité -->
+    <!-- <div id="access" class="access d-flex justify-content-center align-items-center">
+        <i class="fa-solid fa-eye-low-vision"></i>
+    </div> -->
+
     <div id="access" class="access d-flex justify-content-center align-items-center">
         <i class="fa-solid fa-eye-low-vision"></i>
+        <div id="access-menu" class="access-menu">
+            <label class="switch mg">
+                <span>Changer l'écriture</span>
+                <input type="checkbox" class="font-toggle">
+                <span class="slider round"></span>
+            </label>
+            <label class="switch">
+                <span>Changer le contraste</span>
+                <input type="checkbox" class="bg-toggle">
+                <span class="slider round"></span>
+            </label>
+            <!-- <label class="switch">
+                <span>Changer Texte</span>
+                <input type="checkbox" class="text-toggle">
+                <span class="slider round"></span>
+            </label> -->
+        </div>
     </div>
+
 
 
     <!-- presentation -->
