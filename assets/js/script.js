@@ -1,5 +1,3 @@
-// test
-
 document.addEventListener('DOMContentLoaded', function () {
     // Fonction pour vérifier si un élément est visible dans la fenêtre
     function isElementInViewport(el) {
@@ -88,7 +86,22 @@ burgerMenuPhone.addEventListener('click', function() {
 // dyslexique
 var body = document.getElementById('body');
 var access = document.getElementById('access');
+var menu = document.getElementById('access-menu');
 
 access.addEventListener("click", function() {
-    body.classList.toggle('dys');
+    // body.classList.toggle('dys');
+    this.classList.toggle('expanded');
+    menu.classList.toggle('visible');
 });
+
+
+
+document.querySelector('.font-toggle').addEventListener('change', function() {
+    document.body.style.fontFamily = this.checked ? 'Open-Dyslexic' : 'Raleway';
+});
+
+document.querySelector('.bg-toggle').addEventListener('change', function() {
+    document.body.style.backgroundColor = this.checked ? 'black' : 'transparent' ;
+    document.body.style.color = this.checked ? 'white' : 'black' ;
+});
+

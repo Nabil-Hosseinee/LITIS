@@ -77,27 +77,3 @@ document.getElementById("next-btn").addEventListener("click", function() {
 
 
 
-
-// Gestionnaire d'événement pour le bouton "Soumettre"
-// document.getElementById("submit-btn").addEventListener("click", function() {
-//     var currentQuestionDiv = document.getElementById("question" + currentQuestion);
-
-
-//     var answer = currentQuestionDiv.querySelector('input[name="question' + currentQuestion + '"]:checked');
-//     if (answer !== null) {
-//         if (answer.value === correctAnswers["question" + currentQuestion]) {
-//             score++;
-//         }
-
-
-//         var resultContainer = document.getElementById("result");
-//         resultContainer.innerHTML = "Votre score est : " + score + "/" + totalQuestions;
-
-
-//         // Mettre à jour le score affiché sur la page après la soumission
-//         updateScoreContainer();
-//         updateAvanceeContainer();
-//     } else {
-//         alert("Veuillez sélectionner une réponse.");
-//     }
-// });
