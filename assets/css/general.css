@@ -403,8 +403,18 @@ footer {
 
 
 /* media queries */
+@media screen and (max-width: 1400px) {
+  header nav ul li {
+    margin: 0 50px;
+  }
+}
+
 @media screen and (max-width: 1200px) {
   /* header */
+  header {
+    padding: 0;
+  }
+
   header nav {
       display: block;
   }
@@ -427,6 +437,7 @@ footer {
 
 @media screen and (max-width: 992px) {
   /* header */
+
   header nav {
       display: none !important;
   }

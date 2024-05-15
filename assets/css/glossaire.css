@@ -108,3 +108,50 @@
   text-align: center;
   width: 100%; /* Assure que l'erreur est centrée relativement au conteneur .big_search */
 }
+
+
+
+/* Media queries */
+
+@media screen and (max-width:1200px) {
+  .mot-box{
+    min-height: 40vh;
+  }
+}
+
+@media screen and (max-width:992px) {
+  .mot-box{
+    min-height: 45vh;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .title p {
+    margin: 5vh 8vw 4vh 8vw;
+  }
+
+  .mot-box {
+    max-width: 80vw;
+    min-height: 20vh;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .title h1 {
+    font-size: 70px;
+  }
+
+  .title p {
+    font-size: 1.3rem !important;
+  }
+
+  .filtre {
+    justify-content: flex-start !important;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .title h1 {
+    font-size: 40px;
+  }
+}
