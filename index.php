@@ -20,7 +20,7 @@ session_start();
   <body id="body">
     <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
-            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique">
+            <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
@@ -30,20 +30,18 @@ session_start();
             </ul>
         </nav>
 
-        <div>
-            <form class="search" action="cible2.php" method="post">
-                <label for="search-input" class="visually-hidden">Rechercher</label>
-                <input id="search-input" name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
-                <a href="#" aria-label="Rechercher">
-                    <lord-icon class="icon"
-                        src="https://cdn.lordicon.com/unukghxb.json"
-                        trigger="loop"
-                        delay="2000"
-                        style="width:30px;height:30px">
-                    </lord-icon>
-                </a>
-            </form>
-        </div>
+        <form class="search" action="cible2.php" method="post">
+            <label for="search-input" class="visually-hidden">Rechercher</label>
+            <input id="search-input" name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
+            <a href="#" aria-label="Rechercher">
+                <lord-icon class="icon"
+                    src="https://cdn.lordicon.com/unukghxb.json"
+                    trigger="loop"
+                    delay="2000"
+                    style="width:30px;height:30px">
+                </lord-icon>
+            </a>
+        </form>
 
         <div class="burger-active" id="burger-menu">
             <button>
@@ -65,7 +63,7 @@ session_start();
     <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
         <div class="header-container d-flex justify-content-around align-items-center">
             <div class="logo">
-                <img src="./assets/images/logo/Logo_principal.png" alt="Logo du site existence numérique">
+                <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
             </div>
             
             <div class="burger-active" id="burger-menu-phone">
@@ -79,31 +77,28 @@ session_start();
                 <ul>
                     <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
                     <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Ressources</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
                 </ul>
             </div>
         </div>
 
-        <div class="search">
-                <input type="text" id="search-input" placeholder="Rechercher...">
-                <a href="#" aria-labelledby="search-input">
-                    <lord-icon class="icon"
-                        src="https://cdn.lordicon.com/unukghxb.json"
-                        trigger="loop"
-                        delay="2000"
-                        style="width:30px;height:30px">
-                    </lord-icon>
-                    <span class="visually-hidden">Rechercher</span>
-                </a>
-            </div>
+        <form class="search" action="cible2.php" method="post">
+            <label for="search-input" class="visually-hidden">Rechercher</label>
+            <input type="text" id="search-input" placeholder="Rechercher...">
+            <a href="#" aria-labelledby="search-input">
+                <lord-icon class="icon"
+                    src="https://cdn.lordicon.com/unukghxb.json"
+                    trigger="loop"
+                    delay="2000"
+                    style="width:30px;height:30px">
+                </lord-icon>
+                <span class="visually-hidden">Rechercher</span>
+            </a>
+        </form>
     </header>
 
 
     <!-- accessibilité -->
-    <!-- <div id="access" class="access d-flex justify-content-center align-items-center">
-        <i class="fa-solid fa-eye-low-vision"></i>
-    </div> -->
-
     <div id="access" class="access d-flex justify-content-center align-items-center">
         <i class="fa-solid fa-eye-low-vision"></i>
         <div id="access-menu" class="access-menu">
