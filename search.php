@@ -16,22 +16,9 @@ if (isset($_SESSION['motsAssocies'])) {
     var_dump($motsAssocies);
     echo "</pre>";
 
-
-    // 
-    // La boucle peut être enlever si on affiche pas les autres mots possibles 
-    // 
-
-    // foreach ($motsAssocies as $mot => $data) {
-    //     $definition = $data['definition'];
-    //     $synonyme = $data['synonymes'];
-    //     $synonymesArray = explode(',', $synonyme); // Convertir la chaîne de synonymes en tableau
-
-    //     // Construire la chaîne des synonymes entre parenthèses
-    //     $synonymes = implode(', ', $synonymesArray);
-
-    //     echo "<li><strong>$mot $synonymes :</strong> $definition</li>";
-    // }
-
+    if (isset($_SESSION['ressource'])) {
+        $ressource = $_SESSION['ressource'];
+    }
 }
 
 // dans le cas ou c'est un mot et où l'on récupère def + syn
@@ -44,23 +31,7 @@ else {
 
         if (isset($_SESSION['ressource'])) {
             $ressource = $_SESSION['ressource'];
-
-            echo "<pre>";
-            var_dump($ressource);
-            echo "</pre>";
-
-            foreach ($ressource as $item) {
-                echo "Titre: " . $item['Titre'] . "\n";
-                echo "Catégorie: " . $item['Categorie'] . "\n\n";
-            }
         }
-
-        echo "<h2>$mot ($synonymes)</h2>";
-        echo "<p>$definition</p>";
-        echo $mot;
-
-        
-
     }
     // logiquement, dans le cas où ce n'est ni un synonyme, ni un mot
     else {
@@ -151,11 +122,32 @@ else {
                         <h3 class="fs-5">Utiliser Parcoursup</h3>
                         <h4 class="fs-6">Éducation</h4>
                         <div class="img rounded-4">
-                            <img class="img-fluid rounded" src="./assets/images/miniatures/minia_parcoursup.png" alt="">
+                            <img class="img-fluid rounded" src="./assets/images/miniatures/éducation/minia_parcoursup.png" alt="">
                         </div>
                         <button>Consulter la ressource</button>
                     </div>
                 </div> -->
+
+                <?php
+                    foreach ($ressource as $item) {
+                        $titre = $item['Titre'];
+                        $categorie = $item['Categorie'];
+                        $minia = $item['Image'];
+
+                        echo "
+                            <div class='ressource-prop'>
+                                <div class='box d-flex flex-column align-items-center bg-white rounded-4 center-box'>
+                                    <h3 class='fs-5'>$titre</h3>
+                                    <h4 class='fs-6'>$categorie</h4>
+                                    <div class='img rounded-4'>
+                                        <img class='img-fluid rounded' src='$minia' alt=''>
+                                    </div>
+                                    <button>Consulter la ressource</button>
+                                </div>
+                            </div>";
+                    }
+                ?>
+
             </div>
         </div>
     </section>
