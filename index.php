@@ -188,7 +188,7 @@ session_start();
                     <h3>Prendre un rendez-vous sur Doctolib</h3>
                     <h4>Santé</h4>
                     <p class="fs-5">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, possimus tenetur consequuntur nam fugit repellat...
+                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, possimus tenetur consequuntur nam fugit repellat... <br>
                         <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
                     </p>
                 </div>
@@ -202,7 +202,7 @@ session_start();
                         <img class="img-fluid rounded" src="./assets/images/miniatures/sécurité/minia_crea_mdp.png" alt="Miniature de la vidéo nommée 'Créer un mot de passe sécurisé'">
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae. <br>
                         <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
                     </p>
                 </div>
@@ -214,7 +214,7 @@ session_start();
                         <img class="img-fluid rounded" src="./assets/images/miniatures/éducation/minia_parcoursup.png" alt="Miniature de la vidéo nommée 'Utiliser Parcoursup'">
                     </div>
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae. <br>
                         <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
                     </p>
                 </div>

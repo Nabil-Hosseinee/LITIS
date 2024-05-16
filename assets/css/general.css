@@ -681,8 +681,8 @@ footer {
   height: 80px;
   background-color: white;
   position: fixed;
-  bottom: 30px;
-  right: 10px;
+  bottom: 40px;
+  left: 50px;
   border-radius: 100%;
   border: 2px solid var(--violet);
   color: black;
