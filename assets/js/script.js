@@ -101,7 +101,11 @@ document.querySelector('.font-toggle').addEventListener('change', function() {
 });
 
 document.querySelector('.bg-toggle').addEventListener('change', function() {
-    document.body.style.backgroundColor = this.checked ? 'black' : 'transparent' ;
-    document.body.style.color = this.checked ? 'white' : 'black' ;
+    if (this.checked) {
+        document.body.classList.add('accessibility-mode');
+        document.getElementById('search-input').classList.add('.accessibility-search-mode');
+    } else {
+        document.body.classList.remove('accessibility-mode');
+    }
 });
 

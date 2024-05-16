@@ -30,9 +30,9 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
-                <li><a class="active fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
                 <li><a class="fs-3 menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-3 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                <li><a class="active fs-3 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
             </ul>
         </nav>
 

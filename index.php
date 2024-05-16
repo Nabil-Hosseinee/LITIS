@@ -103,20 +103,15 @@ session_start();
         <i class="fa-solid fa-eye-low-vision"></i>
         <div id="access-menu" class="access-menu">
             <label class="switch mg">
-                <span>Changer l'écriture</span>
+                <span class="fw-bold color_v">Changer l'écriture</span>
                 <input type="checkbox" class="font-toggle">
                 <span class="slider round"></span>
             </label>
             <label class="switch">
-                <span>Changer le contraste</span>
+                <span class="fw-bold color_v">Changer le contraste</span>
                 <input type="checkbox" class="bg-toggle">
                 <span class="slider round"></span>
             </label>
-            <!-- <label class="switch">
-                <span>Changer Texte</span>
-                <input type="checkbox" class="text-toggle">
-                <span class="slider round"></span>
-            </label> -->
         </div>
     </div>
 
@@ -145,7 +140,7 @@ session_start();
 
 
     <!-- slogan -->
-    <div class="slogan d-flex justify-content-center align-items-center fade-in">
+    <div class="slogan d-flex justify-content-center align-items-center">
         <div class="circle d-flex justify-content-center align-items-center">
             <img src="./assets/images/illustration/quotes.svg" alt="">
         </div>
@@ -159,12 +154,12 @@ session_start();
 
     
     <!-- prb -->
-    <section class="prb fade-in">
+    <section class="prb">
         <h2 class="fs-1 fw-bold">
             Quelle est notre <span class="color_v">mission</span> ?
         </h2>
         <div class="container prb-container d-flex flex-column align-items-center">
-            <img class="col-xl-12 img-fluid" src="./assets/images/illustration/mission.png" alt="Illustration des missions, une personne vise une cible avec une fléchette">
+            <img class="col-xl-12 img-fluid" src="./assets/images/illustration/mission2.png" alt="Illustration des missions, une personne vise une cible avec une fléchette">
             <p class="col-xl-12 fs-3 fw-medium">
                 Nous nous engageons à rendre le monde numérique accessible à tous.
                 <br>
@@ -179,7 +174,7 @@ session_start();
 
 
     <!-- tuto -->
-    <section class="tuto fade-in">
+    <section class="tuto">
         <h2 class="fs-1 fw-bold">
             Les <span class="color_v">tutoriels</span> à la une
         </h2>
