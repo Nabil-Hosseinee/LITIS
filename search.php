@@ -8,13 +8,13 @@ if (isset($_SESSION['motsAssocies'])) {
     $definition = $_SESSION['definition'];
     $synonymes = $_SESSION['synonyme'];
 
-    echo "le dernier mot récupérer est $mot";
-    echo "</br>";
-    $text = "On a un synonyme";
+    // echo "le dernier mot récupérer est $mot";
+    // echo "</br>";
+    // $text = "On a un synonyme";
 
-    echo "<pre>";
-    var_dump($motsAssocies);
-    echo "</pre>";
+    // echo "<pre>";
+    // var_dump($motsAssocies);
+    // echo "</pre>";
 
     if (isset($_SESSION['ressource'])) {
         $ressource = $_SESSION['ressource'];
@@ -43,33 +43,34 @@ else {
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/general.css">
-    <link rel="stylesheet" href="./assets/css/search.css">
+    <link rel="stylesheet" href="./assets/css/searchv2.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <title>LITIS | Accueil</title>
-  </head>
-
-  <body>
-    <!-- <header class="d-flex justify-content-evenly align-items-center bg-white fixed-top">
+    <title>Existence Numérique | A propos</title>
+</head>
+<body>
+    
+    <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
-            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="">
+            <img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique">
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
-                <li><a class="active fs-4 menu__link fw-semibold" href="#">Accueil</a></li>
-                <li><a class="fs-4 menu__link fw-semibold" href="#">A propos</a></li>
-                <li><a class="fs-4 menu__link fw-semibold" href="#">Ressources</a></li>
+                <li><a class="fs-4 menu__link fw-semibold" href="index.php">Accueil</a></li>
+                <li><a class="fs-4 menu__link fw-semibold" href="about.html">A propos</a></li>
+                <li><a class="fs-4 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
             </ul>
         </nav>
 
         <div>
             <form class="search" action="cible2.php" method="post">
-                <input name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
-                <a href="#">
+                <label for="search-input" class="visually-hidden">Rechercher</label>
+                <input id="search-input" name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
+                <a href="#" aria-label="Rechercher">
                     <lord-icon class="icon"
                         src="https://cdn.lordicon.com/unukghxb.json"
                         trigger="loop"
@@ -89,69 +90,88 @@ else {
 
         <div id="menu">
             <ul>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.html">Accueil</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
                 <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="#">Ressources</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
             </ul>
         </div>
-    </header> -->
+    </header> 
 
-    <section class="affichage d-flex flex-column">
-        <!-- php pour le h1 -->
-        <h1>Les résultats pour : <?php echo $_SESSION['mot']; ?></h1>
-        <p><?php echo $text; ?></p>
-        <div class="container d-flex align-items-center">
-            <!-- php pour les boites glossaire et ressource -->
-            <div class="glossaire d-flex flex-column align-items-center">
-                <h2>Glossaire</h2>
-                <div class="def">
-                    <h3 class="fs-2"><?php echo "$mot ($synonymes)";?></h3>
-                    <p class="fs-5">
-                        <?php echo $definition; ?>
-                    </p>
-                </div>
-                
+    <!-- phone header -->
+    <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
+        <div class="header-container d-flex justify-content-around align-items-center">
+            <div class="logo">
+                <img src="./assets/images/logo/Logo_principal.png" alt="Logo du site existence numérique">
             </div>
+            
+            <div class="burger-active" id="burger-menu-phone">
+                <button>
+                    <p>Menu</p>
+                    <span></span>
+                </button>
+            </div>
+    
+            <div id="menu-phone">
+                <ul>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                </ul>
+            </div>
+        </div>
 
-            <div class="separator bg-black"></div>
+        <div class="search">
+                <input type="text" id="search-input" placeholder="Rechercher...">
+                <a href="#" aria-labelledby="search-input">
+                    <lord-icon class="icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                    <span class="visually-hidden">Rechercher</span>
+                </a>
+            </div>
+    </header>
 
-            <div class="ressource d-flex flex-column align-items-center">
-                <h2 class="res-title">Ressource(s)</h2>
-                <!-- <div class="ressource-prop">
-                    <div class="box d-flex flex-column align-items-center bg-white rounded-4 center-box">
-                        <h3 class="fs-5">Utiliser Parcoursup</h3>
-                        <h4 class="fs-6">Éducation</h4>
-                        <div class="img rounded-4">
-                            <img class="img-fluid rounded" src="./assets/images/miniatures/éducation/minia_parcoursup.png" alt="">
-                        </div>
-                        <button>Consulter la ressource</button>
-                    </div>
-                </div> -->
 
+    <!-- tutoriel -->
+    <section class="container tutoriels d-flex flex-column align-items-center">
+        <div class="titre">
+            <h1><?php echo $_SESSION['mot']; ?></h1>
+        </div>
+        <div class="definition d-flex flex-column">
+            <?php echo "<p class='fs-5'>$definition</p>" ?>
+            <br>
+            <?php echo "<p class='fs-5'><span class='syn'>Synonymes :</span> $synonymes</p>" ?>
+        </div>
+
+        <div class="bar"></div>
+
+        <h2>Ressources</h2>
+
+        <div class="container rdv">
+            <div class="videos d-flex">
                 <?php
                     foreach ($ressource as $item) {
-                        $titre = $item['Titre'];
-                        $categorie = $item['Categorie'];
                         $minia = $item['Image'];
 
                         echo "
-                            <div class='ressource-prop'>
-                                <div class='box d-flex flex-column align-items-center bg-white rounded-4 center-box'>
-                                    <h3 class='fs-5'>$titre</h3>
-                                    <h4 class='fs-6'>$categorie</h4>
-                                    <div class='img rounded-4'>
-                                        <img class='img-fluid rounded' src='$minia' alt=''>
+                            <div class='tuto image_wrapper'>
+                                <a href='tuto.php'>
+                                    <img src='$minia' alt=''>
+                                    <div class='overlay_4'>
+                                        <div class='text_overlay fw-semibold'>Consulter</div>
                                     </div>
-                                    <button>Consulter la ressource</button>
-                                </div>
-                            </div>";
+                                </a>
+                            </div>
+                            ";
                     }
                 ?>
-
             </div>
         </div>
     </section>
-    
+
 
     <!-- footer -->
     <footer>
@@ -159,13 +179,13 @@ else {
             <div class="link-container">
                 <ul class="d-flex">
                     <li><a class="fs-4 menu__link fw-medium" href="#">Accueil</a></li>
-                    <div class="footer-separator"></div>
+                    <div class="separator"></div>
                     <li><a class="fs-4 menu__link fw-medium" href="#">A propos</a></li>
-                    <div class="footer-separator"></div>
+                    <div class="separator"></div>
                     <li><a class="fs-4 menu__link fw-medium" href="#">Ressources</a></li>
-                    <div class="footer-separator"></div>
+                    <div class="separator"></div>
                     <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
-                    <div class="footer-separator"></div>
+                    <div class="separator"></div>
                     <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
                 </ul>
             </div>
@@ -174,27 +194,28 @@ else {
                 <div class="top">
                     <ul class="d-flex">
                         <li><a class="fs-3 menu__link fw-medium" href="#">Accueil</a></li>
-                        <div class="footer-separator"></div>
+                        <div class="separator"></div>
                         <li><a class="fs-3 menu__link fw-medium" href="#">A propos</a></li>
-                        <div class="footer-separator"></div>
+                        <div class="separator"></div>
                         <li><a class="fs-3 menu__link fw-medium" href="#">Ressources</a></li>
                     </ul>
                 </div>
                 <div class="bot">
                     <ul class="d-flex">
                         <li><a class="fs-3 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
-                        <div class="footer-separator"></div>
+                        <div class="separator"></div>
                         <li><a class="fs-3 menu__link fw-medium" href="#">Mentions légales</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="logo-container">
-                <img class="img-fluid" src="./assets/images/logo/litis_logo.webp" alt="">
-                <img class="img-fluid" src="./assets/images/logo/agefiph logo.svg" alt="">
-                <img class="img-fluid" src="./assets/images/logo/logo_iut.png" alt="">
-                <img class="img-fluid" src="./assets/images/logo/iut_rouen_logo_nobg.png" alt="">
+                <img class="img-fluid" src="./assets/images/logo/litis_logo.webp" alt="Logo du laboratoire LITIS">
+                <img class="img-fluid" src="./assets/images/logo/agefiph logo.svg" alt="Logo de l'AGEFIPH">
+                <img class="img-fluid" src="./assets/images/logo/logo_iut.png" alt="Logo de l'Université de Rouen">
+                <img class="img-fluid" src="./assets/images/logo/iut_rouen_logo_nobg.png" alt="Logo de l'IUT de Rouen">
             </div>
         </div>
     </footer>
-  </body>
+</body>
+</html>
