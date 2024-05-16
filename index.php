@@ -116,6 +116,11 @@ session_start();
     </div>
 
 
+    <!-- chatbot -->
+    <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
+        <img src="./assets/images/avatar/normal.svg" alt="">
+    </div>
+
 
     <!-- presentation -->
     <section class="presentation">
