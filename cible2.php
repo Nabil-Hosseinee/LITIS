@@ -158,7 +158,7 @@ if (isset($_POST['mot'])) {
         }
 
         // Redirection vers la page search.html
-        header("Location: search2.php");
+        header("Location: search.php");
         exit;
         
     } catch (PDOException $e) {
