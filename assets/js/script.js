@@ -86,12 +86,16 @@ burgerMenuPhone.addEventListener('click', function() {
 // dyslexique
 var body = document.getElementById('body');
 var access = document.getElementById('access');
+var chatbot = document.getElementById('chatbot');
 var menu = document.getElementById('access-menu');
 
 access.addEventListener("click", function() {
-    // body.classList.toggle('dys');
     this.classList.toggle('expanded');
     menu.classList.toggle('visible');
+});
+
+chatbot.addEventListener("click", function() {
+    this.classList.toggle('square');
 });
 
 
@@ -108,4 +112,6 @@ document.querySelector('.bg-toggle').addEventListener('change', function() {
         document.body.classList.remove('accessibility-mode');
     }
 });
+
+
 
