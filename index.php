@@ -164,7 +164,7 @@ session_start();
             Quelle est notre <span class="color_v">mission</span> ?
         </h2>
         <div class="container prb-container d-flex flex-column align-items-center">
-            <img class="col-xl-12 img-fluid" src="./assets/images/illustration/mission2.png" alt="Illustration des missions, une personne vise une cible avec une fléchette">
+            <img class="col-xl-12 img-fluid" src="./assets/images/illustration/mission3.png" alt="Illustration des missions, une personne vise une cible avec une fléchette">
             <p class="col-xl-12 fs-3 fw-medium">
                 Nous nous engageons à rendre le monde numérique accessible à tous.
                 <br>
