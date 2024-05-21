@@ -28,13 +28,13 @@ body {
 
 /* Vidéo */
 
-.image_wrapper a{
+.image_wrapper {
     display: flex;
     justify-content: center;
     margin-top: 10vh;
 }
 
-.image_wrapper img  {
+.image_wrapper video  {
     width: 60%;
 }
 
@@ -44,6 +44,46 @@ body {
     width: 50vw;
     height: 5px;
     border-radius: 16px;
-    margin: 10vh auto;
+    margin: 15vh auto;
     background-color: #1F936F;
 }
+
+/* Étapes */
+
+/* Style pour la section des étapes */
+.etape {
+    margin-left: 7vh;
+    padding: 5vh;
+    margin-bottom: 10px; /* Espace entre chaque étape */
+    max-width: 70%; /* Limite la largeur de la zone de texte */
+}
+
+/* Style pour les titres des étapes */
+.etape h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style pour les paragraphes des étapes */
+.etape p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Bouton*/
+
+.btn-resource {
+    margin: 0 auto; /* Centre le bouton horizontalement */
+    display: block; /* Permet au bouton de prendre toute la largeur disponible */
+    width: fit-content; /* Ajuste la largeur du bouton à son contenu */
+    background-color: var(--secondaire);
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px; /* Ajoute un espace de remplissage au bouton */
+    margin-bottom: 10vh;
+}
+
+
+
