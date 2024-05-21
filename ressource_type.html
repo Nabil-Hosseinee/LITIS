@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/general.css">
+    <link rel="stylesheet" href="./assets/css/ressource_type.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <title>Existence Numérique | Ressources</title>
+</head>
+<body>
+
+    <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
+        <div class="logo d-flex justify-content-center align-items-center">
+            <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <ul class="d-flex justify-content-center align-items-center">
+                <li><a class="fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="about.html">A propos</a></li>
+                <li><a class="active fs-3 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+            </ul>
+        </nav>
+
+        <form class="search" action="cible2.php" method="post">
+            <label for="search-input" class="visually-hidden">Rechercher</label>
+            <input id="search-input" name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
+            <a href="#" aria-label="Rechercher">
+                <lord-icon class="icon"
+                    src="https://cdn.lordicon.com/unukghxb.json"
+                    trigger="loop"
+                    delay="2000"
+                    style="width:30px;height:30px">
+                </lord-icon>
+            </a>
+        </form>
+
+        <div class="burger-active" id="burger-menu">
+            <button>
+                <p>Menu</p>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- phone header -->
+    <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
+        <div class="header-container d-flex justify-content-around align-items-center">
+            <div class="logo">
+                <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
+            </div>
+            
+            <div class="burger-active" id="burger-menu-phone">
+                <button>
+                    <p>Menu</p>
+                    <span></span>
+                </button>
+            </div>
+    
+            <div id="menu-phone">
+                <ul>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <form class="search" action="cible2.php" method="post">
+            <label for="search-input" class="visually-hidden">Rechercher</label>
+            <input type="text" id="search-input" placeholder="Rechercher...">
+            <a href="#" aria-labelledby="search-input">
+                <lord-icon class="icon"
+                    src="https://cdn.lordicon.com/unukghxb.json"
+                    trigger="loop"
+                    delay="2000"
+                    style="width:30px;height:30px">
+                </lord-icon>
+                <span class="visually-hidden">Rechercher</span>
+            </a>
+        </form>
+    </header>
+
+
+    <!-- Titre -->
+
+    <div class="title">
+        <h1>Créer un compte Doctolib </h1>
+         <div class="underline title_underline"></div>
+    </div>
+
+
+    <!-- Vidéo -->
+    
+    <div class="tuto image_wrapper">
+        <video src="./assets/vidéos/tuto_compte_doctolib-.mp4" controls></video>
+    </div> 
+
+     <!-- separator -->
+
+    <div class="bar"></div>
+
+
+     <!-- Étapes-->
+
+     <div class="etape">
+        <h2>Étape 1 :</h2>
+        <p>Rendez-vous sur le site web de Doctolib en utilisant votre navigateur web préféré.</p>
+        <br>
+        <br>
+
+        <h2>Étape 2 :</h2>
+        <p>Sur la page d'accueil de Doctolib, recherchez le lien ou le bouton d'inscription.
+             Il peut être situé en haut à droite de la page ou dans le menu de navigation.
+        </p>
+        <br>
+        <br>
+
+        <h2>Étape 3 :</h2>
+        <p>Doctolib propose différents types de comptes en fonction de votre profil. Sélectionnez 
+            le type de compte approprié, par exemple, 
+            "Patient" si vous êtes un patient ou "Professionnel de Santé" si vous êtes un professionnel de santé.
+        </p>
+        <br>
+        <br>
+
+        <h2>Étape 4 :</h2>
+        <p>Remplissez le formulaire d'inscription avec les informations requises. Cela peut inclure votre nom, prénom, adresse e-mail,
+             numéro de téléphone, date de naissance, et éventuellement d'autres informations pertinentes.
+        </p>
+        <br>
+        <br>
+
+        <h2>Étape 5 :</h2>
+        <p>Choisissez un mot de passe sécurisé pour votre compte Doctolib.
+         Assurez-vous qu'il contient une combinaison de lettres, de chiffres et de caractères spéciaux pour renforcer sa sécurité.
+        </p>
+        <br>
+        <br>
+
+        <h2>Étape 6 :</h2>
+        <p>Après avoir rempli tous les champs obligatoires du formulaire d'inscription,
+             cliquez sur le bouton de validation ou de confirmation pour créer votre compte.
+        </p>
+        <br>
+        <br>
+
+        <h2>Étapes 7 :</h2>
+        <p>Doctolib peut vous demander de vérifier votre adresse e-mail en cliquant sur un lien de
+        confirmation envoyé à l'adresse que vous avez fournie.
+        </p>
+        <br>
+        <br>
+
+        <h2>Étape 8 :</h2>
+        <p>Suivez les instructions supplémentaires fournies par Doctolib pour finaliser la création de votre compte.
+             Cela peut inclure la configuration de vos préférences de notification, la sélection de votre médecin traitant
+              (si applicable), ou d'autres paramètres personnalisés.
+        </p>
+        <br>
+        <br>
+
+        <p>Une fois ces étapes terminées, vous aurez créé avec succès un compte Doctolib, 
+            ce qui vous permettra de prendre rendez-vous en ligne avec des professionnels de santé, 
+            de consulter votre historique médical, et d'accéder à d'autres fonctionnalités utiles proposées par la plateforme.
+        </p>
+     </div>
+
+     <div class="container text-center">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <a href="#"><button class="btn fw-bold btn-resource">Télécharger</button></a>
+            </div>
+        </div>
+    </div>
+    
+
+
+
+
+
+    <!-- footer -->
+    <footer>
+        <div class="d-flex flex-column align-items-center">
+            <div class="link-container">
+                <ul class="d-flex">
+                    <li><a class="fs-4 menu__link fw-medium" href="index.php">Accueil</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-4 menu__link fw-medium" href="about.html">A propos</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-4 menu__link fw-medium" href="ressource.html">Ressources</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                </ul>
+            </div>
+
+            <div class="link-container_992 d-flex flex-column align-items-center none">
+                <div class="top">
+                    <ul class="d-flex">
+                        <li><a class="fs-4 menu__link fw-medium" href="index.php">Accueil</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-4 menu__link fw-medium" href="about.html">A propos</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-4 menu__link fw-medium" href="#">Ressources</a></li>
+                    </ul>
+                </div>
+                <div class="bot">
+                    <ul class="d-flex">
+                        <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="logo-container">
+                <img class="img-fluid" src="./assets/images/logo/litis_logo.webp" alt="Logo du laboratoire LITIS">
+                <img class="img-fluid" src="./assets/images/logo/agefiph logo.svg" alt="Logo de l'AGEFIPH">
+                <img class="img-fluid" src="./assets/images/logo/logo_iut.png" alt="Logo de l'Université de Rouen">
+                <img class="img-fluid" src="./assets/images/logo/iut_rouen_logo_nobg.png" alt="Logo de l'IUT de Rouen">
+            </div>
+        </div>
+    </footer>
+    
+</body>
+
+<script src="./assets/js/script.js"></script>
+</html>

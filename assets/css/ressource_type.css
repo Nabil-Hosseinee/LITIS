@@ -1,0 +1,204 @@
+body {
+    background-color: var(--gris-clair);
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    overflow-x: hidden;
+}
+
+.title {
+    margin-top: 20vh;
+    margin-left: 7vh;
+    
+}
+
+/* ligne */
+
+.underline {
+    height: 5px;
+    background-color: #1F936F;
+    border-radius: 16px;
+}
+
+.title_underline {
+    width: 50px;
+    margin-left: 1vw;
+    margin-top: 1.5vh;
+}
+
+/* Vidéo */
+
+.image_wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.image_wrapper video  {
+    width: 60%;
+}
+
+/* separator */
+
+.bar {
+    width: 50vw;
+    height: 5px;
+    border-radius: 16px;
+    margin: 15vh auto;
+    background-color: #1F936F;
+}
+
+/* Étapes */
+
+/* Style pour la section des étapes */
+.etape {
+    margin-left: 7vh;
+    padding: 5vh;
+    margin-bottom: 10px; /* Espace entre chaque étape */
+    max-width: 70%; /* Limite la largeur de la zone de texte */
+}
+
+/* Style pour les titres des étapes */
+.etape h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Style pour les paragraphes des étapes */
+.etape p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Bouton*/
+
+.btn-resource {
+    margin: 0 auto; /* Centre le bouton horizontalement */
+    display: block; /* Permet au bouton de prendre toute la largeur disponible */
+    width: fit-content; /* Ajuste la largeur du bouton à son contenu */
+    background-color: var(--secondaire);
+    color: white;
+    border: 2px solid white;
+    padding: 10px 20px; /* Ajoute un espace de remplissage au bouton */
+    margin-bottom: 10vh;
+}
+
+
+
+
+/* Media Queries */
+
+/* max-width: 1400px */
+@media (max-width: 1400px) {
+    .title {
+        margin-top: 18vh;
+    }
+
+    .etape {
+        margin-left: 5vh;
+        max-width: 75%;
+    }
+}
+
+/* max-width: 1200px */
+@media (max-width: 1200px) {
+    .title {
+        margin-top: 16vh;
+    }
+
+    .etape {
+        margin-left: 5vh;
+        max-width: 80%;
+    }
+
+    .image_wrapper video {
+        width: 70%;
+    }
+}
+
+/* max-width: 992px */
+@media (max-width: 992px) {
+    .title {
+        margin-top: 20vh;
+    }
+
+    .etape {
+        margin-left: 4vh;
+        max-width: 85%;
+    }
+
+    .image_wrapper video {
+        width: 75%;
+    }
+}
+
+/* max-width: 768px */
+@media (max-width: 768px) {
+    .title {
+        margin-top: 20vh;
+        margin-left: 4vh;
+    }
+
+    .etape {
+        margin-left: 3vh;
+        max-width: 90%;
+        padding: 4vh;
+    }
+
+    .image_wrapper video {
+        width: 80%;
+    }
+
+    .btn-resource {
+        margin-bottom: 8vh;
+    }
+}
+
+/* max-width: 576px */
+@media (max-width: 576px) {
+    .title {
+        margin-top: 20vh;
+        margin-left: 3vh;
+    }
+
+    .etape {
+        margin-left: 3vh;
+        max-width: 95%;
+        padding: 3vh;
+    }
+
+    .image_wrapper video {
+        width: 90%;
+    }
+
+    .btn-resource {
+        margin-bottom: 6vh;
+    }
+}
+
+/* max-width: 400px */
+@media (max-width: 400px) {
+    .title {
+        margin-top: 22vh;
+        margin-left: 2vh;
+    }
+
+    .etape {
+        margin-left: 2vh;
+        max-width: 100%;
+        padding: 2vh;
+    }
+
+    .image_wrapper video {
+        width: 100%;
+    }
+
+    .btn-resource {
+        margin-bottom: 4vh;
+    }
+}
+
+
+

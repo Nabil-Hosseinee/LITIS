@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./assets/css/general.css">
+    <link rel="stylesheet" href="./assets/css/faq.css">
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <title>Existence Numérique | FAQ</title>
+</head>
+<body>
+    
+    <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
+        <div class="logo d-flex justify-content-center align-items-center">
+            <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
+        </div>
+        <nav class="navbar navbar-expand-lg">
+            <ul class="d-flex justify-content-center align-items-center">
+                <li><a class="fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="about.html">A propos</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+            </ul>
+        </nav>
+
+        <form class="search" action="cible2.php" method="post">
+            <label for="search-input" class="visually-hidden">Rechercher</label>
+            <input id="search-input" name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
+            <a href="#" aria-label="Rechercher">
+                <lord-icon class="icon"
+                    src="https://cdn.lordicon.com/unukghxb.json"
+                    trigger="loop"
+                    delay="2000"
+                    style="width:30px;height:30px">
+                </lord-icon>
+            </a>
+        </form>
+
+        <div class="burger-active" id="burger-menu">
+            <button>
+                <p>Menu</p>
+                <span></span>
+            </button>
+        </div>
+
+        <div id="menu">
+            <ul>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- phone header -->
+    <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
+        <div class="header-container d-flex justify-content-around align-items-center">
+            <div class="logo">
+                <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
+            </div>
+            
+            <div class="burger-active" id="burger-menu-phone">
+                <button>
+                    <p>Menu</p>
+                    <span></span>
+                </button>
+            </div>
+    
+            <div id="menu-phone">
+                <ul>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <form class="search" action="cible2.php" method="post">
+            <label for="search-input" class="visually-hidden">Rechercher</label>
+            <input type="text" id="search-input" placeholder="Rechercher...">
+            <a href="#" aria-labelledby="search-input">
+                <lord-icon class="icon"
+                    src="https://cdn.lordicon.com/unukghxb.json"
+                    trigger="loop"
+                    delay="2000"
+                    style="width:30px;height:30px">
+                </lord-icon>
+                <span class="visually-hidden">Rechercher</span>
+            </a>
+        </form>
+    </header>
+
+
+    <!-- titre -->
+    <section class="container titre d-flex flex-column align-items-center">
+        <h1>Foire aux questions</h1>
+        <p class="">Ici, vous pouvez trouver les réponses à toutes vos questions.</p>
+    </section>
+
+    <!-- qr -->
+    <section class="container qr">
+        <div class="quest">
+            <h2>Quel type de ressources proposez-vous sur votre site ?</h2>
+            <p>Nous proposons une variété de ressources, y compris des articles, des tutoriels vidéo, des quiz interactifs et des fichiers téléchargeables.</p>
+        </div>
+        <div class="quest">
+            <h2>Comment puis-je accéder aux ressources disponibles ?</h2>
+            <p>Vous pouvez accéder aux ressources disponibles en naviguant sur notre site web et en utilisant la barre de recherche ou les menus de navigation. <br/>Cliquez <a href="ressource.html">sur ce lien</a> afin de vous rendre sur la page destinée aux ressources.</p>
+        </div>
+        <div class="quest">
+            <h2>Comment puis-je accéder aux tutoriels vidéo ?</h2>
+            <p>Les tutoriels vidéo sont accessibles via notre plateforme en ligne. Pour cela, il faut aller dans les ressources, puis sélectionner une catégorie et enfin une ressource qui vous intéresse. Sinon, l’intégralité de nos vidéos est disponible sur la chaîne Youtube ‘Existence Numérique’. <br/>Cliquez <a href="https://www.youtube.com/">sur ce lien</a> afin de vous rendre sur notre chaîne Youtube.</p>
+        </div>
+        <div class="quest">
+            <h2>Proposez-vous des tutoriels vidéo accessibles à tous ?</h2>
+            <p>Nous accordons une grande importance à l'accessibilité de nos ressources à tous. C'est pour cela que les vidéos ont une voix-off, permettant à une personne aveugle ou malvoyante de suivre le tutoriel sans grande difficulté. Pour les personnes sourdes ou malentendantes, la vidéo contient des bulles de texte, ce qui leur permettent de lire et de comprendre tous les contenus de ce site.</p>
+        </div>
+        <div class="quest">
+            <h2>Comment faire si je ne trouve pas le contenu qui m'intéresse ?</h2>
+            <p>Nous avons à votre disposition un chatbot qui permet de répondre à vos questions. Pour cela, vous devez cliquer sur le cercle en bas à droite de votre écran, puis écrire la question que vous vous posez.</p>
+        </div>
+        <div class="quest">
+            <h2>Sur quels réseaux sociaux pouvons-nous vous retrouver ?</h2>
+            <p>Nous sommes actifs sur plusieurs réseaux sociaux : <a href="https://www.instagram.com/?hl=fr">Instagram</a>, <a href="https://www.facebook.com">Facebook</a>, <a href="https://www.linkedin.com/in/dylan-dumont-97ab64271/">Linkedin</a> et <a href="https://www.youtube.com/">Youtube</a>. Vous pouvez vous y rendre via votre navigateur, vos applications ou en cliquant sur les liens précédents.</p>
+        </div>
+        <div class="quest">
+            <h2>Comment puis-je vous contacter en cas de problème ou de question ?</h2>
+            <p>Vous pouvez nous contacter en utilisant le formulaire de contact sur notre site web. Ce formulaire est disponible en bas de la page 'A propos' de notre site web. <br/>Cliquez <a href="about.html">sur ce lien</a> afin de vous rendre sur la page contenant le formulaire de contact.</p>
+        </div>
+    </section>
+
+
+    <!-- footer -->
+    <footer>
+        <div class="container d-flex flex-column align-items-center">
+            <div class="link-container">
+                <ul class="d-flex">
+                    <li><a class="fs-4 menu__link fw-medium" href="index.php">Accueil</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-4 menu__link fw-medium" href="about.html">A propos</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-4 menu__link fw-medium" href="ressource.html">Ressources</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                    <div class="separator"></div>
+                    <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                </ul>
+            </div>
+
+            <div class="link-container_992 d-flex flex-column align-items-center none">
+                <div class="top">
+                    <ul class="d-flex">
+                        <li><a class="fs-3 menu__link fw-medium" href="index.php">Accueil</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-3 menu__link fw-medium" href="about.html">A propos</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-3 menu__link fw-medium" href="ressource.html">Ressources</a></li>
+                    </ul>
+                </div>
+                <div class="bot">
+                    <ul class="d-flex">
+                        <li><a class="fs-3 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                        <div class="separator"></div>
+                        <li><a class="fs-3 menu__link fw-medium" href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="logo-container">
+                <img class="img-fluid" src="./assets/images/logo/litis_logo.webp" alt="Logo du laboratoire LITIS">
+                <img class="img-fluid" src="./assets/images/logo/agefiph logo.svg" alt="Logo de l'AGEFIPH">
+                <img class="img-fluid" src="./assets/images/logo/logo_iut.png" alt="Logo de l'Université de Rouen">
+                <img class="img-fluid" src="./assets/images/logo/iut_rouen_logo_nobg.png" alt="Logo de l'IUT de Rouen">
+            </div>
+        </div>
+    </footer>

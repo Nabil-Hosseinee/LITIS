@@ -11,6 +11,29 @@ body {
     margin: auto;
 }
 
+.color_int {
+    color: var(--internet);
+}
+
+.color_adm {
+    color: var(--administratif);
+}
+
+.color_edu {
+    color: #f1b742;
+}
+
+.color_san {
+    color: var(--sante);
+}
+
+.color_sec {
+    color: var(--securite);
+}
+
+.color_com {
+    color: var(--communication);
+}
 
 /* intro */
 .intro {
@@ -71,7 +94,7 @@ h1 {
     padding-bottom: 0;
 }
 
-.tutoriels h2 {
+.tutoriels h2, .quiz h2 {
     margin-bottom: 3vh;
 }
 
@@ -168,13 +191,59 @@ h1 {
 }
 
 
+/* Quiz */
+.quiz {
+    padding: 0 20vh 15vh 20vh;
+    padding-bottom: 0;
+}
+
+.btn-quiz {
+    display: block;
+    margin: 0 auto;
+    background-color: var(--secondaire);
+    color: white;
+    border: 2px solid white;
+}
+
+.btn-quiz:hover {
+    background-color: white;
+    color: var(--secondaire);
+    border: 2px solid var(--secondaire);
+}
+
+.quiz {
+    margin-bottom: 20vh;
+}
+
+.texte-img-quiz {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.texte-quiz {
+    max-width: 70vh;
+}
+
+.texte-quiz p {
+    padding: 10% 0;
+}
+
+.img-quiz {
+    max-width: 100vh;
+}
+
+.quiz img {
+    width: 30vw;
+    height: auto;
+}
 
 
 
 /* media queries */
 @media screen and (max-width: 1400px) {
     /* padding de la page */ 
-    .intro, .tutoriels {
+    .intro, .tutoriels, .quiz {
         padding: 10vw;
     }
 
@@ -227,6 +296,15 @@ h1 {
     .tuto {
         width: calc(50% - 2vw);
     }
+
+    /* quiz */
+    .btn-quiz {
+        width: 25vw !important;
+    }
+
+    .btn-quiz {
+        margin-bottom: 2vh;
+    }
 }
 
 @media screen and (max-width: 768px){ 
@@ -246,6 +324,26 @@ h1 {
 
     .trait {
         margin-bottom: 5vh;
+    }
+
+    /* quiz */
+    .texte-img-quiz {
+        flex-direction: column-reverse;
+    }
+
+    .texte-quiz,
+    .img-quiz {
+        width: 100%;
+    }
+
+    .texte-quiz {
+        margin-bottom: 3vh;
+    }
+
+    .quiz img {
+        width: 40vw;
+        margin-left: 20vw;
+        margin-bottom: 3vh;
     }
 }
 
@@ -282,6 +380,12 @@ h1 {
     .tuto img, .overlay_4 {
         width: 80%;
         margin-left: 10%;
+    }
+
+    /* quiz */
+    .btn-quiz {
+        width: 40vw !important;
+        height: 5vh !important;
     }
 }
 
