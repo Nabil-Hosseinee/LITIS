@@ -168,6 +168,7 @@ h1 {
 .big-box {
     background-color: var(--gris-clair);
     padding: 5vh;
+    color: black;
 }
 
 .big-box-img {
@@ -201,6 +202,9 @@ h1 {
     margin: 50px 0;
 }
 
+.read_more {
+    margin: 2vh 0;
+}
 
 /* media queries */
 

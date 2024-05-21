@@ -6,27 +6,43 @@
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/ressource.css">
+    <script src="https://kit.fontawesome.com/96e027db6d.js" crossorigin="anonymous"></script>
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <!-- test langue -->
+    <script src="https://unpkg.com/i18next@21.6.13/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@1.4.0/i18nextHttpBackend.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <!-- test langue 2 -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'fr', // Langue de base de votre site
+                includedLanguages: 'fr,en,es,de', // Langues dans lesquelles vous souhaitez traduire
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <title>Existence Numérique | Ressources</title>
 </head>
 <body>
 
-    <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
+    <header id="desktop-header" class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top exclude-accessibility">
         <div class="logo d-flex justify-content-center align-items-center">
             <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
-                <li><a class="fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
-                <li><a class="fs-3 menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="active fs-3 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                <li><a class="active fs-3 menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
             </ul>
         </nav>
 
-        <form class="search" action="cible2.php" method="post">
+        <form class="search exclude-accessibility" action="cible2.php" method="post">
             <label for="search-input" class="visually-hidden">Rechercher</label>
-            <input id="search-input" name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
-            <a href="#" aria-label="Rechercher">
+            <input id="search-input" class="exclude-accessibility" name="mot" type="text" placeholder="Rechercher..." autocomplete="off" data-i18n="search_placeholder">
+            <a href="#" aria-label="Rechercher" class="exclude-accessibility">
                 <lord-icon class="icon"
                     src="https://cdn.lordicon.com/unukghxb.json"
                     trigger="loop"
@@ -36,100 +52,148 @@
             </a>
         </form>
 
-        <div class="burger-active" id="burger-menu">
-            <button>
-                <p>Menu</p>
-                <span></span>
+        <div class="language-selector exclude-accessibility">
+            <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
+            <div class="dropdown-content" id="language-menu">
+                <a href="#" data-lang="fr">FR : Français</a>
+                <a href="#" data-lang="en">EN : English</a>
+                <a href="#" data-lang="es">ES : Español</a>
+                <a href="#" data-lang="de">DE : Deutsch</a>
+            </div>
+        </div>
+
+        <div class="burger-active exclude-accessibility" id="burger-menu">
+            <button class="exclude-accessibility">
+                <p class="exclude-accessibility">Menu</p>
+                <span class="exclude-accessibility"></span>
             </button>
         </div>
 
-        <div id="menu">
+        <div id="menu" class="exclude-accessibility">
             <ul>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
             </ul>
         </div>
     </header>
 
     <!-- phone header -->
-    <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
+    <header id="phone-header" class="phone d-flex flex-column align-items-center bg-white fixed-top exclude-accessibility">
         <div class="header-container d-flex justify-content-around align-items-center">
             <div class="logo">
                 <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
             </div>
             
-            <div class="burger-active" id="burger-menu-phone">
-                <button>
-                    <p>Menu</p>
-                    <span></span>
+            <div class="burger-active exclude-accessibility" id="burger-menu-phone">
+                <button class="exclude-accessibility">
+                    <p class="exclude-accessibility">Menu</p>
+                    <span class="exclude-accessibility"></span>
                 </button>
             </div>
     
-            <div id="menu-phone">
+            <div id="menu-phone" class="exclude-accessibility">
                 <ul>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
                 </ul>
             </div>
         </div>
 
-        <form class="search" action="cible2.php" method="post">
-            <label for="search-input" class="visually-hidden">Rechercher</label>
-            <input type="text" id="search-input" placeholder="Rechercher...">
-            <a href="#" aria-labelledby="search-input">
-                <lord-icon class="icon"
-                    src="https://cdn.lordicon.com/unukghxb.json"
-                    trigger="loop"
-                    delay="2000"
-                    style="width:30px;height:30px">
-                </lord-icon>
-                <span class="visually-hidden">Rechercher</span>
-            </a>
-        </form>
+        <div class="phone_bot d-flex justify-content-between exclude-accessibility">
+            <form class="search exclude-accessibility" action="cible2.php" method="post">
+                <label for="search-input" class="visually-hidden">Rechercher</label>
+                <input type="text" id="search-input" placeholder="Rechercher...">
+                <a href="#" aria-labelledby="search-input">
+                    <lord-icon class="icon phone_icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                    <span class="visually-hidden">Rechercher</span>
+                </a>
+            </form>
+
+            <div class="language-selector exclude-accessibility phone_select">
+                <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
+                <div class="dropdown-content" id="language-menu">
+                    <a href="#" data-lang="fr">FR : Français</a>
+                    <a href="#" data-lang="en">EN : English</a>
+                    <a href="#" data-lang="es">ES : Español</a>
+                    <a href="#" data-lang="de">DE : Deutsch</a>
+                </div>
+            </div>
+        </div>
     </header>
+
+    <!-- accessibilité -->
+    <div id="access" class="access d-flex justify-content-center align-items-center exclude-accessibility">
+        <i class="fa-solid fa-eye-low-vision exclude-accessibility"></i>
+        <div id="access-menu" class="access-menu">
+            <label class="switch mg">
+                <span class="fw-bold color_v exclude-accessibility" data-i18n="access_lang">Changer l'écriture</span>
+                <input type="checkbox" class="font-toggle exclude-accessibility">
+                <span class="slider round exclude-accessibility"></span>
+            </label>
+            <label class="switch">
+                <span class="fw-bold color_v exclude-accessibility" data-i18n="access_contrast">Changer le contraste</span>
+                <input type="checkbox" class="bg-toggle exclude-accessibility">
+                <span class="slider round exclude-accessibility"></span>
+            </label>
+        </div>
+    </div>
+
+    <!-- chatbot -->
+    <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
+        <img src="./assets/images/avatar/normal.svg" alt="">
+    </div>
 
 
     <!-- section fonctionnalité -->
 
     <section class="fonctionnalite">
+        <!-- pour la traduction -->
+        <div id="google_translate_element"></div>
+        <!--  -->
+
         <h2>Nos autres <span class="color_v">fonctionnalités</span></h2>
         <!-- <div class="underline big_title_underline"></div> -->
         <div class="container d-flex justify-content-between">
-            <div class="fonc_box mg_r mg_b">
+            <div class="fonc_box mg_r mg_b exclude-accessibility BonW">
                 <div class="top d-flex justify-content-between">
                     <div class="title">
-                        <h3>Glossaire</h3>
-                        <div class="underline title_underline"></div>
+                        <h3 class="exclude-accessibility text">Glossaire</h3>
+                        <div class="underline title_underline exclude-accessibility"></div>
                     </div>
                     <img class="img-fluid" src="./assets/images/illustration/glossaire2.png" alt="">
                 </div>
 
                 <div class="bot">
-                    <p class="fs-5">
+                    <p class="fs-5 exclude-accessibility text">
                         Voici un glossaire avec tous les termes techniques à votre disposition.
                     </p>
                     <a href="glossaire.php">
-                        <button>En savoir plus</button>
+                        <button class="exclude-accessibility BonW">En savoir plus</button>
                     </a>
                 </div>
             </div>
 
-            <div class="fonc_box">
+            <div class="fonc_box exclude-accessibility BonW">
                 <div class="top d-flex justify-content-between">
                     <div class="title">
-                        <h3>Foire aux questions</h3>
-                        <div class="underline title_underline"></div>
+                        <h3 class="exclude-accessibility text">Foire aux questions</h3>
+                        <div class="underline title_underline exclude-accessibility"></div>
                     </div>
                     <img class="img-fluid" src="./assets/images/illustration/LITIS faq.png" alt="">
                 </div>
 
                 <div class="bot">
-                    <p class="fs-5 pmg_b">
+                    <p class="fs-5 pmg_b exclude-accessibility text">
                         Vous trouverez ici les réponses à toutes vos questions.
                     </p>
-                    <button>En savoir plus</button>
+                    <button class="exclude-accessibility BonW">En savoir plus</button>
                 </div>
             </div>
         </div>
@@ -147,111 +211,111 @@
         <h1>Nos <span class="color_v">thématiques</span></h1>
         <div class="container">
             <div class="line d-flex justify-content-between">
-                <div class="theme_box mg_r mg_b">
+                <div class="theme_box mg_r mg_b exclude-accessibility BonW">
                     <div class="top d-flex justify-content-between">
                         <div class="title">
-                            <h4>Bases d'Internet</h4>
-                            <div class="underline title_underline internet"></div>
+                            <h4 class="exclude-accessibility text">Bases d'Internet</h4>
+                            <div class="underline title_underline internet exclude-accessibility"></div>
                         </div>
                         <img src="./assets/images/illustration/internet.png" alt="">
                     </div>
 
                     <div class="bot">
-                        <p class="fs-5">
+                        <p class="fs-5 exclude-accessibility text">
                             Vous retrouverez dans cette rubrique toutes les ressources qui vous aideront à acquérir toutes les bases d'Internet.
                         </p>
-                        <button onclick="window.location.href='categorie-internet.html'">Consulter</button>
+                        <button class="exclude-accessibility BonW" onclick="window.location.href='categorie-internet.html'">Consulter</button>
                     </div>
                 </div>
 
-                <div class="theme_box">
+                <div class="theme_box exclude-accessibility BonW">
                     <div class="top d-flex justify-content-between">
                         <div class="title">
-                            <h4>Sécurité</h4>
-                            <div class="underline title_underline securite"></div>
+                            <h4 class="exclude-accessibility text">Sécurité</h4>
+                            <div class="underline title_underline securite exclude-accessibility"></div>
                         </div>
                         <img src="./assets/images/illustration/sécurité.png" alt="">
                     </div>
 
                     <div class="bot">
-                        <p class="fs-5">
+                        <p class="fs-5 exclude-accessibility text">
                             Vous retrouverez dans cette rubrique toutes les ressources qui vous aideront à garantir votre sécurité sur le web.
                         </p>
-                        <button onclick="window.location.href='categorie-securite.html'">Consulter</button>
+                        <button class="exclude-accessibility BonW" onclick="window.location.href='categorie-securite.html'">Consulter</button>
                     </div>
                 </div>
             </div>
 
 
             <div class="line d-flex justify-content-between">
-                <div class="theme_box mg_r mg_b">
+                <div class="theme_box mg_r mg_b exclude-accessibility BonW">
                     <div class="top d-flex justify-content-between">
                         <div class="title">
-                            <h4>Administratif</h4>
-                            <div class="underline title_underline administratif"></div>
+                            <h4 class="exclude-accessibility text">Administratif</h4>
+                            <div class="underline title_underline administratif exclude-accessibility"></div>
                         </div>
                         <img src="./assets/images/illustration/admin.png" alt="">
                     </div>
 
                     <div class="bot">
-                        <p class="fs-5">
+                        <p class="fs-5 exclude-accessibility text">
                             Vous retrouverez dans cette rubrique toutes les ressources qui vous permettront de réussir vos démarches administratives.
                         </p>
-                        <button onclick="window.location.href='categorie-administratif.html'">Consulter</button>
+                        <button class="exclude-accessibility BonW" onclick="window.location.href='categorie-administratif.html'">Consulter</button>
                     </div>
                 </div>
 
-                <div class="theme_box">
+                <div class="theme_box exclude-accessibility BonW">
                     <div class="top d-flex justify-content-between">
                         <div class="title">
-                            <h4>Éducation</h4>
-                            <div class="underline title_underline education"></div>
+                            <h4 class="exclude-accessibility text">Éducation</h4>
+                            <div class="underline title_underline education exclude-accessibility"></div>
                         </div>
                         <img src="./assets/images/illustration/education.png" alt="">
                     </div>
 
                     <div class="bot">
-                        <p class="fs-5">
+                        <p class="fs-5 exclude-accessibility text">
                             Vous retrouverez dans cette rubrique toutes les ressources en lien avec l'éducation en ligne.
                         </p>
-                        <button onclick="window.location.href='categorie-education.html'">Consulter</button>
+                        <button class="exclude-accessibility BonW" onclick="window.location.href='categorie-education.html'">Consulter</button>
                     </div>
                 </div>
             </div>
 
 
             <div class="line d-flex justify-content-between">
-                <div class="theme_box mg_r mg_b">
+                <div class="theme_box mg_r mg_b exclude-accessibility BonW">
                     <div class="top d-flex justify-content-between">
                         <div class="title">
-                            <h4>Santé</h4>
-                            <div class="underline title_underline sante"></div>
+                            <h4 class="exclude-accessibility text">Santé</h4>
+                            <div class="underline title_underline sante exclude-accessibility"></div>
                         </div>
                         <img src="./assets/images/illustration/santé.png" alt="">
                     </div>
 
                     <div class="bot">
-                        <p class="fs-5">
+                        <p class="fs-5 exclude-accessibility text">
                             Vous retrouverez dans cette rubrique toutes les ressources en rapport avec la santé.
                         </p>
-                        <button onclick="window.location.href='categorie-sante.html'">Consulter</button>
+                        <button class="exclude-accessibility BonW" onclick="window.location.href='categorie-sante.html'">Consulter</button>
                     </div>
                 </div>
 
-                <div class="theme_box">
+                <div class="theme_box exclude-accessibility BonW">
                     <div class="top d-flex justify-content-between">
                         <div class="title">
-                            <h4>Communication</h4>
-                            <div class="underline title_underline comm"></div>
+                            <h4 class="exclude-accessibility text">Communication</h4>
+                            <div class="underline title_underline comm exclude-accessibility"></div>
                         </div>
                         <img src="./assets/images/illustration/communication.png" alt="">
                     </div>
 
                     <div class="bot">
-                        <p class="fs-5">
+                        <p class="fs-5 exclude-accessibility text">
                             Vous retrouverez dans cette rubrique toutes les ressources qui vous aideront à communiquer en ligne.
                         </p>
-                        <button onclick="window.location.href='categorie-communication.html'">Consulter</button>
+                        <button class="exclude-accessibility BonW" onclick="window.location.href='categorie-communication.html'">Consulter</button>
                     </div>
                 </div>
             </div>
@@ -264,33 +328,33 @@
         <div class="d-flex flex-column align-items-center">
             <div class="link-container">
                 <ul class="d-flex">
-                    <li><a class="fs-4 menu__link fw-medium" href="#">Accueil</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="home">Accueil</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#">A propos</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="about">A propos</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#">Ressources</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="resources">Ressources</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="privacy_policy">Politique de confidentialité</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="legal_notice">Mentions légales</a></li>
                 </ul>
             </div>
 
             <div class="link-container_992 d-flex flex-column align-items-center none">
                 <div class="top">
                     <ul class="d-flex">
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Accueil</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="home">Accueil</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#">A propos</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="about">A propos</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Ressources</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="resources">Ressources</a></li>
                     </ul>
                 </div>
                 <div class="bot">
                     <ul class="d-flex">
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="privacy_policy">Politique de confidentialité</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="legal_notice">Mentions légales</a></li>
                     </ul>
                 </div>
             </div>
@@ -303,8 +367,9 @@
             </div>
         </div>
     </footer>
-    
-</body>
 
-<script src="./assets/js/script.js"></script>
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/translate.js"></script>
+</body>
 </html>
