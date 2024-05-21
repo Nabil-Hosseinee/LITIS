@@ -237,11 +237,11 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         <div class="d-flex flex-column align-items-center">
             <div class="link-container">
                 <ul class="d-flex">
-                    <li><a class="fs-4 menu__link fw-medium" href="#">Accueil</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="index.php">Accueil</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#">A propos</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="about.html">A propos</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#">Ressources</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="ressource.html">Ressources</a></li>
                     <div class="separator"></div>
                     <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
                     <div class="separator"></div>
@@ -252,11 +252,11 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
             <div class="link-container_992 d-flex flex-column align-items-center none">
                 <div class="top">
                     <ul class="d-flex">
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Accueil</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="index.php">Accueil</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#">A propos</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="about.html">A propos</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Ressources</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="ressource.html">Ressources</a></li>
                     </ul>
                 </div>
                 <div class="bot">
