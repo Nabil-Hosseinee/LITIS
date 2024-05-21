@@ -10,7 +10,7 @@ if (isset($_POST['mot'])) {
     // Connexion à la base de données (à remplacer avec vos informations de connexion)
     $dsn = 'mysql:host=localhost;dbname=litis';
     $username = 'root';
-    $password = 'root';
+    $password = '';
 
     try {
         $db = new PDO($dsn, $username, $password);

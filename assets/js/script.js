@@ -142,3 +142,21 @@ document.querySelector('.bg-toggle').addEventListener('change', function() {
 
 
 
+// test logout
+function sendEndSessionRequest() {
+    // Envoi d'une requête pour signaler la fin de la session
+    navigator.sendBeacon('/end_session.php');
+}
+
+window.addEventListener('beforeunload', sendEndSessionRequest);
+
+// Envoi de heartbeats toutes les 30 secondes pour maintenir la session active
+setInterval(function () {
+    fetch('/heartbeat.php', { method: 'POST' });
+}, 30000);
+
+
+
+
+
+

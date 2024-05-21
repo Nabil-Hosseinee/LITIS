@@ -505,20 +505,10 @@ footer {
   color: var(--violet);
 }
 
-/* .access:hover {
-  background-color: white;
-  border: 1px solid black;
-  color: black;
-} */
-
 .expanded {
   width: 30vw;
   border-radius: 32px;
-  /* padding: 0 2vw; */
 }
-
-
-
 
 .access-menu {
   display: none;
@@ -837,6 +827,43 @@ input:checked + .slider:before {
   .none a {
     font-size: 1rem !important;
   }
+
+  .access {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .access i {
+    font-size: 25px;
+  }
+
+  .switch span {
+    font-size: 10px;
+    margin-right: 2vw;
+  }
+
+  .chatbot {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .expanded {
+    width: 60vw;
+    border-radius: 32px;
+    /* padding: 0 2vw; */
+    height: 5vh;
+  }
+  
+
+  .chatbot img {
+    width: 35px;
+  }
 }
 
 
@@ -935,13 +962,39 @@ input:checked + .slider:before {
   }
 
   .access {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    position: fixed;
     bottom: 10px;
     left: 10px;
   }
 
   .access i {
     font-size: 15px;
+  }
+
+  .switch span {
+    font-size: 10px;
+    margin-right: 2vw;
+  }
+
+  .chatbot {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .expanded {
+    width: 80vw;
+    border-radius: 32px;
+    /* padding: 0 2vw; */
+    height: 5vh;
+  }
+  
+
+  .chatbot img {
+    width: 25px;
   }
 }
