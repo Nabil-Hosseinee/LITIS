@@ -106,106 +106,59 @@
 
     <!-- section tutoriels -->
     <section class="tutoriels">
-        <div class="rdv">
-            <h2>Rendez-vous médical</h2>
-            <div class="trait-vert"></div>
-            <div class="videos">
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <?php
+        include 'connect_bdd.php';
 
-        <div class="rdv">
-            <h2>Santé en ligne</h2>
-            <div class="trait-vert"></div>
-            <div class="videos">
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        $sql = "SELECT * FROM ressource WHERE Categorie = 'Santé' AND Sous_Categorie = 'Rendez-vous médical' AND Image != ''";
+        $result = $db->query($sql);
 
-        <div class="rdv">
-            <h2>Consultation en ligne</h2>
-            <div class="trait-vert"></div>
-            <div class="videos">
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        if ($result->rowCount() > 0) {
+            echo "<div class='rdv'>";
+            echo "<h2>Rendez-vous médical</h2>";
+            echo "<div class='trait-vert'></div>";
+            echo "<div class='videos'>";
+            while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                echo "<div class='tuto image_wrapper'>";
+                echo "<a href='tuto.php'>";
+                echo "<img src='" . $row["Image"] . "' alt='" . $row["Titre"] . "'>";
+                echo "<div class='overlay_4'>";
+                echo "<div class='text_overlay fw-semibold'>Consulter</div>";
+                echo "</div>";
+                echo "</a>";
+                echo "</div>";
+            }
+            echo "</div>";
+            echo "</div>";
+        } else {
+            echo "Aucun résultat trouvé.";
+        }
+        ?>
+
+        <?php 
+        $sql_utilisation_systeme = "SELECT * FROM ressource WHERE Categorie = 'Santé' AND Sous_Categorie = 'Santé en ligne' AND Image !=' '";
+        $result_utilisation_systeme = $db->query($sql_utilisation_systeme);
+
+        if ($result_utilisation_systeme->rowCount() > 0) {
+            echo "<div class='rdv'>";
+            echo "<h2>Santé en ligne</h2>";
+            echo "<div class='trait-vert'></div>";
+            echo "<div class='videos'>";
+            while ($row_utilisation_systeme = $result_utilisation_systeme->fetch(PDO::FETCH_ASSOC)) {
+                echo "<div class='tuto image_wrapper'>";
+                echo "<a href='tuto.php'>";
+                echo "<img src='" . $row_utilisation_systeme["Image"] . "' alt='" . $row_utilisation_systeme["Titre"] . "'>";
+                echo "<div class='overlay_4'>";
+                echo "<div class='text_overlay fw-semibold'>Consulter</div>";
+                echo "</div>";
+                echo "</a>";
+                echo "</div>";
+            }
+            echo "</div>";
+            echo "</div>";
+        } else {
+            echo "Aucun résultat trouvé pour la sous-catégorie 'Santé en ligne'.";
+        }
+        ?>
     </section>
 
 
