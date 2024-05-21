@@ -5,7 +5,7 @@ session_start();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,26 +14,31 @@ session_start();
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script src="https://kit.fontawesome.com/96e027db6d.js" crossorigin="anonymous"></script>
+    <!-- test langue -->
+    <script src="https://unpkg.com/i18next@21.6.13/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@1.4.0/i18nextHttpBackend.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <!--  -->
     <title>Existence Numérique | Accueil</title>
   </head>
 
   <body id="body">
-    <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
+    <header id="desktop-header" class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top exclude-accessibility">
         <div class="logo d-flex justify-content-center align-items-center">
             <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
-                <li><a class="active fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
-                <li><a class="fs-3 menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-3 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                <li><a class="active fs-3 menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
             </ul>
         </nav>
 
-        <form class="search" action="cible2.php" method="post">
+        <form class="search exclude-accessibility" action="cible2.php" method="post">
             <label for="search-input" class="visually-hidden">Rechercher</label>
-            <input id="search-input" name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
-            <a href="#" aria-label="Rechercher">
+            <input id="search-input" class="exclude-accessibility" name="mot" type="text" placeholder="Rechercher..." autocomplete="off" data-i18n="search_placeholder">
+            <a href="#" aria-label="Rechercher" class="exclude-accessibility">
                 <lord-icon class="icon"
                     src="https://cdn.lordicon.com/unukghxb.json"
                     trigger="loop"
@@ -43,74 +48,96 @@ session_start();
             </a>
         </form>
 
-        <div class="burger-active" id="burger-menu">
-            <button>
-                <p>Menu</p>
-                <span></span>
+        <div class="language-selector exclude-accessibility">
+            <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
+            <div class="dropdown-content" id="language-menu">
+                <a href="#" data-lang="fr">FR : Français</a>
+                <a href="#" data-lang="en">EN : English</a>
+                <a href="#" data-lang="es">ES : Español</a>
+                <a href="#" data-lang="de">DE : Deutsch</a>
+            </div>
+        </div>
+
+        <div class="burger-active exclude-accessibility" id="burger-menu">
+            <button class="exclude-accessibility">
+                <p class="exclude-accessibility">Menu</p>
+                <span class="exclude-accessibility"></span>
             </button>
         </div>
 
-        <div id="menu">
+        <div id="menu" class="exclude-accessibility">
             <ul>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
             </ul>
         </div>
     </header>
 
     <!-- phone header -->
-    <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
+    <header id="phone-header" class="phone d-flex flex-column align-items-center bg-white fixed-top exclude-accessibility">
         <div class="header-container d-flex justify-content-around align-items-center">
             <div class="logo">
                 <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
             </div>
             
-            <div class="burger-active" id="burger-menu-phone">
-                <button>
-                    <p>Menu</p>
-                    <span></span>
+            <div class="burger-active exclude-accessibility" id="burger-menu-phone">
+                <button class="exclude-accessibility">
+                    <p class="exclude-accessibility">Menu</p>
+                    <span class="exclude-accessibility"></span>
                 </button>
             </div>
     
-            <div id="menu-phone">
+            <div id="menu-phone" class="exclude-accessibility">
                 <ul>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
                 </ul>
             </div>
         </div>
 
-        <form class="search" action="cible2.php" method="post">
-            <label for="search-input" class="visually-hidden">Rechercher</label>
-            <input type="text" id="search-input" placeholder="Rechercher...">
-            <a href="#" aria-labelledby="search-input">
-                <lord-icon class="icon"
-                    src="https://cdn.lordicon.com/unukghxb.json"
-                    trigger="loop"
-                    delay="2000"
-                    style="width:30px;height:30px">
-                </lord-icon>
-                <span class="visually-hidden">Rechercher</span>
-            </a>
-        </form>
+        <div class="phone_bot d-flex justify-content-between exclude-accessibility">
+            <form class="search exclude-accessibility" action="cible2.php" method="post">
+                <label for="search-input" class="visually-hidden">Rechercher</label>
+                <input type="text" id="search-input" placeholder="Rechercher...">
+                <a href="#" aria-labelledby="search-input">
+                    <lord-icon class="icon phone_icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                    <span class="visually-hidden">Rechercher</span>
+                </a>
+            </form>
+
+            <div class="language-selector exclude-accessibility phone_select">
+                <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
+                <div class="dropdown-content" id="language-menu">
+                    <a href="#" data-lang="fr">FR : Français</a>
+                    <a href="#" data-lang="en">EN : English</a>
+                    <a href="#" data-lang="es">ES : Español</a>
+                    <a href="#" data-lang="de">DE : Deutsch</a>
+                </div>
+            </div>
+        </div>
     </header>
 
 
     <!-- accessibilité -->
-    <div id="access" class="access d-flex justify-content-center align-items-center">
-        <i class="fa-solid fa-eye-low-vision"></i>
+    <div id="access" class="access d-flex justify-content-center align-items-center exclude-accessibility">
+        <i class="fa-solid fa-eye-low-vision exclude-accessibility"></i>
         <div id="access-menu" class="access-menu">
             <label class="switch mg">
-                <span class="fw-bold color_v">Changer l'écriture</span>
-                <input type="checkbox" class="font-toggle">
-                <span class="slider round"></span>
+                <span class="fw-bold color_v exclude-accessibility" data-i18n="access_lang">Changer l'écriture</span>
+                <input type="checkbox" class="font-toggle exclude-accessibility">
+                <span class="slider round exclude-accessibility"></span>
             </label>
             <label class="switch">
-                <span class="fw-bold color_v">Changer le contraste</span>
-                <input type="checkbox" class="bg-toggle">
-                <span class="slider round"></span>
+                <span class="fw-bold color_v exclude-accessibility" data-i18n="access_contrast">Changer le contraste</span>
+                <input type="checkbox" class="bg-toggle exclude-accessibility">
+                <span class="slider round exclude-accessibility"></span>
             </label>
         </div>
     </div>
@@ -131,12 +158,12 @@ session_start();
 
             <div class="content col-xl-6 col-lg-12">
                 <!-- class bootstrap qui ne fonctionne pas "fs-sm-4" -->
-                <p class="fs-3 fs-sm-4">
+                <p class="fs-3 fs-sm-4" data-i18n="presentation">
                     Découvrez une multitude de <span class="fw-semibold color_v">ressources</span> soigneusement élaborées pour vous accompagner dans le développement de vos <span class="color_v fw-semibold">compétences numériques.</span> <br><br>Elles vous permettront ainsi de naviguer avec aisance et assurance à travers le paysage technologique en constante évolution, tout en vous donnant les outils nécessaires pour relever les <span class="color_v fw-semibold">défis numériques</span> avec confiance et succès.
                 </p>
                 <div class="btn-container d-flex justify-content-start">
-                    <a href="ressource.html"><button class="btn fw-bold btn-resource">Accéder aux ressources</button></a>
-                    <a href="about.html"><button class="btn fw-bold btn-about">A propos</button></a>
+                    <a href="ressource.html"><button class="btn fw-bold btn-resource" data-i18n="resources_btn">Accéder aux ressources</button></a>
+                    <a href="about.html"><button class="btn fw-bold btn-about" data-i18n="about_btn">A propos</button></a>
                 </div>
             </div>
             
@@ -146,12 +173,12 @@ session_start();
 
     <!-- slogan -->
     <div class="slogan d-flex justify-content-center align-items-center">
-        <div class="circle d-flex justify-content-center align-items-center">
+        <div class="circle d-flex justify-content-center align-items-center exclude-accessibility BonW">
             <img src="./assets/images/illustration/quotes.svg" alt="">
         </div>
-        <div class="container rounded-4 d-flex justify-content-center align-items-center">
+        <div class="container rounded-4 d-flex justify-content-center align-items-center exclude-accessibility">
             <img class="slogan_img slogan_gauche" src="./assets/images/illustration/slogan.svg" alt="">
-            <h1 class="color_v">
+            <h1 class="color_v exclude-accessibility text" data-i18n="slogan">
                 La référence digitale pour naviguer vers l'inclusion en ligne
             </h1>
         </div>
@@ -160,12 +187,12 @@ session_start();
     
     <!-- prb -->
     <section class="prb">
-        <h2 class="fs-1 fw-bold">
+        <h2 class="fs-1 fw-bold" data-i18n="mission">
             Quelle est notre <span class="color_v">mission</span> ?
         </h2>
         <div class="container prb-container d-flex flex-column align-items-center">
-            <img class="col-xl-12 img-fluid" src="./assets/images/illustration/mission3.png" alt="Illustration des missions, une personne vise une cible avec une fléchette">
-            <p class="col-xl-12 fs-3 fw-medium">
+            <img class="col-xl-12 img-fluid" src="./assets/images/illustration/mission2.png" alt="Illustration des missions, une personne vise une cible avec une fléchette">
+            <p class="col-xl-12 fs-3 fw-medium" data-i18n="mission_description">
                 Nous nous engageons à rendre le monde numérique accessible à tous.
                 <br>
                 <br>
@@ -180,19 +207,19 @@ session_start();
 
     <!-- tuto -->
     <section class="tuto">
-        <h2 class="fs-1 fw-bold">
+        <h2 class="fs-1 fw-bold" data-i18n="tuto_title">
             Les <span class="color_v">tutoriels</span> à la une
         </h2>
 
         <div class="container">
-            <div class="big-box col-xl-12 d-flex justify-content-between align-items-center rounded-4 desapear-576">
+            <div class="big-box col-xl-12 d-flex justify-content-between align-items-center rounded-4 desapear-576 exclude-accessibility">
                 <div class="big-box-img col-xl-5 rounded-4">
-                    <img class="img-fluid rounded" src="./assets/images/miniatures/santé/minia_doctolib.png" alt="Miniature de la vidéo nommée 'Prendre un rendez-vous sur Doctolib'">
+                    <img class="img-fluid rounded" src="./assets/images/miniatures_fr/santé/minia_doctolib.png" alt="Miniature de la vidéo nommée 'Prendre un rendez-vous sur Doctolib'" data-i18n="img_sante_doctolib">
                 </div>
                 <div class="big-box-content col-6">
-                    <h3>Prendre un rendez-vous sur Doctolib</h3>
-                    <h4>Santé</h4>
-                    <p class="fs-5">
+                    <h3 data-i18n="doctolib_rdv_title" class="exclude-accessibility text">Prendre un rendez-vous sur Doctolib</h3>
+                    <h4 data-i18n="health_cat" class="exclude-accessibility text">Santé</h4>
+                    <p class="fs-5 exclude-accessibility text" data-i18n="details">
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, possimus tenetur consequuntur nam fugit repellat... <br>
                         <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
                     </p>
@@ -200,37 +227,37 @@ session_start();
             </div>
 
             <div class="container box-container d-flex justify-content-between">
-                <div class="box d-flex flex-column align-items-center rounded-4">
-                    <h4 class="fs-5">Créer un mot de passe sécurisé</h4>
-                    <h3 class="fs-6">Sécurité</h3>
+                <div class="box d-flex flex-column align-items-center rounded-4 exclude-accessibility">
+                    <h4 class="fs-5 exclude-accessibility text" data-i18n="mdp_create_title">Créer un mot de passe sécurisé</h4>
+                    <h3 class="fs-6 exclude-accessibility text" data-18n="security_cat">Sécurité</h3>
                     <div class="img rounded-4">
-                        <img class="img-fluid rounded" src="./assets/images/miniatures/sécurité/minia_crea_mdp.png" alt="Miniature de la vidéo nommée 'Créer un mot de passe sécurisé'">
+                        <img class="img-fluid rounded" src="./assets/images/miniatures_fr/sécurité/minia_crea_mdp.png" alt="Miniature de la vidéo nommée 'Créer un mot de passe sécurisé'" data-i18n="img_mdp_create">
                     </div>
-                    <p>
+                    <p data-i18n="details" class="exclude-accessibility text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae. <br>
                         <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
                     </p>
                 </div>
 
-                <div class="box d-flex flex-column align-items-center rounded-4 center-box">
-                    <h4 class="fs-5">Utiliser Parcoursup</h4>
-                    <h3 class="fs-6">Éducation</h3>
+                <div class="box d-flex flex-column align-items-center rounded-4 center-box exclude-accessibility">
+                    <h4 class="fs-5 exclude-accessibility text" data-i18n="parcoursup_title">Utiliser Parcoursup</h4>
+                    <h3 class="fs-6 exclude-accessibility text" data-i18n="education_cat">Éducation</h3>
                     <div class="img rounded-4">
-                        <img class="img-fluid rounded" src="./assets/images/miniatures/éducation/minia_parcoursup.png" alt="Miniature de la vidéo nommée 'Utiliser Parcoursup'">
+                        <img class="img-fluid rounded" src="./assets/images/miniatures_fr/éducation/minia_parcoursup.png" alt="Miniature de la vidéo nommée 'Utiliser Parcoursup'" data-i18n="img_parcoursup">
                     </div>
-                    <p>
+                    <p  data-i18n="details" class="exclude-accessibility text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae. <br>
                         <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
                     </p>
                 </div>
 
-                <div class="box d-flex flex-column align-items-center rounded-4 desapear">
-                    <h4 class="fs-5">Créer un compte Google</h4>
-                    <h3 class="fs-6">Base d'Internet</h3>
+                <div class="box d-flex flex-column align-items-center rounded-4 desapear exclude-accessibility">
+                    <h4 class="fs-5 exclude-accessibility text" data-i18n="google_create_title">Créer un compte Google</h4>
+                    <h3 class="fs-6 exclude-accessibility text" data-i18n="internet_cat">Base d'Internet</h3>
                     <div class="img rounded-4">
-                        <img class="img-fluid rounded" src="./assets/images/miniatures/internet/minia_crea_google.png" alt="Miniature de la vidéo nommée 'Créer un compte Google'">
+                        <img class="img-fluid rounded" src="./assets/images/miniatures_fr/internet/minia_crea_google.png" alt="Miniature de la vidéo nommée 'Créer un compte Google'" data-i18n="img_google_create">
                     </div>
-                    <p>
+                    <p data-i18n="details" class="exclude-accessibility text">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
                         <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
                     </p>
@@ -244,33 +271,33 @@ session_start();
         <div class="d-flex flex-column align-items-center">
             <div class="link-container">
                 <ul class="d-flex">
-                    <li><a class="fs-4 menu__link fw-medium" href="#">Accueil</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="home">Accueil</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="about.html">A propos</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="about">A propos</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="ressource.html">Ressources</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="resources">Ressources</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="privacy_policy">Politique de confidentialité</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="legal_notice">Mentions légales</a></li>
                 </ul>
             </div>
 
             <div class="link-container_992 d-flex flex-column align-items-center none">
                 <div class="top">
                     <ul class="d-flex">
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Accueil</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="home">Accueil</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="about.html">A propos</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="about">A propos</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="ressource.html">Ressources</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="resources">Ressources</a></li>
                     </ul>
                 </div>
                 <div class="bot">
                     <ul class="d-flex">
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="privacy_policy">Politique de confidentialité</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="legal_notice">Mentions légales</a></li>
                     </ul>
                 </div>
             </div>
@@ -285,8 +312,9 @@ session_start();
     </footer>
 
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
-
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/translate.js"></script>
+    
   </body>
 
 </html>

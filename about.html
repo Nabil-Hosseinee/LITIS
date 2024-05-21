@@ -7,26 +7,30 @@
     <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/about.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="https://kit.fontawesome.com/96e027db6d.js" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/i18next@21.6.13/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@1.4.0/i18nextHttpBackend.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
     <title>Existence Numérique | A propos</title>
 </head>
 <body>
     
-    <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
+    <header id="desktop-header" class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top exclude-accessibility">
         <div class="logo d-flex justify-content-center align-items-center">
             <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
-                <li><a class="fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
-                <li><a class="active fs-3 menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-3 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                <li><a class="active fs-3 menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
             </ul>
         </nav>
 
-        <form class="search" action="cible2.php" method="post">
+        <form class="search exclude-accessibility" action="cible2.php" method="post">
             <label for="search-input" class="visually-hidden">Rechercher</label>
-            <input id="search-input" name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
-            <a href="#" aria-label="Rechercher">
+            <input id="search-input" class="exclude-accessibility" name="mot" type="text" placeholder="Rechercher..." autocomplete="off" data-i18n="search_placeholder">
+            <a href="#" aria-label="Rechercher" class="exclude-accessibility">
                 <lord-icon class="icon"
                     src="https://cdn.lordicon.com/unukghxb.json"
                     trigger="loop"
@@ -36,68 +40,112 @@
             </a>
         </form>
 
-        <div class="burger-active" id="burger-menu">
-            <button>
-                <p>Menu</p>
-                <span></span>
+        <div class="language-selector exclude-accessibility">
+            <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
+            <div class="dropdown-content" id="language-menu">
+                <a href="#" data-lang="fr">FR : Français</a>
+                <a href="#" data-lang="en">EN : English</a>
+                <a href="#" data-lang="es">ES : Español</a>
+                <a href="#" data-lang="de">DE : Deutsch</a>
+            </div>
+        </div>
+
+        <div class="burger-active exclude-accessibility" id="burger-menu">
+            <button class="exclude-accessibility">
+                <p class="exclude-accessibility">Menu</p>
+                <span class="exclude-accessibility"></span>
             </button>
         </div>
 
-        <div id="menu">
+        <div id="menu" class="exclude-accessibility">
             <ul>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
             </ul>
         </div>
     </header>
 
     <!-- phone header -->
-    <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
+    <header id="phone-header" class="phone d-flex flex-column align-items-center bg-white fixed-top exclude-accessibility">
         <div class="header-container d-flex justify-content-around align-items-center">
             <div class="logo">
                 <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
             </div>
             
-            <div class="burger-active" id="burger-menu-phone">
-                <button>
-                    <p>Menu</p>
-                    <span></span>
+            <div class="burger-active exclude-accessibility" id="burger-menu-phone">
+                <button class="exclude-accessibility">
+                    <p class="exclude-accessibility">Menu</p>
+                    <span class="exclude-accessibility"></span>
                 </button>
             </div>
     
-            <div id="menu-phone">
+            <div id="menu-phone" class="exclude-accessibility">
                 <ul>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
                 </ul>
             </div>
         </div>
 
-        <form class="search" action="cible2.php" method="post">
-            <label for="search-input" class="visually-hidden">Rechercher</label>
-            <input type="text" id="search-input" placeholder="Rechercher...">
-            <a href="#" aria-labelledby="search-input">
-                <lord-icon class="icon"
-                    src="https://cdn.lordicon.com/unukghxb.json"
-                    trigger="loop"
-                    delay="2000"
-                    style="width:30px;height:30px">
-                </lord-icon>
-                <span class="visually-hidden">Rechercher</span>
-            </a>
-        </form>
+        <div class="phone_bot d-flex justify-content-between exclude-accessibility">
+            <form class="search exclude-accessibility" action="cible2.php" method="post">
+                <label for="search-input" class="visually-hidden">Rechercher</label>
+                <input type="text" id="search-input" placeholder="Rechercher...">
+                <a href="#" aria-labelledby="search-input">
+                    <lord-icon class="icon phone_icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                    <span class="visually-hidden">Rechercher</span>
+                </a>
+            </form>
+
+            <div class="language-selector exclude-accessibility phone_select">
+                <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
+                <div class="dropdown-content" id="language-menu">
+                    <a href="#" data-lang="fr">FR : Français</a>
+                    <a href="#" data-lang="en">EN : English</a>
+                    <a href="#" data-lang="es">ES : Español</a>
+                    <a href="#" data-lang="de">DE : Deutsch</a>
+                </div>
+            </div>
+        </div>
     </header>
+
+    <!-- accessibilité -->
+    <div id="access" class="access d-flex justify-content-center align-items-center exclude-accessibility">
+        <i class="fa-solid fa-eye-low-vision exclude-accessibility"></i>
+        <div id="access-menu" class="access-menu">
+            <label class="switch mg">
+                <span class="fw-bold color_v exclude-accessibility" data-i18n="access_lang">Changer l'écriture</span>
+                <input type="checkbox" class="font-toggle exclude-accessibility">
+                <span class="slider round exclude-accessibility"></span>
+            </label>
+            <label class="switch">
+                <span class="fw-bold color_v exclude-accessibility" data-i18n="access_contrast">Changer le contraste</span>
+                <input type="checkbox" class="bg-toggle exclude-accessibility">
+                <span class="slider round exclude-accessibility"></span>
+            </label>
+        </div>
+    </div>
+
+    <!-- chatbot -->
+    <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
+        <img src="./assets/images/avatar/normal.svg" alt="">
+    </div>
     
     <!-- apropos -->
     <section class="apropos">
         <div class="apropos-container d-flex flex-column align-items-center">
             
-            <h1 class="fw-semibold">Qui sommes-nous ?</h1>
+            <h1 class="fw-semibold" data-i18n="about_title">Qui sommes-nous ?</h1>
             
             <!-- class bootstrap qui ne fonctionne pas "fs-sm-4" -->
-            <p class="fs-sm-4 fw-medium">
+            <p class="fs-sm-4 fw-medium" data-i18n="about_pre">
             Nous accompagnons les individus dans <span class="fw-semibold color_v">l'exploration</span> et <span class="fw-semibold color_v">la maîtrise</span> des outils numériques, en fournissant des ressources éducatives <span class="fw-semibold color_v">accessibles à tous</span>. Nous visons à <span class="fw-semibold color_v">sensibiliser</span>, <span class="fw-semibold color_v">autonomiser</span> et <span class="fw-semibold color_v">soutenir</span> chacun dans le développement de compétences numériques essentielles, en collaboration avec des partenaires tels que <span class="fw-semibold color_v">l'AGEFIPH</span>, afin de favoriser leur participation active dans la société moderne.</p>
 
             <div class="images col-xl-6 col-lg-12">
@@ -110,17 +158,17 @@
     
     <!-- services -->
     <section class="services">
-        <h2 class="fw-bold">
+        <h2 class="fw-bold" data-i18n="about_services">
             Quels sont nos <span class="color_v">services</span> ?
         </h2>
         
         <div class="container services-container d-flex justify-content-between">
             
-            <div class="box box-1 d-flex flex-column  bg-white rounded-4">
+            <div class="box box-1 d-flex flex-column  bg-white rounded-4 exclude-accessibility">
                 <div class="titre-icon d-flex justify-content-between">
                     <div class="titre-trait">
-                        <h3 class="fw-bold">Tutoriels vidéo</h3>
-                        <div class="trait"></div>
+                        <h3 class="fw-bold text exclude-accessibility" data-i18n="about_video">Tutoriels vidéo</h3>
+                        <div class="trait exclude-accessibility"></div>
                     </div>
                     <lord-icon class="icon-services"
                         src="https://cdn.lordicon.com/mpzsxzrz.json"
@@ -130,26 +178,26 @@
                     </lord-icon>
                 </div>
 
-                <p class="fw-medium">
+                <p class="fw-medium text exclude-accessibility" data-i18n="about_video_details">
                 Nous proposons des tutoriels couvrants un large éventail de sujets allants des bases de l’informatique à des compétences plus avancées.</p>
 
-                <button class="btn fw-bold btn-savoir" onclick="window.location.href='https:\//www.youtube.com/@agefiph182'">En savoir plus</button>
+                <button class="btn fw-bold btn-savoir exclude-accessibility BonW" onclick="window.location.href='https:\//www.youtube.com/@agefiph182'" data-i18n="know_more_button">En savoir plus</button>
 
             </div>
             
-            <div class="box d-flex flex-column bg-white rounded-4">
+            <div class="box d-flex flex-column bg-white rounded-4 exclude-accessibility">
                 <div class="titre-icon d-flex justify-content-between">
                     <div class="titre-trait">
-                        <h3 class="fw-bold">Ressources</h3>
-                        <div class="trait"></div>
+                        <h3 class="fw-bold text exclude-accessibility" data-i18n="resources">Ressources</h3>
+                        <div class="trait exclude-accessibility"></div>
                     </div>
                     <img class="icon-services" src="assets/images/ressource.gif" alt="Illustration de ressources données à des personnes" style="width:150px;height:130px;">
                 </div>
                 
-                <p class="fw-medium">
+                <p class="fw-medium text exclude-accessibility" data-i18n="about_resources_details">
                 Nous mettons à disposition des ressources telles que des guides pratiques, des fiches techniques et des modèles, pour un apprentissage pratique et autonome à votre rythme.</p>
 
-                <button onclick="window.location.href='ressource.html'" class="btn fw-bold btn-savoir">En savoir plus</button>
+                <button onclick="window.location.href='ressource.html'" class="btn fw-bold btn-savoir exclude-accessibility BonW" data-i18n="know_more_button">En savoir plus</button>
 
             </div>
 
@@ -159,11 +207,11 @@
 
     <!-- partenaire -->
     <section class="partenaire">
-        <h2 class="fw-bold">
+        <h2 class="fw-bold" data-i18n="partenaire">
             Notre <span class="color_v">partenaire</span>
         </h2>
 
-        <div class="container partenaire-container d-flex justify-content-between">
+        <div class="container partenaire-container d-flex justify-content-between" data-i18n="partenaire_details">
             <p class="fw-medium">Nous sommes fiers de collaborer avec l'AGEFIPH dans notre mission commune de promouvoir l'accessibilité numérique pour tous.<br><br>
             En tant qu'organisation engagée dans l'insertion professionnelle des personnes en situation de handicap, l'AGEFIPH apporte une expertise précieuse et des ressources spécifiques pour aider à surmonter les obstacles liés à l'illectronisme chez les personnes en situation de handicap.</p>
             
@@ -174,13 +222,13 @@
 
     <!-- equipe -->
     <section class="equipe">
-        <h2 class="fw-bold">
+        <h2 class="fw-bold" data-i18n="equipe">
             Notre <span class="color_v">équipe</span>
         </h2>
 
         <div class="container equipe-container">
             <div class="equipe-litis d-flex flex-column align-items-center">
-                <h3 class="fs-1 fw-semibold color_v">Laboratoire LITIS</h3>
+                <h3 class="fs-1 fw-semibold color_v" data-i18n="litis">Laboratoire LITIS</h3>
                 <div class="boite d-flex justify-content-between">
                     <div class="team">
                         <img src="assets/images/equipe/katerine.png" alt="Illustration représentant Katerine">
@@ -190,7 +238,7 @@
             </div>
 
             <div class="equipe-agefiph">
-                <h3 class="fs-1 fw-semibold color_v">L'AGEFIPH</h3>
+                <h3 class="fs-1 fw-semibold color_v" data-i18n="agefiph">L'AGEFIPH</h3>
                 <div class="boite d-flex justify-content-between">
                     <div class="team">
                         <img src="assets/images/equipe/marya.png" alt="Illustration représentant Marya">
@@ -204,7 +252,7 @@
             </div>
 
             <div class="equipe-iut">
-                <h3 class="fs-1 fw-semibold color_v">Université de Rouen / IUT de Rouen</h3>
+                <h3 class="fs-1 fw-semibold color_v" data-i18n="iut">Université de Rouen / IUT de Rouen</h3>
                 <div class="boite d-flex justify-content-between">
                     <div class="team">
                         <img src="assets/images/equipe/dylan.png" alt="Illustration représentant Dylan">
@@ -230,14 +278,14 @@
 
     <!-- contact -->
     <section class="contact">
-        <h2 class="fw-bold">
+        <h2 class="fw-bold" data-i18n="contact">
             Nous <span class="color_v">contacter</span>
         </h2>
 
         <div class="container contact-container d-flex flex-column justify-content-between">
             <div class="lieu d-flex justify-content-between align-items-center">
                 <div class="reseaux">
-                    <h3 class="fs-2 fw-semibold color_v">Suivez nous</h3>
+                    <h3 class="fs-2 fw-semibold color_v" data-i18n="follow">Suivez nous</h3>
                     <div class="logo-reseaux d-flex justify-content-around">
                         <div>
                             <a href="https://www.instagram.com/?hl=fr"><img src="assets/images/logo/logo-insta.png" alt="Logo instagram"></img></a>
@@ -258,32 +306,32 @@
                     </div>
                 </div>
                 <div class="adresse">
-                    <h3 class="fs-2 fw-semibold color_v">Emplacement</h3>
+                    <h3 class="fs-2 fw-semibold color_v" data-i18n="lieu">Emplacement</h3>
                     <p class="fw-semibold">30 Rue Henri Gadeau de Kerville, 76038 Rouen</p>
                 </div>
             </div>
             <div class="form-carte">
                 <div class="form">
-                    <h3 class="fs-2 fw-semibold color_v">Formulaire de contact</h3>
+                    <h3 class="fs-2 fw-semibold color_v" data-i18n="form">Formulaire de contact</h3>
                     <form action="#" method="post">
                         <div>
-                            <label for="prenom" class="fs-6 fw-semibold">Entrez votre prénom :</label>
-                            <input type="text" id="prenom" name="prenom" placeholder="Exemple : Julien" required>
+                            <label for="prenom" class="fs-6 fw-semibold" data-i18n="name_label">Entrez votre prénom :</label>
+                            <input type="text" id="prenom" name="prenom" placeholder="Exemple : Julien" required data-i18n="example_name">
                         </div>
                         <div>
-                            <label for="email" class="fs-6 fw-semibold">Entrez votre adresse mail :</label>
-                            <input type="email" id="email" name="email" placeholder="Exemple : julien.dubois@gmail.com" required>
+                            <label for="email" class="fs-6 fw-semibold" data-i18n="mail_label">Entrez votre adresse mail :</label>
+                            <input type="email" id="email" name="email" placeholder="Exemple : julien.dubois@gmail.com" required data-i18n="example_mail">
                         </div>
                         <div>
-                            <label for="objet" class="fs-6 fw-semibold">Entrez l'objet de votre requête :</label>
-                            <input type="text" id="objet" name="objet" placeholder="Exemple : Erreur d'affichage sur le site" required>
+                            <label for="objet" class="fs-6 fw-semibold" data-i18n="object_label">Entrez l'objet de votre requête :</label>
+                            <input type="text" id="objet" name="objet" placeholder="Exemple : Erreur d'affichage sur le site" required data-i18n="example_object">
                         </div>
                         <div>
-                            <label for="message" class="fs-6 fw-semibold">Entrez votre message :</label>
+                            <label for="message" class="fs-6 fw-semibold" data-i18n="message_label">Entrez votre message :</label>
                             <textarea id="message" name="message" rows="5" required></textarea>
                         </div>
                         <div>
-                            <button class="btn fw-bold btn-form" type="submit">Soumettre</button>
+                            <button class="btn fw-bold btn-form" type="submit" data-i18n="submit_btn">Soumettre</button>
                         </div>
                     </form>
                 </div>
@@ -296,36 +344,36 @@
 
     <!-- footer -->
     <footer>
-        <div class="container d-flex flex-column align-items-center">
+        <div class="d-flex flex-column align-items-center">
             <div class="link-container">
                 <ul class="d-flex">
-                    <li><a class="fs-4 menu__link fw-medium" href="index.php">Accueil</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="home">Accueil</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#">A propos</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="about">A propos</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="ressource.html">Ressources</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="resources">Ressources</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="privacy_policy">Politique de confidentialité</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="legal_notice">Mentions légales</a></li>
                 </ul>
             </div>
 
             <div class="link-container_992 d-flex flex-column align-items-center none">
                 <div class="top">
                     <ul class="d-flex">
-                        <li><a class="fs-3 menu__link fw-medium" href="index.php">Accueil</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="home">Accueil</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-3 menu__link fw-medium" href="#">A propos</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="about">A propos</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-3 menu__link fw-medium" href="ressource.html">Ressources</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="resources">Ressources</a></li>
                     </ul>
                 </div>
                 <div class="bot">
                     <ul class="d-flex">
-                        <li><a class="fs-3 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="privacy_policy">Politique de confidentialité</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-3 menu__link fw-medium" href="#">Mentions légales</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="legal_notice">Mentions légales</a></li>
                     </ul>
                 </div>
             </div>
@@ -340,8 +388,8 @@
     </footer>
 
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
-
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/translate.js"></script>
     
 </body>
 </html>

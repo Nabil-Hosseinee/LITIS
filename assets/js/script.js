@@ -83,11 +83,18 @@ burgerMenuPhone.addEventListener('click', function() {
 
 
 
-// dyslexique
+// général var
 var body = document.getElementById('body');
+var menu = document.getElementById('access-menu');
+
+// index.php var
 var access = document.getElementById('access');
 var chatbot = document.getElementById('chatbot');
-var menu = document.getElementById('access-menu');
+var d_header = document.getElementById('desktop-header');
+var p_header = document.getElementById('phone-header');
+var text = document.querySelectorAll('.text');
+var BonW = document.querySelectorAll('.BonW');
+
 
 access.addEventListener("click", function() {
     this.classList.toggle('expanded');
@@ -107,9 +114,29 @@ document.querySelector('.font-toggle').addEventListener('change', function() {
 document.querySelector('.bg-toggle').addEventListener('change', function() {
     if (this.checked) {
         document.body.classList.add('accessibility-mode');
-        document.getElementById('search-input').classList.add('.accessibility-search-mode');
-    } else {
+        d_header.classList.add('header-access');
+        p_header.classList.add('header-access');
+        
+        BonW.forEach(function(element) {
+            element.classList.add('accessibility-mode_BonW')
+        });
+        
+        text.forEach(function(element) {
+            element.classList.add('color_b');
+        });
+    } 
+    else {
         document.body.classList.remove('accessibility-mode');
+        d_header.classList.remove('header-access');
+        p_header.classList.remove('header-access');
+        
+        BonW.forEach(function(element) {
+            element.classList.remove('accessibility-mode_BonW')
+        })
+
+        text.forEach(function(element) {
+            element.classList.remove('color_b');
+        });
     }
 });
 
