@@ -1,0 +1,49 @@
+body {
+    background-color: var(--gris-clair);
+    font-family: "Raleway", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    overflow-x: hidden;
+}
+
+.title {
+    margin-top: 20vh;
+    margin-left: 7vh;
+    
+}
+
+/* ligne */
+
+.underline {
+    height: 5px;
+    background-color: #1F936F;
+    border-radius: 16px;
+}
+
+.title_underline {
+    width: 50px;
+    margin-left: 1vw;
+    margin-top: 1.5vh;
+}
+
+/* Vidéo */
+
+.image_wrapper a{
+    display: flex;
+    justify-content: center;
+    margin-top: 10vh;
+}
+
+.image_wrapper img  {
+    width: 60%;
+}
+
+/* separator */
+
+.bar {
+    width: 50vw;
+    height: 5px;
+    border-radius: 16px;
+    margin: 10vh auto;
+    background-color: #1F936F;
+}
