@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/categorie.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <title>Existence Numérique | Santé</title>
+    <title>Existence Numérique | Administratif</title>
 </head>
 <body>
     
@@ -17,7 +17,7 @@
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
-                <li><a class="active fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
                 <li><a class="fs-3 menu__link fw-semibold" href="about.html">A propos</a></li>
                 <li><a class="fs-3 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
             </ul>
@@ -89,7 +89,7 @@
             </a>
         </form>
     </header>
-
+    
     <!-- section intro -->
     <section class="intro">
         <div class="arc-cercle">
@@ -98,123 +98,75 @@
             </svg>
         </div>
         <div class="intro-container d-flex flex-column align-items-center">
-            <h1>Santé</h1>
+            <h1>Administratif</h1>
             <div class="trait"></div>
-            <p>Vous désirez prendre un rendez-vous médical, mais cela vous semble trop compliqué ? Ne vous inquiétez pas, ici, vous trouverez les réponses à toutes vos questions.</p>
+            <p>Voici une liste complète de ressources pour vous aider à gérer vos tâches administratives plus facilement, sans que cela ne vous stresse.</p>
         </div>
     </section>
 
-    <!-- section tutoriels -->
-    <section class="tutoriels">
-        <div class="rdv">
-            <h2>Rendez-vous médical</h2>
-            <div class="trait-vert"></div>
-            <div class="videos">
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+<!-- section tutoriels -->
+<section class="tutoriels">
+        <?php
+        include 'connect_bdd.php';
 
-        <div class="rdv">
-            <h2>Santé en ligne</h2>
-            <div class="trait-vert"></div>
-            <div class="videos">
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        $sql = "SELECT * FROM ressource WHERE Categorie = 'Administratif' AND Sous_Categorie = 'Création de compte' AND Image != ''";
+        $result = $db->query($sql);
 
-        <div class="rdv">
-            <h2>Consultation en ligne</h2>
-            <div class="trait-vert"></div>
-            <div class="videos">
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/santé/minia_doctolib.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        if ($result->rowCount() > 0) {
+            echo "<div class='rdv'>";
+            echo "<h2>Création de compte</h2>";
+            echo "<div class='trait-bleu'></div>";
+            echo "<div class='videos'>";
+            while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                echo "<div class='tuto image_wrapper'>";
+                echo "<a href='tuto.php'>";
+                echo "<img src='" . $row["Image"] . "' alt='" . $row["Titre"] . "'>";
+                echo "<div class='overlay_4'>";
+                echo "<div class='text_overlay fw-semibold'>Consulter</div>";
+                echo "</div>";
+                echo "</a>";
+                echo "</div>";
+            }
+            echo "</div>";
+            echo "</div>";
+        } else {
+            echo "Aucun résultat trouvé.";
+        }
+        ?>
+
+        <?php 
+        $sql_utilisation_systeme = "SELECT * FROM ressource WHERE Categorie = 'Administratif' AND Sous_Categorie = 'Prendre un rendez-vous' AND Image !=' '";
+        $result_utilisation_systeme = $db->query($sql_utilisation_systeme);
+
+        if ($result_utilisation_systeme->rowCount() > 0) {
+            echo "<div class='rdv'>";
+            echo "<h2>Prendre un rendez-vous</h2>";
+            echo "<div class='trait-bleu'></div>";
+            echo "<div class='videos'>";
+            while ($row_utilisation_systeme = $result_utilisation_systeme->fetch(PDO::FETCH_ASSOC)) {
+                echo "<div class='tuto image_wrapper'>";
+                echo "<a href='tuto.php'>";
+                echo "<img src='" . $row_utilisation_systeme["Image"] . "' alt='" . $row_utilisation_systeme["Titre"] . "'>";
+                echo "<div class='overlay_4'>";
+                echo "<div class='text_overlay fw-semibold'>Consulter</div>";
+                echo "</div>";
+                echo "</a>";
+                echo "</div>";
+            }
+            echo "</div>";
+            echo "</div>";
+        } else {
+            echo "Aucun résultat trouvé.";
+        }
+        ?>
     </section>
-
 
     <div class="quiz">
         <h2>Quiz</h2>
-        <div class="trait-vert"></div>
+        <div class="trait-bleu"></div>
         <div class="texte-img-quiz">
             <div class="texte-quiz">
-                <p class="fs-4 fw-medium">Il est grand temps de vous exercer afin de savoir si vous avez bien suivi les ressources de la catégorie <span class="color_san">santé </span>!</p>
+                <p class="fs-4 fw-medium">Il est grand temps de vous exercer afin de savoir si vous avez bien suivi les ressources de la catégorie <span class="color_adm">administratif </span>!</p>
                 <button onclick="window.location.href='quiz.html'" class="btn fw-bold btn-quiz">Faire le quiz</button>
             </div>
             <div class="img-quiz">

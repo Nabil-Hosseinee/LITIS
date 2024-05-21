@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/categorie.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <title>Existence Numérique | Communication</title>
+    <title>Existence Numérique | Sécurité</title>
 </head>
 <body>
     
@@ -17,7 +17,7 @@
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
-                <li><a class="active fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
                 <li><a class="fs-3 menu__link fw-semibold" href="about.html">A propos</a></li>
                 <li><a class="fs-3 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
             </ul>
@@ -98,147 +98,76 @@
             </svg>
         </div>
         <div class="intro-container d-flex flex-column align-items-center">
-            <h1>Communication</h1>
+            <h1>Sécurité</h1>
             <div class="trait"></div>
-            <p>Voici des ressources pour vous aider à utiliser les réseaux sociaux ou votre boite mail en toute facilité.</p>
+            <p>Découvrez nos ressources pour renforcer votre sécurité en ligne. Avec nous, vous serez protégés contre les menaces numériques.</p>
         </div>
     </section>
 
     <!-- section tutoriels -->
     <section class="tutoriels">
-        <div class="rdv">
-            <h2>Gérer un mail</h2>
-            <div class="trait-rose"></div>
-            <div class="videos">
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/communication/minia_boite_mail.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/communication/minia_boite_mail.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/communication/minia_boite_mail.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/communication/minia_boite_mail.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/communication/minia_boite_mail.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/communication/minia_boite_mail.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        <?php
+        include 'connect_bdd.php';
 
-        <div class="rdv">
-            <h2>Utiliser les réseaux sociaux</h2>
-            <div class="trait-rose"></div>
-            <div class="videos">
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/communication/minia_boite_mail.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/communication/minia_boite_mail.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/communication/minia_boite_mail.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/communication/minia_boite_mail.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        $sql = "SELECT * FROM ressource WHERE Categorie = 'Sécurité' AND Sous_Categorie = 'Se protéger en ligne' AND Image != ''";
+        $result = $db->query($sql);
 
-        <div class="rdv">
-            <h2>Astuces pour les messages</h2>
-            <div class="trait-rose"></div>
-            <div class="videos">
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/communication/minia_boite_mail.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/communication/minia_boite_mail.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-                <div class="tuto image_wrapper">
-                    <a href="tuto.php">
-                        <img src="./assets/images/miniatures/communication/minia_boite_mail.png" alt="">
-                        <div class="overlay_4">
-                            <div class="text_overlay fw-semibold">Consulter</div>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
+        if ($result->rowCount() > 0) {
+            echo "<div class='rdv'>";
+            echo "<h2>Se protéger en ligne</h2>";
+            echo "<div class='trait-orange'></div>";
+            echo "<div class='videos'>";
+            while($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                echo "<div class='tuto image_wrapper'>";
+                echo "<a href='tuto.php'>";
+                echo "<img src='" . $row["Image"] . "' alt='" . $row["Titre"] . "'>";
+                echo "<div class='overlay_4'>";
+                echo "<div class='text_overlay fw-semibold'>Consulter</div>";
+                echo "</div>";
+                echo "</a>";
+                echo "</div>";
+            }
+            echo "</div>";
+            echo "</div>";
+        } else {
+            echo "Aucun résultat trouvé.";
+        }
+        ?>
+
+        <?php 
+        $sql_utilisation_systeme = "SELECT * FROM ressource WHERE Categorie = 'Sécurité' AND Sous_Categorie = 'Mot de passe' AND Image !=' '";
+        $result_utilisation_systeme = $db->query($sql_utilisation_systeme);
+
+        if ($result_utilisation_systeme->rowCount() > 0) {
+            echo "<div class='rdv'>";
+            echo "<h2>Mot de passe</h2>";
+            echo "<div class='trait-orange'></div>";
+            echo "<div class='videos'>";
+            while ($row_utilisation_systeme = $result_utilisation_systeme->fetch(PDO::FETCH_ASSOC)) {
+                echo "<div class='tuto image_wrapper'>";
+                echo "<a href='tuto.php'>";
+                echo "<img src='" . $row_utilisation_systeme["Image"] . "' alt='" . $row_utilisation_systeme["Titre"] . "'>";
+                echo "<div class='overlay_4'>";
+                echo "<div class='text_overlay fw-semibold'>Consulter</div>";
+                echo "</div>";
+                echo "</a>";
+                echo "</div>";
+            }
+            echo "</div>";
+            echo "</div>";
+        } else {
+            echo "Aucun résultat trouvé pour la sous-catégorie 'Mot de passe'.";
+        }
+        ?>
     </section>
 
 
     <div class="quiz">
         <h2>Quiz</h2>
-        <div class="trait-rose"></div>
+        <div class="trait-orange"></div>
         <div class="texte-img-quiz">
             <div class="texte-quiz">
-                <p class="fs-4 fw-medium">Il est grand temps de vous exercer afin de savoir si vous avez bien suivi les ressources de la catégorie <span class="color_com">communication </span>!</p>
+                <p class="fs-4 fw-medium">Il est grand temps de vous exercer afin de savoir si vous avez bien suivi les ressources de la catégorie <span class="color_sec">sécurité </span>!</p>
                 <button onclick="window.location.href='quiz.html'" class="btn fw-bold btn-quiz">Faire le quiz</button>
             </div>
             <div class="img-quiz">
