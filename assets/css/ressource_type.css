@@ -121,7 +121,7 @@ body {
 /* max-width: 992px */
 @media (max-width: 992px) {
     .title {
-        margin-top: 14vh;
+        margin-top: 20vh;
     }
 
     .etape {
@@ -137,7 +137,7 @@ body {
 /* max-width: 768px */
 @media (max-width: 768px) {
     .title {
-        margin-top: 12vh;
+        margin-top: 20vh;
         margin-left: 4vh;
     }
 
@@ -181,7 +181,7 @@ body {
 /* max-width: 400px */
 @media (max-width: 400px) {
     .title {
-        margin-top: 20vh;
+        margin-top: 22vh;
         margin-left: 2vh;
     }
 
