@@ -81,20 +81,13 @@ header nav ul li a:hover {
   color: var(--violet);
 }
 
-/* select */
-/* header select {
-  width: 8vw;
-  height: 5vh;
-  background-color: white;
-  text-align: center;
-  border: 2px solid black;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-} */
-
 /* test select */
 .language-selector {
-  position: relative;
+  position: fixed;
+  top: 17vh;
+  left: 2vw;
   display: inline-block;
+  z-index: 99999;
 }
 
 .dropbtn {
@@ -450,13 +443,6 @@ footer {
 }
 
 
-
-
-
-
-
-
-
 /* chatbot */
 .chatbot {
   width: 80px;
@@ -603,6 +589,7 @@ input:checked + .slider:before {
 }
 
 .accessibility-mode_BonW {
+  fill: white !important;
   background-color: white !important;
   color: black !important;
   border-color: black !important;
@@ -699,6 +686,10 @@ input:checked + .slider:before {
 }
 
 @media screen and (max-width: 768px) {
+  /* langue */
+  .language-selector {
+    top: 19vh;
+  }
   /* header */
   .desktop {
       display: none !important;
@@ -715,12 +706,12 @@ input:checked + .slider:before {
 
   .phone .header-container {
       /* margin-top: 3vh; */
-      padding-right: 5vw;
+      padding: 0 15vw 0 10vw;
   }
 
   .phone .search {
     margin-bottom: 3vh;
-    margin-left: 10vw;
+    /* margin-left: 10vw; */
   }
 
   .phone .search input {
@@ -729,7 +720,7 @@ input:checked + .slider:before {
 
   .phone .search a {
     position: absolute;
-    left: 58%;
+    left: 65%;
   }
 
   #burger-menu-phone {
@@ -803,7 +794,7 @@ input:checked + .slider:before {
   }
 
   .phone .search a {
-    left: 55%;
+    left: 65%;
   }
 
   #burger-menu-phone button {
@@ -912,7 +903,7 @@ input:checked + .slider:before {
   }
 
   .phone .search a {
-    left: 55%;
+    left: 73%;
   }
 
   #burger-menu-phone {

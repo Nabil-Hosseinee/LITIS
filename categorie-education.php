@@ -7,26 +7,27 @@
     <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/categorie.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="https://kit.fontawesome.com/96e027db6d.js" crossorigin="anonymous"></script>
     <title>Existence Numérique | Education</title>
 </head>
 <body>
     
-    <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
+<header id="desktop-header" class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top exclude-accessibility">
         <div class="logo d-flex justify-content-center align-items-center">
             <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
-                <li><a class="fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
-                <li><a class="fs-3 menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-3 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                <li><a class="active fs-3 menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
             </ul>
         </nav>
 
-        <form class="search" action="cible2.php" method="post">
+        <form class="search exclude-accessibility" action="cible2.php" method="post">
             <label for="search-input" class="visually-hidden">Rechercher</label>
-            <input id="search-input" name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
-            <a href="#" aria-label="Rechercher">
+            <input id="search-input" class="exclude-accessibility" name="mot" type="text" placeholder="Rechercher..." autocomplete="off" data-i18n="search_placeholder">
+            <a href="#" aria-label="Rechercher" class="exclude-accessibility">
                 <lord-icon class="icon"
                     src="https://cdn.lordicon.com/unukghxb.json"
                     trigger="loop"
@@ -36,71 +37,117 @@
             </a>
         </form>
 
-        <div class="burger-active" id="burger-menu">
-            <button>
-                <p>Menu</p>
-                <span></span>
+        <div class="burger-active exclude-accessibility" id="burger-menu">
+            <button class="exclude-accessibility">
+                <p class="exclude-accessibility">Menu</p>
+                <span class="exclude-accessibility"></span>
             </button>
         </div>
 
-        <div id="menu">
+        <div id="menu" class="exclude-accessibility">
             <ul>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
             </ul>
         </div>
     </header>
 
     <!-- phone header -->
-    <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
+    <header id="phone-header" class="phone d-flex flex-column align-items-center bg-white fixed-top exclude-accessibility">
         <div class="header-container d-flex justify-content-around align-items-center">
             <div class="logo">
                 <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
             </div>
             
-            <div class="burger-active" id="burger-menu-phone">
-                <button>
-                    <p>Menu</p>
-                    <span></span>
+            <div class="burger-active exclude-accessibility" id="burger-menu-phone">
+                <button class="exclude-accessibility">
+                    <p class="exclude-accessibility">Menu</p>
+                    <span class="exclude-accessibility"></span>
                 </button>
             </div>
     
-            <div id="menu-phone">
+            <div id="menu-phone" class="exclude-accessibility">
                 <ul>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
                 </ul>
             </div>
         </div>
 
-        <form class="search" action="cible2.php" method="post">
-            <label for="search-input" class="visually-hidden">Rechercher</label>
-            <input type="text" id="search-input" placeholder="Rechercher...">
-            <a href="#" aria-labelledby="search-input">
-                <lord-icon class="icon"
-                    src="https://cdn.lordicon.com/unukghxb.json"
-                    trigger="loop"
-                    delay="2000"
-                    style="width:30px;height:30px">
-                </lord-icon>
-                <span class="visually-hidden">Rechercher</span>
-            </a>
-        </form>
+        <div class="phone_bot d-flex justify-content-between exclude-accessibility">
+            <form class="search exclude-accessibility" action="cible2.php" method="post">
+                <label for="search-input" class="visually-hidden">Rechercher</label>
+                <input type="text" id="search-input" placeholder="Rechercher...">
+                <a href="#" aria-labelledby="search-input">
+                    <lord-icon class="icon phone_icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                    <span class="visually-hidden">Rechercher</span>
+                </a>
+            </form>
+
+            <div class="language-selector exclude-accessibility phone_select">
+                <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
+                <div class="dropdown-content" id="language-menu">
+                    <a href="#" data-lang="fr">FR : Français</a>
+                    <a href="#" data-lang="en">EN : English</a>
+                    <a href="#" data-lang="es">ES : Español</a>
+                    <a href="#" data-lang="de">DE : Deutsch</a>
+                </div>
+            </div>
+        </div>
     </header>
+
+
+    <!-- langue -->
+    <div class="language-selector exclude-accessibility">
+        <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
+        <div class="dropdown-content" id="language-menu">
+            <a class="exclude-accessibility" href="#" data-lang="fr">FR : Français</a>
+            <a class="exclude-accessibility" href="#" data-lang="en">EN : English</a>
+            <a class="exclude-accessibility" href="#" data-lang="es">ES : Español</a>
+            <a class="exclude-accessibility" href="#" data-lang="de">DE : Deutsch</a>
+        </div>
+    </div>
+
+    <!-- accessibilité -->
+    <div id="access" class="access d-flex justify-content-center align-items-center exclude-accessibility">
+        <i class="fa-solid fa-eye-low-vision exclude-accessibility"></i>
+        <div id="access-menu" class="access-menu">
+            <label class="switch mg">
+                <span class="fw-bold color_v exclude-accessibility" data-i18n="access_lang">Changer l'écriture</span>
+                <input type="checkbox" class="font-toggle exclude-accessibility">
+                <span class="slider round exclude-accessibility"></span>
+            </label>
+            <label class="switch">
+                <span class="fw-bold color_v exclude-accessibility" data-i18n="access_contrast">Changer le contraste</span>
+                <input type="checkbox" class="bg-toggle exclude-accessibility">
+                <span class="slider round exclude-accessibility"></span>
+            </label>
+        </div>
+    </div>
+
+    <!-- chatbot -->
+    <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
+        <img src="./assets/images/avatar/normal.svg" alt="">
+    </div>
 
     <!-- section intro -->
     <section class="intro">
         <div class="arc-cercle">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill"></path>
+                <path d="M0,0V7.23C0,65.52,268.63,112.77,600,112.77S1200,65.52,1200,7.23V0Z" class="shape-fill exclude-accessibility BonW"></path>
             </svg>
         </div>
         <div class="intro-container d-flex flex-column align-items-center">
-            <h1>Éducation</h1>
-            <div class="trait"></div>
-            <p>Que vous soyez élève ou parent, découvrez comment naviguer facilement sur les plateformes éducatives en ligne avec ces tutoriels pratiques.</p>
+            <h1 class="exclude-accessibility text">Éducation</h1>
+            <div class="trait exclude-accessibility"></div>
+            <p class="exclude-accessibility text">Que vous soyez élève ou parent, découvrez comment naviguer facilement sur les plateformes éducatives en ligne avec ces tutoriels pratiques.</p>
         </div>
     </section>
 
@@ -115,7 +162,7 @@
         if ($result->rowCount() > 0) {
             echo "<div class='rdv'>";
             echo "<h2>Pour les enfants</h2>";
-            echo "<div class='trait-jaune'></div>";
+            echo "<div class='trait-jaune exclude-accessibility'></div>";
             echo "<div class='videos'>";
             while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
@@ -138,7 +185,7 @@
 
     <div class="quiz">
         <h2>Quiz</h2>
-        <div class="trait-jaune"></div>
+        <div class="trait-jaune exclude-accessibility"></div>
         <div class="texte-img-quiz">
             <div class="texte-quiz">
                 <p class="fs-4 fw-medium">Il est grand temps de vous exercer afin de savoir si vous avez bien suivi les ressources de la catégorie <span class="color_edu">éducation </span>!</p>

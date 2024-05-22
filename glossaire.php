@@ -20,6 +20,18 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="./assets/css/glossaire.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script src="https://kit.fontawesome.com/96e027db6d.js" crossorigin="anonymous"></script>
+    <!-- test langue 2 -->
+    <!-- marche pas sur cette page -->
+    <script type="text/javascript">
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: 'fr', // Langue de base de votre site
+                includedLanguages: 'fr,en,es,de', // Langues dans lesquelles vous souhaitez traduire
+                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <title>Existence Numérique | Glossaire</title>
   </head>
 
@@ -152,6 +164,9 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
     <!-- titre -->
     <section class="container title d-flex flex-column align-items-center">
+        <!-- pour la traduction -->
+        <div id="google_translate_element"></div>
+        <!--  -->
         <h1>Glossaire</h1>
         <p class="fs-4">Ici, vous pouvez accéder, apprendre et découvrir tous les termes en lien avec le web.</p>
         <div class="big_search exclude-accessibility">
@@ -282,33 +297,33 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
         <div class="d-flex flex-column align-items-center">
             <div class="link-container">
                 <ul class="d-flex">
-                    <li><a class="fs-4 menu__link fw-medium" href="index.php">Accueil</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="index.php" data-i18n="home">Accueil</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="about.html">A propos</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="about.html" data-i18n="about">A propos</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="ressource.html">Ressources</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="ressource.html" data-i18n="resources">Ressources</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="privacy_policy">Politique de confidentialité</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="legal_notice">Mentions légales</a></li>
                 </ul>
             </div>
 
             <div class="link-container_992 d-flex flex-column align-items-center none">
                 <div class="top">
                     <ul class="d-flex">
-                        <li><a class="fs-4 menu__link fw-medium" href="index.php">Accueil</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="index.php" data-i18n="home">Accueil</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="about.html">A propos</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="about.html" data-i18n="about">A propos</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="ressource.html">Ressources</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="ressource.html" data-i18n="resources">Ressources</a></li>
                     </ul>
                 </div>
                 <div class="bot">
                     <ul class="d-flex">
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="privacy_policy">Politique de confidentialité</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="legal_notice">Mentions légales</a></li>
                     </ul>
                 </div>
             </div>

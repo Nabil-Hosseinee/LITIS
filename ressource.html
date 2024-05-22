@@ -12,17 +12,6 @@
     <script src="https://unpkg.com/i18next@21.6.13/i18next.min.js"></script>
     <script src="https://unpkg.com/i18next-http-backend@1.4.0/i18nextHttpBackend.min.js"></script>
     <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
-    <!-- test langue 2 -->
-    <script type="text/javascript">
-        function googleTranslateElementInit() {
-            new google.translate.TranslateElement({
-                pageLanguage: 'fr', // Langue de base de votre site
-                includedLanguages: 'fr,en,es,de', // Langues dans lesquelles vous souhaitez traduire
-                layout: google.translate.TranslateElement.InlineLayout.SIMPLE
-            }, 'google_translate_element');
-        }
-    </script>
-    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <title>Existence Numérique | Ressources</title>
 </head>
 <body>
@@ -51,16 +40,6 @@
                 </lord-icon>
             </a>
         </form>
-
-        <div class="language-selector exclude-accessibility">
-            <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
-            <div class="dropdown-content" id="language-menu">
-                <a href="#" data-lang="fr">FR : Français</a>
-                <a href="#" data-lang="en">EN : English</a>
-                <a href="#" data-lang="es">ES : Español</a>
-                <a href="#" data-lang="de">DE : Deutsch</a>
-            </div>
-        </div>
 
         <div class="burger-active exclude-accessibility" id="burger-menu">
             <button class="exclude-accessibility">
@@ -128,6 +107,18 @@
         </div>
     </header>
 
+    <!-- langue -->
+    
+    <div class="language-selector exclude-accessibility">
+        <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
+        <div class="dropdown-content" id="language-menu">
+            <a href="#" data-lang="fr">FR : Français</a>
+            <a href="#" data-lang="en">EN : English</a>
+            <a href="#" data-lang="es">ES : Español</a>
+            <a href="#" data-lang="de">DE : Deutsch</a>
+        </div>
+    </div>
+
     <!-- accessibilité -->
     <div id="access" class="access d-flex justify-content-center align-items-center exclude-accessibility">
         <i class="fa-solid fa-eye-low-vision exclude-accessibility"></i>
@@ -154,10 +145,6 @@
     <!-- section fonctionnalité -->
 
     <section class="fonctionnalite">
-        <!-- pour la traduction -->
-        <div id="google_translate_element"></div>
-        <!--  -->
-
         <h2>Nos autres <span class="color_v">fonctionnalités</span></h2>
         <!-- <div class="underline big_title_underline"></div> -->
         <div class="container d-flex justify-content-between">
@@ -224,7 +211,7 @@
                         <p class="fs-5 exclude-accessibility text">
                             Vous retrouverez dans cette rubrique toutes les ressources qui vous aideront à acquérir toutes les bases d'Internet.
                         </p>
-                        <button onclick="window.location.href='categorie-internet.php'">Consulter</button>
+                        <button class="exclude-accessibility BonW" onclick="window.location.href='categorie-internet.php'">Consulter</button>
                     </div>
                 </div>
 
@@ -241,7 +228,7 @@
                         <p class="fs-5 exclude-accessibility text">
                             Vous retrouverez dans cette rubrique toutes les ressources qui vous aideront à garantir votre sécurité sur le web.
                         </p>
-                        <button onclick="window.location.href='categorie-securite.php'">Consulter</button>
+                        <button class="exclude-accessibility BonW" onclick="window.location.href='categorie-securite.php'">Consulter</button>
                     </div>
                 </div>
             </div>
@@ -261,7 +248,7 @@
                         <p class="fs-5 exclude-accessibility text">
                             Vous retrouverez dans cette rubrique toutes les ressources qui vous permettront de réussir vos démarches administratives.
                         </p>
-                        <button onclick="window.location.href='categorie-administratif.php'">Consulter</button>
+                        <button class="exclude-accessibility BonW" onclick="window.location.href='categorie-administratif.php'">Consulter</button>
                     </div>
                 </div>
 
@@ -278,7 +265,7 @@
                         <p class="fs-5 exclude-accessibility text">
                             Vous retrouverez dans cette rubrique toutes les ressources en lien avec l'éducation en ligne.
                         </p>
-                        <button onclick="window.location.href='categorie-education.php'">Consulter</button>
+                        <button class="exclude-accessibility BonW" onclick="window.location.href='categorie-education.php'">Consulter</button>
                     </div>
                 </div>
             </div>
@@ -298,7 +285,7 @@
                         <p class="fs-5 exclude-accessibility text">
                             Vous retrouverez dans cette rubrique toutes les ressources en rapport avec la santé.
                         </p>
-                        <button onclick="window.location.href='categorie-sante.php'">Consulter</button>
+                        <button class="exclude-accessibility BonW" onclick="window.location.href='categorie-sante.php'">Consulter</button>
                     </div>
                 </div>
 
@@ -315,7 +302,7 @@
                         <p class="fs-5 exclude-accessibility text">
                             Vous retrouverez dans cette rubrique toutes les ressources qui vous aideront à communiquer en ligne.
                         </p>
-                        <button onclick="window.location.href='categorie-communication.php'">Consulter</button>
+                        <button class="exclude-accessibility BonW" onclick="window.location.href='categorie-communication.php'">Consulter</button>
                     </div>
                 </div>
             </div>
@@ -328,11 +315,11 @@
         <div class="d-flex flex-column align-items-center">
             <div class="link-container">
                 <ul class="d-flex">
-                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="home">Accueil</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="index.php" data-i18n="home">Accueil</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="about">A propos</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="about.html" data-i18n="about">A propos</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="resources">Ressources</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="ressource.html" data-i18n="resources">Ressources</a></li>
                     <div class="separator"></div>
                     <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="privacy_policy">Politique de confidentialité</a></li>
                     <div class="separator"></div>
@@ -343,11 +330,11 @@
             <div class="link-container_992 d-flex flex-column align-items-center none">
                 <div class="top">
                     <ul class="d-flex">
-                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="home">Accueil</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="index.php" data-i18n="home">Accueil</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="about">A propos</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="about.html" data-i18n="about">A propos</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="resources">Ressources</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="ressource.html" data-i18n="resources">Ressources</a></li>
                     </ul>
                 </div>
                 <div class="bot">

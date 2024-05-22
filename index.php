@@ -48,16 +48,6 @@ session_start();
             </a>
         </form>
 
-        <div class="language-selector exclude-accessibility">
-            <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
-            <div class="dropdown-content" id="language-menu">
-                <a href="#" data-lang="fr">FR : Français</a>
-                <a href="#" data-lang="en">EN : English</a>
-                <a href="#" data-lang="es">ES : Español</a>
-                <a href="#" data-lang="de">DE : Deutsch</a>
-            </div>
-        </div>
-
         <div class="burger-active exclude-accessibility" id="burger-menu">
             <button class="exclude-accessibility">
                 <p class="exclude-accessibility">Menu</p>
@@ -112,7 +102,7 @@ session_start();
                 </a>
             </form>
 
-            <div class="language-selector exclude-accessibility phone_select">
+            <!-- <div class="language-selector exclude-accessibility phone_select">
                 <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
                 <div class="dropdown-content" id="language-menu">
                     <a href="#" data-lang="fr">FR : Français</a>
@@ -120,9 +110,20 @@ session_start();
                     <a href="#" data-lang="es">ES : Español</a>
                     <a href="#" data-lang="de">DE : Deutsch</a>
                 </div>
-            </div>
+            </div> -->
         </div>
     </header>
+
+    <!-- langue -->
+    <div class="language-selector exclude-accessibility">
+        <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
+        <div class="dropdown-content" id="language-menu">
+            <a href="#" data-lang="fr">FR : Français</a>
+            <a href="#" data-lang="en">EN : English</a>
+            <a href="#" data-lang="es">ES : Español</a>
+            <a href="#" data-lang="de">DE : Deutsch</a>
+        </div>
+    </div>
 
 
     <!-- accessibilité -->
@@ -271,11 +272,11 @@ session_start();
         <div class="d-flex flex-column align-items-center">
             <div class="link-container">
                 <ul class="d-flex">
-                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="home">Accueil</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="index.php" data-i18n="home">Accueil</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="about">A propos</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="about.html" data-i18n="about">A propos</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="resources">Ressources</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="ressource.html" data-i18n="resources">Ressources</a></li>
                     <div class="separator"></div>
                     <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="privacy_policy">Politique de confidentialité</a></li>
                     <div class="separator"></div>
@@ -286,11 +287,11 @@ session_start();
             <div class="link-container_992 d-flex flex-column align-items-center none">
                 <div class="top">
                     <ul class="d-flex">
-                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="home">Accueil</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="index.php" data-i18n="home">Accueil</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="about">A propos</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="about.html" data-i18n="about">A propos</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="resources">Ressources</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="ressource.html" data-i18n="resources">Ressources</a></li>
                     </ul>
                 </div>
                 <div class="bot">
