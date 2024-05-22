@@ -63,10 +63,18 @@ header {
   z-index: 9999;
 }
 
+/* logo */
 .logo {
   width: 200px;
   height: 100px;
-  /* background-color: black; */
+}
+
+#logo_prin {
+  display: block;
+}
+
+#logo_BW {
+  display: none;
 }
 
 header nav ul li {

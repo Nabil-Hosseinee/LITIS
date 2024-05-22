@@ -25,7 +25,10 @@ session_start();
   <body id="body">
     <header id="desktop-header" class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top exclude-accessibility">
         <div class="logo d-flex justify-content-center align-items-center">
-            <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
+            <a href="index.php">
+                <img id="logo_prin" class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique">
+                <img id="logo_BW" class="img-fluid" src="./assets/images/logo/logo.png" alt="Logo principal du site existence numérique">
+            </a>
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
@@ -102,15 +105,6 @@ session_start();
                 </a>
             </form>
 
-            <!-- <div class="language-selector exclude-accessibility phone_select">
-                <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
-                <div class="dropdown-content" id="language-menu">
-                    <a href="#" data-lang="fr">FR : Français</a>
-                    <a href="#" data-lang="en">EN : English</a>
-                    <a href="#" data-lang="es">ES : Español</a>
-                    <a href="#" data-lang="de">DE : Deutsch</a>
-                </div>
-            </div> -->
         </div>
     </header>
 
