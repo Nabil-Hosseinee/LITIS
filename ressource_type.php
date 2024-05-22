@@ -1,3 +1,28 @@
+<?php
+try {
+    include 'connect_bdd.php';
+
+    $id_ressource = isset($_GET['Id_ressource']) ? $_GET['Id_ressource'] : null;
+    $sql = "SELECT ressource.*, ressource_type.*, etape.* 
+            FROM ressource 
+            JOIN ressource_type ON ressource.Id_ressource = ressource_type.ressource_id 
+            JOIN etape ON ressource_type.id_ressource_type = etape.ressource_type_id 
+            WHERE ressource.Id_ressource = :id_ressource 
+            ORDER BY etape.numero_etape ASC";
+    $query = $db->prepare($sql);
+    $query->execute(['id_ressource' => $id_ressource]);
+
+    if ($query->rowCount() > 0) {
+        $ressources = $query->fetchAll(PDO::FETCH_ASSOC);
+    } else {
+        $ressources = [];
+    }
+} catch (PDOException $e) {
+    echo "Erreur SQL : " . $e->getMessage();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +32,7 @@
     <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/ressource_type.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <title>Existence Numérique | Ressources</title>
+    <title>Existence Numérique | <?php echo htmlspecialchars($ressources[0]["Titre"]); ?></title>
 </head>
 <body>
 
@@ -94,7 +119,7 @@
     <!-- Titre -->
 
     <div class="title">
-        <h1>Créer un compte Doctolib </h1>
+        <h1><?php echo htmlspecialchars($ressources[0]["titre_video"]); ?></h1>
          <div class="underline title_underline"></div>
     </div>
 
@@ -102,7 +127,10 @@
     <!-- Vidéo -->
     
     <div class="tuto image_wrapper">
-        <video src="./assets/vidéos/tuto_compte_doctolib-.mp4" controls></video>
+        <video controls>
+            <source src="<?php echo htmlspecialchars($ressources[0]["video"]); ?>" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
     </div> 
 
      <!-- separator -->
@@ -113,66 +141,12 @@
      <!-- Étapes-->
 
      <div class="etape">
-        <h2>Étape 1 :</h2>
-        <p>Rendez-vous sur le site web de Doctolib en utilisant votre navigateur web préféré.</p>
-        <br>
-        <br>
 
-        <h2>Étape 2 :</h2>
-        <p>Sur la page d'accueil de Doctolib, recherchez le lien ou le bouton d'inscription.
-             Il peut être situé en haut à droite de la page ou dans le menu de navigation.
-        </p>
-        <br>
-        <br>
-
-        <h2>Étape 3 :</h2>
-        <p>Doctolib propose différents types de comptes en fonction de votre profil. Sélectionnez 
-            le type de compte approprié, par exemple, 
-            "Patient" si vous êtes un patient ou "Professionnel de Santé" si vous êtes un professionnel de santé.
-        </p>
-        <br>
-        <br>
-
-        <h2>Étape 4 :</h2>
-        <p>Remplissez le formulaire d'inscription avec les informations requises. Cela peut inclure votre nom, prénom, adresse e-mail,
-             numéro de téléphone, date de naissance, et éventuellement d'autres informations pertinentes.
-        </p>
-        <br>
-        <br>
-
-        <h2>Étape 5 :</h2>
-        <p>Choisissez un mot de passe sécurisé pour votre compte Doctolib.
-         Assurez-vous qu'il contient une combinaison de lettres, de chiffres et de caractères spéciaux pour renforcer sa sécurité.
-        </p>
-        <br>
-        <br>
-
-        <h2>Étape 6 :</h2>
-        <p>Après avoir rempli tous les champs obligatoires du formulaire d'inscription,
-             cliquez sur le bouton de validation ou de confirmation pour créer votre compte.
-        </p>
-        <br>
-        <br>
-
-        <h2>Étapes 7 :</h2>
-        <p>Doctolib peut vous demander de vérifier votre adresse e-mail en cliquant sur un lien de
-        confirmation envoyé à l'adresse que vous avez fournie.
-        </p>
-        <br>
-        <br>
-
-        <h2>Étape 8 :</h2>
-        <p>Suivez les instructions supplémentaires fournies par Doctolib pour finaliser la création de votre compte.
-             Cela peut inclure la configuration de vos préférences de notification, la sélection de votre médecin traitant
-              (si applicable), ou d'autres paramètres personnalisés.
-        </p>
-        <br>
-        <br>
-
-        <p>Une fois ces étapes terminées, vous aurez créé avec succès un compte Doctolib, 
-            ce qui vous permettra de prendre rendez-vous en ligne avec des professionnels de santé, 
-            de consulter votre historique médical, et d'accéder à d'autres fonctionnalités utiles proposées par la plateforme.
-        </p>
+        <?php foreach ($ressources as $ressource): ?>
+            <h2><?php echo htmlspecialchars($ressource["titre_etape"]); ?> :</h2> 
+            <p><?php echo htmlspecialchars($ressource["description_etape"]); ?></p><br/><br/>
+        <?php endforeach; ?>
+        
      </div>
 
      <div class="container text-center">

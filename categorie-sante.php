@@ -109,6 +109,8 @@
         <?php
         include 'connect_bdd.php';
 
+        $Id_ressource = '';
+
         $sql = "SELECT * FROM ressource WHERE Categorie = 'Santé' AND Sous_Categorie = 'Rendez-vous médical' AND Image != ''";
         $result = $db->query($sql);
 
@@ -119,7 +121,7 @@
             echo "<div class='videos'>";
             while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
-                echo "<a href='tuto.php'>";
+                echo "<a href='ressource_type.php?Id_ressource=" . $row["Id_ressource"] . "'>";
                 echo "<img src='" . $row["Image"] . "' alt='" . $row["Titre"] . "'>";
                 echo "<div class='overlay_4'>";
                 echo "<div class='text_overlay fw-semibold'>Consulter</div>";
@@ -135,18 +137,18 @@
         ?>
 
         <?php 
-        $sql_utilisation_systeme = "SELECT * FROM ressource WHERE Categorie = 'Santé' AND Sous_Categorie = 'Santé en ligne' AND Image !=' '";
-        $result_utilisation_systeme = $db->query($sql_utilisation_systeme);
+        $sql_sante = "SELECT * FROM ressource WHERE Categorie = 'Santé' AND Sous_Categorie = 'Santé en ligne' AND Image !=' '";
+        $result_sante = $db->query($sql_sante);
 
-        if ($result_utilisation_systeme->rowCount() > 0) {
+        if ($result_sante->rowCount() > 0) {
             echo "<div class='rdv'>";
             echo "<h2>Santé en ligne</h2>";
             echo "<div class='trait-vert'></div>";
             echo "<div class='videos'>";
-            while ($row_utilisation_systeme = $result_utilisation_systeme->fetch(PDO::FETCH_ASSOC)) {
+            while ($row_sante = $result_sante->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
-                echo "<a href='tuto.php'>";
-                echo "<img src='" . $row_utilisation_systeme["Image"] . "' alt='" . $row_utilisation_systeme["Titre"] . "'>";
+                echo "<a href='ressource_type.php?Id_ressource=" . $row_sante["Id_ressource"] . "'>";
+                echo "<img src='" . $row_sante["Image"] . "' alt='" . $row_sante["Titre"] . "'>";
                 echo "<div class='overlay_4'>";
                 echo "<div class='text_overlay fw-semibold'>Consulter</div>";
                 echo "</div>";

@@ -104,10 +104,12 @@
         </div>
     </section>
 
-<!-- section tutoriels -->
-<section class="tutoriels">
+    <!-- section tutoriels -->
+    <section class="tutoriels">
         <?php
         include 'connect_bdd.php';
+
+        $Id_ressource = '';
 
         $sql = "SELECT * FROM ressource WHERE Categorie = 'Éducation' AND Sous_Categorie = 'Pour les enfants' AND Image != ''";
         $result = $db->query($sql);
@@ -119,7 +121,7 @@
             echo "<div class='videos'>";
             while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
-                echo "<a href='tuto.php'>";
+                echo "<a href='ressource_type.php?Id_ressource=" . $row["Id_ressource"] . "'>";
                 echo "<img src='" . $row["Image"] . "' alt='" . $row["Titre"] . "'>";
                 echo "<div class='overlay_4'>";
                 echo "<div class='text_overlay fw-semibold'>Consulter</div>";

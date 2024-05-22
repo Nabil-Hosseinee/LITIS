@@ -109,6 +109,8 @@
         <?php
         include 'connect_bdd.php';
 
+        $Id_ressource = '';
+
         $sql = "SELECT * FROM ressource WHERE Categorie = 'Sécurité' AND Sous_Categorie = 'Se protéger en ligne' AND Image != ''";
         $result = $db->query($sql);
 
@@ -119,7 +121,7 @@
             echo "<div class='videos'>";
             while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
-                echo "<a href='tuto.php'>";
+                echo "<a href='ressource_type.php?Id_ressource=" . $row["Id_ressource"] . "'>";
                 echo "<img src='" . $row["Image"] . "' alt='" . $row["Titre"] . "'>";
                 echo "<div class='overlay_4'>";
                 echo "<div class='text_overlay fw-semibold'>Consulter</div>";
@@ -135,18 +137,18 @@
         ?>
 
         <?php 
-        $sql_utilisation_systeme = "SELECT * FROM ressource WHERE Categorie = 'Sécurité' AND Sous_Categorie = 'Mot de passe' AND Image !=' '";
-        $result_utilisation_systeme = $db->query($sql_utilisation_systeme);
+        $sql_mdp = "SELECT * FROM ressource WHERE Categorie = 'Sécurité' AND Sous_Categorie = 'Mot de passe' AND Image !=' '";
+        $result_mdp = $db->query($sql_mdp);
 
-        if ($result_utilisation_systeme->rowCount() > 0) {
+        if ($result_mdp->rowCount() > 0) {
             echo "<div class='rdv'>";
             echo "<h2>Mot de passe</h2>";
             echo "<div class='trait-orange'></div>";
             echo "<div class='videos'>";
-            while ($row_utilisation_systeme = $result_utilisation_systeme->fetch(PDO::FETCH_ASSOC)) {
+            while ($row_mdp = $result_mdp->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
-                echo "<a href='tuto.php'>";
-                echo "<img src='" . $row_utilisation_systeme["Image"] . "' alt='" . $row_utilisation_systeme["Titre"] . "'>";
+                echo "<a href='ressource_type.php?Id_ressource=" . $row_mdp["Id_ressource"] . "'>";
+                echo "<img src='" . $row_mdp["Image"] . "' alt='" . $row_mdp["Titre"] . "'>";
                 echo "<div class='overlay_4'>";
                 echo "<div class='text_overlay fw-semibold'>Consulter</div>";
                 echo "</div>";

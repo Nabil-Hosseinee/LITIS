@@ -104,10 +104,12 @@
         </div>
     </section>
 
-<!-- section tutoriels -->
-<section class="tutoriels">
+    <!-- section tutoriels -->
+    <section class="tutoriels">
         <?php
         include 'connect_bdd.php';
+
+        $Id_ressource = '';
 
         $sql = "SELECT * FROM ressource WHERE Categorie = 'Administratif' AND Sous_Categorie = 'Création de compte' AND Image != ''";
         $result = $db->query($sql);
@@ -119,7 +121,7 @@
             echo "<div class='videos'>";
             while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
-                echo "<a href='tuto.php'>";
+                echo "<a href='ressource_type.php?Id_ressource=" . $row["Id_ressource"] . "'>";
                 echo "<img src='" . $row["Image"] . "' alt='" . $row["Titre"] . "'>";
                 echo "<div class='overlay_4'>";
                 echo "<div class='text_overlay fw-semibold'>Consulter</div>";
@@ -135,18 +137,18 @@
         ?>
 
         <?php 
-        $sql_utilisation_systeme = "SELECT * FROM ressource WHERE Categorie = 'Administratif' AND Sous_Categorie = 'Prendre un rendez-vous' AND Image !=' '";
-        $result_utilisation_systeme = $db->query($sql_utilisation_systeme);
+        $sql_rdv = "SELECT * FROM ressource WHERE Categorie = 'Administratif' AND Sous_Categorie = 'Prendre un rendez-vous' AND Image !=' '";
+        $result_rdv = $db->query($sql_rdv);
 
-        if ($result_utilisation_systeme->rowCount() > 0) {
+        if ($result_rdv->rowCount() > 0) {
             echo "<div class='rdv'>";
             echo "<h2>Prendre un rendez-vous</h2>";
             echo "<div class='trait-bleu'></div>";
             echo "<div class='videos'>";
-            while ($row_utilisation_systeme = $result_utilisation_systeme->fetch(PDO::FETCH_ASSOC)) {
+            while ($row_rdv = $result_rdv->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
-                echo "<a href='tuto.php'>";
-                echo "<img src='" . $row_utilisation_systeme["Image"] . "' alt='" . $row_utilisation_systeme["Titre"] . "'>";
+                echo "<a href='ressource_type.php?Id_ressource=" . $row_rdv["Id_ressource"] . "'>";
+                echo "<img src='" . $row_rdv["Image"] . "' alt='" . $row_rdv["Titre"] . "'>";
                 echo "<div class='overlay_4'>";
                 echo "<div class='text_overlay fw-semibold'>Consulter</div>";
                 echo "</div>";

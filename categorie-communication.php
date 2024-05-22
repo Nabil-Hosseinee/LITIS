@@ -109,6 +109,8 @@
         <?php
         include 'connect_bdd.php';
 
+        $Id_ressource = '';
+
         $sql = "SELECT * FROM ressource WHERE Categorie = 'Communication' AND Sous_Categorie = 'Mail et messagerie' AND Image != ''";
         $result = $db->query($sql);
 
@@ -119,7 +121,7 @@
             echo "<div class='videos'>";
             while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
-                echo "<a href='tuto.php'>";
+                echo "<a href='ressource_type.php?Id_ressource=" . $row["Id_ressource"] . "'>";
                 echo "<img src='" . $row["Image"] . "' alt='" . $row["Titre"] . "'>";
                 echo "<div class='overlay_4'>";
                 echo "<div class='text_overlay fw-semibold'>Consulter</div>";
@@ -135,18 +137,18 @@
         ?>
 
         <?php 
-        $sql_utilisation_systeme = "SELECT * FROM ressource WHERE Categorie = 'Communication' AND Sous_Categorie = 'Réseaux sociaux' AND Image !=' '";
-        $result_utilisation_systeme = $db->query($sql_utilisation_systeme);
+        $sql_reseaux_sociaux = "SELECT * FROM ressource WHERE Categorie = 'Communication' AND Sous_Categorie = 'Réseaux sociaux' AND Image !=' '";
+        $result_reseaux_sociaux = $db->query($sql_reseaux_sociaux);
 
-        if ($result_utilisation_systeme->rowCount() > 0) {
+        if ($result_reseaux_sociaux->rowCount() > 0) {
             echo "<div class='rdv'>";
             echo "<h2>Réseaux sociaux</h2>";
             echo "<div class='trait-vert'></div>";
             echo "<div class='videos'>";
-            while ($row_utilisation_systeme = $result_utilisation_systeme->fetch(PDO::FETCH_ASSOC)) {
+            while ($row_reseaux_sociaux = $result_reseaux_sociaux->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
-                echo "<a href='tuto.php'>";
-                echo "<img src='" . $row_utilisation_systeme["Image"] . "' alt='" . $row_utilisation_systeme["Titre"] . "'>";
+                echo "<a href='ressource_type.php?Id_ressource=" . $row_reseaux_sociaux["Id_ressource"] . "'>";
+                echo "<img src='" . $row_reseaux_sociaux["Image"] . "' alt='" . $row_reseaux_sociaux["Titre"] . "'>";
                 echo "<div class='overlay_4'>";
                 echo "<div class='text_overlay fw-semibold'>Consulter</div>";
                 echo "</div>";
@@ -161,18 +163,18 @@
         ?>
 
 <?php 
-        $sql_utilisation_systeme = "SELECT * FROM ressource WHERE Categorie = 'Communication' AND Sous_Categorie = 'Réseaux sociaux' AND Image !=' '";
-        $result_utilisation_systeme = $db->query($sql_utilisation_systeme);
+        $sql_visio = "SELECT * FROM ressource WHERE Categorie = 'Communication' AND Sous_Categorie = 'Visioconférence' AND Image !=' '";
+        $result_visio = $db->query($sql_visio);
 
-        if ($result_utilisation_systeme->rowCount() > 0) {
+        if ($result_visio->rowCount() > 0) {
             echo "<div class='rdv'>";
             echo "<h2>Réseaux sociaux</h2>";
             echo "<div class='trait-vert'></div>";
             echo "<div class='videos'>";
-            while ($row_utilisation_systeme = $result_utilisation_systeme->fetch(PDO::FETCH_ASSOC)) {
+            while ($row_visio = $result_visio->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
                 echo "<a href='tuto.php'>";
-                echo "<img src='" . $row_utilisation_systeme["Image"] . "' alt='" . $row_utilisation_systeme["Titre"] . "'>";
+                echo "<img src='" . $row_visio["Image"] . "' alt='" . $row_visio["Titre"] . "'>";
                 echo "<div class='overlay_4'>";
                 echo "<div class='text_overlay fw-semibold'>Consulter</div>";
                 echo "</div>";
