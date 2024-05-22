@@ -46,11 +46,12 @@
 }
 
 .tuto {
-    width: calc(33.33% - 2vw);
+    /* width: calc(33.33% - 2vw); */
+    width: 27%;
     margin-bottom: 5vh;
     box-sizing: border-box;
     position: relative;
-    margin: 0 2vw;
+    margin: 5vh 2vw;
 }
 
 .tuto img {
