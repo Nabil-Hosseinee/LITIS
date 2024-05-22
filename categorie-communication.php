@@ -208,12 +208,12 @@
 
         if ($result_visio->rowCount() > 0) {
             echo "<div class='rdv'>";
-            echo "<h2>Réseaux sociaux</h2>";
-            echo "<div class='trait-vert exclude-accessiblity'></div>";
+            echo "<h2>Visioconférence</h2>";
+            echo "<div class='trait-rose exclude-accessiblity'></div>";
             echo "<div class='videos'>";
             while ($row_visio = $result_visio->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
-                echo "<a href='tuto.php'>";
+                echo "<a href='ressource_type.php?Id_ressource=" . $row_visio["Id_ressource"] . "'>";
                 echo "<img src='" . $row_visio["Image"] . "' alt='" . $row_visio["Titre"] . "'>";
                 echo "<div class='overlay_4'>";
                 echo "<div class='text_overlay fw-semibold'>Consulter</div>";
