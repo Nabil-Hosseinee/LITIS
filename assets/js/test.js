@@ -7,102 +7,102 @@ const scoreContainer = document.getElementById('score');
 
 const myQuestions = [
     {
-        question: "Quelles sont les étapes pour effectuer une démarche en ligne selon le contenu fourni ?",
+        question: "Que représente le terme 'Wi-Fi'?",
         answers: {
-            a: "Identification de la démarche",
-            b: "Accès à la page démarche",
-            c: "Préparation des informations",
-            d: "Début de la démarche"
-        },
-        correctAnswer: "a"
-    },
-    {
-        question: "Comment accéder à la page de démarche après avoir identifié le service souhaité ?",
-        answers: {
-            a: "Cliquer sur 'Commencer la démarche'",
-            b: "Télécharger les documents nécessaires",
-            c: "Cliquer sur 'Aide en ligne'",
-            d: "Contacter le service clientèle"
-        },
-        correctAnswer: "a"
-    },
-    {
-        question: "Quels sont les types d'informations et de documents que vous devez préparer avant de commencer une démarche en ligne ?",
-        answers: {
-            a: "Carte de crédit et mot de passe",
-            b: "Pièces d'identité, relevés bancaires, justificatifs de domicile",
-            c: "Code de vérification par SMS",
-            d: "Adresse e-mail et numéro de téléphone"
+            a: "Une marque d'ordinateurs",
+            b: "Une connexion sans fil à Internet",
+            c: "Un type de câble",
+            d: "Une messagerie"
         },
         correctAnswer: "b"
     },
     {
-        question: "Quelles sont les étapes pour remplir un formulaire en ligne de manière efficace ?",
+        question: "Quel symbole est utilisé pour une adresse e-mail ?",
         answers: {
-            a: "Télécharger les documents requis",
-            b: "Cliquer sur 'Suivant' ou 'Créer un compte'",
-            c: "Vérifier les informations avant de soumettre",
-            d: "Utiliser le format incorrect pour les données"
+            a: "#",
+            b: "$",
+            c: "@",
+            d: "*"
         },
         correctAnswer: "c"
     },
     {
-        question: "Comment utiliseriez-vous le gestionnaire de fichiers pour trouver un document spécifique sur votre ordinateur ?",
+        question: "À quoi sert le stockage dans un ordinateur ?",
         answers: {
-            a: "Créer un nouveau dossier",
-            b: "Sélectionner tous les fichiers",
-            c: "Utiliser la fonction de recherche",
-            d: "Copier et coller des fichiers"
+            a: "À faire des calculs",
+            b: "À afficher des images",
+            c: "À stocker des données et des fichiers",
+            d: "À imprimer des documents"
         },
         correctAnswer: "c"
     },
     {
-        question: "Quelles sont les étapes pour créer un dossier sur un Mac selon le contenu fourni ?",
+        question: "Que permet de faire une souris d'ordinateur ?",
         answers: {
-            a: "Ouvrir le Gestionnaire de fichier, choisir l'emplacement, créer le dossier",
-            b: "Ouvrir le Gestionnaire de fichiers, cliquer sur 'Nouveau dossier'",
-            c: "Naviguer vers 'Téléchargements' et créer un dossier",
-            d: "Copier un dossier existant et le renommer"
+            a: "Écouter de la musique",
+            b: "Contrôler le curseur à l'écran",
+            c: "Imprimer des documents",
+            d: "Se connecter à Internet"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "Qu'est-ce qu'un cookie en termes informatiques ?",
+        answers: {
+            a: "Un petit fichier stocké par le navigateur web",
+            b: "Un virus informatique",
+            c: "Un type de programme d'édition",
+            d: "Un jeu vidéo"
         },
         correctAnswer: "a"
     },
     {
-        question: "Pouvez-vous décrire comment créer un dossier sur un système Windows ?",
+        question: "Que fait un moteur de recherche ?",
         answers: {
-            a: "Accéder à l'Explorateur de fichiers, choisir l'emplacement souhaité et créer le dossier",
-            b: "Ouvrir le Finder, naviguer vers l'emplacement souhaité et créer le dossier",
-            c: "Copier un fichier et le déplacer vers un nouvel emplacement",
-            d: "Utiliser le bureau comme emplacement par défaut pour tous les dossiers"
+            a: "Il gère les connexions Wi-Fi",
+            b: "Il recherche des informations sur Internet",
+            c: "Il envoie des e-mails",
+            d: "Il démarre votre ordinateur"
         },
-        correctAnswer: "a"
+        correctAnswer: "b"
     },
     {
-        question: "Quels sont les principaux paramètres à vérifier lors de la gestion des cookies dans votre navigateur web ?",
+        question: "Parmi ces logiciels, lequel n'est pas un moteur de recherche ?",
         answers: {
-            a: "Taille de la police et couleur de fond",
-            b: "Permissions de la caméra et du microphone",
-            c: "Autorisation d'accès aux emplacements",
-            d: "Préférences de confidentialité et de sécurité"
+            a: "Google",
+            b: "Firefox",
+            c: "Yahoo",
+            d: "Windows"
         },
         correctAnswer: "d"
     },
     {
-        question: "Comment mettre à jour votre système d'exploitation Windows selon les instructions fournies ?",
+        question: "Qu'est-ce que le terme 'email' signifie ?",
         answers: {
-            a: "Accéder aux paramètres du navigateur",
-            b: "Vérifier les mises à jour dans 'Mise à jour et Sécurité'",
-            c: "Cliquer sur 'Redémarrer' pour terminer l'installation",
-            d: "Utiliser un outil de numérisation de QR code"
+            a: "Electronic Mail",
+            b: "Electronic Message",
+            c: "Express Mail",
+            d: "Efficient Mail"
         },
-        correctAnswer: "b"
+        correctAnswer: "a"
     },
     {
-        question: "Pouvez-vous m'expliquer comment scanner un QR code selon les étapes fournies ?",
+        question: "Quelle est la fonction du 'copier-coller' sur un ordinateur ?",
         answers: {
-            a: "Télécharger un document spécifique",
-            b: "Utiliser l'application de scanner QR code",
-            c: "Accéder à la page de démarche",
-            d: "Créer un compte Google à partir de zéro"
+            a: "Il supprime du texte",
+            b: "Il déplace du texte",
+            c: "Il duplique du texte",
+            d: "Il imprime du texte"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "Qu'est-ce qu'un 'emoji' ?",
+        answers: {
+            a: "Un type de logiciel de retouche photo",
+            b: "Un petit symbole utilisé pour exprimer une émotion ",
+            c: "Un format de fichier audio",
+            d: "Un navigateur web populaire"
         },
         correctAnswer: "b"
     }
