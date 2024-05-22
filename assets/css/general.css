@@ -63,10 +63,18 @@ header {
   z-index: 9999;
 }
 
+/* logo */
 .logo {
   width: 200px;
   height: 100px;
-  /* background-color: black; */
+}
+
+#logo_prin {
+  display: block;
+}
+
+#logo_BW {
+  display: none;
 }
 
 header nav ul li {
@@ -81,20 +89,13 @@ header nav ul li a:hover {
   color: var(--violet);
 }
 
-/* select */
-/* header select {
-  width: 8vw;
-  height: 5vh;
-  background-color: white;
-  text-align: center;
-  border: 2px solid black;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-} */
-
 /* test select */
 .language-selector {
-  position: relative;
+  position: fixed;
+  top: 17vh;
+  left: 2vw;
   display: inline-block;
+  z-index: 99999;
 }
 
 .dropbtn {
@@ -450,13 +451,6 @@ footer {
 }
 
 
-
-
-
-
-
-
-
 /* chatbot */
 .chatbot {
   width: 80px;
@@ -505,20 +499,10 @@ footer {
   color: var(--violet);
 }
 
-/* .access:hover {
-  background-color: white;
-  border: 1px solid black;
-  color: black;
-} */
-
 .expanded {
   width: 30vw;
   border-radius: 32px;
-  /* padding: 0 2vw; */
 }
-
-
-
 
 .access-menu {
   display: none;
@@ -613,6 +597,7 @@ input:checked + .slider:before {
 }
 
 .accessibility-mode_BonW {
+  fill: white !important;
   background-color: white !important;
   color: black !important;
   border-color: black !important;
@@ -709,6 +694,10 @@ input:checked + .slider:before {
 }
 
 @media screen and (max-width: 768px) {
+  /* langue */
+  .language-selector {
+    top: 19vh;
+  }
   /* header */
   .desktop {
       display: none !important;
@@ -725,12 +714,12 @@ input:checked + .slider:before {
 
   .phone .header-container {
       /* margin-top: 3vh; */
-      padding-right: 5vw;
+      padding: 0 15vw 0 10vw;
   }
 
   .phone .search {
     margin-bottom: 3vh;
-    margin-left: 10vw;
+    /* margin-left: 10vw; */
   }
 
   .phone .search input {
@@ -739,7 +728,7 @@ input:checked + .slider:before {
 
   .phone .search a {
     position: absolute;
-    left: 58%;
+    left: 65%;
   }
 
   #burger-menu-phone {
@@ -813,7 +802,7 @@ input:checked + .slider:before {
   }
 
   .phone .search a {
-    left: 55%;
+    left: 65%;
   }
 
   #burger-menu-phone button {
@@ -836,6 +825,43 @@ input:checked + .slider:before {
 
   .none a {
     font-size: 1rem !important;
+  }
+
+  .access {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+  }
+
+  .access i {
+    font-size: 25px;
+  }
+
+  .switch span {
+    font-size: 10px;
+    margin-right: 2vw;
+  }
+
+  .chatbot {
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .expanded {
+    width: 60vw;
+    border-radius: 32px;
+    /* padding: 0 2vw; */
+    height: 5vh;
+  }
+  
+
+  .chatbot img {
+    width: 35px;
   }
 }
 
@@ -885,7 +911,7 @@ input:checked + .slider:before {
   }
 
   .phone .search a {
-    left: 55%;
+    left: 73%;
   }
 
   #burger-menu-phone {
@@ -935,13 +961,39 @@ input:checked + .slider:before {
   }
 
   .access {
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
+    position: fixed;
     bottom: 10px;
     left: 10px;
   }
 
   .access i {
     font-size: 15px;
+  }
+
+  .switch span {
+    font-size: 10px;
+    margin-right: 2vw;
+  }
+
+  .chatbot {
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .expanded {
+    width: 80vw;
+    border-radius: 32px;
+    /* padding: 0 2vw; */
+    height: 5vh;
+  }
+  
+
+  .chatbot img {
+    width: 25px;
   }
 }

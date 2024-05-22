@@ -25,7 +25,10 @@ session_start();
   <body id="body">
     <header id="desktop-header" class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top exclude-accessibility">
         <div class="logo d-flex justify-content-center align-items-center">
-            <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
+            <a href="index.php">
+                <img id="logo_prin" class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique">
+                <img id="logo_BW" class="img-fluid" src="./assets/images/logo/logo.png" alt="Logo principal du site existence numérique">
+            </a>
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
@@ -47,16 +50,6 @@ session_start();
                 </lord-icon>
             </a>
         </form>
-
-        <div class="language-selector exclude-accessibility">
-            <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
-            <div class="dropdown-content" id="language-menu">
-                <a href="#" data-lang="fr">FR : Français</a>
-                <a href="#" data-lang="en">EN : English</a>
-                <a href="#" data-lang="es">ES : Español</a>
-                <a href="#" data-lang="de">DE : Deutsch</a>
-            </div>
-        </div>
 
         <div class="burger-active exclude-accessibility" id="burger-menu">
             <button class="exclude-accessibility">
@@ -112,17 +105,19 @@ session_start();
                 </a>
             </form>
 
-            <div class="language-selector exclude-accessibility phone_select">
-                <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
-                <div class="dropdown-content" id="language-menu">
-                    <a href="#" data-lang="fr">FR : Français</a>
-                    <a href="#" data-lang="en">EN : English</a>
-                    <a href="#" data-lang="es">ES : Español</a>
-                    <a href="#" data-lang="de">DE : Deutsch</a>
-                </div>
-            </div>
         </div>
     </header>
+
+    <!-- langue -->
+    <div class="language-selector exclude-accessibility">
+        <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
+        <div class="dropdown-content" id="language-menu">
+            <a href="#" data-lang="fr">FR : Français</a>
+            <a href="#" data-lang="en">EN : English</a>
+            <a href="#" data-lang="es">ES : Español</a>
+            <a href="#" data-lang="de">DE : Deutsch</a>
+        </div>
+    </div>
 
 
     <!-- accessibilité -->
@@ -271,11 +266,11 @@ session_start();
         <div class="d-flex flex-column align-items-center">
             <div class="link-container">
                 <ul class="d-flex">
-                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="home">Accueil</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="index.php" data-i18n="home">Accueil</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="about">A propos</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="about.html" data-i18n="about">A propos</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="resources">Ressources</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="ressource.html" data-i18n="resources">Ressources</a></li>
                     <div class="separator"></div>
                     <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="privacy_policy">Politique de confidentialité</a></li>
                     <div class="separator"></div>
@@ -286,11 +281,11 @@ session_start();
             <div class="link-container_992 d-flex flex-column align-items-center none">
                 <div class="top">
                     <ul class="d-flex">
-                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="home">Accueil</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="index.php" data-i18n="home">Accueil</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="about">A propos</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="about.html" data-i18n="about">A propos</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="resources">Ressources</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="ressource.html" data-i18n="resources">Ressources</a></li>
                     </ul>
                 </div>
                 <div class="bot">

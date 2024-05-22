@@ -95,6 +95,9 @@ var p_header = document.getElementById('phone-header');
 var text = document.querySelectorAll('.text');
 var BonW = document.querySelectorAll('.BonW');
 
+var logo_prin = document.getElementById('logo_prin');
+var logo_BW = document.getElementById('logo_BW');
+
 
 access.addEventListener("click", function() {
     this.classList.toggle('expanded');
@@ -124,6 +127,9 @@ document.querySelector('.bg-toggle').addEventListener('change', function() {
         text.forEach(function(element) {
             element.classList.add('color_b');
         });
+
+        logo_prin.style.display="none";
+        logo_BW.style.display="block";
     } 
     else {
         document.body.classList.remove('accessibility-mode');
@@ -137,8 +143,29 @@ document.querySelector('.bg-toggle').addEventListener('change', function() {
         text.forEach(function(element) {
             element.classList.remove('color_b');
         });
+
+        logo_prin.style.display="block";
+        logo_BW.style.display="none";
     }
 });
+
+
+
+// test logout
+function sendEndSessionRequest() {
+    // Envoi d'une requête pour signaler la fin de la session
+    navigator.sendBeacon('/end_session.php');
+}
+
+window.addEventListener('beforeunload', sendEndSessionRequest);
+
+// Envoi de heartbeats toutes les 30 secondes pour maintenir la session active
+setInterval(function () {
+    fetch('/heartbeat.php', { method: 'POST' });
+}, 30000);
+
+
+
 
 
 
