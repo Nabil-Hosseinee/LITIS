@@ -16,7 +16,6 @@ body {
 
 .underline {
     height: 5px;
-    background-color: #1F936F;
     border-radius: 16px;
 }
 
@@ -45,7 +44,31 @@ body {
     height: 5px;
     border-radius: 16px;
     margin: 15vh auto;
-    background-color: #1F936F;
+}
+
+/* Couleur des traits */
+.Éducation .underline, .Éducation .bar {
+    background-color: var(--education);
+}
+
+.Communication .underline, .Communication .bar {
+    background-color: var(--communication);
+}
+
+.Administratif .underline, .Administratif .bar {
+    background-color: var(--administratif);
+}
+
+.Santé .underline, .Santé .bar {
+    background-color: var(--sante);
+}
+
+.Sécurité .underline, .Sécurité .bar {
+    background-color: var(--securite);
+}
+
+.Bases_d_internet .underline, .Bases_d_internet .bar {
+    background-color: var(--internet);
 }
 
 /* Étapes */

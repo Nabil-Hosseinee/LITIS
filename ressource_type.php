@@ -3,7 +3,7 @@ try {
     include 'connect_bdd.php';
 
     $id_ressource = isset($_GET['Id_ressource']) ? $_GET['Id_ressource'] : null;
-    $sql = "SELECT ressource.*, ressource_type.*, etape.* 
+    $sql = "SELECT ressource.*, ressource_type.*, etape.*, ressource.categorie AS categorie
             FROM ressource 
             JOIN ressource_type ON ressource.Id_ressource = ressource_type.ressource_id 
             JOIN etape ON ressource_type.id_ressource_type = etape.ressource_type_id 
@@ -14,8 +14,12 @@ try {
 
     if ($query->rowCount() > 0) {
         $ressources = $query->fetchAll(PDO::FETCH_ASSOC);
+        $categorie = $ressources[0]['categorie'];
+        $categorie_formate = str_replace(' ', '_', $categorie);
+        $categorie_formate2 = str_replace("'", '_', $categorie_formate);
     } else {
         $ressources = [];
+        $categorie = 'default';
     }
 } catch (PDOException $e) {
     echo "Erreur SQL : " . $e->getMessage();
@@ -32,9 +36,9 @@ try {
     <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/ressource_type.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <title>Existence Numérique | <?php echo htmlspecialchars($ressources[0]["Titre"]); ?></title>
+    <title>Existence Numérique | <?php echo htmlspecialchars($ressources[0]["Titre"]);?></title>
 </head>
-<body>
+<body class="<?php echo htmlspecialchars($categorie_formate2); ?>">
 
     <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
