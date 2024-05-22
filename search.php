@@ -154,18 +154,20 @@ else {
             <div class="videos d-flex">
                 <?php
                     foreach ($ressource as $item) {
-                        $minia = $item['Image'];
-
-                        echo "
-                            <div class='tuto image_wrapper'>
-                                <a href='tuto.php'>
-                                    <img src='$minia' alt=''>
-                                    <div class='overlay_4'>
-                                        <div class='text_overlay fw-semibold'>Consulter</div>
-                                    </div>
-                                </a>
-                            </div>
-                            ";
+                        if (!empty($item['Image'])) {
+                            $minia = $item['Image'];
+    
+                            echo "
+                                <div class='tuto image_wrapper'>
+                                    <a href='tuto.php'>
+                                        <img src='$minia' alt=''>
+                                        <div class='overlay_4'>
+                                            <div class='text_overlay fw-semibold'>Consulter</div>
+                                        </div>
+                                    </a>
+                                </div>
+                                ";
+                        }
                     }
                 ?>
             </div>
