@@ -179,6 +179,10 @@ function showNextQuestion() {
 }
 
 function showResults() {
+    var audio = document.getElementById('myAudio');
+    audio.play();
+
+
     quizContainer.innerHTML = '';
     resultsContainer.innerHTML = `Vous avez ${numCorrect} bonnes réponses sur ${myQuestions.length}.`;
 

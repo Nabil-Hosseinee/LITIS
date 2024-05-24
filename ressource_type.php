@@ -1,6 +1,6 @@
 <?php
 try {
-    include 'connect_bdd.php';
+    include('connect_bdd.php');
 
     $id_ressource = isset($_GET['Id_ressource']) ? $_GET['Id_ressource'] : null;
     $sql = "SELECT ressource.*, ressource_type.*, etape.*, ressource.categorie AS categorie
