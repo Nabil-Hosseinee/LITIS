@@ -88,10 +88,14 @@ var body = document.getElementById('body');
 var menu = document.getElementById('access-menu');
 
 // index.php var
-var access = document.getElementById('access');
 var chatbot = document.getElementById('chatbot');
+var avatar = document.getElementById('avatar');
+var cross = document.getElementById('croix');
+
 var d_header = document.getElementById('desktop-header');
 var p_header = document.getElementById('phone-header');
+
+var access = document.getElementById('access');
 var text = document.querySelectorAll('.text');
 var BonW = document.querySelectorAll('.BonW');
 
@@ -99,15 +103,34 @@ var logo_prin = document.getElementById('logo_prin');
 var logo_BW = document.getElementById('logo_BW');
 
 
+// chatbot event
+chatbot.addEventListener("click", function(event) {
+    event.stopPropagation(); // Prevent the click event from propagating to the chatbot div
+
+    this.classList.add('square');
+    avatar.classList.add('avatar');
+    cross.style.display="block";
+});
+
+cross.addEventListener("click", function(event) {
+    event.stopPropagation(); // Prevent the click event from propagating to the chatbot div
+    chatbot.classList.remove('square');
+    cross.style.display = "none";
+});
+
+document.addEventListener("click", function(event) {
+    if (!chatbot.contains(event.target)) {
+        chatbot.classList.remove('square');
+        cross.style.display = "none";
+    }
+});
+
+
+// accessibilité event
 access.addEventListener("click", function() {
     this.classList.toggle('expanded');
     menu.classList.toggle('visible');
 });
-
-chatbot.addEventListener("click", function() {
-    this.classList.toggle('square');
-});
-
 
 
 document.querySelector('.font-toggle').addEventListener('change', function() {
@@ -149,20 +172,6 @@ document.querySelector('.bg-toggle').addEventListener('change', function() {
     }
 });
 
-
-
-// test logout
-function sendEndSessionRequest() {
-    // Envoi d'une requête pour signaler la fin de la session
-    navigator.sendBeacon('/end_session.php');
-}
-
-window.addEventListener('beforeunload', sendEndSessionRequest);
-
-// Envoi de heartbeats toutes les 30 secondes pour maintenir la session active
-setInterval(function () {
-    fetch('/heartbeat.php', { method: 'POST' });
-}, 30000);
 
 
 

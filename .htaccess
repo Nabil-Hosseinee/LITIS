@@ -1,0 +1,28 @@
+# Activer la réécriture d'URL
+RewriteEngine On
+
+# Redirection vers les pages d'erreur personnalisées
+ErrorDocument 403 /litis/erreurs/403.html
+ErrorDocument 404 /litis/erreurs/404.html
+ErrorDocument 405 /litis/erreurs/405.html
+
+# Bloquer l'accès à mail.php, cible2.php, connect_bdd.php, et end_session.php
+<Files "mail.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "cible2.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "connect_bdd.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
+
+<Files "end_session.php">
+    Order Allow,Deny
+    Deny from all
+</Files>
