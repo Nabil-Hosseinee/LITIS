@@ -1,6 +1,51 @@
 <?php
 session_start();
 
+include('connect_bdd.php');
+
+$sql = "
+    (SELECT Id_ressource, Titre, Categorie, Sous_Categorie, Mot_cle, Image
+     FROM ressource
+     WHERE Categorie = 'Bases d\'internet' AND Image IS NOT NULL AND Image != ''
+     ORDER BY Id_ressource DESC
+     LIMIT 1)
+    UNION ALL
+    (SELECT Id_ressource, Titre, Categorie, Sous_Categorie, Mot_cle, Image
+     FROM ressource
+     WHERE Categorie = 'Santé' AND Image IS NOT NULL AND Image != ''
+     ORDER BY Id_ressource DESC
+     LIMIT 1)
+    UNION ALL
+    (SELECT Id_ressource, Titre, Categorie, Sous_Categorie, Mot_cle, Image
+     FROM ressource
+     WHERE Categorie = 'Sécurité' AND Image IS NOT NULL AND Image != ''
+     ORDER BY Id_ressource DESC
+     LIMIT 1)
+    UNION ALL
+    (SELECT Id_ressource, Titre, Categorie, Sous_Categorie, Mot_cle, Image
+     FROM ressource
+     WHERE Categorie = 'Administratif' AND Image IS NOT NULL AND Image != ''
+     ORDER BY Id_ressource DESC
+     LIMIT 1)
+    UNION ALL
+    (SELECT Id_ressource, Titre, Categorie, Sous_Categorie, Mot_cle, Image
+     FROM ressource
+     WHERE Categorie = 'Education' AND Image IS NOT NULL AND Image != ''
+     ORDER BY Id_ressource DESC
+     LIMIT 1)
+    UNION ALL
+    (SELECT Id_ressource, Titre, Categorie, Sous_Categorie, Mot_cle, Image
+     FROM ressource
+     WHERE Categorie = 'Communication' AND Image IS NOT NULL AND Image != ''
+     ORDER BY Id_ressource DESC
+     LIMIT 1)
+    ";
+
+    $statement = $db->prepare($sql);
+    $statement->execute();
+    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+    
 
 ?>
 
@@ -186,7 +231,7 @@ session_start();
             Quelle est notre <span class="color_v">mission</span> ?
         </h2>
         <div class="container prb-container d-flex flex-column align-items-center">
-            <img class="col-xl-12 img-fluid" src="./assets/images/illustration/mission3.png" alt="Illustration des missions, une personne vise une cible avec une fléchette">
+            <img class="col-xl-12 img-fluid" src="./assets/images/illustration/mission2.png" alt="Illustration des missions, une personne vise une cible avec une fléchette">
             <p class="col-xl-12 fs-3 fw-medium" data-i18n="mission_description">
                 Nous nous engageons à rendre le monde numérique accessible à tous.
                 <br>
@@ -201,64 +246,37 @@ session_start();
 
 
     <!-- tuto -->
-    <section class="tuto">
+    <section class="tutoriels">
         <h2 class="fs-1 fw-bold" data-i18n="tuto_title">
             Les <span class="color_v">tutoriels</span> à la une
         </h2>
 
-        <div class="container">
-            <div class="big-box col-xl-12 d-flex justify-content-between align-items-center rounded-4 desapear-576 exclude-accessibility">
-                <div class="big-box-img col-xl-5 rounded-4">
-                    <img class="img-fluid rounded" src="./assets/images/miniatures_fr/santé/minia_doctolib.png" alt="Miniature de la vidéo nommée 'Prendre un rendez-vous sur Doctolib'" data-i18n="img_sante_doctolib">
-                </div>
-                <div class="big-box-content col-6">
-                    <h3 data-i18n="doctolib_rdv_title" class="exclude-accessibility text">Prendre un rendez-vous sur Doctolib</h3>
-                    <h4 data-i18n="health_cat" class="exclude-accessibility text">Santé</h4>
-                    <p class="fs-5 exclude-accessibility text" data-i18n="details">
-                        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptatum, possimus tenetur consequuntur nam fugit repellat... <br>
-                        <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
-                    </p>
-                </div>
-            </div>
+        <div class="rdv">
+            <div class="videos">
+                <?php
+                    if ($results) {
+                        foreach ($results as $row) {
+                            $minia = $row['Image'];
+                            $id = $row['Id_ressource'];
+                            $title = $row['Titre'];
 
-            <div class="container box-container d-flex justify-content-between">
-                <div class="box d-flex flex-column align-items-center rounded-4 exclude-accessibility">
-                    <h4 class="fs-5 exclude-accessibility text" data-i18n="mdp_create_title">Créer un mot de passe sécurisé</h4>
-                    <h3 class="fs-6 exclude-accessibility text" data-18n="security_cat">Sécurité</h3>
-                    <div class="img rounded-4">
-                        <img class="img-fluid rounded" src="./assets/images/miniatures_fr/sécurité/minia_crea_mdp.png" alt="Miniature de la vidéo nommée 'Créer un mot de passe sécurisé'" data-i18n="img_mdp_create">
-                    </div>
-                    <p data-i18n="details" class="exclude-accessibility text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae. <br>
-                        <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
-                    </p>
-                </div>
-
-                <div class="box d-flex flex-column align-items-center rounded-4 center-box exclude-accessibility">
-                    <h4 class="fs-5 exclude-accessibility text" data-i18n="parcoursup_title">Utiliser Parcoursup</h4>
-                    <h3 class="fs-6 exclude-accessibility text" data-i18n="education_cat">Éducation</h3>
-                    <div class="img rounded-4">
-                        <img class="img-fluid rounded" src="./assets/images/miniatures_fr/éducation/minia_parcoursup.png" alt="Miniature de la vidéo nommée 'Utiliser Parcoursup'" data-i18n="img_parcoursup">
-                    </div>
-                    <p  data-i18n="details" class="exclude-accessibility text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae. <br>
-                        <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
-                    </p>
-                </div>
-
-                <div class="box d-flex flex-column align-items-center rounded-4 desapear exclude-accessibility">
-                    <h4 class="fs-5 exclude-accessibility text" data-i18n="google_create_title">Créer un compte Google</h4>
-                    <h3 class="fs-6 exclude-accessibility text" data-i18n="internet_cat">Base d'Internet</h3>
-                    <div class="img rounded-4">
-                        <img class="img-fluid rounded" src="./assets/images/miniatures_fr/internet/minia_crea_google.png" alt="Miniature de la vidéo nommée 'Créer un compte Google'" data-i18n="img_google_create">
-                    </div>
-                    <p data-i18n="details" class="exclude-accessibility text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sed, recusandae.
-                        <a href="#" class="text-primary text-decoration-underline">Lire la suite</a>
-                    </p>
-                </div>
+                            echo "
+                            <div class='tuto image_wrapper'>
+                                <a href='ressource_type.php?Id_ressource=$id'>
+                                    <img src='$minia' alt='$title'>
+                                    <div class='overlay_4'>
+                                        <div class='text_overlay fw-semibold'>Consulter</div>
+                                    </div>
+                                </a> 
+                            </div>";
+                        }
+                    } else {
+                        echo "0 résultats";
+                    }
+                ?>
             </div>
         </div>
+
     </section>
 
     <!-- footer -->

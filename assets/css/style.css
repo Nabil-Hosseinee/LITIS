@@ -156,54 +156,68 @@ h1 {
 
 /* section tuto */
 
-.tuto {
-    /* background-color: var(--blanc); */
+.tutoriels {
     padding: 20vh;
 }
 
-.tuto>.container {
-    margin-top: 10vh;
-}
-
-.big-box {
-    background-color: var(--gris-clair);
-    padding: 5vh;
-    color: black;
-}
-
-.big-box-img {
-    width: 40%;
-    height: 30vh;
-    /* background: #250000; */
-}
-
-
-.big-box-content h3 {
-    margin-bottom: 1vh;
-}
-
-.big-box-content h4 {
+.tutoriels h2, .quiz h2 {
     margin-bottom: 3vh;
 }
 
-.box-container {
-    margin-top: 5vh;
+.rdv {
+    margin-bottom: 10vh;
 }
 
-.box {
-    padding: 5vh;
-    max-width: 31%;
-    background-color: var(--gris-clair);
+.videos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
-.box .img {
+.tuto {
+    width: calc(33.33% - 2vw);
+    margin-bottom: 5vh;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.tuto img {
     width: 100%;
-    height: 20vh;
-    margin: 50px 0;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.3);
 }
 
-.read_more {
-    margin: 2vh 0;
+.tuto:hover img {
+    transform: scale(1.05);
+}
+
+.overlay_4 {
+    position: absolute;
+    left: 0;
+    bottom: 100%;
+    height: 0;
+    width: 100%;
+    border-radius: 8px;
+    overflow: hidden;
+    backdrop-filter: blur(8px) brightness(80%);
+    transition: all .3s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image_wrapper:hover .overlay_4 {
+    bottom: 0;
+    height: 100%;
+    transform: scale(1.05);
+}
+
+.text_overlay {
+    color: white;
+    text-align: center;
+    font-size: 24px;
 }
 
 /* media queries */
@@ -230,6 +244,11 @@ h1 {
 
     h1 {
         font-size: 60px;
+    }
+
+    /* tutoriel */
+    .tutoriels {
+        padding: 15vh;
     }
 }
 
@@ -286,32 +305,11 @@ h1 {
         padding: 20vh 10vh;
     }
 
-    /* section tuto */
-
+    /* tutoriel */
     .tuto {
-        padding: 20vh 10vh;
+        width: calc(50% - 2vw);
     }
 
-
-    .desapear {
-        display: none !important;
-    }
-
-    .box-container {
-        margin-top: 5vh;
-    }
-
-    .box {
-        max-width: 48%;
-    }
-
-    .box h4 {
-        font-size: 1.5rem !important;
-    }
-
-    .box h3 {
-        font-size: 1.2rem !important;
-    }
 }
 
 @media screen and (max-width: 992px) {
@@ -360,23 +358,13 @@ h1 {
         padding: 0 5vh;
     }
 
-
-    /* section tuto */
-    .box-container {
-        flex-direction: column;
+    /* tutoriels */
+    .tutoriels {
+        padding: 10vh;
     }
 
-    .box {
-        max-width: 100%;
-        margin: 5vh 0;
-    }
-
-    .box .img {
-        width: 70%;
-    }
-
-    .box p {
-        margin-top: 8vh;
+    .tuto {
+        width: calc(50% - 2vw);
     }
 }
 
@@ -420,31 +408,6 @@ h1 {
 
     .prb .container p {
         padding: 0 2vh;
-    }
-
-    /* section tuto */
-    .tuto {
-        padding: 10vh 8vh;
-    }
-
-    .big-box {
-        padding: 3vh;
-    }
-
-    .big-box-img {
-        height: 20vh;
-    }
-
-    .big-box-content h3 {
-        font-size: 1.5rem !important;
-    }
-
-    .big-box-content h4 {
-        font-size: 1.2rem !important;
-    }
-
-    .box p {
-        margin-top: 1vh;
     }
 }
 
@@ -491,37 +454,14 @@ h1 {
         text-align: center;
     }
 
-    .prb .container img {
-        transform: scale(2);
-    }
-
-    .prb .container p {
-        padding: 0;
-    }
-
-    /* section tuto */
+    /* tutoriels */
     .tuto {
-        padding: 10vh 3vh 0vh 3vh;
+        width: calc(100%);
     }
 
-    .tuto h2 {
-        text-align: center;
-    }
-
-    .tuto>.container {
-        margin-top: 0vh;
-    }
-
-    .desapear {
-        display: flex !important;  
-    }
-
-    .desapear-576 {
-        display: none !important;
-    }
-
-    .box p {
-        margin-top: -5vh;
+    .tuto img, .overlay_4 {
+        width: 80%;
+        margin-left: 10%;
     }
 }
 
@@ -587,28 +527,11 @@ h1 {
         font-size: 1.3rem !important;
     }
 
-    /* tuto */
-    .tuto h2 {
-        font-size: 1.4rem !important;
-    }
-
-    .box {
-        padding: 2vh;
-    }
-
-    .box .img {
-        width: 80%;
-    }
-
-    .tuto .box-container h4 {
-        font-size: 1.3rem !important;
-    }
-
-    .tuto .box-container h3  {
-        font-size: 1.1rem !important;
-    }
-
-    .box p {
-        margin-top: -10vh;
+    /* tutoriels */
+    .tutoriels {
+        padding: 10vh 5vh;
     }
 }
+
+
+
