@@ -162,7 +162,7 @@
             while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
                 // test.php a changer 
-                echo "<a href='test.php?Id_ressource=" . $row["Id_ressource"] . "'>";
+                echo "<a href='ressource_type.php?Id_ressource=" . $row["Id_ressource"] . "'>";
                 echo "<img src='" . $row["Image"] . "' alt='" . $row["Titre"] . "'>";
                 echo "<div class='overlay_4'>";
                 echo "<div class='text_overlay fw-semibold'>Consulter</div>";

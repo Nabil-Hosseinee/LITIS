@@ -17,15 +17,24 @@ try {
         $categorie = $ressources[0]['categorie'];
         $categorie_formate = str_replace(' ', '_', $categorie);
         $categorie_formate2 = str_replace("'", '_', $categorie_formate);
+        
+        // Formater vidéo Youtube
+        $video_url = $ressources[0]['video'];
+        if (preg_match('/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|.*?[&?]v=))([^"&?\/ ]{11})/', $video_url, $matches)) {
+            $embed_url = 'https://www.youtube.com/embed/' . $matches[1];
+        } else {
+            $embed_url = null;
+        }
+        
     } else {
         $ressources = [];
         $categorie = 'default';
+        $embed_url = null;
     }
 } catch (PDOException $e) {
     echo "Erreur SQL : " . $e->getMessage();
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -119,52 +128,64 @@ try {
         </form>
     </header>
 
-
     <!-- Titre -->
-
     <div class="title">
         <h1><?php echo htmlspecialchars($ressources[0]["titre_video"]); ?></h1>
-         <div class="underline title_underline"></div>
+        <div class="underline title_underline"></div>
+    </div>
+
+    <!-- Vidéo ou Exercice -->
+    <div class="tuto image_wrapper">
+        <?php
+        if (!empty($ressources[0]['video'])) {
+            $youtube_url = htmlspecialchars($ressources[0]['video']);
+            if (preg_match('/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|.*?[&?]v=))([^"&?\/ ]{11})/', $youtube_url, $matches)) {
+                $embed_url = 'https://www.youtube.com/embed/' . $matches[1];
+                ?>
+                <div class="responsive-iframe-container">
+                    <iframe src="<?php echo $embed_url; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <?php
+            } else {
+                echo "<div class='video-content'><p>Vidéo YouTube non valide.</p></div>";
+            }
+        }
+
+        if (!empty($ressources[0]['exercice'])) {
+            $exercice_page = htmlspecialchars($ressources[0]['exercice']);
+            if (file_exists($exercice_page)) {
+                ?>
+                <div class="exercice-content">
+                    <?php include($exercice_page); ?>
+                </div>
+                <?php
+            } else {
+                echo "<div class='exercice-content'><p>Page d'exercice non disponible.</p></div>";
+            }
+        }
+        ?>
     </div>
 
 
-    <!-- Vidéo -->
-    
-    <div class="tuto image_wrapper">
-        <video controls>
-            <source src="<?php echo htmlspecialchars($ressources[0]["video"]); ?>" type="video/mp4">
-            Votre navigateur ne supporte pas la vidéo.
-        </video>
-    </div> 
 
-     <!-- separator -->
-
+    <!-- separator -->
     <div class="bar"></div>
 
-
-     <!-- Étapes-->
-
-     <div class="etape">
-
+    <!-- Étapes -->
+    <div class="etape">
         <?php foreach ($ressources as $ressource): ?>
             <h2><?php echo htmlspecialchars($ressource["titre_etape"]); ?> :</h2> 
             <p><?php echo htmlspecialchars($ressource["description_etape"]); ?></p><br/><br/>
         <?php endforeach; ?>
-        
-     </div>
+    </div>
 
-     <div class="container text-center">
+    <div class="container text-center">
         <div class="row justify-content-center">
             <div class="col-md-6">
                 <a href="#"><button class="btn fw-bold btn-resource">Télécharger</button></a>
             </div>
         </div>
     </div>
-    
-
-
-
-
 
     <!-- footer -->
     <footer>
@@ -213,5 +234,5 @@ try {
     
 </body>
 
-<script src="./assets/js/script.js"></script>
+<!-- <script src="./assets/js/script.js"></script> -->
 </html>
