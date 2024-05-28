@@ -3,6 +3,10 @@ session_start();
 
 include('connect_bdd.php');
 
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 $sql = "
     (SELECT Id_ressource, Titre, Categorie, Sous_Categorie, Mot_cle, Image
      FROM ressource
@@ -41,17 +45,18 @@ $sql = "
      LIMIT 1)
     ";
 
-    $statement = $db->prepare($sql);
-    $statement->execute();
-    $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+$statement = $db->prepare($sql);
+$statement->execute();
+$results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-    
-
+if (!$results) {
+    echo "Aucun résultat trouvé";
+}
 ?>
 
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
@@ -65,9 +70,8 @@ $sql = "
     <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
     <!--  -->
     <title>Existence Numérique | Accueil</title>
-  </head>
-
-  <body id="body">
+</head>
+<body id="body">
     <header id="desktop-header" class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top exclude-accessibility">
         <div class="logo d-flex justify-content-center align-items-center">
             <a href="index.php">
@@ -82,7 +86,6 @@ $sql = "
                 <li><a class="fs-3 menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
             </ul>
         </nav>
-
         <form class="search exclude-accessibility" action="cible2.php" method="post">
             <label for="search-input" class="visually-hidden">Rechercher</label>
             <input id="search-input" class="exclude-accessibility" name="mot" type="text" placeholder="Rechercher..." autocomplete="off" data-i18n="search_placeholder">
@@ -95,14 +98,12 @@ $sql = "
                 </lord-icon>
             </a>
         </form>
-
         <div class="burger-active exclude-accessibility" id="burger-menu">
             <button class="exclude-accessibility">
                 <p class="exclude-accessibility">Menu</p>
                 <span class="exclude-accessibility"></span>
             </button>
         </div>
-
         <div id="menu" class="exclude-accessibility">
             <ul>
                 <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
@@ -111,21 +112,17 @@ $sql = "
             </ul>
         </div>
     </header>
-
-    <!-- phone header -->
     <header id="phone-header" class="phone d-flex flex-column align-items-center bg-white fixed-top exclude-accessibility">
         <div class="header-container d-flex justify-content-around align-items-center">
             <div class="logo">
                 <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
             </div>
-            
             <div class="burger-active exclude-accessibility" id="burger-menu-phone">
                 <button class="exclude-accessibility">
                     <p class="exclude-accessibility">Menu</p>
                     <span class="exclude-accessibility"></span>
                 </button>
             </div>
-    
             <div id="menu-phone" class="exclude-accessibility">
                 <ul>
                     <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
@@ -134,7 +131,6 @@ $sql = "
                 </ul>
             </div>
         </div>
-
         <div class="phone_bot d-flex justify-content-between exclude-accessibility">
             <form class="search exclude-accessibility" action="cible2.php" method="post">
                 <label for="search-input" class="visually-hidden">Rechercher</label>
@@ -149,11 +145,8 @@ $sql = "
                     <span class="visually-hidden">Rechercher</span>
                 </a>
             </form>
-
         </div>
     </header>
-
-    <!-- langue -->
     <div class="language-selector exclude-accessibility">
         <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
         <div class="dropdown-content" id="language-menu">
@@ -163,9 +156,6 @@ $sql = "
             <a href="#" data-lang="de">DE : Deutsch</a>
         </div>
     </div>
-
-
-    <!-- accessibilité -->
     <div id="access" class="access d-flex justify-content-center align-items-center exclude-accessibility">
         <i class="fa-solid fa-eye-low-vision exclude-accessibility"></i>
         <div id="access-menu" class="access-menu">
@@ -181,24 +171,16 @@ $sql = "
             </label>
         </div>
     </div>
-
-
-    <!-- chatbot -->
     <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
         <img id='avatar' src="./assets/images/avatar/normal.svg" alt="">
         <i id="croix" class="fa-solid fa-xmark" style="display:none"></i>
     </div>
-
-
-    <!-- presentation -->
     <section class="presentation">
         <div class="pre-container d-flex align-items-center">
             <div class="images col-xl-6 col-lg-12">
                 <img class="img-fluid" src="./assets/images/illustration/galere.svg" alt="">
             </div>
-
             <div class="content col-xl-6 col-lg-12">
-                <!-- class bootstrap qui ne fonctionne pas "fs-sm-4" -->
                 <p class="fs-3 fs-sm-4" data-i18n="presentation">
                     Découvrez une multitude de <span class="fw-semibold color_v">ressources</span> soigneusement élaborées pour vous accompagner dans le développement de vos <span class="color_v fw-semibold">compétences numériques.</span> <br><br>Elles vous permettront ainsi de naviguer avec aisance et assurance à travers le paysage technologique en constante évolution, tout en vous donnant les outils nécessaires pour relever les <span class="color_v fw-semibold">défis numériques</span> avec confiance et succès.
                 </p>
@@ -207,12 +189,8 @@ $sql = "
                     <a href="about.html"><button class="btn fw-bold btn-about" data-i18n="about_btn">A propos</button></a>
                 </div>
             </div>
-            
         </div>
     </section>
-
-
-    <!-- slogan -->
     <div class="slogan d-flex justify-content-center align-items-center">
         <div class="circle d-flex justify-content-center align-items-center exclude-accessibility BonW">
             <img src="./assets/images/illustration/quotes.svg" alt="">
@@ -224,9 +202,6 @@ $sql = "
             </h1>
         </div>
     </div>
-
-    
-    <!-- prb -->
     <section class="prb">
         <h2 class="fs-1 fw-bold" data-i18n="mission">
             Quelle est notre <span class="color_v">mission</span> ?
@@ -244,14 +219,10 @@ $sql = "
             </p>
         </div>
     </section>
-
-
-    <!-- tuto -->
     <section class="tutoriels">
         <h2 class="fs-1 fw-bold" data-i18n="tuto_title">
             Les <span class="color_v">tutoriels</span> à la une
         </h2>
-
         <div class="rdv">
             <div class="videos">
                 <?php
@@ -260,7 +231,6 @@ $sql = "
                             $minia = $row['Image'];
                             $id = $row['Id_ressource'];
                             $title = $row['Titre'];
-
                             echo "
                             <div class='tuto image_wrapper'>
                                 <a href='ressource_type.php?Id_ressource=$id'>
@@ -268,7 +238,7 @@ $sql = "
                                     <div class='overlay_4'>
                                         <div class='text_overlay fw-semibold'>Consulter</div>
                                     </div>
-                                </a> 
+                                </a>
                             </div>";
                         }
                     } else {
@@ -277,10 +247,7 @@ $sql = "
                 ?>
             </div>
         </div>
-
     </section>
-
-    <!-- footer -->
     <footer>
         <div class="d-flex flex-column align-items-center">
             <div class="link-container">
@@ -296,7 +263,6 @@ $sql = "
                     <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="legal_notice">Mentions légales</a></li>
                 </ul>
             </div>
-
             <div class="link-container_992 d-flex flex-column align-items-center none">
                 <div class="top">
                     <ul class="d-flex">
@@ -315,7 +281,6 @@ $sql = "
                     </ul>
                 </div>
             </div>
-
             <div class="logo-container">
                 <img class="img-fluid" src="./assets/images/logo/litis_logo.webp" alt="Logo du laboratoire LITIS">
                 <img class="img-fluid" src="./assets/images/logo/agefiph logo.svg" alt="Logo de l'AGEFIPH">
@@ -324,11 +289,8 @@ $sql = "
             </div>
         </div>
     </footer>
-
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/translate.js"></script>
-    
-  </body>
-
+</body>
 </html>

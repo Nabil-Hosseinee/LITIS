@@ -1,35 +1,86 @@
 <?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Fonction de nettoyage des entrées
+    function test_input($data) {
+        $data = trim($data);
+        $data = stripslashes($data);
+        $data = htmlspecialchars($data);
+        return $data;
+    }
 
-// securité du formulaire de contact a faire (php.ini)
+    // Initialiser les variables et les erreurs
+    $prenom = $email = $objet = $message = "";
+    $prenomErr = $emailErr = $objetErr = $messageErr = "";
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['message'])) {
-    $prenom = filter_var($_POST['prenom'], FILTER_SANITIZE_STRING);
-    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
-    $objet = filter_var($_POST['objet'], FILTER_SANITIZE_STRING);
-    $message_content = filter_var($_POST['message'], FILTER_SANITIZE_STRING);
+    $isValid = true;
 
-    if ($email) {
-        // remplacer exemplesite.fr
-        $message = "Ce message vous a été envoyé via la page contact du site exemplesite.fr\n
-        Nom : " . $prenom . "\n
-        Email : " . $email . "\n
-        Message : " . $message_content;
+    // Validation du prénom
+    if (empty($_POST["prenom"])) {
+        $prenomErr = "Le prénom est requis";
+        $isValid = false;
+    } else {
+        $prenom = test_input($_POST["prenom"]);
+        if (!preg_match("/^[A-Za-zÀ-ÿ\s\-]+$/", $prenom)) {
+            $prenomErr = "Seules les lettres, les espaces et les traits d'union sont autorisés";
+            $isValid = false;
+        }
+    }
 
-        // remplacer contact@exemplesite.fr
-        $headers = 'From: contact@exemplesite.fr' . "\r\n" .
-                   'Reply-To: ' . $email . "\r\n" .
-                   'X-Mailer: PHP/' . phpversion();
+    // Validation de l'email
+    if (empty($_POST["email"])) {
+        $emailErr = "L'adresse mail est requise";
+        $isValid = false;
+    } else {
+        $email = test_input($_POST["email"]);
+        if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+            $emailErr = "Format d'adresse mail invalide";
+            $isValid = false;
+        }
+    }
 
-        // remplacer exemplemail@gmail.com par le bon mail du destinataire
-        $retour = mail("exemplemail@gmail.com", $objet, $message, $headers);
+    // Validation de l'objet
+    if (empty($_POST["objet"])) {
+        $objetErr = "L'objet est requis";
+        $isValid = false;
+    } else {
+        $objet = test_input($_POST["objet"]);
+        if (!preg_match("/^[A-Za-z0-9À-ÿ\s\-\,.\"!?\(\)]+$/", $objet)) {
+            $objetErr = "Caractères non autorisés dans l'objet";
+            $isValid = false;
+        }
+    }
 
-        if ($retour) {
-            echo "<p>L'email a bien été envoyé.</p>";
+    // Validation du message
+    if (empty($_POST["message"])) {
+        $messageErr = "Le message est requis";
+        $isValid = false;
+    } else {
+        $message = test_input($_POST["message"]);
+    }
+
+    // Si toutes les validations sont passées
+    if ($isValid) {
+        // Envoyer le mail
+        // Remplacez par votre adresse e-mail contact@existence-numerique.fr
+        $to = "contact@existence-numerique.fr"; 
+        $subject = $objet;
+        $body = "Prénom: $prenom\nEmail: $email\n\nMessage:\n$message";
+        $headers = "From: $email";
+
+        if (mail($to, $subject, $body, $headers)) {
+            echo "Le message a été envoyé avec succès.";
         } else {
-            echo "<p>Une erreur s'est produite lors de l'envoi de l'email.</p>";
+            echo "Échec de l'envoi du message.";
         }
     } else {
-        echo "<p>Adresse email invalide.</p>";
+        echo "Des erreurs ont été trouvées dans le formulaire. Veuillez les corriger et réessayer.";
+        // Afficher les erreurs pour chaque champ
+        echo $prenomErr ? "<br>$prenomErr" : "";
+        echo $emailErr ? "<br>$emailErr" : "";
+        echo $objetErr ? "<br>$objetErr" : "";
+        echo $messageErr ? "<br>$messageErr" : "";
     }
+} else {
+    echo "Méthode de requête invalide.";
 }
 ?>
