@@ -25,11 +25,14 @@ try {
         } else {
             $embed_url = null;
         }
+
+        $download_link = $ressources[0]['lien_pdf'];
         
     } else {
         $ressources = [];
         $categorie = 'default';
         $embed_url = null;
+        $download_link = '#';
     }
 } catch (PDOException $e) {
     echo "Erreur SQL : " . $e->getMessage();
@@ -182,7 +185,7 @@ try {
     <div class="container text-center">
         <div class="row justify-content-center">
             <div class="col-md-6">
-                <a href="#"><button class="btn fw-bold btn-resource">Télécharger</button></a>
+                <a href="<?php echo htmlspecialchars($download_link); ?>" download><button class="btn fw-bold btn-resource">Télécharger</button></a>
             </div>
         </div>
     </div>

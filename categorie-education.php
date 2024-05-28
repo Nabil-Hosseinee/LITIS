@@ -151,18 +151,42 @@
 
         $Id_ressource = '';
 
-        $sql = "SELECT * FROM ressource WHERE Categorie = 'Éducation' AND Sous_Categorie = 'Pour les enfants' AND Image != ''";
+        $sql = "SELECT * FROM ressource WHERE Categorie = 'Éducation' AND Sous_Categorie = 'Parcoursup' AND Image != ''";
         $result = $db->query($sql);
 
         if ($result->rowCount() > 0) {
             echo "<div class='rdv'>";
-            echo "<h2>Pour les enfants</h2>";
+            echo "<h2>Parcoursup</h2>";
             echo "<div class='trait-jaune exclude-accessibility'></div>";
             echo "<div class='videos'>";
             while($row = $result->fetch(PDO::FETCH_ASSOC)) {
                 echo "<div class='tuto image_wrapper'>";
                 echo "<a href='ressource_type.php?Id_ressource=" . $row["Id_ressource"] . "'>";
                 echo "<img src='" . $row["Image"] . "' alt='" . $row["Titre"] . "'>";
+                echo "<div class='overlay_4'>";
+                echo "<div class='text_overlay fw-semibold'>Consulter</div>";
+                echo "</div>";
+                echo "</a>";
+                echo "</div>";
+            }
+            echo "</div>";
+            echo "</div>";
+        } else {
+            echo "Aucun résultat trouvé.";
+        }
+
+        $sql_enfants = "SELECT * FROM ressource WHERE Categorie = 'Éducation' AND Sous_Categorie = 'Pour les enfants et les ados' AND Image != ''";
+        $result_enfants  = $db->query($sql_enfants );
+
+        if ($result_enfants ->rowCount() > 0) {
+            echo "<div class='rdv'>";
+            echo "<h2>Pour les enfants et les adolescents</h2>";
+            echo "<div class='trait-jaune exclude-accessibility'></div>";
+            echo "<div class='videos'>";
+            while($row_enfants  = $result_enfants ->fetch(PDO::FETCH_ASSOC)) {
+                echo "<div class='tuto image_wrapper'>";
+                echo "<a href='ressource_type.php?Id_ressource=" . $row_enfants ["Id_ressource"] . "'>";
+                echo "<img src='" . $row_enfants ["Image"] . "' alt='" . $row_enfants ["Titre"] . "'>";
                 echo "<div class='overlay_4'>";
                 echo "<div class='text_overlay fw-semibold'>Consulter</div>";
                 echo "</div>";

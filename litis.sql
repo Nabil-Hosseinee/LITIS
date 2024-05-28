@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mer. 22 mai 2024 à 15:42
--- Version du serveur : 10.4.32-MariaDB
--- Version de PHP : 8.0.30
+-- Généré le : lun. 27 mai 2024 à 16:01
+-- Version du serveur : 10.4.21-MariaDB
+-- Version de PHP : 7.4.25
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -25,7 +25,7 @@ DELIMITER $$
 --
 -- Fonctions
 --
-CREATE DEFINER=`root`@`localhost` FUNCTION `SPLIT_STRING` (`str` VARCHAR(255), `delim` VARCHAR(12), `pos` INT) RETURNS VARCHAR(255) CHARSET utf8mb4 COLLATE utf8mb4_general_ci  BEGIN
+CREATE DEFINER=`root`@`localhost` FUNCTION `SPLIT_STRING` (`str` VARCHAR(255), `delim` VARCHAR(12), `pos` INT) RETURNS VARCHAR(255) CHARSET utf8mb4 BEGIN
     RETURN REPLACE(SUBSTRING(SUBSTRING_INDEX(str, delim, pos), LENGTH(SUBSTRING_INDEX(str, delim, pos - 1)) + 1), delim, '');
 END$$
 
@@ -43,7 +43,7 @@ CREATE TABLE `etape` (
   `numero_etape` int(11) NOT NULL,
   `titre_etape` varchar(255) NOT NULL,
   `description_etape` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `etape`
@@ -208,7 +208,7 @@ CREATE TABLE `glossaire` (
   `Mot` varchar(100) NOT NULL,
   `Definition` varchar(500) NOT NULL,
   `Synonyme` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `glossaire`
@@ -468,7 +468,7 @@ CREATE TABLE `ressource` (
   `Sous_Categorie` varchar(255) NOT NULL,
   `Mot_cle` varchar(1500) NOT NULL,
   `Image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Déchargement des données de la table `ressource`
@@ -539,30 +539,30 @@ CREATE TABLE `ressource_type` (
   `ressource_id` int(11) NOT NULL,
   `titre_video` varchar(255) NOT NULL,
   `video` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
 -- Déchargement des données de la table `ressource_type`
 --
 
 INSERT INTO `ressource_type` (`id_ressource_type`, `ressource_id`, `titre_video`, `video`) VALUES
-(1, 126, 'Prendre un rendez-vous sur Doctolib', './assets/vidéos/tuto_compte_doctolib-.mp4'),
-(2, 105, 'Créer un dossier Mac', ''),
+(1, 126, 'Prendre un rendez-vous sur Doctolib', 'https://youtu.be/mkG4rQi4p28'),
+(2, 105, 'Créer un dossier Mac', 'https://youtu.be/D7SCkfkcn2E'),
 (3, 149, 'Réviser avec votre enfant', ''),
-(4, 113, 'Création d\'un compte Google', ''),
-(5, 104, 'Utilisation du gestionnaire de fichier', ''),
-(6, 116, 'Faire une bonne recherche sur un moteur de recherche', './assets/vidéos/tuto_moteur_de_recherche.mp4'),
-(7, 108, 'Récupération des fichiers téléchargés', ''),
-(8, 117, 'Gestion des cookies\r\n', ''),
-(9, 109, 'Gestion de stockage sur MacOs', ''),
-(10, 129, 'Commander ses médicaments en pharmacie en ligne', ''),
-(11, 152, 'Créer un compte sur Doctolib', ''),
-(12, 124, 'Créer un compte Ubiclic', ''),
+(4, 113, 'Création d\'un compte Google', 'https://youtu.be/EbQqDMpXCIw'),
+(5, 104, 'Utilisation du gestionnaire de fichier', 'https://www.youtube.com/watch?v=CVo93PEcc7U&ab'),
+(6, 116, 'Faire une bonne recherche sur un moteur de recherche', 'https://youtu.be/cFLZp3XgSFw'),
+(7, 108, 'Récupération des fichiers téléchargés', 'https://youtu.be/SXAJnTzey5Q'),
+(8, 117, 'Gestion des cookies\r\n', 'https://youtu.be/6MLvHA2wcVY'),
+(9, 109, 'Gestion de stockage sur MacOs', 'https://youtu.be/XiGr7ac8WMI'),
+(10, 129, 'Commander ses médicaments en pharmacie en ligne', 'https://youtu.be/qQxPd_F8alE'),
+(11, 152, 'Créer un compte sur Doctolib', 'https://youtu.be/gnjkSLqoPM0'),
+(12, 124, 'Créer un compte Ubiclic', 'https://youtu.be/BPVVDQJNx5M'),
 (13, 137, 'Consultation et usage d’une boîte mail', ''),
-(14, 130, 'Créer un mot de passe sécurisé', ''),
-(15, 131, 'Récupérer un mot de passe oublié\r\n', ''),
-(16, 133, 'Naviguer en sécurité sur internet\r\n', ''),
-(17, 132, 'Sensibilisation face aux menaces en lignes', ''),
+(14, 130, 'Créer un mot de passe sécurisé', 'https://youtu.be/gmykJ2fALK8'),
+(15, 131, 'Récupérer un mot de passe oublié\r\n', 'https://youtu.be/qyoQ8swvjPM'),
+(16, 133, 'Naviguer en sécurité sur internet\r\n', 'https://youtu.be/QvfDeNMuEJw'),
+(17, 132, 'Sensibilisation face aux menaces en lignes', 'https://youtu.be/pMPeOqPVWbw'),
 (18, 154, 'Créer un compte Zoom', ''),
 (19, 153, 'Comment utiliser Google Meet', ''),
 (20, 139, 'Comment utiliser l\'application Zoom', ''),
