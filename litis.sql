@@ -21,12 +21,15 @@ SET time_zone = "+00:00";
 -- Base de données : `litis`
 --
 
+DELIMITER $$
 --
 -- Fonctions
 --
 CREATE DEFINER=`root`@`localhost` FUNCTION `SPLIT_STRING` (`str` VARCHAR(255), `delim` VARCHAR(12), `pos` INT) RETURNS VARCHAR(255) CHARSET utf8mb4 BEGIN
     RETURN REPLACE(SUBSTRING(SUBSTRING_INDEX(str, delim, pos), LENGTH(SUBSTRING_INDEX(str, delim, pos - 1)) + 1), delim, '');
 END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
