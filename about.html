@@ -145,10 +145,10 @@
             <h1 class="fw-semibold" data-i18n="about_title">Qui sommes-nous ?</h1>            
             <!-- class bootstrap qui ne fonctionne pas "fs-sm-4" -->
             <p class="fs-sm-4 fw-medium" data-i18n="about_pre">
-            Nous accompagnons les individus dans <span class="fw-semibold color_v">l'exploration</span> et <span class="fw-semibold color_v">la maîtrise</span> des outils numériques, en fournissant des ressources éducatives <span class="fw-semibold color_v">accessibles à tous</span>. Nous visons à <span class="fw-semibold color_v">sensibiliser</span>, <span class="fw-semibold color_v">autonomiser</span> et <span class="fw-semibold color_v">soutenir</span> chacun dans le développement de compétences numériques essentielles, en collaboration avec des partenaires tels que <span class="fw-semibold color_v">l'AGEFIPH</span>, afin de favoriser leur participation active dans la société moderne.</p>
+            Nous accompagnons les individus dans <span class="fw-semibold color_v">l'exploration</span> et <span class="fw-semibold color_v">la maîtrise</span> des outils numériques, en fournissant des ressources éducatives <span class="fw-semibold color_v">accessibles à tous</span>. Nous visons à <span class="fw-semibold color_v">sensibiliser</span>, <span class="fw-semibold color_v">autonomiser</span> et <span class="fw-semibold color_v">soutenir</span> chacun dans le développement de compétences numériques essentielles. C'est une collaboration entre l'AGEFIPH, l'Université de Rouen, l'IUT de Rouen et le laboratoire de recherche LITIS.</p>
 
             <div class="images col-xl-6 col-lg-12">
-                <img class="img-fluid rounded-4" src="./assets/images/test.JPG" alt="Photo de l'équipe du site existence numérique">
+                <img class="img-fluid rounded-4" src="./assets/images/equipe/equipe.jpg" alt="Photo de l'équipe du site existence numérique">
             </div>
 
         </div>
@@ -178,7 +178,7 @@
                 </div>
 
                 <p class="fw-medium text exclude-accessibility" data-i18n="about_video_details">
-                Nous proposons des tutoriels couvrants un large éventail de sujets allants des bases de l’informatique à des compétences plus avancées.</p>
+                Nous proposons des tutoriels couvrant un large éventail de sujets allant des bases de l’informatique à des compétences plus avancées.</p>
 
                 <button class="btn fw-bold btn-savoir exclude-accessibility BonW" onclick="window.location.href='https:\//www.youtube.com/@agefiph182'" data-i18n="know_more_button">En savoir plus</button>
 
@@ -207,11 +207,12 @@
     <!-- partenaire -->
     <section class="partenaire">
         <h2 class="fw-bold" data-i18n="partenaire">
-            Notre <span class="color_v">partenaire</span>
+            <!-- Notre <span class="color_v">partenaire</span> -->
+            <p>AGEFIPH</p>
         </h2>
 
         <div class="container partenaire-container d-flex justify-content-between" data-i18n="partenaire_details">
-            <p class="fw-medium">Nous sommes fiers de collaborer avec l'AGEFIPH dans notre mission commune de promouvoir l'accessibilité numérique pour tous.<br><br>
+            <p class="fw-medium">AGEFIPH a pour mission de promouvoir l'accessibilité numérique pour tous.<br><br>
             En tant qu'organisation engagée dans l'insertion professionnelle des personnes en situation de handicap, l'AGEFIPH apporte une expertise précieuse et des ressources spécifiques pour aider à surmonter les obstacles liés à l'illectronisme chez les personnes en situation de handicap.</p>
             
             <img src="assets/images/logo/agefiph logo.svg" alt="Logo de l'AGEFIPH">
@@ -310,20 +311,20 @@
                 </div>
             </div>
             <div class="form-carte">
-                <!-- <div class="form">
+                <div class="form">
                     <h3 class="fs-2 fw-semibold color_v" data-i18n="form">Formulaire de contact</h3>
                     <form action="mail.php" method="post">
                         <div>
                             <label for="prenom" class="fs-6 fw-semibold" data-i18n="name_label">Entrez votre prénom :</label>
-                            <input type="text" id="prenom" name="prenom" placeholder="Exemple : Julien" required data-i18n="example_name">
+                            <input type="text" id="prenom" name="prenom" placeholder="Exemple : Julien" required data-i18n="example_name" pattern="[A-Za-zÀ-ÿ\s\-]+">
                         </div>
                         <div>
                             <label for="email" class="fs-6 fw-semibold" data-i18n="mail_label">Entrez votre adresse mail :</label>
-                            <input type="email" id="email" name="email" placeholder="Exemple : julien.dubois@gmail.com" required data-i18n="example_mail">
+                            <input type="email" id="email" name="email" placeholder="Exemple : julien.dubois@gmail.com" required data-i18n="example_mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$">
                         </div>
                         <div>
                             <label for="objet" class="fs-6 fw-semibold" data-i18n="object_label">Entrez l'objet de votre requête :</label>
-                            <input type="text" id="objet" name="objet" placeholder="Exemple : Erreur d'affichage sur le site" required data-i18n="example_object">
+                            <input type="text" id="objet" name="objet" placeholder="Exemple : Erreur d'affichage sur le site" required data-i18n="example_object" pattern="[A-Za-z0-9À-ÿ\s\-\,.&quot;!?\(\)]+">
                         </div>
                         <div>
                             <label for="message" class="fs-6 fw-semibold" data-i18n="message_label">Entrez votre message :</label>
@@ -332,8 +333,10 @@
                         <div>
                             <button class="btn fw-bold btn-form" type="submit" data-i18n="submit_btn">Soumettre</button>
                         </div>
-                    </form> -->
+                    </form>
                 </div>
+                
+                
                 <div class="carte">
                     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2594.888430891004!2d1.078311576707716!3d49.42992327141525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e0de6d39fe8c63%3A0x31a48af2a2add715!2s30%20Rue%20Henri%20Gadeau%20de%20Kerville%2C%2076038%20Rouen!5e0!3m2!1sfr!2sfr!4v1713859115253!5m2!1sfr!2sfr" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                 </div>

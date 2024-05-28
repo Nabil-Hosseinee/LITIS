@@ -184,7 +184,7 @@
         <div class="texte-img-quiz">
             <div class="texte-quiz">
                 <p class="fs-4 fw-medium">Il est grand temps de vous exercer afin de savoir si vous avez bien suivi les ressources de la catégorie <span class="color_edu">éducation </span>!</p>
-                <button onclick="window.location.href='quiz.html'" class="btn fw-bold btn-quiz">Faire le quiz</button>
+                <button onclick="window.location.href='quiz.html?category=education&source=categorie-education.php'" class="btn fw-bold btn-quiz">Faire le quiz</button>
             </div>
             <div class="img-quiz">
                 <img src="./assets/images/illustration/quiz2.png" alt="">

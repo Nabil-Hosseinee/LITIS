@@ -1,20 +1,25 @@
 <?php
 session_start();
-
 session_unset();
+
+include('connect_bdd.php');
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
 // Vérifier si un mot a été saisi dans la barre de recherche
 if (isset($_POST['mot'])) {
     $mot = $_POST['mot'];
 
     // Connexion à la base de données (à remplacer avec vos informations de connexion)
-    $dsn = 'mysql:host=localhost;dbname=litis';
-    $username = 'root';
-    $password = '';
+    // $dsn = 'mysql:host=localhost;dbname=litis';
+    // $username = 'root';
+    // $password = '';
 
-    try {
-        $db = new PDO($dsn, $username, $password);
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    // try {
+        // $db = new PDO($dsn, $username, $password);
+        // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
         // 
         // Vérifier d'abord si le mot existe dans la table glossaire
@@ -161,8 +166,8 @@ if (isset($_POST['mot'])) {
         header("Location: search.php");
         exit;
         
-    } catch (PDOException $e) {
-        echo "Erreur de connexion à la base de données : " . $e->getMessage();
-    }
+    // } catch (PDOException $e) {
+    //     echo "Erreur de connexion à la base de données : " . $e->getMessage();
+    // }
 }
 ?>
