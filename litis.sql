@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 28 mai 2024 à 14:49
+-- Généré le : mar. 28 mai 2024 à 15:35
 -- Version du serveur : 10.4.21-MariaDB
 -- Version de PHP : 7.4.25
 
@@ -21,6 +21,7 @@ SET time_zone = "+00:00";
 -- Base de données : `litis`
 --
 
+DELIMITER $$
 --
 -- Fonctions
 --
@@ -28,6 +29,7 @@ CREATE DEFINER=`root`@`localhost` FUNCTION `SPLIT_STRING` (`str` VARCHAR(255), `
     RETURN REPLACE(SUBSTRING(SUBSTRING_INDEX(str, delim, pos), LENGTH(SUBSTRING_INDEX(str, delim, pos - 1)) + 1), delim, '');
 END$$
 
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -560,7 +562,7 @@ INSERT INTO `ressource` (`Id_ressource`, `Titre`, `Categorie`, `Sous_Categorie`,
 (142, 'Trouver un truc lié aux messages (ex : programmer un message)', 'Communication', 'Mail et messagerie', 'Chat, Messagerie instantanée, discussion en ligne, tchat, GIF, Format graphique interchange, Format d\'image animée, Graphics Interchange Format, format d’échange d’images, Messagerie, Service de messagerie, système de messagerie, Messaging, SMS, Texto, message texte, texto, Short Message Service', ''),
 (145, 'Comment se créer un compte ameli : ', 'Administratif', 'Démarches administratives', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', './assets/images/miniatures/administratif/minia_compte_ameli.png'),
 (148, 'France Travail : Comment prendre un rendez-vous en ligne ?', 'Administratif', 'Démarches administratives', 'Widget, Gadgets, composant, élément d\'interface', './assets/images/miniatures/administratif/minia_france_travail_rdv.png'),
-(149, 'Réviser avec votre enfant', 'Éducation', 'Pour les enfants', 'E-learning, Apprentissage, apprentissage en ligne, formation, formation à distance, enseignement, enseignement virtuel', './assets/images/miniatures/éducation/minia_reviser.png'),
+(149, 'Réviser avec votre enfant', 'Éducation', 'Pour les enfants et les ados', 'E-learning, Apprentissage, apprentissage en ligne, formation, formation à distance, enseignement, enseignement virtuel', './assets/images/miniatures/éducation/minia_reviser.png'),
 (150, 'Parcoursup : Comment créer son dossier candidat', 'Éducation', 'Parcoursup', '', './assets/images/miniatures/éducation/minia_parcoursup_candidat.png'),
 (151, 'Accéder à l’ENT', 'Éducation', 'Pour les enfants et les ados', 'ENT, plateforme, éducation, espace, espace numérique, Environnement Numérique de Travail, E-learning, Apprentissage, apprentissage en ligne, formation, formation à distance, enseignement, enseignement virtuel', ''),
 (152, 'Créer un compte Doctolib', 'Santé', 'Santé en ligne', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', './assets/images/miniatures/santé/minia_compte_doctolib.png'),
@@ -616,11 +618,11 @@ INSERT INTO `ressource_type` (`id_ressource_type`, `ressource_id`, `titre_video`
 (19, 153, 'Comment utiliser Google Meet', '', './assets/pdf/Communication/Comment utiliser Google Meet.pdf'),
 (20, 139, 'Comment utiliser l\'application Zoom', '', './assets/pdf/Communication/Comment utiliser l\'application Zoom.pdf'),
 (21, 138, 'Joindre un fichier par mail', '', './assets/pdf/Communication/Joindre un fichier par mail.pdf'),
-(22, 150, 'Parcoursup : Créer son dossier candidat (vidéo du Ministère Enseignement supérieur et Recherche)', 'https://youtu.be/u-pfMSmeVlc?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj', ''),
-(23, 155, 'Parcoursup : Handicap et études supérieures (vidéo du Ministère Enseignement supérieur et Recherche)', 'https://youtu.be/xxjh6FXaXbM?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj', ''),
-(24, 156, 'Parcoursup : comment formuler des vœux en apprentissage ? (vidéo du Ministère Enseignement supérieur et Recherche)', 'https://youtu.be/KeNngPkKKZA?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj', ''),
-(25, 157, 'Parcoursup : comment compléter son dossier ? (vidéo du Ministère Enseignement supérieur et Recherche)', 'https://youtu.be/a8Gcw-0GrWE?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj', ''),
-(26, 158, 'Parcoursup : rédiger une lettre de motivation (vidéo du Ministère Enseignement supérieur et Recherche)\r\n', 'https://youtu.be/52T8GRU9EBw?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj\r\n', ''),
+(22, 150, 'Parcoursup : Créer son dossier candidat (vidéo du Ministère Enseignement supérieur et Recherche)', 'https://youtu.be/u-pfMSmeVlc?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj', './assets/pdf/Éducation/Parcoursup - Créer son dossier candidat.pdf'),
+(23, 155, 'Parcoursup : Handicap et études supérieures (vidéo du Ministère Enseignement supérieur et Recherche)', 'https://youtu.be/xxjh6FXaXbM?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj', './assets/pdf/Éducation/Parcoursup - Handicap et études supérieures.pdf'),
+(24, 156, 'Parcoursup : comment formuler des vœux en apprentissage ? (vidéo du Ministère Enseignement supérieur et Recherche)', 'https://youtu.be/KeNngPkKKZA?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj', './assets/pdf/Éducation/Parcoursup - Formuler des vœux en apprentissage.pdf'),
+(25, 157, 'Parcoursup : comment compléter son dossier ? (vidéo du Ministère Enseignement supérieur et Recherche)', 'https://youtu.be/a8Gcw-0GrWE?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj', './assets/pdf/Éducation/Parcoursup - Comment compléter son dossier.pdf'),
+(26, 158, 'Parcoursup : rédiger une lettre de motivation (vidéo du Ministère Enseignement supérieur et Recherche)\r\n', 'https://youtu.be/52T8GRU9EBw?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj\r\n', './assets/pdf/Éducation/Parcoursup - Rédiger une lettre de motivation.pdf'),
 (33, 159, 'CAF : Gérer son dossier (vidéo des Allocations familiales)', 'https://youtu.be/Nu3Q7bvUizo?list=PLWeo8BGFPatgNWoWkfu4ZSvZo1AnzRYv4', ''),
 (34, 160, 'CAF : comment déclarer ses ressources trimestrielles (vidéo des Allocations familiales)', 'https://youtu.be/gcJex30gluk?list=PLWeo8BGFPatgNWoWkfu4ZSvZo1AnzRYv4\r\n', ''),
 (35, 161, 'France Travail : Comment faire ma première demande d\'inscription ? (vidéo de France Travail)', 'https://youtu.be/LqEqBQM1lVk?list=PLWeo8BGFPatgNWoWkfu4ZSvZo1AnzRYv4', ''),
