@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.1
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : mar. 28 mai 2024 à 15:35
--- Version du serveur : 10.4.21-MariaDB
--- Version de PHP : 7.4.25
+-- Généré le : mer. 22 mai 2024 à 15:42
+-- Version du serveur : 10.4.32-MariaDB
+-- Version de PHP : 8.0.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -21,12 +21,15 @@ SET time_zone = "+00:00";
 -- Base de données : `litis`
 --
 
+DELIMITER $$
 --
 -- Fonctions
 --
-CREATE DEFINER=`root`@`localhost` FUNCTION `SPLIT_STRING` (`str` VARCHAR(255), `delim` VARCHAR(12), `pos` INT) RETURNS VARCHAR(255) CHARSET utf8mb4 BEGIN
+CREATE DEFINER=`root`@`localhost` FUNCTION `SPLIT_STRING` (`str` VARCHAR(255), `delim` VARCHAR(12), `pos` INT) RETURNS VARCHAR(255) CHARSET utf8mb4 COLLATE utf8mb4_general_ci  BEGIN
     RETURN REPLACE(SUBSTRING(SUBSTRING_INDEX(str, delim, pos), LENGTH(SUBSTRING_INDEX(str, delim, pos - 1)) + 1), delim, '');
 END$$
+
+DELIMITER ;
 
 -- --------------------------------------------------------
 
@@ -40,7 +43,7 @@ CREATE TABLE `etape` (
   `numero_etape` int(11) NOT NULL,
   `titre_etape` varchar(255) NOT NULL,
   `description_etape` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `etape`
@@ -60,7 +63,7 @@ INSERT INTO `etape` (`id_etape`, `ressource_type_id`, `numero_etape`, `titre_eta
 (12, 2, 4, '4. Nommer le Dossier', 'Un nouveau dossier apparaîtra, prêt à être renommé. Cliquez une fois sur le texte \"Nouveau dossier\" pour le mettre en surbrillance, puis tapez le nom que vous souhaitez donner à votre dossier.'),
 (13, 2, 5, '5. Valider le Nom', 'Appuyez sur la touche \"Entrée\" une fois que vous avez terminé de taper le nom pour valider le nom du dossier.'),
 (14, 4, 1, '1. Accédez à la Page de Création de Compte', 'Rendez-vous sur la page de création de compte Google en ouvrant votre navigateur web et en accédant à l\'adresse suivante : https://accounts.google.com/signup.'),
-(15, 4, 2, '2. Remplissez le Formulaire de Création de Compte', 'Sur la page de création de compte, vous serez invité à remplir un formulaire avec les informations suivantes : prénom et nom de famille, nom d\'utilisateur (adresse email que vous souhaitez utiliser pour votre compte Google), mot de passe (choisissez un mot de passe sécurisé), confirmation du mot de passe.'),
+(15, 4, 2, '2. Remplissez le Formulaire de Création de Compte', 'Sur la page de création de compte, vous serez invité à remplir un formulaire avec les informations suivantes : prénom et nom de famille, nom d\'utilisateur (adresse email que vous souhaitez utiliser pour votre compte Google), mot de passe (choisissez un mot de passe sécurisé), confirmation du mot de passe\n'),
 (16, 4, 3, '3. Ajoutez des Informations Supplémentaires (optionnel)', 'Vous pouvez également ajouter des informations supplémentaires à votre compte, telles que votre numéro de téléphone, votre date de naissance et votre genre. Cependant, ces informations ne sont pas obligatoires pour créer un compte Google.'),
 (17, 4, 4, '4. Vérifiez votre Identité', 'Pour des raisons de sécurité, Google peut vous demander de vérifier votre identité en vous envoyant un code de vérification par SMS ou par appel vocal sur le numéro de téléphone que vous avez fourni. Suivez les instructions à l\'écran pour terminer le processus de vérification.'),
 (18, 4, 5, '5. Acceptez les Conditions d\'Utilisation et la Politique de Confidentialité', 'Avant de créer votre compte, assurez-vous de lire attentivement les conditions d\'utilisation et la politique de confidentialité de Google. Une fois que vous avez lu et compris ces documents, cochez les cases indiquant que vous acceptez ces termes.'),
@@ -108,7 +111,7 @@ INSERT INTO `etape` (`id_etape`, `ressource_type_id`, `numero_etape`, `titre_eta
 (60, 10, 8, '8. Attendez la Livraison\r\n', 'Une fois votre commande passée, attendez la livraison de vos médicaments à l\'adresse que vous avez spécifiée. Assurez-vous de respecter les délais de livraison estimés.\r\n'),
 (61, 10, 9, '9. Réceptionnez et Vérifiez votre Commande\r\n', 'Lorsque vous recevez votre commande, vérifiez attentivement les médicaments pour vous assurer qu\'ils correspondent à ce que vous avez commandé et qu\'ils sont en bon état.\r\n'),
 (62, 10, 10, '10. Suivez les Instructions d\'Utilisation\r\n', 'Suivez les instructions d\'utilisation fournies avec vos médicaments et consultez un professionnel de santé en cas de doute ou de préoccupation.'),
-(63, 11, 1, '1. Accéder au Site Web de Doctolib \n', 'Rendez-vous sur le site web de Doctolib en utilisant votre navigateur web préféré.'),
+(63, 11, 1, '1. Accéder au Site Web de Doctolib : \r\n', 'Rendez-vous sur le site web de Doctolib en utilisant votre navigateur web préféré.'),
 (64, 11, 2, '2. Accéder à la Page d\'Inscription ', 'Sur la page d\'accueil de Doctolib, recherchez le lien ou le bouton d\'inscription. Il peut être situé en haut à droite de la page ou dans le menu de navigation.'),
 (65, 11, 3, '3. Choisir le Type de Compte', 'Doctolib propose différents types de comptes en fonction de votre profil. Sélectionnez le type de compte approprié, par exemple, \"Patient\" si vous êtes un patient ou \"Professionnel de Santé\" si vous êtes un professionnel de santé.'),
 (66, 11, 4, '4. Remplir le Formulaire d\'Inscription \r\n', 'Remplissez le formulaire d\'inscription avec les informations requises. Cela peut inclure votre nom, prénom, adresse e-mail, numéro de téléphone, date de naissance, et éventuellement d\'autres informations pertinentes.'),
@@ -192,52 +195,7 @@ INSERT INTO `etape` (`id_etape`, `ressource_type_id`, `numero_etape`, `titre_eta
 (144, 3, 2, '2.  Exploration de Lumni.fr\r\n', 'Rendez-vous sur le site Lumni.fr dans votre navigateur web.\r\nExplorez les différentes catégories disponibles, telles que les matières scolaires, les niveaux d\'enseignement et les ressources éducatives.\r\nChoisissez une matière spécifique que votre enfant souhaite réviser, par exemple les mathématiques ou la géographie.\r\nSélectionnez des vidéos, des exercices interactifs ou des jeux éducatifs pertinents pour le niveau et les besoins de votre enfant.\r\nVisionnez les vidéos et complétez les activités proposées ensemble, en discutant des concepts et en répondant aux questions.\r\n'),
 (145, 3, 3, '3. Utilisation de Les Fondamentaux.fr\r\n', 'Accédez au site Les Fondamentaux.fr dans votre navigateur.\r\nExplorez les différentes matières et compétences couvertes, telles que la lecture, les mathématiques, les sciences et l\'histoire.\r\nSélectionnez une compétence spécifique que votre enfant souhaite renforcer, comme la conjugaison des verbes ou la compréhension de texte.\r\nParcourez les différentes activités interactives et les vidéos disponibles pour cette compétence.\r\nTravaillez ensemble sur les exercices et les leçons interactives, en encourageant votre enfant à poser des questions et à exprimer ses idées.\r\n'),
 (146, 3, 4, '4. Découverte des Odyssées par France Inter\r\n', 'Visitez la section Les Odyssées sur le site de France Inter.\r\nParcourez les différentes séries audio disponibles, qui présentent des sujets intéressants et éducatifs dans des formats captivants.\r\nChoisissez une série qui intéresse votre enfant, comme l\'histoire, les sciences ou la culture.\r\nÉcoutez ensemble un épisode de la série sélectionnée, en discutant des faits intéressants et en posant des questions pour encourager la réflexion.\r\nProfitez de cette expérience audio pour élargir les horizons de votre enfant et susciter sa curiosité pour le monde qui l\'entoure.\r\n'),
-(147, 3, 5, '5. Conclusion\r\n', 'Une fois la session de révision terminée, prenez le temps de discuter avec votre enfant de ce qu\'il a appris et de ce qu\'il a trouvé le plus utile ou intéressant. Encouragez-le à continuer à explorer les ressources en ligne disponibles et à poser des questions chaque fois qu\'il en a besoin. Répétez régulièrement ces sessions de révision pour renforcer les connaissances de votre enfant et favoriser son développement académique et personnel.'),
-(148, 22, 1, '1. Accéder au site web de Parcoursup', 'Ouvrez votre navigateur et allez sur www.parcoursup.fr.'),
-(149, 22, 2, '2. Créer un Compte', 'Sur la page d\'accueil, recherchez et cliquez sur un bouton ou un lien appelé \"S\'inscrire\" ou \"Créer un compte\".\r\n'),
-(150, 22, 3, '3. Renseigner les Informations Initiales', 'Fournissez une adresse e-mail valide et créez un mot de passe sécurisé. Vous devrez également fournir des informations personnelles telles que votre numéro INE (Identifiant National Élève) si vous en avez un.'),
-(151, 22, 4, '4. Valider l\'Inscription', 'Après avoir rempli le formulaire, vous recevrez un e-mail. Ouvrez cet e-mail et cliquez sur le lien pour activer votre compte.'),
-(152, 22, 5, '5. Se Connecter à son Compte', 'Retournez sur www.parcoursup.fr et cliquez sur \"Se connecter\". Utilisez votre adresse e-mail et le mot de passe que vous avez choisi pour vous connecter.'),
-(153, 22, 6, '6. Accéder à votre Dossier', 'Une fois connecté, cliquez sur \"Mon dossier\" ou \"Accéder à mon dossier\" pour commencer à compléter votre dossier de candidature.'),
-(154, 22, 7, '7. Compléter les Informations Personnelles', 'Suivez les instructions pour remplir chaque section de votre dossier. Vous devrez fournir des informations personnelles, vos études précédentes, vos centres d\'intérêt, etc.'),
-(155, 22, 8, '8. Télécharger les Documents', 'Si nécessaire, vous devrez télécharger des documents comme vos bulletins de notes. Suivez les instructions pour le faire.'),
-(156, 22, 9, '9. Sauvegarder', 'Assurez-vous de cliquer sur le bouton \"Sauvegarder\" ou \"Enregistrer\" régulièrement pour ne pas perdre vos progrès.'),
-(157, 23, 1, '1. Créer un Compte sur Parcoursup', 'Rendez-vous sur Parcoursup, cliquez sur \"Créer mon dossier 2024\", et renseignez vos informations personnelles. Créez un mot de passe sécurisé et validez votre inscription. Vous recevrez un e-mail de confirmation avec un lien pour activer votre compte.'),
-(158, 23, 2, '2. Remplir le Dossier Parcoursup', 'Connectez-vous à votre compte Parcoursup et complétez votre profil avec vos coordonnées et informations personnelles. Renseignez votre parcours scolaire en indiquant les établissements fréquentés, les classes suivies, et vos notes et appréciations des deux dernières années. Rédigez également votre projet de formation motivé, expliquant pourquoi vous souhaitez intégrer les formations choisies.'),
-(159, 23, 3, '3. Déclaration de la Situation de Handicap\r\n', 'Indiquez votre situation de handicap dans la section \"Ma préférence\" et \"Situation particulière\". Fournissez un certificat médical ou une reconnaissance de votre handicap (RQTH) et joignez tout autre document justifiant votre situation et vos besoins spécifiques.'),
-(160, 23, 4, '4. Dispositifs d\'Accompagnement\r\n', 'Consultez la rubrique \"Accéder à l\'enseignement supérieur avec un handicap\" sur Parcoursup pour connaître les aides disponibles. Prenez contact avec le référent handicap de chaque établissement pour discuter de vos besoins spécifiques et demander les aménagements nécessaires pour vos études et examens (temps supplémentaire, matériel adapté, etc.).'),
-(161, 23, 5, '5. Conseils Pratiques\r\n', 'Préparez votre dossier bien avant la date limite pour éviter tout stress de dernière minute. N\'hésitez pas à demander de l\'aide à vos professeurs, conseillers d\'orientation, ou associations de soutien aux étudiants en situation de handicap. Notez les dates importantes de Parcoursup (ouverture des inscriptions, date limite de soumission, etc.) et respectez-les scrupuleusement.'),
-(162, 23, 6, '6. Conclusion', 'En suivant ces étapes, vous mettrez toutes les chances de votre côté pour réussir votre inscription sur Parcoursup et accéder à l\'enseignement supérieur avec les aménagements nécessaires pour votre situation de handicap. De nombreux dispositifs et aides sont disponibles pour vous soutenir tout au long de votre parcours académique.'),
-(163, 24, 1, '1. Créer un Compte sur Parcoursup', 'Accédez à Parcoursup et créez votre compte en cliquant sur \"Créer mon dossier 2024\". Renseignez vos informations personnelles, créez un mot de passe, et validez votre inscription.'),
-(164, 24, 2, '2. Se Connecter à Parcoursup', 'Connectez-vous à votre compte en utilisant votre identifiant et mot de passe.'),
-(165, 24, 3, '3. Accéder à la Rubrique \"Formuler des Vœux\"', 'Dans votre tableau de bord, accédez à la rubrique \"Formuler des vœux\".'),
-(166, 24, 4, '4. Rechercher des Formations en Apprentissage', 'Utilisez le moteur de recherche pour trouver des formations en apprentissage. Vous pouvez filtrer les résultats par domaine, localisation, et type de diplôme.'),
-(167, 24, 5, '5. Sélectionner les Formations', 'Sélectionnez les formations en apprentissage qui vous intéressent en cliquant sur \"Ajouter à la liste de vœux\".'),
-(168, 24, 6, '6. Compléter les Informations Demandées', 'Pour chaque vœu, complétez les informations demandées, telles que le projet de formation motiver et les justificatifs spécifiques à l\'apprentissage (CV, lettre de motivation, etc.).'),
-(169, 24, 7, '7. Valider et Soumettre vos Vœux\r\n', 'Après avoir complété toutes les informations pour chaque vœu, validez et soumettez vos vœux avant la date limite.'),
-(170, 24, 8, '8. Suivre l\'Avancement de vos Vœux', 'Surveillez régulièrement votre tableau de bord Parcoursup pour suivre l\'avancement de vos vœux et les réponses des établissements.'),
-(171, 24, 9, '9. Préparer les Entretiens d\'Apprentissage', 'En cas de sélection, préparez-vous aux entretiens avec les employeurs potentiels en vous renseignant sur l\'entreprise et en vous entraînant à présenter votre parcours et vos motivations.'),
-(172, 24, 10, '10. Confirmer votre Choix', 'Une fois que vous avez reçu des propositions d\'apprentissage, confirmez votre choix sur Parcoursup en respectant les délais indiqués.'),
-(173, 25, 1, '1. Créer un Compte sur Parcoursup\r\n', 'Accédez à Parcoursup et créez votre compte en cliquant sur \"Créer mon dossier 2024\". Renseignez vos informations personnelles, créez un mot de passe, et validez votre inscription.\r\n'),
-(174, 25, 2, '2. Se Connecter à Parcoursup', 'Connectez-vous à votre compte en utilisant votre identifiant et mot de passe.'),
-(175, 25, 3, '3. Accéder à la Rubrique \"Compléter son Dossier\"', 'Dans votre tableau de bord, accédez à la rubrique \"Compléter son dossier\".'),
-(176, 25, 4, '4. Renseigner les Informations Personnelles', 'Complétez toutes les informations personnelles demandées, comme votre adresse, numéro de téléphone, et situation familiale.'),
-(177, 25, 5, '5. Indiquer le Parcours Scolaire', 'Renseignez les détails de votre parcours scolaire : établissements fréquentés, classes suivies, et les notes des deux dernières années.'),
-(178, 25, 6, '6. Ajouter les Expériences et Centres d\'Intérêt', 'Mentionnez vos expériences professionnelles, stages, bénévolats, et vos centres d\'intérêt pertinents.'),
-(179, 25, 7, '7. Rédiger le Projet de Formation Motivé', 'Rédigez un projet de formation motivé pour chaque vœu, expliquant pourquoi vous souhaitez intégrer cette formation et comment elle s\'inscrit dans votre projet professionnel.'),
-(180, 25, 8, '8. Joindre les Documents Requis\r\n', 'Téléchargez tous les documents nécessaires : bulletins de notes, certificats, lettres de recommandation, etc.'),
-(181, 25, 9, '9. Vérifier et Valider le Dossier', 'Revérifiez toutes les informations et documents pour vous assurer qu\'ils sont complets et corrects. Ensuite, validez votre dossier.'),
-(182, 25, 10, '10. Suivre les Notifications et Réponses', 'Surveillez régulièrement votre tableau de bord pour suivre les notifications et les réponses des établissements.'),
-(183, 26, 1, '1. Comprendre l\'Importance de la Lettre de Motivation', 'La lettre de motivation est une opportunité de présenter votre parcours, vos motivations et de démontrer votre intérêt pour la formation souhaitée. Elle peut faire la différence dans la sélection de votre dossier.'),
-(184, 26, 2, '2. Se Connecter à Parcoursup\r\n', 'Accédez à Parcoursup et connectez-vous à votre compte en utilisant votre identifiant et mot de passe.'),
-(185, 26, 3, '3. Accéder à la Rubrique \"Projet de Formation Motivé\"', 'Dans votre tableau de bord, accédez à la rubrique \"Formuler des vœux\" puis cliquez sur \"Projet de formation motivé\" pour le vœu concerné.'),
-(186, 26, 4, '4. Structurer la Lettre de Motivation', 'Utilisez une structure claire : introduction, développement et conclusion. Chaque partie doit être bien distincte.\r\n'),
-(187, 26, 5, '5. Introduction', 'Présentez-vous brièvement et mentionnez la formation pour laquelle vous postulez. Expliquez en une phrase pourquoi vous êtes intéressé par cette formation.');
-INSERT INTO `etape` (`id_etape`, `ressource_type_id`, `numero_etape`, `titre_etape`, `description_etape`) VALUES
-(188, 26, 6, '6. Développement', 'Décrivez votre parcours académique et/ou professionnel pertinent. Expliquez vos motivations en détail : pourquoi cette formation, vos objectifs professionnels, et comment cette formation s\'inscrit dans votre projet de carrière.'),
-(189, 26, 7, '7. Conclusion', 'Terminez en réitérant votre intérêt pour la formation et en remerciant le lecteur pour sa considération. Mentionnez que vous êtes disponible pour un entretien si nécessaire.'),
-(190, 26, 8, '8. Relire et Corriger la Lettre', 'Relisez attentivement votre lettre pour corriger les fautes d’orthographe et de grammaire. Faites-la relire par quelqu\'un d\'autre pour un avis extérieur.'),
-(191, 26, 9, '9. Soumettre la Lettre de Motivation', 'Une fois satisfait de votre lettre, copiez-la dans le champ dédié sur Parcoursup et soumettez-la pour le vœu concerné.');
+(147, 3, 5, '5. Conclusion\r\n', 'Une fois la session de révision terminée, prenez le temps de discuter avec votre enfant de ce qu\'il a appris et de ce qu\'il a trouvé le plus utile ou intéressant. Encouragez-le à continuer à explorer les ressources en ligne disponibles et à poser des questions chaque fois qu\'il en a besoin. Répétez régulièrement ces sessions de révision pour renforcer les connaissances de votre enfant et favoriser son développement académique et personnel.');
 
 -- --------------------------------------------------------
 
@@ -250,7 +208,7 @@ CREATE TABLE `glossaire` (
   `Mot` varchar(100) NOT NULL,
   `Definition` varchar(500) NOT NULL,
   `Synonyme` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `glossaire`
@@ -510,7 +468,7 @@ CREATE TABLE `ressource` (
   `Sous_Categorie` varchar(255) NOT NULL,
   `Mot_cle` varchar(1500) NOT NULL,
   `Image` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Déchargement des données de la table `ressource`
@@ -545,35 +503,30 @@ INSERT INTO `ressource` (`Id_ressource`, `Titre`, `Categorie`, `Sous_Categorie`,
 (128, 'Réaliser des démarches de base sur le site Ameli', 'Santé', 'Santé en ligne', '', ''),
 (129, 'Commander ses médicaments en pharmacie en ligne', 'Santé', 'Santé en ligne', '', './assets/images/miniatures/santé/minia_commander_medicaments.png'),
 (130, 'Création de mot de passe sécurisé', 'Sécurité', 'Mot de passe', 'Mot de passe, Code secret, clé d\'accès, Password, Authentification, Vérification, validation, identification, Authentication, Gestionnaire de mot de passe, Gestionnaire d’authentification, coffre-fort des mots de passe, password manager, Caractère, Symbole, lettre, chiffre, signe, élément graphique, Chaîne de caractères, Texte, suite de caractères, séquence de caractères, ASCII, Code ASCII, jeu de caractères ASCII', './assets/images/miniatures/sécurité/minia_crea_mdp.png'),
-(131, 'Récupérer un mot de passe oublié', 'Sécurité', 'Mot de passe', 'Mot de passe, Code secret, clé d\'accès, Password, Authentification, Vérification, validation, identification, Authentication, Gestionnaire de mot de passe, Gestionnaire d’authentification, coffre-fort des mots de passe, password manager, Caractère, Symbole, lettre, chiffre, signe, élément graphique, Chaîne de caractères, Texte, suite de caractères, séquence de caractères, ASCII, Code ASCII, jeu de caractères ASCII', './assets/images/miniatures/sécurité/minia_mot_de_passe.png'),
+(131, 'Récupérer un mot de passe oublié', 'Sécurité', 'Mot de passe', 'Mot de passe, Code secret, clé d\'accès, Password, Authentification, Vérification, validation, identification, Authentication, Gestionnaire de mot de passe, Gestionnaire d’authentification, coffre-fort des mots de passe, password manager, Caractère, Symbole, lettre, chiffre, signe, élément graphique, Chaîne de caractères, Texte, suite de caractères, séquence de caractères, ASCII, Code ASCII, jeu de caractères ASCII', './assets/images/miniatures/sécurité/tuto_mot_de_passe.png'),
 (132, 'Sensibilisation aux menaces en ligne', 'Sécurité', 'Se protéger en ligne', 'Hameçonnage, Filoutage, Phishing, Antivirus, Logiciel de sécurité, programme antivirus, Blacklist, Liste noir, répertoire d’exclusion, index négatif Cybersécurité, Sécurité, informatique, protection, défense, Pirate informatique, Pare-feu, coupe-feu, Firewall, Vulnérabilité, Faille de sécurité, point faible, vulnerability, Logiciel malveillant, Malware, programme malveillant, Virus, malware, Clickbait, contenu accrocheur, appât, Cryptographie, Chiffrement, codage, science, code, code-secret', './assets/images/miniatures/sécurité/minia_sensibiliser_menaces.png'),
 (133, 'Navigation sécurisée sur internet', 'Sécurité', 'Se protéger en ligne', 'Recherche, Search, recherche en ligne, Moteur de recherche, Mode de recherche, outil de recherche, Search engine, Mot-clé, Terme-clé, expression-clé, Keyword, HTTP, Hypertext Transfer Protocol, Protocole de transfert hypertexte, Clickbait, contenu accrocheur, appât, Cryptographie, Chiffrement, codage, science, code, code-secret', './assets/images/miniatures/sécurité/minia_navigation_secure.png'),
 (134, 'Gestion des comptes en ligne', 'Sécurité', 'Se protéger en ligne', '', ''),
 (135, 'Sécurité des achats en ligne', 'Sécurité', 'Se protéger en ligne', 'Télépaiement, Paiement en ligne, paiement électronique, paiement à distance, online payment', ''),
 (136, 'Sécurité des réseaux sociaux (les bonnes habitudes)', 'Sécurité', 'Se protéger en ligne', 'Cyberharcèlement, Harcèlement, intimidation, cyberintimidation', ''),
-(137, 'Consultation et usage d’une boîte mail', 'Communication', 'Mail et messagerie', 'Mail, Courrier électronique, E-mail, message électronique, courriel, objet, titre, sujet, intitulé, description, rubrique', './assets/images/miniatures/communication/minia_consultation_mail.png'),
-(138, 'Joindre un fichier par mail', 'Communication', 'Mail et messagerie', 'Mail, Courrier électronique, E-mail, message électronique, courriel, objet, titre, sujet, intitulé, description, rubrique', './assets/images/miniatures/communication/minia_joindre_fichier.png'),
-(139, 'Comment utiliser l\'application Zoom ?', 'Communication', 'Visioconférence', 'Visioconférence, Conférence vidéo, vidéoconférence, visioconférence, video conference, Présentation, Exposé, Discours, Exposition, diapositive, diapo, Présentation visuelle, Webcam, Caméra web, caméra Internet', './assets/images/miniatures/communication/minia_utiliser_zoom.png'),
+(137, 'Consultation et usage d’une boîte mail', 'Communication', 'Mail et messagerie', 'Mail, Courrier électronique, E-mail, message électronique, courriel, objet, titre, sujet, intitulé, description, rubrique', './assets/images/miniatures/communication/tuto_consultation_mail.png'),
+(138, 'Joindre un fichier par mail', 'Communication', 'Mail et messagerie', 'Mail, Courrier électronique, E-mail, message électronique, courriel, objet, titre, sujet, intitulé, description, rubrique', './assets/images/miniatures/communication/tuto_joindre_fichier.png'),
+(139, 'Comment utiliser l\'application Zoom ?', 'Communication', 'Visioconférence', 'Visioconférence, Conférence vidéo, vidéoconférence, visioconférence, video conference, Présentation, Exposé, Discours, Exposition, diapositive, diapo, Présentation visuelle, Webcam, Caméra web, caméra Internet', './assets/images/miniatures/communication/tuto_utiliser_zoom.png'),
 (140, 'Utilisation de TeamViewer', 'Communication', '?', '', ''),
 (141, 'Faire un post Instagram', 'Communication', 'Réseaux Sociaux', 'Buzz, Célèbre, Troll, Provocateur, agitateur, Tweet, Message Twitter, publication, Follower, Abonné, suiveur, Fan, Emoji, émoticône, pictogramme, Influenceur, Personne influente, leader d\'opinion, influenceur numérique, Influencer, Hashtag, Mot-clic, mot-dièse, Réseau social, Media social, site de réseautage social, Commentaire, Remarque, observation, note, réaction', ''),
 (142, 'Trouver un truc lié aux messages (ex : programmer un message)', 'Communication', 'Mail et messagerie', 'Chat, Messagerie instantanée, discussion en ligne, tchat, GIF, Format graphique interchange, Format d\'image animée, Graphics Interchange Format, format d’échange d’images, Messagerie, Service de messagerie, système de messagerie, Messaging, SMS, Texto, message texte, texto, Short Message Service', ''),
-(145, 'Comment se créer un compte ameli : ', 'Administratif', 'Démarches administratives', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', './assets/images/miniatures/administratif/minia_compte_ameli.png'),
-(148, 'France Travail : Comment prendre un rendez-vous en ligne ?', 'Administratif', 'Démarches administratives', 'Widget, Gadgets, composant, élément d\'interface', './assets/images/miniatures/administratif/minia_france_travail_rdv.png'),
-(149, 'Réviser avec votre enfant', 'Éducation', 'Pour les enfants et les ados', 'E-learning, Apprentissage, apprentissage en ligne, formation, formation à distance, enseignement, enseignement virtuel', './assets/images/miniatures/éducation/minia_reviser.png'),
-(150, 'Parcoursup : Comment créer son dossier candidat', 'Éducation', 'Parcoursup', '', './assets/images/miniatures/éducation/minia_parcoursup_candidat.png'),
-(151, 'Accéder à l’ENT', 'Éducation', 'Pour les enfants et les ados', 'ENT, plateforme, éducation, espace, espace numérique, Environnement Numérique de Travail, E-learning, Apprentissage, apprentissage en ligne, formation, formation à distance, enseignement, enseignement virtuel', ''),
+(143, 'Créer un compte CAF', 'Administratif', 'Création de compte', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', ''),
+(144, 'Créer un compte Pôle Emploi (Emploi Travail)', 'Administratif', 'Création de compte', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', ''),
+(145, 'Créer un compte sur impôt.gouv.fr', 'Administratif', 'Création de compte', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', ''),
+(146, 'Créer un compte ANTS', 'Administratif', 'Création de compte', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', './assets/images/miniatures/administratif/minia_crea_ants.png'),
+(147, 'Prendre un rendez-vous avec sa CAF', 'Administratif', 'Prendre un rendez-vous', 'Widget, Gadgets, composant, élément d\'interface', ''),
+(148, 'Prendre un rendez-vous avec Pôle Emploi', 'Administratif', 'Prendre un rendez-vous', 'Widget, Gadgets, composant, élément d\'interface', ''),
+(149, 'Réviser avec votre enfant', 'Éducation', 'Pour les enfants', 'E-learning, Apprentissage, apprentissage en ligne, formation, formation à distance, enseignement, enseignement virtuel', './assets/images/miniatures/éducation/tuto_reviser.png'),
+(150, 'Utilisation et fonctionnement de parcoursup', 'Éducation', 'Pour les enfants', '', './assets/images/miniatures/éducation/minia_parcoursup.png'),
+(151, 'Accéder à l’ENT', 'Éducation', 'Pour les enfants', 'ENT, plateforme, éducation, espace, espace numérique, Environnement Numérique de Travail, E-learning, Apprentissage, apprentissage en ligne, formation, formation à distance, enseignement, enseignement virtuel', ''),
 (152, 'Créer un compte Doctolib', 'Santé', 'Santé en ligne', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', './assets/images/miniatures/santé/minia_compte_doctolib.png'),
-(153, 'Comment utiliser Google Meet ?', 'Communication', 'Visioconférence', 'Visioconférence, Conférence vidéo, vidéoconférence, visioconférence, video conference, Présentation, Exposé, Discours, Exposition, diapositive, diapo, Présentation visuelle, Webcam, Caméra web, caméra Internet', './assets/images/miniatures/communication/minia_google_meet.png'),
-(154, 'Créer un compte sur Zoom', 'Communication', 'Visioconférence', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', './assets/images/miniatures/communication/minia_compte_zoom.png'),
-(155, 'Parcoursup : Handicap et études supérieures', 'Éducation', 'Parcoursup', '', './assets/images/miniatures/éducation/minia_parcoursup_handicap.png'),
-(156, 'Parcoursup : comment formuler des vœux en apprentissage ?', 'Éducation', 'Parcoursup', '', './assets/images/miniatures/éducation/minia_parcoursup_voeux.png'),
-(157, 'Parcoursup : comment compléter son dossier ?', 'Éducation', 'Parcoursup', '', './assets/images/miniatures/éducation/minia_parcoursup_dossier.png'),
-(158, 'Parcoursup : rédiger une lettre de motivation', 'Éducation', 'Parcoursup', '', './assets/images/miniatures/éducation/minia_parcoursup_lettre.png'),
-(159, 'CAF : Gérer son dossier : ', 'Administratif', 'Démarches administratives', '', './assets/images/miniatures/administratif/minia_caf_dossier.png'),
-(160, 'CAF : comment déclarer ses ressources trimestrielles', 'Administratif', 'Démarches administratives', '', './assets/images/miniatures/administratif/minia_caf_declarer.png'),
-(161, 'France Travail : Comment faire ma première demande d\'inscription ?', 'Administratif', 'Démarches administratives', '', './assets/images/miniatures/administratif/minia_france_travail_inscription.png'),
-(162, 'Faire une déclaration d’impôts : ', 'Administratif', 'Démarches administratives', '', './assets/images/miniatures/administratif/minia_impots.png'),
-(163, 'Comment utiliser Google Classroom ?', 'Éducation', 'Pour les enfants et les ados', '', './assets/images/miniatures/éducation/minia_google_classroom.png');
+(153, 'Comment utiliser Google Meet ?', 'Communication', 'Visioconférence', 'Visioconférence, Conférence vidéo, vidéoconférence, visioconférence, video conference, Présentation, Exposé, Discours, Exposition, diapositive, diapo, Présentation visuelle, Webcam, Caméra web, caméra Internet', './assets/images/miniatures/communication/tuto_google_meet.png'),
+(154, 'Créer un compte sur Zoom', 'Communication', 'Visioconférence', 'formulaire, champ, saisie,  champ de saisie, demande, captcha, vérification, champ de saisie, zone de texte, espace de remplissage, champ d’entrée, authentification, vérification, validation, identification, authentication, identifiant, nom d\'utilisateur, ID, login, username, mot de passe, code secret, clé d\'accès, password', './assets/images/miniatures/communication/tuto_compte_zoom.png');
 
 -- --------------------------------------------------------
 
@@ -585,47 +538,35 @@ CREATE TABLE `ressource_type` (
   `id_ressource_type` int(11) NOT NULL,
   `ressource_id` int(11) NOT NULL,
   `titre_video` varchar(255) NOT NULL,
-  `video` varchar(255) NOT NULL,
-  `lien_pdf` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `video` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
 --
 -- Déchargement des données de la table `ressource_type`
 --
 
-INSERT INTO `ressource_type` (`id_ressource_type`, `ressource_id`, `titre_video`, `video`, `lien_pdf`) VALUES
-(1, 126, 'Prendre un rendez-vous sur Doctolib', 'https://youtu.be/mkG4rQi4p28', './assets/pdf/Santé/Prendre un rendez-vous sur Doctolib.pdf'),
-(2, 105, 'Créer un dossier Mac', 'https://youtu.be/D7SCkfkcn2E', './assets/pdf/Internet/Créer un dossier Mac.pdf'),
-(3, 149, 'Réviser avec votre enfant', '', './assets/pdf/Éducation/Réviser avec votre enfant.pdf'),
-(4, 113, 'Création d\'un compte Google', 'https://youtu.be/EbQqDMpXCIw', './assets/pdf/Internet/Créer compte Google.pdf'),
-(5, 104, 'Utilisation du gestionnaire de fichier', 'https://www.youtube.com/watch?v=CVo93PEcc7U&ab', './assets/pdf/Internet/Utilisation du gestionnaire de fichier.pdf'),
-(6, 116, 'Faire une bonne recherche sur un moteur de recherche', 'https://youtu.be/cFLZp3XgSFw', './assets/pdf/Internet/Faire une bonne recherche sur un moteur de recherche.pdf'),
-(7, 108, 'Récupération des fichiers téléchargés', 'https://youtu.be/SXAJnTzey5Q', './assets/pdf/Internet/Récupération des fichiers téléchargés.pdf'),
-(8, 117, 'Gestion des cookies\r\n', 'https://youtu.be/6MLvHA2wcVY', './assets/pdf/Internet/Gestion des cookies.pdf'),
-(9, 109, 'Gestion de stockage sur MacOs', 'https://youtu.be/XiGr7ac8WMI', './assets/pdf/Internet/Gestion de stockage sur MacOs.pdf'),
-(10, 129, 'Commander ses médicaments en pharmacie en ligne', 'https://youtu.be/qQxPd_F8alE', './assets/pdf/Santé/Commander ses médicaments en pharmacie.pdf'),
-(11, 152, 'Créer un compte sur Doctolib', 'https://youtu.be/gnjkSLqoPM0', './assets/pdf/Santé/Créer un compte Doctolib.pdf'),
-(12, 124, 'Créer un compte Ubiclic', 'https://youtu.be/BPVVDQJNx5M', './assets/pdf/Santé/Créer un compte Ubiclic.pdf'),
-(13, 137, 'Consultation et usage d’une boîte mail', '', './assets/pdf/Communication/Consultation et usage d’une boîte mail.pdf'),
-(14, 130, 'Créer un mot de passe sécurisé', 'https://youtu.be/gmykJ2fALK8', './assets/pdf/Sécurité/Créer un mot de passe sécurisé.pdf'),
-(15, 131, 'Récupérer un mot de passe oublié\r\n', 'https://youtu.be/qyoQ8swvjPM', './assets/pdf/Sécurité/Récupérer un mot de passe oublié.pdf'),
-(16, 133, 'Naviguer en sécurité sur internet\r\n', 'https://youtu.be/QvfDeNMuEJw', './assets/pdf/Sécurité/Naviguer en sécurité sur internet.pdf'),
-(17, 132, 'Sensibilisation face aux menaces en lignes', 'https://youtu.be/pMPeOqPVWbw', './assets/pdf/Sécurité/Sensibilisation face aux menaces en lignes.pdf'),
-(18, 154, 'Créer un compte Zoom', '', './assets/pdf/Communication/Créer un compte Zoom.pdf'),
-(19, 153, 'Comment utiliser Google Meet', '', './assets/pdf/Communication/Comment utiliser Google Meet.pdf'),
-(20, 139, 'Comment utiliser l\'application Zoom', '', './assets/pdf/Communication/Comment utiliser l\'application Zoom.pdf'),
-(21, 138, 'Joindre un fichier par mail', '', './assets/pdf/Communication/Joindre un fichier par mail.pdf'),
-(22, 150, 'Parcoursup : Créer son dossier candidat (vidéo du Ministère Enseignement supérieur et Recherche)', 'https://youtu.be/u-pfMSmeVlc?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj', './assets/pdf/Éducation/Parcoursup - Créer son dossier candidat.pdf'),
-(23, 155, 'Parcoursup : Handicap et études supérieures (vidéo du Ministère Enseignement supérieur et Recherche)', 'https://youtu.be/xxjh6FXaXbM?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj', './assets/pdf/Éducation/Parcoursup - Handicap et études supérieures.pdf'),
-(24, 156, 'Parcoursup : comment formuler des vœux en apprentissage ? (vidéo du Ministère Enseignement supérieur et Recherche)', 'https://youtu.be/KeNngPkKKZA?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj', './assets/pdf/Éducation/Parcoursup - Formuler des vœux en apprentissage.pdf'),
-(25, 157, 'Parcoursup : comment compléter son dossier ? (vidéo du Ministère Enseignement supérieur et Recherche)', 'https://youtu.be/a8Gcw-0GrWE?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj', './assets/pdf/Éducation/Parcoursup - Comment compléter son dossier.pdf'),
-(26, 158, 'Parcoursup : rédiger une lettre de motivation (vidéo du Ministère Enseignement supérieur et Recherche)\r\n', 'https://youtu.be/52T8GRU9EBw?list=PLWeo8BGFPatjLm_fdqyAUIMdvuj7UuDvj\r\n', './assets/pdf/Éducation/Parcoursup - Rédiger une lettre de motivation.pdf'),
-(33, 159, 'CAF : Gérer son dossier (vidéo des Allocations familiales)', 'https://youtu.be/Nu3Q7bvUizo?list=PLWeo8BGFPatgNWoWkfu4ZSvZo1AnzRYv4', ''),
-(34, 160, 'CAF : comment déclarer ses ressources trimestrielles (vidéo des Allocations familiales)', 'https://youtu.be/gcJex30gluk?list=PLWeo8BGFPatgNWoWkfu4ZSvZo1AnzRYv4\r\n', ''),
-(35, 161, 'France Travail : Comment faire ma première demande d\'inscription ? (vidéo de France Travail)', 'https://youtu.be/LqEqBQM1lVk?list=PLWeo8BGFPatgNWoWkfu4ZSvZo1AnzRYv4', ''),
-(36, 148, 'France Travail : Comment prendre un rendez-vous en ligne ? (vidéo de France Travail)', 'https://youtu.be/JMIEsLqBKF4?list=PLWeo8BGFPatgNWoWkfu4ZSvZo1AnzRYv4', ''),
-(37, 162, 'Faire une déclaration d’impôts (vidéo du Gouvernement) ', 'https://youtu.be/QndS96yEOk0?list=PLWeo8BGFPatgNWoWkfu4ZSvZo1AnzRYv4', ''),
-(38, 125, 'Comment se créer un compte ameli ? (vidéo de l\'Assurance Maladie)', 'https://youtu.be/bqVwWmrv74I?list=PLWeo8BGFPatgNWoWkfu4ZSvZo1AnzRYv4', '');
+INSERT INTO `ressource_type` (`id_ressource_type`, `ressource_id`, `titre_video`, `video`) VALUES
+(1, 126, 'Prendre un rendez-vous sur Doctolib', './assets/vidéos/tuto_compte_doctolib-.mp4'),
+(2, 105, 'Créer un dossier Mac', ''),
+(3, 149, 'Réviser avec votre enfant', ''),
+(4, 113, 'Création d\'un compte Google', ''),
+(5, 104, 'Utilisation du gestionnaire de fichier', ''),
+(6, 116, 'Faire une bonne recherche sur un moteur de recherche', './assets/vidéos/tuto_moteur_de_recherche.mp4'),
+(7, 108, 'Récupération des fichiers téléchargés', ''),
+(8, 117, 'Gestion des cookies\r\n', ''),
+(9, 109, 'Gestion de stockage sur MacOs', ''),
+(10, 129, 'Commander ses médicaments en pharmacie en ligne', ''),
+(11, 152, 'Créer un compte sur Doctolib', ''),
+(12, 124, 'Créer un compte Ubiclic', ''),
+(13, 137, 'Consultation et usage d’une boîte mail', ''),
+(14, 130, 'Créer un mot de passe sécurisé', ''),
+(15, 131, 'Récupérer un mot de passe oublié\r\n', ''),
+(16, 133, 'Naviguer en sécurité sur internet\r\n', ''),
+(17, 132, 'Sensibilisation face aux menaces en lignes', ''),
+(18, 154, 'Créer un compte Zoom', ''),
+(19, 153, 'Comment utiliser Google Meet', ''),
+(20, 139, 'Comment utiliser l\'application Zoom', ''),
+(21, 138, 'Joindre un fichier par mail', '');
 
 --
 -- Index pour les tables déchargées
@@ -665,7 +606,7 @@ ALTER TABLE `ressource_type`
 -- AUTO_INCREMENT pour la table `etape`
 --
 ALTER TABLE `etape`
-  MODIFY `id_etape` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=192;
+  MODIFY `id_etape` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
 -- AUTO_INCREMENT pour la table `glossaire`
@@ -677,13 +618,13 @@ ALTER TABLE `glossaire`
 -- AUTO_INCREMENT pour la table `ressource`
 --
 ALTER TABLE `ressource`
-  MODIFY `Id_ressource` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=164;
+  MODIFY `Id_ressource` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=155;
 
 --
 -- AUTO_INCREMENT pour la table `ressource_type`
 --
 ALTER TABLE `ressource_type`
-  MODIFY `id_ressource_type` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_ressource_type` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- Contraintes pour les tables déchargées
