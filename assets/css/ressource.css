@@ -239,9 +239,12 @@ body {
         text-align: start;
     }
 
-
-    .mg_b {
+    .first-mg_b {
         margin-bottom: 10vh;
+    }
+
+    .mg_b:not(.first-mg_b) {
+        margin-bottom: 0;
     }
 
     .container button {
@@ -271,7 +274,7 @@ body {
         padding: 5vh 10vw;
     }
 
-    .mg_b {
+    .mg_b:not(.first-mg_b) {
         margin-bottom: 10vh;
     }
 }
