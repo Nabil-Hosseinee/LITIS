@@ -8,14 +8,6 @@ if (isset($_SESSION['motsAssocies'])) {
     $definition = $_SESSION['definition'];
     $synonymes = $_SESSION['synonyme'];
 
-    // echo "le dernier mot récupérer est $mot";
-    // echo "</br>";
-    // $text = "On a un synonyme";
-
-    // echo "<pre>";
-    // var_dump($motsAssocies);
-    // echo "</pre>";
-
     if (isset($_SESSION['ressource'])) {
         $ressource = $_SESSION['ressource'];
     }
@@ -156,10 +148,11 @@ else {
                     foreach ($ressource as $item) {
                         if (!empty($item['Image'])) {
                             $minia = $item['Image'];
+                            $id = $item['Id_ressource'];
     
                             echo "
                                 <div class='tuto image_wrapper'>
-                                    <a href='tuto.php'>
+                                    <a href='ressource_type.php?Id_ressource=$id'>
                                         <img src='$minia' alt=''>
                                         <div class='overlay_4'>
                                             <div class='text_overlay fw-semibold'>Consulter</div>

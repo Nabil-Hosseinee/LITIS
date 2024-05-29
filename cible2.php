@@ -11,16 +11,6 @@ error_reporting(E_ALL);
 // Vérifier si un mot a été saisi dans la barre de recherche
 if (isset($_POST['mot'])) {
     $mot = $_POST['mot'];
-
-    // Connexion à la base de données (à remplacer avec vos informations de connexion)
-    // $dsn = 'mysql:host=localhost;dbname=litis';
-    // $username = 'root';
-    // $password = '';
-
-    // try {
-        // $db = new PDO($dsn, $username, $password);
-        // $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
         // 
         // Vérifier d'abord si le mot existe dans la table glossaire
         // 
@@ -58,13 +48,9 @@ if (isset($_POST['mot'])) {
                     $titre = $ressource['Titre'];
                     $categorie = $ressource['Categorie'];
                     $img = $ressource['Image'];
-                    $ressource_tab[] = array('Titre' => $titre, 'Categorie' => $categorie, 'Image' =>$img);
+                    $id = $ressource['Id_ressource'];
+                    $ressource_tab[] = array('Titre' => $titre, 'Categorie' => $categorie, 'Image' =>$img, 'Id_ressource' => $id);
                 }
-
-                // echo "<pre>";
-                // var_dump($ressource_tab);
-                // echo "</pre>";
-
 
                 // il faudrait faire une condition pour vérifier s'il y a des valeurs dans le tableau ressource_tab et faire la session
                 if(!empty($ressource_tab)) {
@@ -145,10 +131,11 @@ if (isset($_POST['mot'])) {
 
                 $statementRessources->execute();
                 $ressource_tab = $statementRessources->fetchAll(PDO::FETCH_ASSOC);
-
+                
                 // echo "<pre>";
                 // var_dump($ressource_tab);
                 // echo "</pre>";
+
 
                 if(!empty($ressource_tab)) {
                     $_SESSION['ressource'] = $ressource_tab;
