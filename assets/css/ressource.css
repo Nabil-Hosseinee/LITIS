@@ -151,6 +151,10 @@ body {
     padding: 15vh;
 }
 
+.download img {
+    width: 30%;
+}
+
 .download p {
     margin-top: 2vh;
 }
@@ -308,6 +312,11 @@ body {
     .bar {
         margin: 5vh auto;
     }
+
+    /* download */
+    .download img {
+        width: 55%;
+    }
 } 
 
 
@@ -321,8 +330,10 @@ body {
         min-width: 70%;
     }
 
-    /* thematique */
-    
+    /* download */
+    .download h2 {
+        font-size: 1.3rem !important;
+    }
 }
 
 
