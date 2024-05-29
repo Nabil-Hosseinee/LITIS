@@ -306,6 +306,41 @@
     </section>
 
 
+    <!-- section download -->
+    <section class="download d-flex flex-column justify-content-center align-items-center">
+        <h2>Nos <span class="color_v">ressources téléchargeables</span></h2>
+        <p>Vous trouverez ci-dessous des ressources qui pourraient vous être pratiques.</p>
+        <img src="./assets/images/illustration/ressources_téléchargeables.png" alt="">
+        <div class="container d-flex justify-content-center">
+            <div class="download-box d-flex flex-column justify-content-center align-items-center">
+                <h4 class="color_v fw-bold">Les formes de curseurs <i class="fa-solid fa-arrow-pointer fs-3"></i></h4>
+                <p>Vous trouverez dans ce PDF toutes les formes de curseurs dont vous avez besoin.</p>
+                <button class="downloadButton" data-filepath="./assets/pdf/Ressources/Curseurs.pdf" data-filename="Curseur.pdf">Télécharger le PDF</button>
+            </div>
+
+
+            <div class="download-box d-flex flex-column justify-content-center align-items-center">
+                <h4 class="color_v fw-bold">Les extensions <i class="fa-solid fa-file-audio fs-3"></i></h4>
+                <p>Vous trouverez dans ce PDF toutes les extensions de fichier dont vous avez besoin.</p>
+                <button class="downloadButton" data-filepath="./assets/pdf/Ressources/Extensions.pdf" data-filename="Extensions.pdf">Télécharger le PDF</button>
+            </div>
+
+            <div class="download-box d-flex flex-column justify-content-center align-items-center">
+                <h4 class="color_v fw-bold">Les raccourcis Mac <i class="fa-brands fa-apple fs-3"></i></h4>
+
+                <p>Vous trouverez dans ce PDF tous les raccourcis pour le système d'exploitation Mac.</p>
+                <button class="downloadButton" data-filepath="./assets/pdf/Ressources/Raccourcis_Mac.pdf" data-filename="Raccourcis Mac.pdf">Télécharger le PDF</button>
+            </div>
+
+            <div class="download-box d-flex flex-column justify-content-center align-items-center">
+                <h4 class="color_v fw-bold">Les raccourcis Windows <i class="fa-brands fa-windows fs-3"></i></h4>
+                <p>Vous trouverez dans ce PDF tous les raccourcis pour le système d'exploitation Windows.</p>
+                <button class="downloadButton" data-filepath="./assets/pdf/Ressources/Raccourcis_Windows.pdf" data-filename="Raccourcis Windows.pdf">Télécharger le PDF</button>
+            </div>
+        </div>
+    </section>
+
+
      <!-- footer -->
      <footer>
         <div class="d-flex flex-column align-items-center">
@@ -351,6 +386,20 @@
         </div>
     </footer>
 
+
+    <script>
+        document.querySelectorAll('.downloadButton').forEach(button => {
+            button.addEventListener('click', function() {
+                // Créer un lien
+                var a = document.createElement('a');
+                a.href = this.getAttribute('data-filepath'); // Chemin du fichier
+                a.download = this.getAttribute('data-filename'); // Nom du fichier
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+            });
+        });
+    </script>
     <script src="./assets/js/bootstrap.bundle.min.js"></script>
     <script src="./assets/js/script.js"></script>
     <script src="./assets/js/translate.js"></script>

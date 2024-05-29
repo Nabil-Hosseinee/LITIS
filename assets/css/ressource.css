@@ -146,6 +146,44 @@ body {
 }
 
 
+/* section download */
+.download {
+    padding: 15vh;
+}
+
+.download img {
+    width: 30%;
+}
+
+.download p {
+    margin-top: 2vh;
+}
+
+.download .container {
+    max-width: 1200px;
+    margin-top: 5vh;
+    flex-wrap: wrap !important;
+}
+
+.download-box {
+    width: 100%;
+    height: 35vh;
+    background-color: white;
+    border-radius: 32px;
+    box-shadow: 5px 10px 25px rgba(0, 0, 0, 0.3);
+    padding: 3vh 3vw;
+    /* margin-right: 5vw; */
+    margin-bottom: 10vh;
+}
+
+.downloadButton {
+    margin: 2vh 0 !important;
+}
+
+.download-box i {
+    margin-left: 0.5vw;
+}
+
 
 /* medias queries */
 
@@ -174,6 +212,15 @@ body {
     /* fonctionnalite */
     .fonctionnalite {
         padding: 10vh 8vw;
+    }
+
+    /* download */
+    .download {
+        padding: 10vh 8vw;
+    }
+
+    .downloadButton {
+        font-size: 0.9rem !important;
     }
 }
 
@@ -265,6 +312,11 @@ body {
     .bar {
         margin: 5vh auto;
     }
+
+    /* download */
+    .download img {
+        width: 55%;
+    }
 } 
 
 
@@ -278,8 +330,10 @@ body {
         min-width: 70%;
     }
 
-    /* thematique */
-    
+    /* download */
+    .download h2 {
+        font-size: 1.3rem !important;
+    }
 }
 
 

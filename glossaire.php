@@ -8,6 +8,13 @@ $statement = $db->prepare($query);
 $statement->execute();
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
 
+// if ($results) {
+//     foreach ($results as $result) {
+//         echo $result['Definition'];
+//         echo "<br>";
+//     }
+// }
+
 ?>
 
 <!DOCTYPE html>
