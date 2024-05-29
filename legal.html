@@ -1,58 +1,56 @@
-<?php
-try {
-    include('connect_bdd.php');
-
-    $id_ressource = isset($_GET['Id_ressource']) ? $_GET['Id_ressource'] : null;
-    
-    $sql = "SELECT ressource.*, ressource_type.*, etape.*, ressource.categorie AS categorie
-            FROM ressource 
-            JOIN ressource_type ON ressource.Id_ressource = ressource_type.ressource_id 
-            JOIN etape ON ressource_type.id_ressource_type = etape.ressource_type_id 
-            WHERE ressource.Id_ressource = :id_ressource 
-            ORDER BY etape.numero_etape ASC";
-    $query = $db->prepare($sql);
-    $query->execute(['id_ressource' => $id_ressource]);
-
-    if ($query->rowCount() > 0) {
-        $ressources = $query->fetchAll(PDO::FETCH_ASSOC);
-        $categorie = $ressources[0]['categorie'];
-        $categorie_formate = str_replace(' ', '_', $categorie);
-        $categorie_formate2 = str_replace("'", '_', $categorie_formate);
-        
-        // Formater vidéo Youtube
-        $video_url = $ressources[0]['video'];
-        if (preg_match('/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|.*?[&?]v=))([^"&?\/ ]{11})/', $video_url, $matches)) {
-            $embed_url = 'https://www.youtube.com/embed/' . $matches[1];
-        } else {
-            $embed_url = null;
-        }
-
-        $download_link = $ressources[0]['lien_pdf'];
-        
-    } else {
-        $ressources = [];
-        $categorie = 'default';
-        $embed_url = null;
-        $download_link = '#';
-    }
-} catch (PDOException $e) {
-    echo "Erreur SQL : " . $e->getMessage();
-}
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/general.css">
-    <link rel="stylesheet" href="./assets/css/ressource_type.css">
+    <link rel="stylesheet" href="./assets/css/mentions.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <title>Existence Numérique | <?php echo htmlspecialchars($ressources[0]["Titre"]);?></title>
-</head>
-<body class="<?php echo htmlspecialchars($categorie_formate2); ?>">
+    <title>Existence Numérique | Mentions légales</title>
+    <style>
+        body {
+            background-color: var(--gris-clair);
+        }
+        /* Section styles */
+section.mentions {
+    padding: 20px;
+    padding-top: 15vh;
+    max-width: 80vw;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
 
+section.mentions h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #0056b3;
+}
+
+section.mentions h2 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: #0056b3;
+}
+
+section.mentions p,
+section.mentions ul {
+    margin-bottom: 15px;
+}
+
+section.mentions ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+section.mentions ul li {
+    margin-bottom: 5px;
+}
+    </style>
+</head>
+<body>
+    
     <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
         <div class="logo d-flex justify-content-center align-items-center">
             <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
@@ -131,69 +129,43 @@ try {
             </a>
         </form>
     </header>
+    
+    <section class="mentions">
+        <h1>Mentions Légales</h1>
+        
+        <h2>1. Éditeur du site</h2>
+        <p><strong>Nom du Site :</strong> [Nom de votre site]</p>
+        <p><strong>URL du Site :</strong> [www.votre-site.com]</p>
+        <p><strong>Responsable de la publication :</strong> [Votre nom ou celui du responsable de la publication]</p>
+        <p><strong>Adresse :</strong> [Votre adresse ou celle de votre entreprise]</p>
+        <p><strong>Téléphone :</strong> [Votre numéro de téléphone]</p>
+        <p><strong>Email :</strong> [Votre adresse email]</p>
+        <p><strong>Numéro de SIRET :</strong> [Votre numéro de SIRET si vous êtes en France]</p>
+        <p><strong>RCS :</strong> [Numéro de registre du commerce et des sociétés, le cas échéant]</p>
+        <p><strong>Hébergeur :</strong> [Nom de l'hébergeur, adresse, numéro de téléphone, email]</p>
 
-    <!-- Titre -->
-    <div class="title">
-        <h1><?php echo htmlspecialchars($ressources[0]["titre_video"]); ?></h1>
-        <div class="underline title_underline"></div>
-    </div>
+        <h2>2. Propriété intellectuelle</h2>
+        <p>Le contenu présent sur ce site, incluant mais ne se limitant pas aux textes, images, graphismes, logos, icônes, sons, logiciels, est la propriété exclusive de [Nom de votre entreprise ou de vous-même] ou de ses partenaires. Toute reproduction, distribution, modification, adaptation, retransmission ou publication de ces éléments, même partielle, est strictement interdite sans l'accord exprès par écrit de [Nom de votre entreprise ou de vous-même]. Cette représentation ou reproduction, par quelque procédé que ce soit, constitue une contrefaçon sanctionnée par le Code de la propriété intellectuelle.</p>
 
-    <!-- Vidéo ou Exercice -->
-    <div class="tuto image_wrapper">
-        <?php
-        if (!empty($ressources[0]['video'])) {
-            $youtube_url = htmlspecialchars($ressources[0]['video']);
-            if (preg_match('/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|.*?[&?]v=))([^"&?\/ ]{11})/', $youtube_url, $matches)) {
-                $embed_url = 'https://www.youtube.com/embed/' . $matches[1];
-                ?>
-                <div class="responsive-iframe-container">
-                    <iframe src="<?php echo $embed_url; ?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                </div>
-                <?php
-            } else {
-                echo "<div class='video-content'><p>Vidéo YouTube non valide.</p></div>";
-            }
-        }
+        <h2>3. Collecte de données personnelles</h2>
+        <p>En conformité avec la loi Informatique et Libertés du 6 janvier 1978 modifiée et le Règlement Général sur la Protection des Données (RGPD), vous disposez d'un droit d'accès, de rectification, de suppression, d'opposition et de portabilité des données vous concernant. Vous pouvez exercer ce droit en envoyant un email à [Votre adresse email] ou un courrier à l'adresse suivante : [Votre adresse postale].</p>
 
-        if (!empty($ressources[0]['exercice'])) {
-            $exercice_page = htmlspecialchars($ressources[0]['exercice']);
-            if (file_exists($exercice_page)) {
-                ?>
-                <div class="exercice-content">
-                    <?php include($exercice_page); ?>
-                </div>
-                <?php
-            } else {
-                echo "<div class='exercice-content'><p>Page d'exercice non disponible.</p></div>";
-            }
-        }
-        ?>
-    </div>
+        <h2>4. Cookies</h2>
+        <p>Le site [Nom de votre site] peut être amené à vous demander l'acceptation des cookies pour des besoins de statistiques et d'affichage. Un cookie est une information déposée sur votre disque dur par le serveur du site que vous visitez. Il contient plusieurs données qui sont stockées sur votre ordinateur dans un simple fichier texte auquel un serveur accède pour lire et enregistrer des informations.</p>
 
+        <h2>5. Liens hypertextes</h2>
+        <p>Le site [Nom de votre site] peut contenir des liens hypertextes vers d'autres sites. Cependant, [Nom de votre entreprise ou de vous-même] n'a pas la possibilité de vérifier le contenu des sites ainsi visités, et n'assumera en conséquence aucune responsabilité de ce fait.</p>
 
+        <h2>6. Limitation de responsabilité</h2>
+        <p>Les informations contenues sur le site [Nom de votre site] sont aussi précises que possibles et le site est périodiquement remis à jour, mais peut toutefois contenir des inexactitudes ou des omissions. Si vous constatez une lacune, erreur ou ce qui paraît être un dysfonctionnement, merci de bien vouloir le signaler par email à [Votre adresse email] en décrivant le problème de la manière la plus précise possible.</p>
 
-    <!-- separator -->
-    <div class="bar"></div>
-
-    <!-- Étapes -->
-    <div class="etape">
-        <?php foreach ($ressources as $ressource): ?>
-            <h2><?php echo htmlspecialchars($ressource["titre_etape"]); ?> :</h2> 
-            <p><?php echo htmlspecialchars($ressource["description_etape"]); ?></p><br/><br/>
-        <?php endforeach; ?>
-    </div>
-
-    <div class="container text-center">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <a href="<?php echo htmlspecialchars($download_link); ?>" download><button class="btn fw-bold btn-resource">Télécharger</button></a>
-            </div>
-        </div>
-    </div>
+        <h2>7. Droit applicable et attribution de juridiction</h2>
+        <p>Tout litige en relation avec l'utilisation du site [Nom de votre site] est soumis au droit français. Il est fait attribution exclusive de juridiction aux tribunaux compétents de [Votre ville ou siège de votre entreprise].</p>
+    </section>
 
     <!-- footer -->
     <footer>
-        <div class="d-flex flex-column align-items-center">
+        <div class="container d-flex flex-column align-items-center">
             <div class="link-container">
                 <ul class="d-flex">
                     <li><a class="fs-4 menu__link fw-medium" href="index.php">Accueil</a></li>
@@ -211,18 +183,18 @@ try {
             <div class="link-container_992 d-flex flex-column align-items-center none">
                 <div class="top">
                     <ul class="d-flex">
-                        <li><a class="fs-4 menu__link fw-medium" href="index.php">Accueil</a></li>
+                        <li><a class="fs-3 menu__link fw-medium" href="index.php">Accueil</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="about.html">A propos</a></li>
+                        <li><a class="fs-3 menu__link fw-medium" href="about.html">A propos</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="ressource.html">Ressources</a></li>
+                        <li><a class="fs-3 menu__link fw-medium" href="ressource.html">Ressources</a></li>
                     </ul>
                 </div>
                 <div class="bot">
                     <ul class="d-flex">
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                        <li><a class="fs-3 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                        <li><a class="fs-3 menu__link fw-medium" href="#">Mentions légales</a></li>
                     </ul>
                 </div>
             </div>
@@ -235,8 +207,5 @@ try {
             </div>
         </div>
     </footer>
-    
 </body>
-
-<!-- <script src="./assets/js/script.js"></script> -->
 </html>
