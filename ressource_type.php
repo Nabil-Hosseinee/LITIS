@@ -12,25 +12,33 @@ try {
     $query = $db->prepare($sql);
     $query->execute(['id_ressource' => $id_ressource]);
 
-    if ($query->rowCount() > 0) {
-        $ressources = $query->fetchAll(PDO::FETCH_ASSOC);
-        $categorie = $ressources[0]['categorie'];
-        $categorie_formate = str_replace(' ', '_', $categorie);
-        $categorie_formate2 = str_replace("'", '_', $categorie_formate);
-        
-        // Formater vidéo Youtube
-        $video_url = $ressources[0]['video'];
-        if (preg_match('/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|.*?[&?]v=))([^"&?\/ ]{11})/', $video_url, $matches)) {
-            $embed_url = 'https://www.youtube.com/embed/' . $matches[1];
-        } else {
-            $embed_url = null;
-        }
+    $ressources = $query->fetchAll(PDO::FETCH_ASSOC);
 
-        $download_link = $ressources[0]['lien_pdf'];
-        
+    if (!empty($ressources)) {
+        $categorie = null;
+        $categorie_formate = null;
+        $categorie_formate2 = null;
+
+        foreach ($ressources as $ressource) {
+            if (!$categorie) {
+                $categorie = $ressource['categorie'];
+                $categorie_formate = str_replace(' ', '_', $categorie);
+                $categorie_formate2 = str_replace("'", '_', $categorie_formate);
+            }
+
+            // Formater vidéo Youtube
+            $video_url = $ressource['video'];
+            if (preg_match('/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|v\/|.*?[&?]v=))([^"&?\/ ]{11})/', $video_url, $matches)) {
+                $embed_url = 'https://www.youtube.com/embed/' . $matches[1];
+            } else {
+                $embed_url = null;
+            }
+
+            $download_link = $ressource['lien_pdf'];
+        }
     } else {
-        $ressources = [];
         $categorie = 'default';
+        $categorie_formate2 = 'default';
         $embed_url = null;
         $download_link = '#';
     }
