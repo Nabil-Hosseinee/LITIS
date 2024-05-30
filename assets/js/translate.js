@@ -28,6 +28,7 @@ document.querySelectorAll('.dropdown-content a').forEach(function(element) {
     event.preventDefault();
     const selectedLang = this.getAttribute('data-lang');
     document.getElementById('selected-lang').textContent = selectedLang.toUpperCase();
+    localStorage.setItem('selectedLanguage', selectedLang); // Enregistrer la langue choisie dans le local storage
     i18next.changeLanguage(selectedLang, function(err, t) {
       if (err) {
         console.error('something went wrong loading', err);

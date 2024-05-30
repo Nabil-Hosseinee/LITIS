@@ -42,6 +42,12 @@ else {
     <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/searchv2.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <script src="https://kit.fontawesome.com/96e027db6d.js" crossorigin="anonymous"></script>
+    <!-- langue -->
+    <script src="https://unpkg.com/i18next@21.6.13/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@1.4.0/i18nextHttpBackend.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <!--  -->
     <title>Chercher un mot | Recherche | Existence Numérique</title>
 </head>
 <body>
@@ -125,6 +131,38 @@ else {
                 </a>
             </div>
     </header>
+
+
+    <div class="language-selector exclude-accessibility">
+        <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
+        <div class="dropdown-content" id="language-menu">
+            <a href="#" data-lang="fr">FR : Français</a>
+            <a href="#" data-lang="en">EN : English</a>
+            <a href="#" data-lang="es">ES : Español</a>
+            <a href="#" data-lang="de">DE : Deutsch</a>
+        </div>
+    </div>
+
+    <div id="access" class="access d-flex justify-content-center align-items-center exclude-accessibility">
+        <i class="fa-solid fa-eye-low-vision exclude-accessibility"></i>
+        <div id="access-menu" class="access-menu">
+            <label class="switch mg">
+                <span class="fw-bold color_v exclude-accessibility" data-i18n="access_lang">Changer l'écriture</span>
+                <input type="checkbox" class="font-toggle exclude-accessibility">
+                <span class="slider round exclude-accessibility"></span>
+            </label>
+            <label class="switch">
+                <span class="fw-bold color_v exclude-accessibility" data-i18n="access_contrast">Changer le contraste</span>
+                <input type="checkbox" class="bg-toggle exclude-accessibility">
+                <span class="slider round exclude-accessibility"></span>
+            </label>
+        </div>
+    </div>
+
+    <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
+        <img id='avatar' src="./assets/images/avatar/normal.svg" alt="Avatar du Chatbot">
+        <i id="croix" class="fa-solid fa-xmark" style="display:none"></i>
+    </div>
 
 
     <!-- tutoriel -->

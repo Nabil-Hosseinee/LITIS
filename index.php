@@ -64,7 +64,7 @@ if (!$results) {
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script src="https://kit.fontawesome.com/96e027db6d.js" crossorigin="anonymous"></script>
-    <!-- test langue -->
+    <!-- langue -->
     <script src="https://unpkg.com/i18next@21.6.13/i18next.min.js"></script>
     <script src="https://unpkg.com/i18next-http-backend@1.4.0/i18nextHttpBackend.min.js"></script>
     <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
@@ -147,6 +147,7 @@ if (!$results) {
             </form>
         </div>
     </header>
+
     <div class="language-selector exclude-accessibility">
         <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
         <div class="dropdown-content" id="language-menu">
@@ -156,6 +157,7 @@ if (!$results) {
             <a href="#" data-lang="de">DE : Deutsch</a>
         </div>
     </div>
+
     <div id="access" class="access d-flex justify-content-center align-items-center exclude-accessibility">
         <i class="fa-solid fa-eye-low-vision exclude-accessibility"></i>
         <div id="access-menu" class="access-menu">
@@ -171,14 +173,16 @@ if (!$results) {
             </label>
         </div>
     </div>
+
     <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
-        <img id='avatar' src="./assets/images/avatar/normal.svg" alt="">
+        <img id='avatar' src="./assets/images/avatar/normal.svg" alt="Avatar du Chatbot">
         <i id="croix" class="fa-solid fa-xmark" style="display:none"></i>
     </div>
+
     <section class="presentation">
         <div class="pre-container d-flex align-items-center">
             <div class="images col-xl-6 col-lg-12">
-                <img class="img-fluid" src="./assets/images/illustration/galere.svg" alt="">
+                <img class="img-fluid" src="./assets/images/illustration/galere.svg" alt="Illustration Présentation">
             </div>
             <div class="content col-xl-6 col-lg-12">
                 <p class="fs-3 fs-sm-4" data-i18n="presentation">
@@ -193,10 +197,10 @@ if (!$results) {
     </section>
     <div class="slogan d-flex justify-content-center align-items-center">
         <div class="circle d-flex justify-content-center align-items-center exclude-accessibility BonW">
-            <img src="./assets/images/illustration/quotes.svg" alt="">
+            <img src="./assets/images/illustration/quotes.svg" alt="Illustration Guillemets">
         </div>
         <div class="container rounded-4 d-flex justify-content-center align-items-center exclude-accessibility">
-            <img class="slogan_img slogan_gauche" src="./assets/images/illustration/slogan.svg" alt="">
+            <img class="slogan_img slogan_gauche" src="./assets/images/illustration/slogan.svg" alt="Illustration Slogan">
             <h1 class="color_v exclude-accessibility text" data-i18n="slogan">
                 La référence digitale pour naviguer vers l'inclusion en ligne
             </h1>

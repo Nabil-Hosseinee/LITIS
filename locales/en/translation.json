@@ -57,8 +57,9 @@
 
     "know_more_button": "Learn more",
 
-    "partenaire": "Our <span class='color_v'>partner</span>",
-    "partenaire_details": "<p class='fw-medium'>We are proud to collaborate with AGEFIPH in our common mission to promote digital accessibility for everyone.<br><br>As an organization committed to the professional inclusion of people with disabilities, AGEFIPH brings valuable expertise and specific resources to help overcome the obstacles related to digital illiteracy among people with disabilities.</p><img src='assets/images/logo/agefiph logo.svg' alt='AGEFIPH Logo'>",
+    "partenaire": "Our <span class='color_v'>collaboration</span>",
+    "partenaire_details": "<p class='fw-medium'>AGEFIPH's mission is to promote digital accessibility for all.<br><br>As an organization committed to the professional inclusion of people with disabilities, AGEFIPH provides valuable expertise and specific resources to help overcome the obstacles related to digital illiteracy among people with disabilities.</p>",
+      
 
     "equipe": "Our <span class='color_v'>team</span>",
     "litis": "LITIS Laboratory",

@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="./assets/css/categorie.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script src="https://kit.fontawesome.com/96e027db6d.js" crossorigin="anonymous"></script>
+    <!-- langue -->
+    <script src="https://unpkg.com/i18next@21.6.13/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next-http-backend@1.4.0/i18nextHttpBackend.min.js"></script>
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <!--  -->
     <title>Ressources pour la Sécurité | Sécurité | Existence Numérique</title>
 </head>
 <body>
@@ -127,7 +132,8 @@
 
     <!-- chatbot -->
     <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
-        <img src="./assets/images/avatar/normal.svg" alt="">
+        <img id='avatar' src="./assets/images/avatar/normal.svg" alt="Avatar du Chatbot">
+        <i id="croix" class="fa-solid fa-xmark" style="display:none"></i>
     </div>
 
     <!-- section intro -->
@@ -213,7 +219,7 @@
                 <button onclick="window.location.href='quiz.html?category=securite&source=categorie-securite.php'" class="btn fw-bold btn-quiz">Faire le quiz</button>
             </div>
             <div class="img-quiz">
-                <img src="./assets/images/illustration/quiz2.png" alt="">
+                <img src="./assets/images/illustration/quiz2.png" alt="Illustation Quiz">
             </div>
         </div>
     </div>

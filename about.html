@@ -9,10 +9,10 @@
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script src="https://kit.fontawesome.com/96e027db6d.js" crossorigin="anonymous"></script>
     <!-- langue -->
-    <!-- <script src="https://unpkg.com/i18next@21.6.13/i18next.min.js"></script>
+    <script src="https://unpkg.com/i18next@21.6.13/i18next.min.js"></script>
     <script src="https://unpkg.com/i18next-http-backend@1.4.0/i18nextHttpBackend.min.js"></script>
-    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script> -->
-
+    <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
+    <!--  -->
     <title>Qui sommes-nous ? | À propos | Existence Numérique</title>
     
 </head>
@@ -133,7 +133,8 @@
 
     <!-- chatbot -->
     <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
-        <img src="./assets/images/avatar/normal.svg" alt="">
+        <img id='avatar' src="./assets/images/avatar/normal.svg" alt="avatar du chatbot">
+        <i id="croix" class="fa-solid fa-xmark" style="display:none"></i>
     </div>
 
     
@@ -207,16 +208,15 @@
     <!-- partenaire -->
     <section class="partenaire">
         <h2 class="fw-bold" data-i18n="partenaire">
-            <!-- Notre <span class="color_v">partenaire</span> -->
-            <p>Notre <span class="color_v">collaboration</span></p>
+            Notre <span class="color_v">collaboration</span>
         </h2>
 
-        <div class="container partenaire-container d-flex flex-column justify-content-center align-items-center" data-i18n="partenaire_details">
+        <div class="container partenaire-container d-flex flex-column justify-content-center align-items-center">
             <div class="partenaire_logo d-flex justify-content-evenly align-items-center">
                 <img src="./assets/images/logo/agefiph logo.svg" alt="Logo de l'AGEFIPH">
-                <img src="./assets/images/logo/litis_logo.webp" alt="">
+                <img src="./assets/images/logo/litis_logo.webp" alt="Logo de LITIS">
             </div>
-            <p class="fw-medium">AGEFIPH a pour mission de promouvoir l'accessibilité numérique pour tous.<br><br>
+            <p class="fw-medium" data-i18n="partenaire_details">AGEFIPH a pour mission de promouvoir l'accessibilité numérique pour tous.<br><br>
             En tant qu'organisation engagée dans l'insertion professionnelle des personnes en situation de handicap, l'AGEFIPH apporte une expertise précieuse et des ressources spécifiques pour aider à surmonter les obstacles liés à l'illectronisme chez les personnes en situation de handicap.</p>
         </div>
     </section>
