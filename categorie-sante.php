@@ -231,9 +231,9 @@
                         <div class="separator"></div>
                         <li><a class="fs-4 menu__link fw-medium" href="ressource.html">Ressources</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="politique.html">Politique de confidentialité</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#">Mentions légales</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="legal.html">Mentions légales</a></li>
                     </ul>
                 </div>
     
@@ -249,9 +249,9 @@
                     </div>
                     <div class="bot">
                         <ul class="d-flex">
-                            <li><a class="fs-3 menu__link fw-medium" href="#">Politique de confidentialité</a></li>
+                            <li><a class="fs-3 menu__link fw-medium" href="politique.html">Politique de confidentialité</a></li>
                             <div class="separator"></div>
-                            <li><a class="fs-3 menu__link fw-medium" href="#">Mentions légales</a></li>
+                            <li><a class="fs-3 menu__link fw-medium" href="legal.html">Mentions légales</a></li>
                         </ul>
                     </div>
                 </div>

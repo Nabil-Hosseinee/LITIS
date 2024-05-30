@@ -291,12 +291,8 @@ body {
         min-width: 60%;
     }
 
-    .container img {
-        width: 40%;
-    }
-
     h3 {
-        font-size: 1.3rem !important;
+        font-size: 1.2rem !important;
     }
 
     .fonc_box .bot p {

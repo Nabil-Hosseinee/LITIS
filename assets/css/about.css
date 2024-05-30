@@ -127,9 +127,10 @@ p {
 }
 
 .partenaire-container p {
-    max-width: 50%;
-    margin: 0;
+    /* max-width: 50%; */
+    margin: 10vh 0;
     font-size: 24px;
+    /* padding: 0 5vw; */
 }
 
 .partenaire-container img {
@@ -329,11 +330,6 @@ p {
     
     .titre-trait h3 {
         font-size: 28px;
-    }
-
-    /* partenaire */ 
-    .partenaire-container p {
-        max-width: 55%;
     }
 
     /* contact */
@@ -549,9 +545,7 @@ p {
         flex-direction: column-reverse;
     }
     .partenaire-container img {
-        max-width: 50%;
         margin: auto;
-        margin-bottom: 10%;
     }
 
     /* contact */
