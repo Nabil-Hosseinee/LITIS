@@ -165,7 +165,7 @@ try {
     </div>
 
     <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
-        <img id='avatar' src="./assets/images/avatar/normal.svg" alt="">
+        <img id='avatar' src="./assets/images/avatar/normal.svg" alt="Avatar du Chatbot">
         <i id="croix" class="fa-solid fa-xmark" style="display:none"></i>
     </div>
 

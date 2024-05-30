@@ -132,7 +132,7 @@
 
     <!-- chatbot -->
     <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
-        <img id='avatar' src="./assets/images/avatar/normal.svg" alt="">
+        <img id='avatar' src="./assets/images/avatar/normal.svg" alt="Avatar du Chatbot">
         <i id="croix" class="fa-solid fa-xmark" style="display:none"></i>
     </div>
 
@@ -220,7 +220,7 @@
                 <button onclick="window.location.href='quiz.html?category=internet&source=categorie-internet.php'" class="btn fw-bold btn-quiz">Faire le quiz</button>
             </div>
             <div class="img-quiz">
-                <img src="./assets/images/illustration/quiz2.png" alt="">
+                <img src="./assets/images/illustration/quiz2.png" alt="Illustration Quiz">
             </div>
         </div>
     </div>

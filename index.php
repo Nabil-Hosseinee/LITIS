@@ -175,14 +175,14 @@ if (!$results) {
     </div>
 
     <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
-        <img id='avatar' src="./assets/images/avatar/normal.svg" alt="">
+        <img id='avatar' src="./assets/images/avatar/normal.svg" alt="Avatar du Chatbot">
         <i id="croix" class="fa-solid fa-xmark" style="display:none"></i>
     </div>
 
     <section class="presentation">
         <div class="pre-container d-flex align-items-center">
             <div class="images col-xl-6 col-lg-12">
-                <img class="img-fluid" src="./assets/images/illustration/galere.svg" alt="">
+                <img class="img-fluid" src="./assets/images/illustration/galere.svg" alt="Illustration Présentation">
             </div>
             <div class="content col-xl-6 col-lg-12">
                 <p class="fs-3 fs-sm-4" data-i18n="presentation">
@@ -197,10 +197,10 @@ if (!$results) {
     </section>
     <div class="slogan d-flex justify-content-center align-items-center">
         <div class="circle d-flex justify-content-center align-items-center exclude-accessibility BonW">
-            <img src="./assets/images/illustration/quotes.svg" alt="">
+            <img src="./assets/images/illustration/quotes.svg" alt="Illustration Guillemets">
         </div>
         <div class="container rounded-4 d-flex justify-content-center align-items-center exclude-accessibility">
-            <img class="slogan_img slogan_gauche" src="./assets/images/illustration/slogan.svg" alt="">
+            <img class="slogan_img slogan_gauche" src="./assets/images/illustration/slogan.svg" alt="Illustration Slogan">
             <h1 class="color_v exclude-accessibility text" data-i18n="slogan">
                 La référence digitale pour naviguer vers l'inclusion en ligne
             </h1>
