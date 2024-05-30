@@ -59,22 +59,24 @@ try {
 </head>
 <body class="<?php echo htmlspecialchars($categorie_formate2); ?>">
 
-    <header class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top">
+<header id="desktop-header" class="desktop d-flex justify-content-evenly align-items-center bg-white fixed-top exclude-accessibility">
         <div class="logo d-flex justify-content-center align-items-center">
-            <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
+            <a href="index.php">
+                <img id="logo_prin" class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique">
+                <img id="logo_BW" class="img-fluid" src="./assets/images/logo/logo.png" alt="Logo principal du site existence numérique">
+            </a>
         </div>
         <nav class="navbar navbar-expand-lg">
             <ul class="d-flex justify-content-center align-items-center">
-                <li><a class="fs-3 menu__link fw-semibold" href="index.php">Accueil</a></li>
-                <li><a class="fs-3 menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-3 menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                <li><a class="fs-3 menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
             </ul>
         </nav>
-
-        <form class="search" action="cible2.php" method="post">
+        <form class="search exclude-accessibility" action="cible2.php" method="post">
             <label for="search-input" class="visually-hidden">Rechercher</label>
-            <input id="search-input" name="mot" type="text" placeholder="Rechercher..." autocomplete="off">
-            <a href="#" aria-label="Rechercher">
+            <input id="search-input" class="exclude-accessibility" name="mot" type="text" placeholder="Rechercher..." autocomplete="off" data-i18n="search_placeholder">
+            <a href="#" aria-label="Rechercher" class="exclude-accessibility">
                 <lord-icon class="icon"
                     src="https://cdn.lordicon.com/unukghxb.json"
                     trigger="loop"
@@ -83,59 +85,54 @@ try {
                 </lord-icon>
             </a>
         </form>
-
-        <div class="burger-active" id="burger-menu">
-            <button>
-                <p>Menu</p>
-                <span></span>
+        <div class="burger-active exclude-accessibility" id="burger-menu">
+            <button class="exclude-accessibility">
+                <p class="exclude-accessibility">Menu</p>
+                <span class="exclude-accessibility"></span>
             </button>
         </div>
-
-        <div id="menu">
+        <div id="menu" class="exclude-accessibility">
             <ul>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
-                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
             </ul>
         </div>
     </header>
-
-    <!-- phone header -->
-    <header class="phone d-flex flex-column align-items-center bg-white fixed-top">
+    <header id="phone-header" class="phone d-flex flex-column align-items-center bg-white fixed-top exclude-accessibility">
         <div class="header-container d-flex justify-content-around align-items-center">
             <div class="logo">
                 <a href="index.php"><img class="img-fluid" src="./assets/images/logo/Logo_principal.png" alt="Logo principal du site existence numérique"></a>
             </div>
-            
-            <div class="burger-active" id="burger-menu-phone">
-                <button>
-                    <p>Menu</p>
-                    <span></span>
+            <div class="burger-active exclude-accessibility" id="burger-menu-phone">
+                <button class="exclude-accessibility">
+                    <p class="exclude-accessibility">Menu</p>
+                    <span class="exclude-accessibility"></span>
                 </button>
             </div>
-    
-            <div id="menu-phone">
+            <div id="menu-phone" class="exclude-accessibility">
                 <ul>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php">Accueil</a></li>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html">A propos</a></li>
-                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html">Ressources</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="index.php" data-i18n="home">Accueil</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="about.html" data-i18n="about">A propos</a></li>
+                    <li><a class="fs-3 fw-bold menu__link fw-semibold" href="ressource.html" data-i18n="resources">Ressources</a></li>
                 </ul>
             </div>
         </div>
-
-        <form class="search" action="cible2.php" method="post">
-            <label for="search-input" class="visually-hidden">Rechercher</label>
-            <input type="text" id="search-input" placeholder="Rechercher...">
-            <a href="#" aria-labelledby="search-input">
-                <lord-icon class="icon"
-                    src="https://cdn.lordicon.com/unukghxb.json"
-                    trigger="loop"
-                    delay="2000"
-                    style="width:30px;height:30px">
-                </lord-icon>
-                <span class="visually-hidden">Rechercher</span>
-            </a>
-        </form>
+        <div class="phone_bot d-flex justify-content-between exclude-accessibility">
+            <form class="search exclude-accessibility" action="cible2.php" method="post">
+                <label for="search-input" class="visually-hidden">Rechercher</label>
+                <input type="text" id="search-input" placeholder="Rechercher...">
+                <a href="#" aria-labelledby="search-input">
+                    <lord-icon class="icon phone_icon"
+                        src="https://cdn.lordicon.com/unukghxb.json"
+                        trigger="loop"
+                        delay="2000"
+                        style="width:30px;height:30px">
+                    </lord-icon>
+                    <span class="visually-hidden">Rechercher</span>
+                </a>
+            </form>
+        </div>
     </header>
 
     <div class="language-selector exclude-accessibility">
@@ -272,8 +269,8 @@ try {
             </div>
         </div>
     </footer>
-    
+    <script src="./assets/js/bootstrap.bundle.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/translate.js"></script>
 </body>
-
-<!-- <script src="./assets/js/script.js"></script> -->
 </html>
