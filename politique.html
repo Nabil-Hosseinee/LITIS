@@ -95,6 +95,37 @@
             </a>
         </form>
     </header>
+
+    <div class="language-selector exclude-accessibility">
+        <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
+        <div class="dropdown-content" id="language-menu">
+            <a href="#" data-lang="fr">FR : Français</a>
+            <a href="#" data-lang="en">EN : English</a>
+            <a href="#" data-lang="es">ES : Español</a>
+            <a href="#" data-lang="de">DE : Deutsch</a>
+        </div>
+    </div>
+
+    <div id="access" class="access d-flex justify-content-center align-items-center exclude-accessibility">
+        <i class="fa-solid fa-eye-low-vision exclude-accessibility"></i>
+        <div id="access-menu" class="access-menu">
+            <label class="switch mg">
+                <span class="fw-bold color_v exclude-accessibility" data-i18n="access_lang">Changer l'écriture</span>
+                <input type="checkbox" class="font-toggle exclude-accessibility">
+                <span class="slider round exclude-accessibility"></span>
+            </label>
+            <label class="switch">
+                <span class="fw-bold color_v exclude-accessibility" data-i18n="access_contrast">Changer le contraste</span>
+                <input type="checkbox" class="bg-toggle exclude-accessibility">
+                <span class="slider round exclude-accessibility"></span>
+            </label>
+        </div>
+    </div>
+
+    <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
+        <img id='avatar' src="./assets/images/avatar/normal.svg" alt="Avatar du Chatbot">
+        <i id="croix" class="fa-solid fa-xmark" style="display:none"></i>
+    </div>
     
     
     <section class="politique">
