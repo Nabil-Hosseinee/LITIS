@@ -289,9 +289,9 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
                     <div class="separator"></div>
                     <li><a class="fs-4 menu__link fw-medium" href="ressource.html" data-i18n="resources">Ressources</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="privacy_policy">Politique de confidentialité</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="politique.html" data-i18n="privacy_policy">Politique de confidentialité</a></li>
                     <div class="separator"></div>
-                    <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="legal_notice">Mentions légales</a></li>
+                    <li><a class="fs-4 menu__link fw-medium" href="legal.html" data-i18n="legal_notice">Mentions légales</a></li>
                 </ul>
             </div>
 
@@ -307,9 +307,9 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
                 </div>
                 <div class="bot">
                     <ul class="d-flex">
-                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="privacy_policy">Politique de confidentialité</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="politique.html" data-i18n="privacy_policy">Politique de confidentialité</a></li>
                         <div class="separator"></div>
-                        <li><a class="fs-4 menu__link fw-medium" href="#" data-i18n="legal_notice">Mentions légales</a></li>
+                        <li><a class="fs-4 menu__link fw-medium" href="legal.html" data-i18n="legal_notice">Mentions légales</a></li>
                     </ul>
                 </div>
             </div>
