@@ -141,12 +141,15 @@ h1 {
 .videos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    margin-left: 2vw;
+    width: 85vw;
 }
 
 .tuto {
-    width: calc(33.33% - 2vw);
+    width: calc(26% - 0vw);
     margin-bottom: 5vh;
+    margin-right: 5vw;
     box-sizing: border-box;
     position: relative;
 }
@@ -294,7 +297,11 @@ h1 {
 
     /* tutoriels */
     .tuto {
-        width: calc(50% - 2vw);
+        width: calc(40% - 2vw);
+    }
+
+    .videos {
+        margin-left: 5vw;
     }
 
     /* quiz */
@@ -380,6 +387,10 @@ h1 {
     .tuto img, .overlay_4 {
         width: 80%;
         margin-left: 10%;
+    }
+
+    .videos {
+        margin-left: 0;
     }
 
     /* quiz */
