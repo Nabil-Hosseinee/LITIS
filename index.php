@@ -64,7 +64,7 @@ if (!$results) {
     <link rel="stylesheet" href="./assets/css/style.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script src="https://kit.fontawesome.com/96e027db6d.js" crossorigin="anonymous"></script>
-    <!-- test langue -->
+    <!-- langue -->
     <script src="https://unpkg.com/i18next@21.6.13/i18next.min.js"></script>
     <script src="https://unpkg.com/i18next-http-backend@1.4.0/i18nextHttpBackend.min.js"></script>
     <script src="https://unpkg.com/i18next-browser-languagedetector@6.1.3/i18nextBrowserLanguageDetector.min.js"></script>
@@ -147,6 +147,7 @@ if (!$results) {
             </form>
         </div>
     </header>
+
     <div class="language-selector exclude-accessibility">
         <button class="dropbtn exclude-accessibility" id="selected-lang">FR</button>
         <div class="dropdown-content" id="language-menu">
@@ -156,6 +157,7 @@ if (!$results) {
             <a href="#" data-lang="de">DE : Deutsch</a>
         </div>
     </div>
+
     <div id="access" class="access d-flex justify-content-center align-items-center exclude-accessibility">
         <i class="fa-solid fa-eye-low-vision exclude-accessibility"></i>
         <div id="access-menu" class="access-menu">
@@ -171,10 +173,12 @@ if (!$results) {
             </label>
         </div>
     </div>
+
     <div id="chatbot" class="chatbot d-flex justify-content-center align-items-center">
         <img id='avatar' src="./assets/images/avatar/normal.svg" alt="">
         <i id="croix" class="fa-solid fa-xmark" style="display:none"></i>
     </div>
+
     <section class="presentation">
         <div class="pre-container d-flex align-items-center">
             <div class="images col-xl-6 col-lg-12">
