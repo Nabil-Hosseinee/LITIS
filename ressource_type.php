@@ -49,7 +49,7 @@ try {
     <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/ressource_type.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <title>Existence Numérique | <?php echo htmlspecialchars($ressources[0]["Titre"]);?></title>
+    <title><?php echo htmlspecialchars($ressources[0]["Titre"]);?> | Tutoriel et étapes | Existence Numérique</title>
 </head>
 <body class="<?php echo htmlspecialchars($categorie_formate2); ?>">
 

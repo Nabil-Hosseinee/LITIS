@@ -42,7 +42,7 @@ else {
     <link rel="stylesheet" href="./assets/css/general.css">
     <link rel="stylesheet" href="./assets/css/searchv2.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <title>Existence Numérique | A propos</title>
+    <title>Chercher un mot | Recherche | Existence Numérique</title>
 </head>
 <body>
     

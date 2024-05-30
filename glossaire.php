@@ -27,7 +27,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="./assets/css/glossaire.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script src="https://kit.fontawesome.com/96e027db6d.js" crossorigin="anonymous"></script>
-    <title>Existence Numérique | Glossaire</title>
+    <title>Termes du numérique | Glossaire | Existence Numérique</title>
   </head>
 
   <body id="body">

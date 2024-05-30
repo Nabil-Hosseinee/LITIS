@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="./assets/css/categorie.css">
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
     <script src="https://kit.fontawesome.com/96e027db6d.js" crossorigin="anonymous"></script>
-    <title>Existence Numérique | Communication</title>
+    <title>Ressources pour la Communication | Communication | Existence Numérique</title>
 </head>
 <body>
     
