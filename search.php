@@ -180,14 +180,14 @@ else {
             <br>
             <?php echo "<p class='fs-5'><span class='syn'>Synonymes :</span> $synonymes</p>" ?>
         </div>
-
-        <div class="bar"></div>
-
-        <h2>Ressources</h2>
-
-        <div class="container rdv">
-            <div class="videos d-flex">
-                <?php
+            <?php
+                if (!empty($ressource)) {
+                    echo "
+                    <div class='bar'></div>
+                    <h2>Ressources</h2>
+                    <div class='container rdv'>
+                        <div class='videos d-flex'>
+                    ";
                     foreach ($ressource as $item) {
                         if (!empty($item['Image'])) {
                             $minia = $item['Image'];
@@ -205,9 +205,11 @@ else {
                                 ";
                         }
                     }
-                ?>
-            </div>
-        </div>
+                    echo "
+                        </div>
+                    </div>";
+                }
+            ?>
     </section>
 
 
