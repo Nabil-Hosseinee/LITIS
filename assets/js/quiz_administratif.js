@@ -133,7 +133,7 @@ function showQuestion() {
         <div class="answers"> ${answers.join('')} </div>
     `;
 
-    // Update question counter and score
+    // Mise à jour du compteur et du score
     questionCounter.textContent = `Question ${currentQuestionIndex + 1} sur ${myQuestions.length}`;
     scoreContainer.textContent = `Score: ${numCorrect}/${currentQuestionIndex}`;
 
@@ -146,26 +146,26 @@ function checkAnswer() {
     const selector = `input[name=question]:checked`;
     const userAnswer = (quizContainer.querySelector(selector) || {}).value;
 
-    // Check if the user answer is correct or not
+    // Vérifie si l'utilisateur répond correctement ou non
     if (userAnswer === myQuestions[currentQuestionIndex].correctAnswer) {
         numCorrect++;
         const correctAnswerElement = quizContainer.querySelector(`input[value=${userAnswer}]`).parentElement;
         correctAnswerElement.classList.add('correct');
     } else {
-        // Color the user answer red if incorrect
+        // Met en rouge si la réponse est incorrect
         if (userAnswer) {
             const incorrectAnswerElement = quizContainer.querySelector(`input[value=${userAnswer}]`).parentElement;
             incorrectAnswerElement.classList.add('incorrect');
         }
-        // Color the correct answer green
+        // Met en vert si la réponse est correct
         const correctAnswerElement = quizContainer.querySelector(`input[value=${myQuestions[currentQuestionIndex].correctAnswer}]`).parentElement;
         correctAnswerElement.classList.add('correct');
     }
 
-    // Update score
+    // Mise à jour du score
     scoreContainer.textContent = `Score: ${numCorrect}/${currentQuestionIndex + 1}`;
 
-    // Show the "Continue" button
+    // Changement de bouton
     submitButton.style.display = 'none';
     nextButton.style.display = 'block';
 }
@@ -188,13 +188,13 @@ function showResults() {
     quizContainer.innerHTML = '';
     resultsContainer.innerHTML = `Vous avez ${numCorrect} bonnes réponses sur ${myQuestions.length}.`;
 
-    // Add the class 'appear' to all SVGs with the class 'layer'
+    // Ajout de la class 'appear' pour tous les SVG avec la class 'layer'
     const layers = document.querySelectorAll('.layer');
     layers.forEach(layer => {
         layer.classList.add('appear');
     });
 
-    // Change the next button to a restart button
+    // Change le bouton suivant en bouton recommencer
     nextButton.textContent = 'Recommencer';
     nextButton.removeEventListener('click', showNextQuestion);
     nextButton.addEventListener('click', restartQuiz);
@@ -202,7 +202,7 @@ function showResults() {
 }
 
 function restartQuiz() {
-    // Remove the 'appear' class from all SVGs with the class 'layer'
+    // Enleve la class 'appear'
     const layers = document.querySelectorAll('.layer');
     layers.forEach(layer => {
         layer.classList.remove('appear');
