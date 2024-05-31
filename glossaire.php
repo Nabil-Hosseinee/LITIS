@@ -265,7 +265,7 @@ $results = $statement->fetchAll(PDO::FETCH_ASSOC);
                         if (target.length) {
                             // Défiler vers le mot spécifique si trouvé
                             $('html, body').animate({
-                                scrollTop: target.offset().top - 350 // ajustez '-100' pour compenser la hauteur du header si nécessaire
+                                scrollTop: target.offset().top - 350
                             }, 1000, function() {
                                 // Ajouter la classe de mise en évidence une fois le défilement terminé
                                 target.addClass('highlight');
