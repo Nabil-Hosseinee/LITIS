@@ -132,7 +132,6 @@ function showQuestion() {
         <div class="answers"> ${answers.join('')} </div>
     `;
 
-    // Update question counter and score
     questionCounter.textContent = `Question ${currentQuestionIndex + 1} sur ${myQuestions.length}`;
     scoreContainer.textContent = `Score: ${numCorrect}/${currentQuestionIndex}`;
 
@@ -145,26 +144,21 @@ function checkAnswer() {
     const selector = `input[name=question]:checked`;
     const userAnswer = (quizContainer.querySelector(selector) || {}).value;
 
-    // Check if the user answer is correct or not
     if (userAnswer === myQuestions[currentQuestionIndex].correctAnswer) {
         numCorrect++;
         const correctAnswerElement = quizContainer.querySelector(`input[value=${userAnswer}]`).parentElement;
         correctAnswerElement.classList.add('correct');
     } else {
-        // Color the user answer red if incorrect
         if (userAnswer) {
             const incorrectAnswerElement = quizContainer.querySelector(`input[value=${userAnswer}]`).parentElement;
             incorrectAnswerElement.classList.add('incorrect');
         }
-        // Color the correct answer green
         const correctAnswerElement = quizContainer.querySelector(`input[value=${myQuestions[currentQuestionIndex].correctAnswer}]`).parentElement;
         correctAnswerElement.classList.add('correct');
     }
 
-    // Update score
     scoreContainer.textContent = `Score: ${numCorrect}/${currentQuestionIndex + 1}`;
 
-    // Show the "Continue" button
     submitButton.style.display = 'none';
     nextButton.style.display = 'block';
 }
@@ -187,13 +181,11 @@ function showResults() {
     quizContainer.innerHTML = '';
     resultsContainer.innerHTML = `Vous avez ${numCorrect} bonnes réponses sur ${myQuestions.length}.`;
 
-    // Add the class 'appear' to all SVGs with the class 'layer'
     const layers = document.querySelectorAll('.layer');
     layers.forEach(layer => {
         layer.classList.add('appear');
     });
 
-    // Change the next button to a restart button
     nextButton.textContent = 'Recommencer';
     nextButton.removeEventListener('click', showNextQuestion);
     nextButton.addEventListener('click', restartQuiz);
@@ -201,7 +193,6 @@ function showResults() {
 }
 
 function restartQuiz() {
-    // Remove the 'appear' class from all SVGs with the class 'layer'
     const layers = document.querySelectorAll('.layer');
     layers.forEach(layer => {
         layer.classList.remove('appear');

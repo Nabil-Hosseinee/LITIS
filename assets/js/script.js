@@ -53,16 +53,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-// 
-
-// 
-// 
-// 
-// 
-
-
-
 var burgerMenu = document.getElementById('burger-menu');
 var overlay = document.getElementById('menu');
 var burgerMenuPhone = document.getElementById('burger-menu-phone');
@@ -77,10 +67,6 @@ burgerMenuPhone.addEventListener('click', function() {
     this.classList.toggle("close");
     overlayPhone.classList.toggle("overlay");
 });
-
-
-
-
 
 
 // général var
@@ -105,7 +91,7 @@ var logo_BW = document.getElementById('logo_BW');
 
 // chatbot event
 chatbot.addEventListener("click", function(event) {
-    event.stopPropagation(); // Prevent the click event from propagating to the chatbot div
+    event.stopPropagation(); 
 
     this.classList.add('square');
     avatar.classList.add('avatar');
@@ -113,7 +99,7 @@ chatbot.addEventListener("click", function(event) {
 });
 
 cross.addEventListener("click", function(event) {
-    event.stopPropagation(); // Prevent the click event from propagating to the chatbot div
+    event.stopPropagation(); 
     chatbot.classList.remove('square');
     cross.style.display = "none";
 });
