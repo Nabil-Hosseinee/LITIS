@@ -3,7 +3,7 @@ session_start();
 
 include('connect_bdd.php');
 
-$query = "SELECT * FROM glossaire";
+$query = "SELECT * FROM glossaire ORDER BY Mot ASC";
 $statement = $db->prepare($query);
 $statement->execute();
 $results = $statement->fetchAll(PDO::FETCH_ASSOC);
