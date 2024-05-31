@@ -83,23 +83,19 @@ body {
 }
 
 /* Étapes */
-
-/* Style pour la section des étapes */
 .etape {
     margin-left: 7vh;
     padding: 5vh;
-    margin-bottom: 10px; /* Espace entre chaque étape */
-    max-width: 70%; /* Limite la largeur de la zone de texte */
+    margin-bottom: 10px;
+    max-width: 70%;
 }
 
-/* Style pour les titres des étapes */
 .etape h2 {
     font-size: 24px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-/* Style pour les paragraphes des étapes */
 .etape p {
     font-size: 18px;
     line-height: 1.6;
@@ -107,23 +103,20 @@ body {
 }
 
 /* Bouton*/
-
 .btn-resource {
-    margin: 0 auto; /* Centre le bouton horizontalement */
-    display: block; /* Permet au bouton de prendre toute la largeur disponible */
-    width: fit-content; /* Ajuste la largeur du bouton à son contenu */
+    margin: 0 auto;
+    display: block;
+    width: fit-content;
     background-color: var(--secondaire);
     color: white;
     border: 2px solid white;
-    padding: 10px 20px; /* Ajoute un espace de remplissage au bouton */
+    padding: 10px 20px;
     margin-bottom: 10vh;
 }
 
 
 
 /* Media Queries */
-
-/* max-width: 1400px */
 @media (max-width: 1400px) {
     .title {
         margin-top: 18vh;
@@ -135,7 +128,6 @@ body {
     }
 }
 
-/* max-width: 1200px */
 @media (max-width: 1200px) {
     .title {
         margin-top: 16vh;
@@ -152,7 +144,6 @@ body {
     }
 }
 
-/* max-width: 992px */
 @media (max-width: 992px) {
     .title {
         margin-top: 20vh;
@@ -169,7 +160,6 @@ body {
     }
 }
 
-/* max-width: 768px */
 @media (max-width: 768px) {
     .title {
         margin-top: 20vh;
@@ -192,7 +182,6 @@ body {
     }
 }
 
-/* max-width: 576px */
 @media (max-width: 576px) {
     .title {
         margin-top: 20vh;
@@ -215,7 +204,6 @@ body {
     }
 }
 
-/* max-width: 400px */
 @media (max-width: 400px) {
     .title {
         margin-top: 22vh;
